@@ -29,7 +29,39 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "MEX",
-      "fifa_ranking": 15
+      "fifa_ranking": 16,
+      "nickname": "El Tri",
+      "coach": "Javier Aguirre",
+      "captain": "Edson Álvarez",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 16,
+      "best_world_cup_result": "Quarterfinals (1970, 1986)",
+      "group_2026": "A",
+      "co_host_nation": true,
+      "colors": {
+        "primary": "#006847",
+        "secondary": "#CE1126",
+        "tertiary": "#FFFFFF",
+        "primary_name": "Green",
+        "secondary_name": "Red",
+        "tertiary_name": "White"
+      },
+      "kits": {
+        "home": { "primary_color": "#006847", "secondary_color": "#CE1126", "description": "Green with red and white trim" },
+        "away": { "primary_color": "#FFFFFF", "secondary_color": "#006847", "description": "White with green trim" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Mexico_national_football_team_crest.svg/800px-Mexico_national_football_team_crest.svg.png",
+      "logo_svg_url": "https://upload.wikimedia.org/wikipedia/en/b/bd/Mexico_national_football_team_crest.svg",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico",
+      "stadium_home": "Estadio Azteca",
+      "opening_match": {
+        "opponent": "South Africa",
+        "date": "2026-06-11",
+        "kickoff_utc": "02:00",
+        "venue": "Estadio Azteca",
+        "city": "Mexico City",
+        "group": "A"
+      }
     },
     "aliases": [
       { "alias": "Mexico", "source_id": null },
@@ -38,7 +70,8 @@
       { "alias": "Mexico", "source_id": "espn_fifa" },
       { "alias": "Mexico", "source_id": "footballdata_wc" },
       { "alias": "Mexico", "source_id": "fifa_api" },
-      { "alias": "M\u00e9xico", "source_id": null }
+      { "alias": "M\u00e9xico", "source_id": null },
+      { "alias": "Mexico National Football Team", "source_id": null }
     ]
   },
   {
@@ -942,6 +975,67 @@
       { "alias": "New Zealand", "source_id": "espn_fifa" },
       { "alias": "New Zealand", "source_id": "footballdata_wc" },
       { "alias": "New Zealand", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-south-africa",
+    "name": "South Africa",
+    "short_name": "RSA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "RSA",
+      "fifa_ranking": 60,
+      "nickname": "Bafana Bafana",
+      "coach": "Hugo Broos",
+      "captain": "Ronwen Williams",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 3,
+      "best_world_cup_result": "Group stage (1998, 2002, 2010 — as hosts)",
+      "group_2026": "A",
+      "colors": {
+        "primary": "#FFD100",
+        "secondary": "#007A4D",
+        "tertiary": "#DE3831",
+        "quaternary": "#002395",
+        "primary_name": "Gold",
+        "secondary_name": "Green",
+        "tertiary_name": "Red",
+        "quaternary_name": "Blue"
+      },
+      "kits": {
+        "home": {
+          "primary_color": "#FFD100",
+          "secondary_color": "#007A4D",
+          "description": "Gold/yellow with green, black and white trim — inspired by the South African flag"
+        },
+        "away": {
+          "primary_color": "#007A4D",
+          "secondary_color": "#FFD100",
+          "description": "Green with gold and white accents"
+        }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/South_Africa_national_football_team_logo.svg/800px-South_Africa_national_football_team_logo.svg.png",
+      "logo_svg_url": "https://upload.wikimedia.org/wikipedia/en/9/98/South_Africa_national_football_team_logo.svg",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa",
+      "opening_match": {
+        "opponent": "Mexico",
+        "date": "2026-06-11",
+        "kickoff_utc": "02:00",
+        "venue": "Estadio Azteca",
+        "city": "Mexico City",
+        "group": "A"
+      }
+    },
+    "aliases": [
+      { "alias": "South Africa", "source_id": null },
+      { "alias": "RSA", "source_id": null },
+      { "alias": "Bafana Bafana", "source_id": null },
+      { "alias": "South Africa", "source_id": "espn_fifa" },
+      { "alias": "South Africa", "source_id": "footballdata_wc" },
+      { "alias": "South Africa", "source_id": "fifa_api" },
+      { "alias": "South Africa National Football Team", "source_id": null },
+      { "alias": "Suid-Afrika", "source_id": null }
     ]
   }
 ]

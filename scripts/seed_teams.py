@@ -34,7 +34,7 @@ async def seed_teams() -> None:
     for filename, sport in [
         ("nba_teams.json", Sport.NBA),
         ("lol_teams.json", Sport.LOL),
-        ("fifa_wc_teams.json", Sport.SOCCER),
+        ("fifa_wc_teams.json", Sport.FOOTBALL),
     ]:
         filepath = data_dir / filename
         if not filepath.exists():

@@ -1,0 +1,1124 @@
+[
+  {
+    "name": "Guillermo Ochoa",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 12,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Salernitana",
+      "club_country": "Italy",
+      "age": 38,
+      "caps": 145,
+      "date_of_birth": "1985-07-13",
+      "height_cm": 183,
+      "preferred_foot": "right",
+      "world_cups": ["2006", "2010", "2014", "2018", "2022", "2026"],
+      "notable": "Mexico's most capped GK; penalty save hero at 2014 vs Brazil"
+    },
+    "aliases": [
+      { "alias": "Guillermo Ochoa", "source_id": "fifa_api" },
+      { "alias": "Memo Ochoa", "source_id": null },
+      { "alias": "G. Ochoa", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Luis Malagón",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 1,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Club América",
+      "club_country": "Mexico",
+      "age": 27,
+      "caps": 18,
+      "date_of_birth": "1997-06-08",
+      "height_cm": 185,
+      "preferred_foot": "right",
+      "notable": "First-choice GK heading into 2026 World Cup; Liga MX standout"
+    },
+    "aliases": [
+      { "alias": "Luis Malagón", "source_id": "fifa_api" },
+      { "alias": "L. Malagón", "source_id": "espn_fifa" },
+      { "alias": "Luis Malagon", "source_id": null }
+    ]
+  },
+  {
+    "name": "Carlos Acevedo",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 13,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Santos Laguna",
+      "club_country": "Mexico",
+      "age": 28,
+      "caps": 5,
+      "date_of_birth": "1996-04-25",
+      "height_cm": 190
+    },
+    "aliases": [
+      { "alias": "Carlos Acevedo", "source_id": "fifa_api" },
+      { "alias": "C. Acevedo", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Julián Araujo",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 2,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Barcelona",
+      "club_country": "Spain",
+      "age": 23,
+      "caps": 22,
+      "date_of_birth": "2001-08-13",
+      "height_cm": 175,
+      "sub_position": "RB",
+      "preferred_foot": "right",
+      "notable": "Dynamic right-back at La Liga side Barcelona"
+    },
+    "aliases": [
+      { "alias": "Julián Araujo", "source_id": "fifa_api" },
+      { "alias": "Julian Araujo", "source_id": null },
+      { "alias": "J. Araujo", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Gerardo Arteaga",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 3,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Getafe",
+      "club_country": "Spain",
+      "age": 26,
+      "caps": 30,
+      "date_of_birth": "1998-12-07",
+      "height_cm": 172,
+      "sub_position": "LB",
+      "preferred_foot": "left"
+    },
+    "aliases": [
+      { "alias": "Gerardo Arteaga", "source_id": "fifa_api" },
+      { "alias": "G. Arteaga", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Johan Vásquez",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 5,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Genoa",
+      "club_country": "Italy",
+      "age": 26,
+      "caps": 35,
+      "date_of_birth": "1998-12-22",
+      "height_cm": 186,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Johan Vásquez", "source_id": "fifa_api" },
+      { "alias": "Johan Vasquez", "source_id": null },
+      { "alias": "J. Vásquez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "César Montes",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 4,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Espanyol",
+      "club_country": "Spain",
+      "age": 27,
+      "caps": 48,
+      "date_of_birth": "1997-04-24",
+      "height_cm": 193,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "César Montes", "source_id": "fifa_api" },
+      { "alias": "Cesar Montes", "source_id": null },
+      { "alias": "C. Montes", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Jorge Sánchez",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 6,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Porto",
+      "club_country": "Portugal",
+      "age": 26,
+      "caps": 40,
+      "date_of_birth": "1998-01-23",
+      "height_cm": 175,
+      "sub_position": "RB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Jorge Sánchez", "source_id": "fifa_api" },
+      { "alias": "Jorge Sanchez", "source_id": null },
+      { "alias": "J. Sánchez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Jesús Gallardo",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 23,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Monterrey",
+      "club_country": "Mexico",
+      "age": 29,
+      "caps": 65,
+      "date_of_birth": "1994-08-15",
+      "height_cm": 173,
+      "sub_position": "LB",
+      "preferred_foot": "left"
+    },
+    "aliases": [
+      { "alias": "Jesús Gallardo", "source_id": "fifa_api" },
+      { "alias": "Jesus Gallardo", "source_id": null },
+      { "alias": "J. Gallardo", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Néstor Araujo",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 15,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Club América",
+      "club_country": "Mexico",
+      "age": 33,
+      "caps": 65,
+      "date_of_birth": "1991-08-29",
+      "height_cm": 188,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Néstor Araujo", "source_id": "fifa_api" },
+      { "alias": "Nestor Araujo", "source_id": null },
+      { "alias": "N. Araujo", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Israel Reyes",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 16,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Club América",
+      "club_country": "Mexico",
+      "age": 24,
+      "caps": 12,
+      "date_of_birth": "2000-07-23",
+      "height_cm": 189,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Israel Reyes", "source_id": "fifa_api" },
+      { "alias": "I. Reyes", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Edson Álvarez",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 8,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "West Ham United",
+      "club_country": "England",
+      "age": 27,
+      "caps": 85,
+      "date_of_birth": "1997-10-24",
+      "height_cm": 185,
+      "sub_position": "DM",
+      "preferred_foot": "right",
+      "captain": true,
+      "notable": "Mexico captain; Premier League regular with West Ham; excellent in defensive midfield"
+    },
+    "aliases": [
+      { "alias": "Edson Álvarez", "source_id": "fifa_api" },
+      { "alias": "Edson Alvarez", "source_id": null },
+      { "alias": "E. Álvarez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Andrés Guardado",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 18,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Club León",
+      "club_country": "Mexico",
+      "age": 37,
+      "caps": 183,
+      "date_of_birth": "1986-09-28",
+      "height_cm": 167,
+      "sub_position": "CM",
+      "preferred_foot": "left",
+      "notable": "Mexico's most-capped outfield player; veteran midfielder appearing at 6th World Cup"
+    },
+    "aliases": [
+      { "alias": "Andrés Guardado", "source_id": "fifa_api" },
+      { "alias": "Andres Guardado", "source_id": null },
+      { "alias": "A. Guardado", "source_id": "espn_fifa" },
+      { "alias": "Principito", "source_id": null }
+    ]
+  },
+  {
+    "name": "Héctor Herrera",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 16,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Tigres UANL",
+      "club_country": "Mexico",
+      "age": 34,
+      "caps": 115,
+      "date_of_birth": "1990-04-19",
+      "height_cm": 177,
+      "sub_position": "CM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Héctor Herrera", "source_id": "fifa_api" },
+      { "alias": "Hector Herrera", "source_id": null },
+      { "alias": "H. Herrera", "source_id": "espn_fifa" },
+      { "alias": "HH", "source_id": null }
+    ]
+  },
+  {
+    "name": "Orbelín Pineda",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 7,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "AEK Athens",
+      "club_country": "Greece",
+      "age": 28,
+      "caps": 55,
+      "date_of_birth": "1996-03-24",
+      "height_cm": 168,
+      "sub_position": "AM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Orbelín Pineda", "source_id": "fifa_api" },
+      { "alias": "Orbelin Pineda", "source_id": null },
+      { "alias": "O. Pineda", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Carlos Rodríguez",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 14,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Cruz Azul",
+      "club_country": "Mexico",
+      "age": 27,
+      "caps": 38,
+      "date_of_birth": "1997-04-13",
+      "height_cm": 178,
+      "sub_position": "CM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Carlos Rodríguez", "source_id": "fifa_api" },
+      { "alias": "Carlos Rodriguez", "source_id": null },
+      { "alias": "C. Rodríguez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Luis Romo",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 19,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Cruz Azul",
+      "club_country": "Mexico",
+      "age": 29,
+      "caps": 42,
+      "date_of_birth": "1995-06-05",
+      "height_cm": 173,
+      "sub_position": "CM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Luis Romo", "source_id": "fifa_api" },
+      { "alias": "L. Romo", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Roberto Alvarado",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 20,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Chivas de Guadalajara",
+      "club_country": "Mexico",
+      "age": 26,
+      "caps": 20,
+      "date_of_birth": "1998-04-07",
+      "height_cm": 171,
+      "sub_position": "AM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Roberto Alvarado", "source_id": "fifa_api" },
+      { "alias": "R. Alvarado", "source_id": "espn_fifa" },
+      { "alias": "El Piojo", "source_id": null }
+    ]
+  },
+  {
+    "name": "Hirving Lozano",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 10,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "San Diego FC",
+      "club_country": "USA",
+      "age": 29,
+      "caps": 90,
+      "date_of_birth": "1995-07-30",
+      "height_cm": 169,
+      "sub_position": "RW",
+      "preferred_foot": "right",
+      "notable": "Chucky; former PSV/Napoli forward; explosive pace and dribbling"
+    },
+    "aliases": [
+      { "alias": "Hirving Lozano", "source_id": "fifa_api" },
+      { "alias": "Chucky Lozano", "source_id": null },
+      { "alias": "H. Lozano", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Raúl Jiménez",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 9,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Fulham",
+      "club_country": "England",
+      "age": 33,
+      "caps": 102,
+      "date_of_birth": "1991-05-05",
+      "height_cm": 188,
+      "sub_position": "CF",
+      "preferred_foot": "right",
+      "goals_international": 38,
+      "notable": "Experienced target striker; first Mexican to score 100+ international goals"
+    },
+    "aliases": [
+      { "alias": "Raúl Jiménez", "source_id": "fifa_api" },
+      { "alias": "Raul Jimenez", "source_id": null },
+      { "alias": "R. Jiménez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Santiago Giménez",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 11,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "AC Milan",
+      "club_country": "Italy",
+      "age": 23,
+      "caps": 35,
+      "date_of_birth": "2001-04-18",
+      "height_cm": 183,
+      "sub_position": "CF",
+      "preferred_foot": "right",
+      "notable": "Santi; prolific striker at AC Milan; Mexico's standout young forward"
+    },
+    "aliases": [
+      { "alias": "Santiago Giménez", "source_id": "fifa_api" },
+      { "alias": "Santiago Gimenez", "source_id": null },
+      { "alias": "S. Giménez", "source_id": "espn_fifa" },
+      { "alias": "Santi Giménez", "source_id": null }
+    ]
+  },
+  {
+    "name": "Henry Martín",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 21,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Club América",
+      "club_country": "Mexico",
+      "age": 32,
+      "caps": 47,
+      "date_of_birth": "1992-08-18",
+      "height_cm": 182,
+      "sub_position": "CF",
+      "preferred_foot": "right",
+      "notable": "Liga MX top scorer; powerful center-forward"
+    },
+    "aliases": [
+      { "alias": "Henry Martín", "source_id": "fifa_api" },
+      { "alias": "Henry Martin", "source_id": null },
+      { "alias": "H. Martín", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Erick Sánchez",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 22,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Pachuca",
+      "club_country": "Mexico",
+      "age": 25,
+      "caps": 15,
+      "date_of_birth": "1999-09-04",
+      "height_cm": 176,
+      "sub_position": "DM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Erick Sánchez", "source_id": "fifa_api" },
+      { "alias": "Erick Sanchez", "source_id": null },
+      { "alias": "E. Sánchez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Alexis Vega",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 17,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Toluca",
+      "club_country": "Mexico",
+      "age": 27,
+      "caps": 32,
+      "date_of_birth": "1997-01-15",
+      "height_cm": 173,
+      "sub_position": "LW",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Alexis Vega", "source_id": "fifa_api" },
+      { "alias": "A. Vega", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Kevin Álvarez",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 24,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Pachuca",
+      "club_country": "Mexico",
+      "age": 25,
+      "caps": 10,
+      "date_of_birth": "1999-10-30",
+      "height_cm": 174,
+      "sub_position": "RB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Kevin Álvarez", "source_id": "fifa_api" },
+      { "alias": "Kevin Alvarez", "source_id": null },
+      { "alias": "K. Álvarez", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Fernando Tapia",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 25,
+    "nationality": "Mexican",
+    "team_id": "football-mexico",
+    "metadata": {
+      "team": "Mexico",
+      "club": "Santos Laguna",
+      "club_country": "Mexico",
+      "age": 24,
+      "caps": 6,
+      "date_of_birth": "2000-02-17",
+      "height_cm": 180,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Fernando Tapia", "source_id": "fifa_api" },
+      { "alias": "F. Tapia", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Ronwen Williams",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 1,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 32,
+      "caps": 65,
+      "date_of_birth": "1992-09-09",
+      "height_cm": 183,
+      "preferred_foot": "right",
+      "captain": true,
+      "notable": "South Africa captain; AFCON 2023 penalty shootout hero; named best goalkeeper at AFCON"
+    },
+    "aliases": [
+      { "alias": "Ronwen Williams", "source_id": "fifa_api" },
+      { "alias": "R. Williams", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Veli Mothwa",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 16,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "AmaZulu",
+      "club_country": "South Africa",
+      "age": 32,
+      "caps": 10,
+      "date_of_birth": "1992-01-25",
+      "height_cm": 187
+    },
+    "aliases": [
+      { "alias": "Veli Mothwa", "source_id": "fifa_api" },
+      { "alias": "V. Mothwa", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Bruce Bvuma",
+    "sport": "football",
+    "position": "GK",
+    "jersey_number": 23,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Kaizer Chiefs",
+      "club_country": "South Africa",
+      "age": 30,
+      "caps": 8,
+      "date_of_birth": "1994-09-01",
+      "height_cm": 187
+    },
+    "aliases": [
+      { "alias": "Bruce Bvuma", "source_id": "fifa_api" },
+      { "alias": "B. Bvuma", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Terrence Mashego",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 3,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Cape Town City",
+      "club_country": "South Africa",
+      "age": 29,
+      "caps": 25,
+      "date_of_birth": "1995-01-22",
+      "height_cm": 168,
+      "sub_position": "LB",
+      "preferred_foot": "left"
+    },
+    "aliases": [
+      { "alias": "Terrence Mashego", "source_id": "fifa_api" },
+      { "alias": "T. Mashego", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Siyanda Xulu",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 5,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 32,
+      "caps": 40,
+      "date_of_birth": "1992-08-09",
+      "height_cm": 186,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Siyanda Xulu", "source_id": "fifa_api" },
+      { "alias": "S. Xulu", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Rushine de Reuck",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 4,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Kasimpasa",
+      "club_country": "Turkey",
+      "age": 30,
+      "caps": 38,
+      "date_of_birth": "1994-01-19",
+      "height_cm": 190,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Rushine de Reuck", "source_id": "fifa_api" },
+      { "alias": "R. de Reuck", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Reeve Frosler",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 2,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Kaizer Chiefs",
+      "club_country": "South Africa",
+      "age": 26,
+      "caps": 22,
+      "date_of_birth": "1998-03-11",
+      "height_cm": 175,
+      "sub_position": "RB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Reeve Frosler", "source_id": "fifa_api" },
+      { "alias": "R. Frosler", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Teboho Mokoena",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 8,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 27,
+      "caps": 50,
+      "date_of_birth": "1997-03-24",
+      "height_cm": 175,
+      "sub_position": "CM",
+      "preferred_foot": "right",
+      "notable": "Combative central midfielder; Bafana Bafana engine room"
+    },
+    "aliases": [
+      { "alias": "Teboho Mokoena", "source_id": "fifa_api" },
+      { "alias": "T. Mokoena", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Ethan Brooks",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 6,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 24,
+      "caps": 12,
+      "date_of_birth": "2000-07-08",
+      "height_cm": 177,
+      "sub_position": "DM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Ethan Brooks", "source_id": "fifa_api" },
+      { "alias": "E. Brooks", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Mothobi Mvala",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 17,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 29,
+      "caps": 30,
+      "date_of_birth": "1995-05-27",
+      "height_cm": 180,
+      "sub_position": "DM",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Mothobi Mvala", "source_id": "fifa_api" },
+      { "alias": "M. Mvala", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Keagan Dolly",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 11,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Kaizer Chiefs",
+      "club_country": "South Africa",
+      "age": 31,
+      "caps": 55,
+      "date_of_birth": "1993-01-22",
+      "height_cm": 172,
+      "sub_position": "LW",
+      "preferred_foot": "left",
+      "notable": "Experienced winger; former Montpellier and Mamelodi Sundowns"
+    },
+    "aliases": [
+      { "alias": "Keagan Dolly", "source_id": "fifa_api" },
+      { "alias": "K. Dolly", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Relebohile Mofokeng",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 10,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Orlando Pirates",
+      "club_country": "South Africa",
+      "age": 20,
+      "caps": 20,
+      "date_of_birth": "2004-10-12",
+      "height_cm": 169,
+      "sub_position": "AM",
+      "preferred_foot": "left",
+      "notable": "Exciting teenage talent; 2023 CAF Youth Player of the Year; South Africa's brightest prospect"
+    },
+    "aliases": [
+      { "alias": "Relebohile Mofokeng", "source_id": "fifa_api" },
+      { "alias": "R. Mofokeng", "source_id": "espn_fifa" },
+      { "alias": "Rele Mofokeng", "source_id": null }
+    ]
+  },
+  {
+    "name": "Oswin Appollis",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 7,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Polokwane City",
+      "club_country": "South Africa",
+      "age": 24,
+      "caps": 28,
+      "date_of_birth": "2000-07-04",
+      "height_cm": 173,
+      "sub_position": "RW",
+      "preferred_foot": "left",
+      "notable": "Pacey winger who tormented opponents during 2026 WC qualifying"
+    },
+    "aliases": [
+      { "alias": "Oswin Appollis", "source_id": "fifa_api" },
+      { "alias": "O. Appollis", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Lyle Foster",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 9,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Burnley",
+      "club_country": "England",
+      "age": 24,
+      "caps": 32,
+      "date_of_birth": "2000-02-09",
+      "height_cm": 184,
+      "sub_position": "CF",
+      "preferred_foot": "right",
+      "notable": "South Africa's main striker; scored in WC qualifying; Championship top-scorer at Burnley"
+    },
+    "aliases": [
+      { "alias": "Lyle Foster", "source_id": "fifa_api" },
+      { "alias": "L. Foster", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Evidence Makgopa",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 19,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Orlando Pirates",
+      "club_country": "South Africa",
+      "age": 24,
+      "caps": 22,
+      "date_of_birth": "2000-06-18",
+      "height_cm": 183,
+      "sub_position": "CF",
+      "preferred_foot": "right",
+      "notable": "Scored winner in 2023 AFCON group stage; powerful forward"
+    },
+    "aliases": [
+      { "alias": "Evidence Makgopa", "source_id": "fifa_api" },
+      { "alias": "E. Makgopa", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Percy Tau",
+    "sport": "football",
+    "position": "FWD",
+    "jersey_number": 20,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Al Ahly",
+      "club_country": "Egypt",
+      "age": 30,
+      "caps": 72,
+      "date_of_birth": "1994-05-13",
+      "height_cm": 171,
+      "sub_position": "AM",
+      "preferred_foot": "left",
+      "notable": "Bafana's most experienced forward; former Brighton; CAF Champions League winner with Al Ahly"
+    },
+    "aliases": [
+      { "alias": "Percy Tau", "source_id": "fifa_api" },
+      { "alias": "P. Tau", "source_id": "espn_fifa" },
+      { "alias": "The Lion of Judah", "source_id": null }
+    ]
+  },
+  {
+    "name": "Themba Zwane",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 14,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 33,
+      "caps": 58,
+      "date_of_birth": "1991-09-14",
+      "height_cm": 172,
+      "sub_position": "AM",
+      "preferred_foot": "right",
+      "notable": "Mshishi; multiple PSL Player of the Season; creative spark for Sundowns and Bafana"
+    },
+    "aliases": [
+      { "alias": "Themba Zwane", "source_id": "fifa_api" },
+      { "alias": "T. Zwane", "source_id": "espn_fifa" },
+      { "alias": "Mshishi", "source_id": null }
+    ]
+  },
+  {
+    "name": "Bongani Zungu",
+    "sport": "football",
+    "position": "MID",
+    "jersey_number": 15,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 30,
+      "caps": 55,
+      "date_of_birth": "1993-10-09",
+      "height_cm": 181,
+      "sub_position": "CM",
+      "preferred_foot": "right",
+      "notable": "Former Rangers and Amiens midfielder; strong, box-to-box style"
+    },
+    "aliases": [
+      { "alias": "Bongani Zungu", "source_id": "fifa_api" },
+      { "alias": "B. Zungu", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Sifiso Hlanti",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 18,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Kaizer Chiefs",
+      "club_country": "South Africa",
+      "age": 33,
+      "caps": 40,
+      "date_of_birth": "1991-02-16",
+      "height_cm": 170,
+      "sub_position": "LB",
+      "preferred_foot": "left"
+    },
+    "aliases": [
+      { "alias": "Sifiso Hlanti", "source_id": "fifa_api" },
+      { "alias": "S. Hlanti", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Thapelo Morena",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 12,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 30,
+      "caps": 35,
+      "date_of_birth": "1994-06-10",
+      "height_cm": 171,
+      "sub_position": "RB",
+      "preferred_foot": "right",
+      "notable": "Versatile right-back/winger; strong going forward"
+    },
+    "aliases": [
+      { "alias": "Thapelo Morena", "source_id": "fifa_api" },
+      { "alias": "T. Morena", "source_id": "espn_fifa" }
+    ]
+  },
+  {
+    "name": "Grant Kekana",
+    "sport": "football",
+    "position": "DEF",
+    "jersey_number": 21,
+    "nationality": "South African",
+    "team_id": "football-south-africa",
+    "metadata": {
+      "team": "South Africa",
+      "club": "Mamelodi Sundowns",
+      "club_country": "South Africa",
+      "age": 28,
+      "caps": 15,
+      "date_of_birth": "1996-01-29",
+      "height_cm": 185,
+      "sub_position": "CB",
+      "preferred_foot": "right"
+    },
+    "aliases": [
+      { "alias": "Grant Kekana", "source_id": "fifa_api" },
+      { "alias": "G. Kekana", "source_id": "espn_fifa" }
+    ]
+  }
+]

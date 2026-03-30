@@ -27,7 +27,11 @@ async def seed_players() -> None:
     factory = get_session_factory()
     data_dir = Path(__file__).resolve().parent.parent / "data"
 
-    for filename, sport in [("nba_players.json", Sport.NBA), ("lol_players.json", Sport.LOL)]:
+    for filename, sport in [
+        ("nba_players.json", Sport.NBA),
+        ("lol_players.json", Sport.LOL),
+        ("fifa_wc_players.json", Sport.FOOTBALL),
+    ]:
         filepath = data_dir / filename
         if not filepath.exists():
             print(f"Skipping {filename} (not found)")
