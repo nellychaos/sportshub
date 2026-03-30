@@ -1,10 +1,13 @@
 """Mollybet ingestion adapter.
 
 Fetches upcoming events from the Mollybet multi-bookie aggregator for a single sport.
-Three instances are registered (fb → FOOTBALL, basket → NBA, esports → LOL).
+Three instances are registered (fb -> FOOTBALL, basket -> NBA, esports -> LOL).
 
-Competition IDs are pre-seeded in data/mollybet_competitions.json — run
-scripts/discover_mollybet_competitions.py once to populate real IDs.
+Event discovery uses the Mollybet WebSocket stream:
+  1. REST login -> session token
+  2. Connect wss://api.mollybet.com/v1/stream/?token=TOKEN
+  3. Receive all `event` messages until `sync` marker
+  4. Filter events by sport, emit as RawEvent
 
 Mollybet API docs: https://api.mollybet.com/docs/api/contents/
 """
@@ -13,11 +16,15 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 from typing import Any
 
 import httpx
 import structlog
+
+try:
+    import websockets
+except ImportError:
+    websockets = None  # type: ignore[assignment]
 
 from sportshub.ingestion.base import SourceAdapter
 from sportshub.models.common import Sport
@@ -25,28 +32,9 @@ from sportshub.models.source import RawEvent, SourceReliability
 
 logger = structlog.get_logger()
 
-_COMPETITIONS_FILE = (
-    Path(__file__).resolve().parent.parent.parent.parent.parent
-    / "data"
-    / "mollybet_competitions.json"
-)
-
-# Fallback window when no cached competitions are available
-_FETCH_WINDOW_DAYS = 14
-
-
-def _load_competition_ids(mollybet_sport: str) -> list[dict]:
-    """Return seeded competition entries for this sport (only those with an ID)."""
-    try:
-        data = json.loads(_COMPETITIONS_FILE.read_text())
-        return [
-            e for e in data
-            if e.get("mollybet_sport") == mollybet_sport
-            and e.get("mollybet_competition_id")
-        ]
-    except Exception as exc:
-        logger.warning("mollybet_competitions_load_failed", error=str(exc))
-        return []
+# How long to wait for the sync message (seconds)
+_WS_TIMEOUT = 60
+_WS_CONNECT_TIMEOUT = 15
 
 
 def _parse_kickoff(raw: Any) -> datetime | None:
@@ -56,7 +44,6 @@ def _parse_kickoff(raw: Any) -> datetime | None:
     try:
         if isinstance(raw, (int, float)):
             return datetime.fromtimestamp(raw, tz=timezone.utc)
-        # ISO 8601 string
         dt = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
         if dt.tzinfo is None:
             dt = dt.replace(tzinfo=timezone.utc)
@@ -66,7 +53,12 @@ def _parse_kickoff(raw: Any) -> datetime | None:
 
 
 class MollybetAdapter(SourceAdapter):
-    """Ingestion adapter for one Mollybet sport (fb / basket / esports)."""
+    """Ingestion adapter for one Mollybet sport (fb / basket / esports).
+
+    Connects to the Mollybet WebSocket stream, collects all event messages
+    until the sync marker, filters for the configured sport, and returns
+    RawEvents for the ingestion pipeline.
+    """
 
     def __init__(
         self,
@@ -82,11 +74,13 @@ class MollybetAdapter(SourceAdapter):
         self._sport = sport
         self._mollybet_sport = mollybet_sport
         self._api_url = api_url.rstrip("/")
+        self._ws_url = api_url.rstrip("/").replace("https://", "wss://").replace("http://", "ws://")
 
         self._session_token: str | None = None
         self._session_expires_at: datetime | None = None
+        self._client: httpx.AsyncClient | None = None
 
-    # ── SourceAdapter properties ──────────────────────────────────────────
+    # -- SourceAdapter properties ------------------------------------------
 
     @property
     def source_id(self) -> str:
@@ -98,13 +92,13 @@ class MollybetAdapter(SourceAdapter):
 
     @property
     def reliability(self) -> SourceReliability:
-        return SourceReliability.ESTABLISHED  # multi-bookie verified
+        return SourceReliability.ESTABLISHED
 
     @property
     def source_timezone(self) -> str:
         return "UTC"
 
-    # ── Lifecycle ─────────────────────────────────────────────────────────
+    # -- Lifecycle ---------------------------------------------------------
 
     async def initialize(self) -> None:
         self._client = httpx.AsyncClient(
@@ -114,7 +108,12 @@ class MollybetAdapter(SourceAdapter):
             follow_redirects=True,
         )
 
-    # ── Auth ─────────────────────────────────────────────────────────────
+    async def shutdown(self) -> None:
+        if self._client:
+            await self._client.aclose()
+            self._client = None
+
+    # -- Auth --------------------------------------------------------------
 
     def _session_expired(self) -> bool:
         if self._session_expires_at is None:
@@ -136,8 +135,7 @@ class MollybetAdapter(SourceAdapter):
             )
             resp.raise_for_status()
             data = resp.json()
-            self._session_token = data.get("session_id") or data.get("token")
-            # Session is valid 24 h; refresh after 23 h to be safe
+            self._session_token = data.get("session_id") or data.get("data") or data.get("token")
             self._session_expires_at = datetime.utcnow() + timedelta(hours=23)
             logger.info(
                 "mollybet_session_created",
@@ -159,106 +157,31 @@ class MollybetAdapter(SourceAdapter):
             self._session_token = None
             return False
 
-    def _auth_headers(self) -> dict[str, str]:
-        return {"Session": self._session_token or ""}
-
-    # ── Fetch ─────────────────────────────────────────────────────────────
+    # -- Fetch (WebSocket) -------------------------------------------------
 
     async def fetch_upcoming(self) -> list[RawEvent]:
+        if websockets is None:
+            logger.error(
+                "mollybet_websockets_missing",
+                source_id=self.source_id,
+                hint="pip install websockets",
+            )
+            return []
+
         try:
             if not await self._ensure_session():
                 self._record_failure("authentication failed")
                 return []
 
-            competitions = _load_competition_ids(self._mollybet_sport)
-
-            if not competitions:
-                logger.warning(
-                    "mollybet_no_competitions_seeded",
-                    source_id=self.source_id,
-                    hint="Run scripts/discover_mollybet_competitions.py to populate IDs",
-                )
-                self._record_success()
-                return []
-
-            now = datetime.utcnow()
-            date_from = now.strftime("%Y-%m-%d")
-            date_to = (now + timedelta(days=_FETCH_WINDOW_DAYS)).strftime("%Y-%m-%d")
-
-            raw_events: list[RawEvent] = []
-            seen_event_ids: set[str] = set()
-
-            for comp_entry in competitions:
-                comp_id = comp_entry["mollybet_competition_id"]
-                short_name = comp_entry.get("sportshub_short_name", comp_id)
-
-                try:
-                    events = await self._fetch_competition_events(
-                        comp_id, date_from, date_to
-                    )
-                except httpx.HTTPStatusError as exc:
-                    if exc.response.status_code == 401:
-                        # Token expired — refresh and retry once
-                        self._session_token = None
-                        if not await self._ensure_session():
-                            break
-                        events = await self._fetch_competition_events(
-                            comp_id, date_from, date_to
-                        )
-                    else:
-                        logger.warning(
-                            "mollybet_competition_fetch_failed",
-                            source_id=self.source_id,
-                            competition_id=comp_id,
-                            status=exc.response.status_code,
-                        )
-                        continue
-
-                for ev in events:
-                    event_id = str(ev.get("event_id") or ev.get("id") or "")
-                    if not event_id or event_id in seen_event_ids:
-                        continue
-                    seen_event_ids.add(event_id)
-
-                    home_team = ev.get("home_team") or ev.get("home") or ""
-                    away_team = ev.get("away_team") or ev.get("away") or ""
-                    kickoff = _parse_kickoff(
-                        ev.get("kickoff_time") or ev.get("start_time") or ev.get("event_start")
-                    )
-
-                    if not home_team or not away_team or kickoff is None:
-                        continue
-
-                    # Normalise to naive UTC for pipeline compatibility
-                    scheduled_at = kickoff.replace(tzinfo=None)
-
-                    raw_events.append(RawEvent(
-                        source_id=self.source_id,
-                        source_event_id=event_id,
-                        sport=self._sport,
-                        raw_home_team=home_team,
-                        raw_away_team=away_team,
-                        raw_competition=short_name,
-                        scheduled_at=scheduled_at,
-                        venue=None,
-                        source_timezone="UTC",
-                        raw_metadata={
-                            "mollybet_event_id": event_id,
-                            "mollybet_competition_id": comp_id,
-                            "mollybet_sport": self._mollybet_sport,
-                            "competition_country": comp_entry.get("country", ""),
-                            "raw": ev,
-                        },
-                    ))
+            events = await self._stream_events()
 
             self._record_success()
             logger.info(
                 "mollybet_fetch_complete",
                 source_id=self.source_id,
-                event_count=len(raw_events),
-                competitions_checked=len(competitions),
+                event_count=len(events),
             )
-            return raw_events
+            return events
 
         except Exception as exc:
             self._record_failure(str(exc))
@@ -269,22 +192,124 @@ class MollybetAdapter(SourceAdapter):
             )
             return []
 
-    async def _fetch_competition_events(
-        self, competition_id: str, date_from: str, date_to: str
-    ) -> list[dict]:
-        """GET /v1/orders/filters/events/ for one competition, with retry on token expiry."""
-        resp = await self._client.get(  # type: ignore[union-attr]
-            "/v1/orders/filters/events/",
-            params={
-                "competition_id": competition_id,
-                "event_start_from": date_from,
-                "event_start_to": date_to,
-            },
-            headers=self._auth_headers(),
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        # Mollybet returns a list directly or wrapped in a key
-        if isinstance(data, list):
-            return data
-        return data.get("events") or data.get("results") or []
+    async def _stream_events(self) -> list[RawEvent]:
+        """Connect to Mollybet WebSocket, collect events until sync, filter by sport.
+
+        Mollybet streams batched messages in the format:
+            {"ts": <float>, "data": [["event", {...}], ["event", {...}], ...]}
+        The "sync" marker signals the end of the initial snapshot.
+        We only keep "normal" event_type (individual matches with home/away);
+        "multirunner" events (season outrights) are skipped.
+        """
+        import asyncio
+
+        ws_url = f"{self._ws_url}/v1/stream/?token={self._session_token}"
+        raw_events: list[RawEvent] = []
+        seen_ids: set[str] = set()
+
+        async with websockets.connect(  # type: ignore[union-attr]
+            ws_url,
+            open_timeout=_WS_CONNECT_TIMEOUT,
+            close_timeout=5,
+        ) as ws:
+            deadline = asyncio.get_event_loop().time() + _WS_TIMEOUT
+            synced = False
+
+            while not synced:
+                remaining = deadline - asyncio.get_event_loop().time()
+                if remaining <= 0:
+                    logger.warning(
+                        "mollybet_ws_timeout",
+                        source_id=self.source_id,
+                        events_so_far=len(raw_events),
+                    )
+                    break
+
+                try:
+                    raw_msg = await asyncio.wait_for(ws.recv(), timeout=remaining)
+                except asyncio.TimeoutError:
+                    break
+
+                try:
+                    msg = json.loads(raw_msg)
+                except (json.JSONDecodeError, TypeError):
+                    continue
+
+                # Messages are wrapped: {"ts": ..., "data": [[type, payload], ...]}
+                if not isinstance(msg, dict) or "data" not in msg:
+                    continue
+
+                for item in msg["data"]:
+                    if not isinstance(item, list) or len(item) < 2:
+                        continue
+
+                    msg_type = item[0]
+
+                    if msg_type == "sync":
+                        synced = True
+                        break
+
+                    if msg_type != "event":
+                        continue
+
+                    ev = item[1] if isinstance(item[1], dict) else None
+                    if not ev:
+                        continue
+
+                    # Only normal events (individual matches) — skip multirunner outrights
+                    if ev.get("event_type") != "normal":
+                        continue
+
+                    # Filter by our sport
+                    if ev.get("sport", "") != self._mollybet_sport:
+                        continue
+
+                    event_id = str(ev.get("event_id", ""))
+                    if not event_id or event_id in seen_ids:
+                        continue
+                    seen_ids.add(event_id)
+
+                    home_team = ev.get("home", "")
+                    away_team = ev.get("away", "")
+
+                    if not home_team or not away_team:
+                        continue
+
+                    kickoff = _parse_kickoff(ev.get("start_time"))
+                    if kickoff is None:
+                        continue
+
+                    # Only include upcoming events (not in-running or finished)
+                    now_utc = datetime.now(tz=timezone.utc)
+                    if kickoff < now_utc - timedelta(hours=3):
+                        continue
+
+                    # Normalise to naive UTC for pipeline compatibility
+                    scheduled_at = kickoff.replace(tzinfo=None)
+
+                    competition_id = str(ev.get("competition_id", ""))
+                    competition_name = ev.get("competition_name", "")
+                    competition_country = ev.get("competition_country", "")
+
+                    raw_events.append(RawEvent(
+                        source_id=self.source_id,
+                        source_event_id=event_id,
+                        sport=self._sport,
+                        raw_home_team=home_team,
+                        raw_away_team=away_team,
+                        raw_competition=competition_name or competition_id,
+                        scheduled_at=scheduled_at,
+                        venue=None,
+                        source_timezone="UTC",
+                        raw_metadata={
+                            "mollybet_event_id": event_id,
+                            "mollybet_competition_id": competition_id,
+                            "mollybet_competition_name": competition_name,
+                            "mollybet_competition_country": competition_country,
+                            "mollybet_sport": self._mollybet_sport,
+                            "event_name": ev.get("event_name", ""),
+                            "ir_status": ev.get("ir_status", ""),
+                        },
+                    ))
+
+        return raw_events

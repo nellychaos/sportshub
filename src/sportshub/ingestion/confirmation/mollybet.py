@@ -1,22 +1,26 @@
-"""Mollybet confirmation source — cross-checks Sportshub events against live Mollybet markets.
+"""Mollybet confirmation source — cross-checks events against live Mollybet markets.
 
-Fetches upcoming events for each sport from the Mollybet multi-bookie aggregator and
-fuzzy-matches them against our canonical events.  A match gives a +0.20 confidence boost
-(higher than OddsAPI's 0.15 because Mollybet aggregates dozens of bookmakers — if
-a real-money market exists here the fixture is definitively happening).
+Uses the Mollybet WebSocket stream to fetch all available events, then fuzzy-matches
+against our canonical events.  A match gives a +0.20 confidence boost (higher than
+OddsAPI's 0.15 because Mollybet aggregates dozens of bookmakers — if a real-money
+market exists here, the fixture is definitively happening).
 
-Results are cached per sport in Redis (TTL 1h) to minimise Mollybet API calls.
+Results are cached per sport in Redis (TTL 1h) to minimise WebSocket reconnections.
 """
 
 from __future__ import annotations
 
 import json
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 from uuid import UUID
 
 import httpx
 import structlog
+
+try:
+    import websockets
+except ImportError:
+    websockets = None  # type: ignore[assignment]
 
 from sportshub.cache.client import RedisClient
 from sportshub.models.common import Sport
@@ -25,25 +29,19 @@ from .base import ConfirmationResult, ConfirmationSource
 
 logger = structlog.get_logger()
 
-# ── Competition seed file ──────────────────────────────────────────────────────
-_COMPETITIONS_FILE = (
-    Path(__file__).resolve().parent.parent.parent.parent.parent.parent
-    / "data"
-    / "mollybet_competitions.json"
-)
-
-# ── Sport → Mollybet sport code ───────────────────────────────────────────────
+# -- Sport -> Mollybet sport code ------------------------------------------
 SPORT_CODE_MAP: dict[str, str] = {
     "football": "fb",
     "nba": "basket",
     "lol": "esports",
 }
 
-# ── Cache / timing ────────────────────────────────────────────────────────────
+# -- Cache / timing --------------------------------------------------------
 CACHE_TTL_SECONDS = 3600  # 1 hour per sport
-_FETCH_WINDOW_DAYS = 14
 CONFIDENCE_BOOST = 0.20
-KICKOFF_TOLERANCE_SECONDS = 90 * 60  # ±90 minutes
+KICKOFF_TOLERANCE_SECONDS = 90 * 60  # +/-90 minutes
+_WS_TIMEOUT = 60
+_WS_CONNECT_TIMEOUT = 15
 
 
 def _cache_key(mollybet_sport: str) -> str:
@@ -85,23 +83,12 @@ def _empty_result() -> ConfirmationResult:
     return ConfirmationResult(exists=False, confidence_boost=0.0)
 
 
-def _load_competition_ids(mollybet_sport: str) -> list[str]:
-    """Return Mollybet competition IDs for this sport from the seed file."""
-    try:
-        data = json.loads(_COMPETITIONS_FILE.read_text())
-        return [
-            e["mollybet_competition_id"]
-            for e in data
-            if e.get("mollybet_sport") == mollybet_sport
-            and e.get("mollybet_competition_id")
-        ]
-    except Exception as exc:
-        logger.warning("mollybet_confirmation_competitions_load_failed", error=str(exc))
-        return []
-
-
 class MollybetConfirmationSource(ConfirmationSource):
-    """Confirmation source backed by the Mollybet multi-bookie aggregator."""
+    """Confirmation source backed by the Mollybet multi-bookie aggregator.
+
+    Fetches all events via the WebSocket stream (cached per sport in Redis),
+    then fuzzy-matches team names and kickoff times.
+    """
 
     def __init__(
         self,
@@ -113,6 +100,7 @@ class MollybetConfirmationSource(ConfirmationSource):
         self._username = username
         self._password = password
         self._api_url = api_url.rstrip("/")
+        self._ws_url = api_url.rstrip("/").replace("https://", "wss://").replace("http://", "ws://")
         self._cache = cache
         self._client: httpx.AsyncClient | None = None
 
@@ -123,7 +111,7 @@ class MollybetConfirmationSource(ConfirmationSource):
     def source_id(self) -> str:
         return "mollybet"
 
-    # ── Lifecycle ──────────────────────────────────────────────────────────────
+    # -- Lifecycle ---------------------------------------------------------
 
     async def initialize(self) -> None:
         self._client = httpx.AsyncClient(
@@ -138,7 +126,7 @@ class MollybetConfirmationSource(ConfirmationSource):
             await self._client.aclose()
             self._client = None
 
-    # ── Auth ───────────────────────────────────────────────────────────────────
+    # -- Auth --------------------------------------------------------------
 
     def _session_expired(self) -> bool:
         if self._session_expires_at is None:
@@ -159,7 +147,7 @@ class MollybetConfirmationSource(ConfirmationSource):
             )
             resp.raise_for_status()
             data = resp.json()
-            self._session_token = data.get("session_id") or data.get("token")
+            self._session_token = data.get("session_id") or data.get("data") or data.get("token")
             self._session_expires_at = datetime.utcnow() + timedelta(hours=23)
             logger.info("mollybet_confirmation_session_created", expires_in_hours=23)
             return True
@@ -168,10 +156,7 @@ class MollybetConfirmationSource(ConfirmationSource):
             self._session_token = None
             return False
 
-    def _auth_headers(self) -> dict[str, str]:
-        return {"Session": self._session_token or ""}
-
-    # ── Public interface ───────────────────────────────────────────────────────
+    # -- Public interface --------------------------------------------------
 
     async def check_event_exists(
         self,
@@ -189,16 +174,13 @@ class MollybetConfirmationSource(ConfirmationSource):
         if not mb_events:
             return _empty_result()
 
-        # Make scheduled_at timezone-aware for comparison
         if scheduled_at.tzinfo is None:
             scheduled_at = scheduled_at.replace(tzinfo=timezone.utc)
 
         for ev in mb_events:
-            mb_home = ev.get("home_team") or ev.get("home") or ""
-            mb_away = ev.get("away_team") or ev.get("away") or ""
-            kickoff = _parse_kickoff(
-                ev.get("kickoff_time") or ev.get("start_time") or ev.get("event_start")
-            )
+            mb_home = ev.get("home", "")
+            mb_away = ev.get("away", "")
+            kickoff = _parse_kickoff(ev.get("start_time"))
             if not _teams_match(mb_home, mb_away, home_team, away_team):
                 continue
             if kickoff is None:
@@ -209,10 +191,10 @@ class MollybetConfirmationSource(ConfirmationSource):
                     exists=True,
                     confidence_boost=CONFIDENCE_BOOST,
                     raw_data={
-                        "mollybet_event_id": str(ev.get("event_id") or ev.get("id") or ""),
+                        "mollybet_event_id": str(ev.get("event_id", "")),
                         "mollybet_home": mb_home,
                         "mollybet_away": mb_away,
-                        "mollybet_kickoff": kickoff.isoformat() if kickoff else None,
+                        "mollybet_kickoff": kickoff.isoformat(),
                         "mollybet_sport": mollybet_sport,
                         "time_diff_seconds": time_diff,
                     },
@@ -233,7 +215,7 @@ class MollybetConfirmationSource(ConfirmationSource):
         if not await self._ensure_session():
             return {ev["id"]: _empty_result() for ev in events}
 
-        # Group by sport to fetch events once per sport
+        # Group by sport
         by_sport: dict[str, list[dict]] = {}
         for ev in events:
             sport_val = ev["sport"].value if isinstance(ev["sport"], Sport) else ev["sport"]
@@ -257,13 +239,9 @@ class MollybetConfirmationSource(ConfirmationSource):
 
                 matched = False
                 for mb_ev in mb_events:
-                    mb_home = mb_ev.get("home_team") or mb_ev.get("home") or ""
-                    mb_away = mb_ev.get("away_team") or mb_ev.get("away") or ""
-                    kickoff = _parse_kickoff(
-                        mb_ev.get("kickoff_time")
-                        or mb_ev.get("start_time")
-                        or mb_ev.get("event_start")
-                    )
+                    mb_home = mb_ev.get("home", "")
+                    mb_away = mb_ev.get("away", "")
+                    kickoff = _parse_kickoff(mb_ev.get("start_time"))
                     if not _teams_match(mb_home, mb_away, ev["home_team"], ev["away_team"]):
                         continue
                     if kickoff is None:
@@ -274,9 +252,7 @@ class MollybetConfirmationSource(ConfirmationSource):
                             exists=True,
                             confidence_boost=CONFIDENCE_BOOST,
                             raw_data={
-                                "mollybet_event_id": str(
-                                    mb_ev.get("event_id") or mb_ev.get("id") or ""
-                                ),
+                                "mollybet_event_id": str(mb_ev.get("event_id", "")),
                                 "mollybet_home": mb_home,
                                 "mollybet_away": mb_away,
                                 "mollybet_kickoff": kickoff.isoformat(),
@@ -291,82 +267,36 @@ class MollybetConfirmationSource(ConfirmationSource):
                     results[ev["id"]] = ConfirmationResult(
                         exists=False,
                         confidence_boost=0.0,
-                        raw_data={
-                            "mollybet_sport": mollybet_sport,
-                            "events_checked": len(mb_events),
-                        },
+                        raw_data={"mollybet_sport": mollybet_sport, "events_checked": len(mb_events)},
                     )
 
         return results
 
-    # ── Internal helpers ───────────────────────────────────────────────────────
+    # -- Internal helpers --------------------------------------------------
 
     async def _get_sport_events(self, mollybet_sport: str) -> list[dict]:
         """Return cached or freshly-fetched Mollybet events for a sport."""
-        # Try Redis cache first
+        # Check Redis cache
         if self._cache:
             cached = await self._cache.get_json(_cache_key(mollybet_sport))
             if cached is not None:
-                logger.debug(
-                    "mollybet_confirmation_cache_hit", mollybet_sport=mollybet_sport
-                )
+                logger.debug("mollybet_confirmation_cache_hit", mollybet_sport=mollybet_sport)
                 return cached
+
+        if websockets is None:
+            logger.error("mollybet_websockets_missing", hint="pip install websockets")
+            return []
 
         if not await self._ensure_session():
             return []
 
-        comp_ids = _load_competition_ids(mollybet_sport)
-        if not comp_ids:
-            logger.warning(
-                "mollybet_confirmation_no_competitions",
-                mollybet_sport=mollybet_sport,
-                hint="Run scripts/discover_mollybet_competitions.py to populate IDs",
-            )
-            return []
-
-        now = datetime.utcnow()
-        date_from = now.strftime("%Y-%m-%d")
-        date_to = (now + timedelta(days=_FETCH_WINDOW_DAYS)).strftime("%Y-%m-%d")
-
-        all_events: list[dict] = []
-        seen_ids: set[str] = set()
-
-        for comp_id in comp_ids:
-            try:
-                events = await self._fetch_competition_events(comp_id, date_from, date_to)
-            except httpx.HTTPStatusError as exc:
-                if exc.response.status_code == 401:
-                    self._session_token = None
-                    if not await self._ensure_session():
-                        break
-                    events = await self._fetch_competition_events(comp_id, date_from, date_to)
-                else:
-                    logger.warning(
-                        "mollybet_confirmation_comp_fetch_failed",
-                        competition_id=comp_id,
-                        status=exc.response.status_code,
-                    )
-                    continue
-            except Exception as exc:
-                logger.warning(
-                    "mollybet_confirmation_comp_fetch_error",
-                    competition_id=comp_id,
-                    error=str(exc),
-                )
-                continue
-
-            for ev in events:
-                eid = str(ev.get("event_id") or ev.get("id") or "")
-                if not eid or eid in seen_ids:
-                    continue
-                seen_ids.add(eid)
-                all_events.append(ev)
+        # Stream all events via WebSocket, filter by sport
+        all_events = await self._stream_all_events(mollybet_sport)
 
         logger.info(
             "mollybet_confirmation_fetched",
             mollybet_sport=mollybet_sport,
             event_count=len(all_events),
-            competitions_checked=len(comp_ids),
         )
 
         # Cache for 1 hour
@@ -377,23 +307,79 @@ class MollybetConfirmationSource(ConfirmationSource):
 
         return all_events
 
-    async def _fetch_competition_events(
-        self, competition_id: str, date_from: str, date_to: str
-    ) -> list[dict]:
-        if not self._client:
-            await self.initialize()
+    async def _stream_all_events(self, mollybet_sport: str) -> list[dict]:
+        """Connect to WebSocket, collect all normal events for a sport until sync.
 
-        resp = await self._client.get(  # type: ignore[union-attr]
-            "/v1/orders/filters/events/",
-            params={
-                "competition_id": competition_id,
-                "event_start_from": date_from,
-                "event_start_to": date_to,
-            },
-            headers=self._auth_headers(),
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        if isinstance(data, list):
-            return data
-        return data.get("events") or data.get("results") or []
+        Mollybet streams batched messages:
+            {"ts": <float>, "data": [["event", {...}], ...]}
+        We only keep "normal" event_type (individual matches with home/away).
+        """
+        import asyncio
+
+        ws_url = f"{self._ws_url}/v1/stream/?token={self._session_token}"
+        events: list[dict] = []
+        seen_ids: set[str] = set()
+
+        try:
+            async with websockets.connect(  # type: ignore[union-attr]
+                ws_url,
+                open_timeout=_WS_CONNECT_TIMEOUT,
+                close_timeout=5,
+            ) as ws:
+                deadline = asyncio.get_event_loop().time() + _WS_TIMEOUT
+                synced = False
+
+                while not synced:
+                    remaining = deadline - asyncio.get_event_loop().time()
+                    if remaining <= 0:
+                        break
+
+                    try:
+                        raw_msg = await asyncio.wait_for(ws.recv(), timeout=remaining)
+                    except asyncio.TimeoutError:
+                        break
+
+                    try:
+                        msg = json.loads(raw_msg)
+                    except (json.JSONDecodeError, TypeError):
+                        continue
+
+                    if not isinstance(msg, dict) or "data" not in msg:
+                        continue
+
+                    for item in msg["data"]:
+                        if not isinstance(item, list) or len(item) < 2:
+                            continue
+
+                        if item[0] == "sync":
+                            synced = True
+                            break
+
+                        if item[0] != "event":
+                            continue
+
+                        ev = item[1] if isinstance(item[1], dict) else None
+                        if not ev:
+                            continue
+
+                        # Only normal events (individual matches)
+                        if ev.get("event_type") != "normal":
+                            continue
+
+                        if ev.get("sport") != mollybet_sport:
+                            continue
+
+                        eid = str(ev.get("event_id", ""))
+                        if not eid or eid in seen_ids:
+                            continue
+                        seen_ids.add(eid)
+                        events.append(ev)
+
+        except Exception as exc:
+            logger.error(
+                "mollybet_confirmation_ws_error",
+                mollybet_sport=mollybet_sport,
+                error=str(exc),
+            )
+
+        return events
