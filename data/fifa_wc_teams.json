@@ -7,7 +7,26 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "USA",
-      "fifa_ranking": 14
+      "fifa_ranking": 14,
+      "nickname": "Stars and Stripes",
+      "coach": "Mauricio Pochettino",
+      "captain": "Christian Pulisic",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 11,
+      "best_world_cup_result": "Semifinals (1930)",
+      "group_2026": "B",
+      "co_host_nation": true,
+      "colors": {
+        "primary": "#002868",
+        "secondary": "#BF0A30",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue trim" },
+        "away": { "primary_color": "#002868", "description": "Navy blue with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/US_Soccer_logo_%282022%29.svg/800px-US_Soccer_logo_%282022%29.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/united-states"
     },
     "aliases": [
       { "alias": "United States", "source_id": null },
@@ -18,7 +37,8 @@
       { "alias": "United States", "source_id": "espn_fifa" },
       { "alias": "United States of America", "source_id": "footballdata_wc" },
       { "alias": "USA", "source_id": "fifa_api" },
-      { "alias": "Estados Unidos", "source_id": null }
+      { "alias": "Estados Unidos", "source_id": null },
+      { "alias": "USA", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -70,8 +90,9 @@
       { "alias": "Mexico", "source_id": "espn_fifa" },
       { "alias": "Mexico", "source_id": "footballdata_wc" },
       { "alias": "Mexico", "source_id": "fifa_api" },
-      { "alias": "M\u00e9xico", "source_id": null },
-      { "alias": "Mexico National Football Team", "source_id": null }
+      { "alias": "México", "source_id": null },
+      { "alias": "Mexico National Football Team", "source_id": null },
+      { "alias": "Mexico", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -82,7 +103,26 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "CAN",
-      "fifa_ranking": 41
+      "fifa_ranking": 41,
+      "nickname": "Les Rouges",
+      "coach": "Jesse Marsch",
+      "captain": "Alphonso Davies",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Group stage (1986, 2022)",
+      "group_2026": "I",
+      "co_host_nation": true,
+      "colors": {
+        "primary": "#FF0000",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FF0000", "description": "Red with white accents" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red trim" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Canada_Soccer_Logo.svg/800px-Canada_Soccer_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada"
     },
     "aliases": [
       { "alias": "Canada", "source_id": null },
@@ -90,7 +130,8 @@
       { "alias": "Les Rouges", "source_id": null },
       { "alias": "Canada", "source_id": "espn_fifa" },
       { "alias": "Canada", "source_id": "footballdata_wc" },
-      { "alias": "Canada", "source_id": "fifa_api" }
+      { "alias": "Canada", "source_id": "fifa_api" },
+      { "alias": "Canada", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -101,7 +142,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "ARG",
-      "fifa_ranking": 1
+      "fifa_ranking": 1,
+      "nickname": "La Albiceleste",
+      "coach": "Lionel Scaloni",
+      "captain": "Lionel Messi",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 18,
+      "best_world_cup_result": "Champions (1978, 1986, 2022)",
+      "group_2026": "E",
+      "colors": {
+        "primary": "#75AADB",
+        "secondary": "#FFFFFF",
+        "tertiary": "#F6B40E"
+      },
+      "kits": {
+        "home": { "primary_color": "#75AADB", "description": "Light blue and white vertical stripes" },
+        "away": { "primary_color": "#1A1A2E", "description": "Dark navy with light blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Argentina_national_football_team_logo.svg/800px-Argentina_national_football_team_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina"
     },
     "aliases": [
       { "alias": "Argentina", "source_id": null },
@@ -109,7 +168,8 @@
       { "alias": "La Albiceleste", "source_id": null },
       { "alias": "Argentina", "source_id": "espn_fifa" },
       { "alias": "Argentina", "source_id": "footballdata_wc" },
-      { "alias": "Argentina", "source_id": "fifa_api" }
+      { "alias": "Argentina", "source_id": "fifa_api" },
+      { "alias": "Argentina", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -120,16 +180,35 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "BRA",
-      "fifa_ranking": 5
+      "fifa_ranking": 5,
+      "nickname": "Seleção",
+      "coach": "Dorival Júnior",
+      "captain": "Marquinhos",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 22,
+      "best_world_cup_result": "Champions (1958, 1962, 1970, 1994, 2002)",
+      "group_2026": "C",
+      "colors": {
+        "primary": "#009C3B",
+        "secondary": "#FFDF00",
+        "tertiary": "#002776"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFDF00", "description": "Yellow with green collar and blue trim" },
+        "away": { "primary_color": "#002776", "description": "Blue with green and yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Brazil_national_football_team_crest.svg/800px-Brazil_national_football_team_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil"
     },
     "aliases": [
       { "alias": "Brazil", "source_id": null },
       { "alias": "BRA", "source_id": null },
-      { "alias": "Sele\u00e7\u00e3o", "source_id": null },
+      { "alias": "Seleção", "source_id": null },
       { "alias": "Brasil", "source_id": null },
       { "alias": "Brazil", "source_id": "espn_fifa" },
       { "alias": "Brazil", "source_id": "footballdata_wc" },
-      { "alias": "Brazil", "source_id": "fifa_api" }
+      { "alias": "Brazil", "source_id": "fifa_api" },
+      { "alias": "Brazil", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -140,7 +219,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "FRA",
-      "fifa_ranking": 2
+      "fifa_ranking": 2,
+      "nickname": "Les Bleus",
+      "coach": "Didier Deschamps",
+      "captain": "Kylian Mbappé",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 16,
+      "best_world_cup_result": "Champions (1998, 2018)",
+      "group_2026": "D",
+      "colors": {
+        "primary": "#002395",
+        "secondary": "#FFFFFF",
+        "tertiary": "#ED2939"
+      },
+      "kits": {
+        "home": { "primary_color": "#002395", "description": "Dark blue with white and red trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/FFF_2022_Logo.svg/800px-FFF_2022_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france"
     },
     "aliases": [
       { "alias": "France", "source_id": null },
@@ -148,7 +245,8 @@
       { "alias": "Les Bleus", "source_id": null },
       { "alias": "France", "source_id": "espn_fifa" },
       { "alias": "France", "source_id": "footballdata_wc" },
-      { "alias": "France", "source_id": "fifa_api" }
+      { "alias": "France", "source_id": "fifa_api" },
+      { "alias": "France", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -159,7 +257,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "ENG",
-      "fifa_ranking": 4
+      "fifa_ranking": 4,
+      "nickname": "Three Lions",
+      "coach": "Thomas Tuchel",
+      "captain": "Harry Kane",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 16,
+      "best_world_cup_result": "Champions (1966)",
+      "group_2026": "B",
+      "colors": {
+        "primary": "#FFFFFF",
+        "secondary": "#003399",
+        "tertiary": "#CC0000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with navy blue shorts" },
+        "away": { "primary_color": "#CC0000", "description": "Red with white trim" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/2022_FIFA_World_Cup_England_crest.svg/800px-2022_FIFA_World_Cup_England_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england"
     },
     "aliases": [
       { "alias": "England", "source_id": null },
@@ -167,7 +283,8 @@
       { "alias": "Three Lions", "source_id": null },
       { "alias": "England", "source_id": "espn_fifa" },
       { "alias": "England", "source_id": "footballdata_wc" },
-      { "alias": "England", "source_id": "fifa_api" }
+      { "alias": "England", "source_id": "fifa_api" },
+      { "alias": "England", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -178,16 +295,35 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "ESP",
-      "fifa_ranking": 3
+      "fifa_ranking": 3,
+      "nickname": "La Roja",
+      "coach": "Luis de la Fuente",
+      "captain": "Álvaro Morata",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 16,
+      "best_world_cup_result": "Champions (2010)",
+      "group_2026": "F",
+      "colors": {
+        "primary": "#AA151B",
+        "secondary": "#F1BF00",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#AA151B", "description": "Red with yellow trim" },
+        "away": { "primary_color": "#002D62", "description": "Dark blue with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spain_national_football_team_crest.svg/800px-Spain_national_football_team_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain"
     },
     "aliases": [
       { "alias": "Spain", "source_id": null },
       { "alias": "ESP", "source_id": null },
       { "alias": "La Roja", "source_id": null },
-      { "alias": "Espa\u00f1a", "source_id": null },
+      { "alias": "España", "source_id": null },
       { "alias": "Spain", "source_id": "espn_fifa" },
       { "alias": "Spain", "source_id": "footballdata_wc" },
-      { "alias": "Spain", "source_id": "fifa_api" }
+      { "alias": "Spain", "source_id": "fifa_api" },
+      { "alias": "Spain", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -198,7 +334,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "GER",
-      "fifa_ranking": 8
+      "fifa_ranking": 8,
+      "nickname": "Die Mannschaft",
+      "coach": "Julian Nagelsmann",
+      "captain": "Joshua Kimmich",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 20,
+      "best_world_cup_result": "Champions (1954, 1974, 1990, 2014)",
+      "group_2026": "G",
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#FFFFFF",
+        "tertiary": "#DD0000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with black trim" },
+        "away": { "primary_color": "#000000", "description": "Black with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/German_Football_Association_%28DFB%29_logo_2017.svg/800px-German_Football_Association_%28DFB%29_logo_2017.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany"
     },
     "aliases": [
       { "alias": "Germany", "source_id": null },
@@ -207,7 +361,8 @@
       { "alias": "Deutschland", "source_id": null },
       { "alias": "Germany", "source_id": "espn_fifa" },
       { "alias": "Germany", "source_id": "footballdata_wc" },
-      { "alias": "Germany", "source_id": "fifa_api" }
+      { "alias": "Germany", "source_id": "fifa_api" },
+      { "alias": "Germany", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -218,15 +373,34 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "POR",
-      "fifa_ranking": 6
+      "fifa_ranking": 6,
+      "nickname": "Seleção das Quinas",
+      "coach": "Roberto Martínez",
+      "captain": "Cristiano Ronaldo",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 9,
+      "best_world_cup_result": "Third place (1966)",
+      "group_2026": "H",
+      "colors": {
+        "primary": "#006600",
+        "secondary": "#FF0000",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#FF0000", "description": "Red with green trim" },
+        "away": { "primary_color": "#006600", "description": "Green with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/FPF_%28logo%29.svg/800px-FPF_%28logo%29.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal"
     },
     "aliases": [
       { "alias": "Portugal", "source_id": null },
       { "alias": "POR", "source_id": null },
-      { "alias": "Sele\u00e7\u00e3o das Quinas", "source_id": null },
+      { "alias": "Seleção das Quinas", "source_id": null },
       { "alias": "Portugal", "source_id": "espn_fifa" },
       { "alias": "Portugal", "source_id": "footballdata_wc" },
-      { "alias": "Portugal", "source_id": "fifa_api" }
+      { "alias": "Portugal", "source_id": "fifa_api" },
+      { "alias": "Portugal", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -237,7 +411,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "NED",
-      "fifa_ranking": 7
+      "fifa_ranking": 7,
+      "nickname": "Oranje",
+      "coach": "Ronald Koeman",
+      "captain": "Virgil van Dijk",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 11,
+      "best_world_cup_result": "Runners-up (1974, 1978, 2010)",
+      "group_2026": "I",
+      "colors": {
+        "primary": "#FF6600",
+        "secondary": "#FFFFFF",
+        "tertiary": "#003DA5"
+      },
+      "kits": {
+        "home": { "primary_color": "#FF6600", "description": "Orange with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with orange accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Royal_Dutch_Football_Association_logo.svg/800px-Royal_Dutch_Football_Association_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands"
     },
     "aliases": [
       { "alias": "Netherlands", "source_id": null },
@@ -248,7 +440,8 @@
       { "alias": "Netherlands", "source_id": "espn_fifa" },
       { "alias": "Netherlands", "source_id": "footballdata_wc" },
       { "alias": "Netherlands", "source_id": "fifa_api" },
-      { "alias": "Nederland", "source_id": null }
+      { "alias": "Nederland", "source_id": null },
+      { "alias": "Netherlands", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -259,17 +452,36 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "BEL",
-      "fifa_ranking": 9
+      "fifa_ranking": 9,
+      "nickname": "Red Devils",
+      "coach": "Domenico Tedesco",
+      "captain": "Kevin De Bruyne",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 14,
+      "best_world_cup_result": "Third place (2018)",
+      "group_2026": "J",
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#FFD700",
+        "tertiary": "#EF3340"
+      },
+      "kits": {
+        "home": { "primary_color": "#EF3340", "description": "Red with black and gold trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red and black accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Royal_Belgian_FA_logo.svg/800px-Royal_Belgian_FA_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium"
     },
     "aliases": [
       { "alias": "Belgium", "source_id": null },
       { "alias": "BEL", "source_id": null },
       { "alias": "Red Devils", "source_id": null },
       { "alias": "Belgique", "source_id": null },
-      { "alias": "Belgi\u00eb", "source_id": null },
+      { "alias": "België", "source_id": null },
       { "alias": "Belgium", "source_id": "espn_fifa" },
       { "alias": "Belgium", "source_id": "footballdata_wc" },
-      { "alias": "Belgium", "source_id": "fifa_api" }
+      { "alias": "Belgium", "source_id": "fifa_api" },
+      { "alias": "Belgium", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -280,7 +492,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "ITA",
-      "fifa_ranking": 10
+      "fifa_ranking": 10,
+      "nickname": "Gli Azzurri",
+      "coach": "Luciano Spalletti",
+      "captain": "Gianluigi Donnarumma",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 18,
+      "best_world_cup_result": "Champions (1934, 1938, 1982, 2006)",
+      "group_2026": "K",
+      "colors": {
+        "primary": "#003DA5",
+        "secondary": "#FFFFFF",
+        "tertiary": "#009246"
+      },
+      "kits": {
+        "home": { "primary_color": "#003DA5", "description": "Azzurri blue with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/2022_FIFA_World_Cup_Italy_crest.svg/800px-2022_FIFA_World_Cup_Italy_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/italy"
     },
     "aliases": [
       { "alias": "Italy", "source_id": null },
@@ -290,7 +520,8 @@
       { "alias": "Italia", "source_id": null },
       { "alias": "Italy", "source_id": "espn_fifa" },
       { "alias": "Italy", "source_id": "footballdata_wc" },
-      { "alias": "Italy", "source_id": "fifa_api" }
+      { "alias": "Italy", "source_id": "fifa_api" },
+      { "alias": "Italy", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -301,7 +532,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "CRO",
-      "fifa_ranking": 11
+      "fifa_ranking": 11,
+      "nickname": "Vatreni",
+      "coach": "Zlatko Dalić",
+      "captain": "Luka Modrić",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 7,
+      "best_world_cup_result": "Third place (2022)",
+      "group_2026": "L",
+      "colors": {
+        "primary": "#FF0000",
+        "secondary": "#FFFFFF",
+        "tertiary": "#003DA5"
+      },
+      "kits": {
+        "home": { "primary_color": "#FF0000", "description": "Red and white checkerboard" },
+        "away": { "primary_color": "#003DA5", "description": "Blue with red and white checkerboard accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/HNS_crest.svg/800px-HNS_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia"
     },
     "aliases": [
       { "alias": "Croatia", "source_id": null },
@@ -310,7 +559,8 @@
       { "alias": "Hrvatska", "source_id": null },
       { "alias": "Croatia", "source_id": "espn_fifa" },
       { "alias": "Croatia", "source_id": "footballdata_wc" },
-      { "alias": "Croatia", "source_id": "fifa_api" }
+      { "alias": "Croatia", "source_id": "fifa_api" },
+      { "alias": "Croatia", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -321,7 +571,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "COL",
-      "fifa_ranking": 12
+      "fifa_ranking": 12,
+      "nickname": "Los Cafeteros",
+      "coach": "Néstor Lorenzo",
+      "captain": "James Rodríguez",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 7,
+      "best_world_cup_result": "Quarterfinals (2014)",
+      "group_2026": "D",
+      "colors": {
+        "primary": "#FCD116",
+        "secondary": "#003087",
+        "tertiary": "#CE1126"
+      },
+      "kits": {
+        "home": { "primary_color": "#FCD116", "description": "Yellow with red and blue trim" },
+        "away": { "primary_color": "#003087", "description": "Blue with yellow and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/FCF_%28crest%29.svg/800px-FCF_%28crest%29.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia"
     },
     "aliases": [
       { "alias": "Colombia", "source_id": null },
@@ -329,7 +597,8 @@
       { "alias": "Los Cafeteros", "source_id": null },
       { "alias": "Colombia", "source_id": "espn_fifa" },
       { "alias": "Colombia", "source_id": "footballdata_wc" },
-      { "alias": "Colombia", "source_id": "fifa_api" }
+      { "alias": "Colombia", "source_id": "fifa_api" },
+      { "alias": "Colombia", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -340,7 +609,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "URU",
-      "fifa_ranking": 13
+      "fifa_ranking": 13,
+      "nickname": "La Celeste",
+      "coach": "Marcelo Bielsa",
+      "captain": "Federico Valverde",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 14,
+      "best_world_cup_result": "Champions (1930, 1950)",
+      "group_2026": "F",
+      "colors": {
+        "primary": "#75AADB",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#75AADB", "description": "Sky blue with white trim" },
+        "away": { "primary_color": "#000000", "description": "Black with sky blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/AUF_logo.svg/800px-AUF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay"
     },
     "aliases": [
       { "alias": "Uruguay", "source_id": null },
@@ -348,7 +635,8 @@
       { "alias": "La Celeste", "source_id": null },
       { "alias": "Uruguay", "source_id": "espn_fifa" },
       { "alias": "Uruguay", "source_id": "footballdata_wc" },
-      { "alias": "Uruguay", "source_id": "fifa_api" }
+      { "alias": "Uruguay", "source_id": "fifa_api" },
+      { "alias": "Uruguay", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -359,7 +647,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "JPN",
-      "fifa_ranking": 16
+      "fifa_ranking": 16,
+      "nickname": "Samurai Blue",
+      "coach": "Hajime Moriyasu",
+      "captain": "Wataru Endo",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 8,
+      "best_world_cup_result": "Round of 16 (2002, 2010, 2018, 2022)",
+      "group_2026": "G",
+      "colors": {
+        "primary": "#003087",
+        "secondary": "#FFFFFF",
+        "tertiary": "#BC002D"
+      },
+      "kits": {
+        "home": { "primary_color": "#003087", "description": "Dark blue with white accents" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue trim" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Japan_Football_Association.svg/800px-Japan_Football_Association.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan"
     },
     "aliases": [
       { "alias": "Japan", "source_id": null },
@@ -368,7 +674,8 @@
       { "alias": "Nippon", "source_id": null },
       { "alias": "Japan", "source_id": "espn_fifa" },
       { "alias": "Japan", "source_id": "footballdata_wc" },
-      { "alias": "Japan", "source_id": "fifa_api" }
+      { "alias": "Japan", "source_id": "fifa_api" },
+      { "alias": "Japan", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -379,7 +686,25 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "MAR",
-      "fifa_ranking": 17
+      "fifa_ranking": 17,
+      "nickname": "Atlas Lions",
+      "coach": "Walid Regragui",
+      "captain": "Romain Saïss",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 7,
+      "best_world_cup_result": "Semifinals (2022)",
+      "group_2026": "E",
+      "colors": {
+        "primary": "#C1272D",
+        "secondary": "#006233",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#C1272D", "description": "Red with green trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red and green accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/FRMF_crest.svg/800px-FRMF_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco"
     },
     "aliases": [
       { "alias": "Morocco", "source_id": null },
@@ -389,7 +714,8 @@
       { "alias": "Al-Maghrib", "source_id": null },
       { "alias": "Morocco", "source_id": "espn_fifa" },
       { "alias": "Morocco", "source_id": "footballdata_wc" },
-      { "alias": "Morocco", "source_id": "fifa_api" }
+      { "alias": "Morocco", "source_id": "fifa_api" },
+      { "alias": "Morocco", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -400,7 +726,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "SUI",
-      "fifa_ranking": 18
+      "fifa_ranking": 18,
+      "nickname": "Nati",
+      "coach": "Murat Yakin",
+      "captain": "Granit Xhaka",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 12,
+      "best_world_cup_result": "Quarterfinals (1934, 1938, 1954)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#FF0000",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FF0000", "description": "Red with white cross motif" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/SFV-ASF_logo.svg/800px-SFV-ASF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SUI"
     },
     "aliases": [
       { "alias": "Switzerland", "source_id": null },
@@ -410,7 +754,8 @@
       { "alias": "Suisse", "source_id": null },
       { "alias": "Switzerland", "source_id": "espn_fifa" },
       { "alias": "Switzerland", "source_id": "footballdata_wc" },
-      { "alias": "Switzerland", "source_id": "fifa_api" }
+      { "alias": "Switzerland", "source_id": "fifa_api" },
+      { "alias": "Switzerland", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -421,7 +766,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "DEN",
-      "fifa_ranking": 19
+      "fifa_ranking": 19,
+      "nickname": "Danish Dynamite",
+      "coach": "Kasper Hjulmand",
+      "captain": "Simon Kjær",
+      "kit_supplier": "Hummel",
+      "world_cup_appearances": 6,
+      "best_world_cup_result": "Quarterfinals (1998)",
+      "group_2026": "H",
+      "colors": {
+        "primary": "#C60C30",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#C60C30", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/DBU_logo.svg/800px-DBU_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/denmark"
     },
     "aliases": [
       { "alias": "Denmark", "source_id": null },
@@ -430,7 +793,8 @@
       { "alias": "Danmark", "source_id": null },
       { "alias": "Denmark", "source_id": "espn_fifa" },
       { "alias": "Denmark", "source_id": "footballdata_wc" },
-      { "alias": "Denmark", "source_id": "fifa_api" }
+      { "alias": "Denmark", "source_id": "fifa_api" },
+      { "alias": "Denmark", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -441,15 +805,34 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "AUT",
-      "fifa_ranking": 20
+      "fifa_ranking": 20,
+      "nickname": "Das Team",
+      "coach": "Ralf Rangnick",
+      "captain": "David Alaba",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 7,
+      "best_world_cup_result": "Third place (1954)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#ED2939",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#ED2939", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/ÖFB_logo_2018.svg/800px-ÖFB_logo_2018.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/AUT"
     },
     "aliases": [
       { "alias": "Austria", "source_id": null },
       { "alias": "AUT", "source_id": null },
-      { "alias": "\u00d6sterreich", "source_id": null },
+      { "alias": "Österreich", "source_id": null },
       { "alias": "Austria", "source_id": "espn_fifa" },
       { "alias": "Austria", "source_id": "footballdata_wc" },
-      { "alias": "Austria", "source_id": "fifa_api" }
+      { "alias": "Austria", "source_id": "fifa_api" },
+      { "alias": "Austria", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -460,16 +843,35 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "SEN",
-      "fifa_ranking": 21
+      "fifa_ranking": 21,
+      "nickname": "Lions of Teranga",
+      "coach": "Aliou Cissé",
+      "captain": "Kalidou Koulibaly",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 4,
+      "best_world_cup_result": "Quarterfinals (2002)",
+      "group_2026": "J",
+      "colors": {
+        "primary": "#00853F",
+        "secondary": "#FDEF42",
+        "tertiary": "#E31B23"
+      },
+      "kits": {
+        "home": { "primary_color": "#00853F", "description": "Green with yellow and red trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green and yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/FSF_%28logo%29.svg/800px-FSF_%28logo%29.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal"
     },
     "aliases": [
       { "alias": "Senegal", "source_id": null },
       { "alias": "SEN", "source_id": null },
       { "alias": "Lions of Teranga", "source_id": null },
-      { "alias": "S\u00e9n\u00e9gal", "source_id": null },
+      { "alias": "Sénégal", "source_id": null },
       { "alias": "Senegal", "source_id": "espn_fifa" },
       { "alias": "Senegal", "source_id": "footballdata_wc" },
-      { "alias": "Senegal", "source_id": "fifa_api" }
+      { "alias": "Senegal", "source_id": "fifa_api" },
+      { "alias": "Senegal", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -480,7 +882,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "AUS",
-      "fifa_ranking": 22
+      "fifa_ranking": 22,
+      "nickname": "Socceroos",
+      "coach": "Tony Popovic",
+      "captain": "Jackson Irvine",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 6,
+      "best_world_cup_result": "Round of 16 (2006, 2022)",
+      "group_2026": "C",
+      "colors": {
+        "primary": "#00843D",
+        "secondary": "#FFCD00",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#00843D", "description": "Green with gold trim" },
+        "away": { "primary_color": "#FFCD00", "description": "Gold with green accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Football_Federation_Australia_logo.svg/800px-Football_Federation_Australia_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia"
     },
     "aliases": [
       { "alias": "Australia", "source_id": null },
@@ -488,7 +908,8 @@
       { "alias": "Socceroos", "source_id": null },
       { "alias": "Australia", "source_id": "espn_fifa" },
       { "alias": "Australia", "source_id": "footballdata_wc" },
-      { "alias": "Australia", "source_id": "fifa_api" }
+      { "alias": "Australia", "source_id": "fifa_api" },
+      { "alias": "Australia", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -499,7 +920,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "KOR",
-      "fifa_ranking": 23
+      "fifa_ranking": 23,
+      "nickname": "Taegeuk Warriors",
+      "coach": "Hong Myung-bo",
+      "captain": "Son Heung-min",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 11,
+      "best_world_cup_result": "Semifinals (2002)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#C60C30",
+        "secondary": "#003478",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#C60C30", "description": "Red with blue and white trim" },
+        "away": { "primary_color": "#003478", "description": "Blue with red and white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Korea_Football_Association_Logo.svg/800px-Korea_Football_Association_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/KOR"
     },
     "aliases": [
       { "alias": "Korea Republic", "source_id": null },
@@ -509,7 +948,8 @@
       { "alias": "Taegeuk Warriors", "source_id": null },
       { "alias": "South Korea", "source_id": "espn_fifa" },
       { "alias": "Korea Republic", "source_id": "footballdata_wc" },
-      { "alias": "Korea Republic", "source_id": "fifa_api" }
+      { "alias": "Korea Republic", "source_id": "fifa_api" },
+      { "alias": "Korea Republic", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -520,16 +960,35 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "POL",
-      "fifa_ranking": 24
+      "fifa_ranking": 24,
+      "nickname": "Biało-Czerwoni",
+      "coach": "Michał Probierz",
+      "captain": "Robert Lewandowski",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 9,
+      "best_world_cup_result": "Third place (1974, 1982)",
+      "group_2026": "L",
+      "colors": {
+        "primary": "#FFFFFF",
+        "secondary": "#DC143C",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with red trim" },
+        "away": { "primary_color": "#DC143C", "description": "Red with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/PZPN_logo.svg/800px-PZPN_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/poland"
     },
     "aliases": [
       { "alias": "Poland", "source_id": null },
       { "alias": "POL", "source_id": null },
-      { "alias": "Bia\u0142o-Czerwoni", "source_id": null },
+      { "alias": "Biało-Czerwoni", "source_id": null },
       { "alias": "Polska", "source_id": null },
       { "alias": "Poland", "source_id": "espn_fifa" },
       { "alias": "Poland", "source_id": "footballdata_wc" },
-      { "alias": "Poland", "source_id": "fifa_api" }
+      { "alias": "Poland", "source_id": "fifa_api" },
+      { "alias": "Poland", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -540,7 +999,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "ECU",
-      "fifa_ranking": 25
+      "fifa_ranking": 25,
+      "nickname": "La Tri",
+      "coach": "Sebastián Beccacece",
+      "captain": "Enner Valencia",
+      "kit_supplier": "Marathon",
+      "world_cup_appearances": 4,
+      "best_world_cup_result": "Round of 16 (2006)",
+      "group_2026": "F",
+      "colors": {
+        "primary": "#FFD100",
+        "secondary": "#003DA5",
+        "tertiary": "#C8102E"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFD100", "description": "Yellow with blue and red trim" },
+        "away": { "primary_color": "#003DA5", "description": "Blue with yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/FEF_logo.svg/800px-FEF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador"
     },
     "aliases": [
       { "alias": "Ecuador", "source_id": null },
@@ -548,7 +1025,8 @@
       { "alias": "La Tri", "source_id": null },
       { "alias": "Ecuador", "source_id": "espn_fifa" },
       { "alias": "Ecuador", "source_id": "footballdata_wc" },
-      { "alias": "Ecuador", "source_id": "fifa_api" }
+      { "alias": "Ecuador", "source_id": "fifa_api" },
+      { "alias": "Ecuador", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -559,7 +1037,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "SRB",
-      "fifa_ranking": 26
+      "fifa_ranking": 26,
+      "nickname": "Orlovi",
+      "coach": "Dragan Stojković",
+      "captain": "Dušan Tadić",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 13,
+      "best_world_cup_result": "Fourth place (1930, 1962 — as Yugoslavia)",
+      "group_2026": "C",
+      "colors": {
+        "primary": "#C6363C",
+        "secondary": "#003DA5",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#C6363C", "description": "Red with blue and white trim" },
+        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/FSS_logo.svg/800px-FSS_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/serbia"
     },
     "aliases": [
       { "alias": "Serbia", "source_id": null },
@@ -568,7 +1064,8 @@
       { "alias": "Srbija", "source_id": null },
       { "alias": "Serbia", "source_id": "espn_fifa" },
       { "alias": "Serbia", "source_id": "footballdata_wc" },
-      { "alias": "Serbia", "source_id": "fifa_api" }
+      { "alias": "Serbia", "source_id": "fifa_api" },
+      { "alias": "Serbia", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -579,15 +1076,34 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "TUR",
-      "fifa_ranking": 27
+      "fifa_ranking": 27,
+      "nickname": "Ay-Yıldızlılar",
+      "coach": "Vincenzo Montella",
+      "captain": "Hakan Çalhanoğlu",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Third place (2002)",
+      "group_2026": "K",
+      "colors": {
+        "primary": "#E30A17",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#E30A17", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/TFF_logo.svg/800px-TFF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkey"
     },
     "aliases": [
       { "alias": "Turkey", "source_id": null },
       { "alias": "TUR", "source_id": null },
-      { "alias": "T\u00fcrkiye", "source_id": null },
+      { "alias": "Türkiye", "source_id": null },
       { "alias": "Turkey", "source_id": "espn_fifa" },
       { "alias": "Turkey", "source_id": "footballdata_wc" },
-      { "alias": "T\u00fcrkiye", "source_id": "fifa_api" }
+      { "alias": "Türkiye", "source_id": "fifa_api" },
+      { "alias": "Turkey", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -598,7 +1114,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "IRN",
-      "fifa_ranking": 28
+      "fifa_ranking": 28,
+      "nickname": "Team Melli",
+      "coach": "Amir Ghalenoei",
+      "captain": "Alireza Jahanbakhsh",
+      "kit_supplier": "Majid",
+      "world_cup_appearances": 6,
+      "best_world_cup_result": "Group stage (1978, 1998, 2006, 2014, 2018, 2022)",
+      "group_2026": "J",
+      "colors": {
+        "primary": "#239F40",
+        "secondary": "#FFFFFF",
+        "tertiary": "#DA0000"
+      },
+      "kits": {
+        "home": { "primary_color": "#239F40", "description": "Green with white and red trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Football_Federation_IR_Iran.svg/800px-Football_Federation_IR_Iran.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ir-iran"
     },
     "aliases": [
       { "alias": "Iran", "source_id": null },
@@ -607,7 +1141,8 @@
       { "alias": "Team Melli", "source_id": null },
       { "alias": "Iran", "source_id": "espn_fifa" },
       { "alias": "Iran", "source_id": "footballdata_wc" },
-      { "alias": "IR Iran", "source_id": "fifa_api" }
+      { "alias": "IR Iran", "source_id": "fifa_api" },
+      { "alias": "Iran", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -618,15 +1153,34 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "UKR",
-      "fifa_ranking": 29
+      "fifa_ranking": 29,
+      "nickname": "Zbirna",
+      "coach": "Serhiy Rebrov",
+      "captain": "Andriy Yarmolenko",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Quarterfinals (2006)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#005BBB",
+        "secondary": "#FFD500",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFD500", "description": "Yellow with blue trim" },
+        "away": { "primary_color": "#005BBB", "description": "Blue with yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Football_Federation_of_Ukraine_Logo.svg/800px-Football_Federation_of_Ukraine_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/UKR"
     },
     "aliases": [
       { "alias": "Ukraine", "source_id": null },
       { "alias": "UKR", "source_id": null },
-      { "alias": "\u0423\u043a\u0440\u0430\u0457\u043d\u0430", "source_id": null },
+      { "alias": "Україна", "source_id": null },
       { "alias": "Ukraine", "source_id": "espn_fifa" },
       { "alias": "Ukraine", "source_id": "footballdata_wc" },
-      { "alias": "Ukraine", "source_id": "fifa_api" }
+      { "alias": "Ukraine", "source_id": "fifa_api" },
+      { "alias": "Ukraine", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -637,7 +1191,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "SCO",
-      "fifa_ranking": 30
+      "fifa_ranking": 30,
+      "nickname": "Tartan Army",
+      "coach": "Steve Clarke",
+      "captain": "Andy Robertson",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 8,
+      "best_world_cup_result": "Group stage (1974, 1978, 1982, 1986, 1990, 1998)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#003DA5",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#003DA5", "description": "Dark blue with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Scottish_FA_crest.svg/800px-Scottish_FA_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SCO"
     },
     "aliases": [
       { "alias": "Scotland", "source_id": null },
@@ -645,7 +1217,8 @@
       { "alias": "Tartan Army", "source_id": null },
       { "alias": "Scotland", "source_id": "espn_fifa" },
       { "alias": "Scotland", "source_id": "footballdata_wc" },
-      { "alias": "Scotland", "source_id": "fifa_api" }
+      { "alias": "Scotland", "source_id": "fifa_api" },
+      { "alias": "Scotland", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -656,7 +1229,25 @@
     "metadata": {
       "confederation": "UEFA",
       "fifa_code": "WAL",
-      "fifa_ranking": 31
+      "fifa_ranking": 31,
+      "nickname": "The Dragons",
+      "coach": "Craig Bellamy",
+      "captain": "Aaron Ramsey",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Round of 16 (2022)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#C8102E",
+        "secondary": "#FFFFFF",
+        "tertiary": "#00AB4E"
+      },
+      "kits": {
+        "home": { "primary_color": "#C8102E", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Football_Association_of_Wales_crest.svg/800px-Football_Association_of_Wales_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/WAL"
     },
     "aliases": [
       { "alias": "Wales", "source_id": null },
@@ -665,7 +1256,8 @@
       { "alias": "Cymru", "source_id": null },
       { "alias": "Wales", "source_id": "espn_fifa" },
       { "alias": "Wales", "source_id": "footballdata_wc" },
-      { "alias": "Wales", "source_id": "fifa_api" }
+      { "alias": "Wales", "source_id": "fifa_api" },
+      { "alias": "Wales", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -676,7 +1268,25 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "NGA",
-      "fifa_ranking": 32
+      "fifa_ranking": 32,
+      "nickname": "Super Eagles",
+      "coach": "Augustine Eguavoen",
+      "captain": "Ahmed Musa",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 7,
+      "best_world_cup_result": "Round of 16 (1994, 1998, 2014)",
+      "group_2026": "K",
+      "colors": {
+        "primary": "#008751",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#008751", "description": "Green with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Nigeria_Football_Federation_logo.svg/800px-Nigeria_Football_Federation_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/nigeria"
     },
     "aliases": [
       { "alias": "Nigeria", "source_id": null },
@@ -684,7 +1294,8 @@
       { "alias": "Super Eagles", "source_id": null },
       { "alias": "Nigeria", "source_id": "espn_fifa" },
       { "alias": "Nigeria", "source_id": "footballdata_wc" },
-      { "alias": "Nigeria", "source_id": "fifa_api" }
+      { "alias": "Nigeria", "source_id": "fifa_api" },
+      { "alias": "Nigeria", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -695,7 +1306,25 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "CMR",
-      "fifa_ranking": 33
+      "fifa_ranking": 33,
+      "nickname": "Indomitable Lions",
+      "coach": "Marc Brys",
+      "captain": "André-Frank Zambo Anguissa",
+      "kit_supplier": "One All Sports",
+      "world_cup_appearances": 8,
+      "best_world_cup_result": "Quarterfinals (1990)",
+      "group_2026": "I",
+      "colors": {
+        "primary": "#007A5E",
+        "secondary": "#CE1126",
+        "tertiary": "#FCD116"
+      },
+      "kits": {
+        "home": { "primary_color": "#007A5E", "description": "Green with red and yellow trim" },
+        "away": { "primary_color": "#CE1126", "description": "Red with green and yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/FECAFOOT_logo.svg/800px-FECAFOOT_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cameroon"
     },
     "aliases": [
       { "alias": "Cameroon", "source_id": null },
@@ -704,7 +1333,8 @@
       { "alias": "Cameroun", "source_id": null },
       { "alias": "Cameroon", "source_id": "espn_fifa" },
       { "alias": "Cameroon", "source_id": "footballdata_wc" },
-      { "alias": "Cameroon", "source_id": "fifa_api" }
+      { "alias": "Cameroon", "source_id": "fifa_api" },
+      { "alias": "Cameroon", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -715,7 +1345,25 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "EGY",
-      "fifa_ranking": 34
+      "fifa_ranking": 34,
+      "nickname": "The Pharaohs",
+      "coach": "Hossam Hassan",
+      "captain": "Mohamed Salah",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 3,
+      "best_world_cup_result": "Group stage (1934, 1990, 2018)",
+      "group_2026": "L",
+      "colors": {
+        "primary": "#CE1126",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#CE1126", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/EFA_crest_2022.svg/800px-EFA_crest_2022.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt"
     },
     "aliases": [
       { "alias": "Egypt", "source_id": null },
@@ -724,7 +1372,8 @@
       { "alias": "Misr", "source_id": null },
       { "alias": "Egypt", "source_id": "espn_fifa" },
       { "alias": "Egypt", "source_id": "footballdata_wc" },
-      { "alias": "Egypt", "source_id": "fifa_api" }
+      { "alias": "Egypt", "source_id": "fifa_api" },
+      { "alias": "Egypt", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -735,7 +1384,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "KSA",
-      "fifa_ranking": 35
+      "fifa_ranking": 35,
+      "nickname": "The Green Falcons",
+      "coach": "Roberto Mancini",
+      "captain": "Salman Al-Faraj",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 6,
+      "best_world_cup_result": "Round of 16 (1994)",
+      "group_2026": "D",
+      "colors": {
+        "primary": "#006C35",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#006C35", "description": "Green with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Saudi_Arabia_Football_Federation_Logo.svg/800px-Saudi_Arabia_Football_Federation_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia"
     },
     "aliases": [
       { "alias": "Saudi Arabia", "source_id": null },
@@ -743,7 +1410,8 @@
       { "alias": "The Green Falcons", "source_id": null },
       { "alias": "Saudi Arabia", "source_id": "espn_fifa" },
       { "alias": "Saudi Arabia", "source_id": "footballdata_wc" },
-      { "alias": "Saudi Arabia", "source_id": "fifa_api" }
+      { "alias": "Saudi Arabia", "source_id": "fifa_api" },
+      { "alias": "Saudi Arabia", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -754,7 +1422,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "QAT",
-      "fifa_ranking": 36
+      "fifa_ranking": 36,
+      "nickname": "The Maroons",
+      "coach": "Marquez Lopez",
+      "captain": "Hassan Al-Haydos",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (2022 — as hosts)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#8D1B3D",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#8D1B3D", "description": "Maroon with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with maroon accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ea/Qatar_Football_Association_Logo.svg/800px-Qatar_Football_Association_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/QAT"
     },
     "aliases": [
       { "alias": "Qatar", "source_id": null },
@@ -762,7 +1448,8 @@
       { "alias": "The Maroons", "source_id": null },
       { "alias": "Qatar", "source_id": "espn_fifa" },
       { "alias": "Qatar", "source_id": "footballdata_wc" },
-      { "alias": "Qatar", "source_id": "fifa_api" }
+      { "alias": "Qatar", "source_id": "fifa_api" },
+      { "alias": "Qatar", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -773,7 +1460,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "PAR",
-      "fifa_ranking": 37
+      "fifa_ranking": 37,
+      "nickname": "La Albirroja",
+      "coach": "Alfaro Moreno",
+      "captain": "Gustavo Gómez",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 9,
+      "best_world_cup_result": "Quarterfinals (2010)",
+      "group_2026": "H",
+      "colors": {
+        "primary": "#D52B1E",
+        "secondary": "#FFFFFF",
+        "tertiary": "#003DA5"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue stripes" },
+        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/APF_Logo.svg/800px-APF_Logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay"
     },
     "aliases": [
       { "alias": "Paraguay", "source_id": null },
@@ -781,7 +1486,8 @@
       { "alias": "La Albirroja", "source_id": null },
       { "alias": "Paraguay", "source_id": "espn_fifa" },
       { "alias": "Paraguay", "source_id": "footballdata_wc" },
-      { "alias": "Paraguay", "source_id": "fifa_api" }
+      { "alias": "Paraguay", "source_id": "fifa_api" },
+      { "alias": "Paraguay", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -792,7 +1498,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "VEN",
-      "fifa_ranking": 38
+      "fifa_ranking": 38,
+      "nickname": "La Vinotinto",
+      "coach": "Fernando Batista",
+      "captain": "Tomás Rincón",
+      "kit_supplier": "Kelme",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "Never qualified",
+      "group_2026": null,
+      "colors": {
+        "primary": "#8B0000",
+        "secondary": "#FFD700",
+        "tertiary": "#003DA5"
+      },
+      "kits": {
+        "home": { "primary_color": "#8B0000", "description": "Burgundy/wine red with gold trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with burgundy accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/FVF_logo.svg/800px-FVF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/VEN"
     },
     "aliases": [
       { "alias": "Venezuela", "source_id": null },
@@ -800,7 +1524,8 @@
       { "alias": "La Vinotinto", "source_id": null },
       { "alias": "Venezuela", "source_id": "espn_fifa" },
       { "alias": "Venezuela", "source_id": "footballdata_wc" },
-      { "alias": "Venezuela", "source_id": "fifa_api" }
+      { "alias": "Venezuela", "source_id": "fifa_api" },
+      { "alias": "Venezuela", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -811,7 +1536,25 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "JAM",
-      "fifa_ranking": 42
+      "fifa_ranking": 42,
+      "nickname": "Reggae Boyz",
+      "coach": "Heimir Hallgrímsson",
+      "captain": "Michail Antonio",
+      "kit_supplier": "Umbro",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (1998)",
+      "group_2026": "A",
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#FED100",
+        "tertiary": "#009B77"
+      },
+      "kits": {
+        "home": { "primary_color": "#000000", "description": "Black with gold and green trim" },
+        "away": { "primary_color": "#FED100", "description": "Gold with black and green accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Jamaica_football_federation_crest.svg/800px-Jamaica_football_federation_crest.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jamaica"
     },
     "aliases": [
       { "alias": "Jamaica", "source_id": null },
@@ -819,7 +1562,8 @@
       { "alias": "Reggae Boyz", "source_id": null },
       { "alias": "Jamaica", "source_id": "espn_fifa" },
       { "alias": "Jamaica", "source_id": "footballdata_wc" },
-      { "alias": "Jamaica", "source_id": "fifa_api" }
+      { "alias": "Jamaica", "source_id": "fifa_api" },
+      { "alias": "Jamaica", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -830,7 +1574,25 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "HON",
-      "fifa_ranking": 55
+      "fifa_ranking": 55,
+      "nickname": "Los Catrachos",
+      "coach": "Reinaldo Rueda",
+      "captain": "Maynor Figueroa",
+      "kit_supplier": "Joma",
+      "world_cup_appearances": 3,
+      "best_world_cup_result": "Group stage (1982, 2010, 2014)",
+      "group_2026": "J",
+      "colors": {
+        "primary": "#0073CF",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with blue trim" },
+        "away": { "primary_color": "#0073CF", "description": "Blue with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/FENAFUTH_logo.svg/800px-FENAFUTH_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/honduras"
     },
     "aliases": [
       { "alias": "Honduras", "source_id": null },
@@ -838,7 +1600,8 @@
       { "alias": "Los Catrachos", "source_id": null },
       { "alias": "Honduras", "source_id": "espn_fifa" },
       { "alias": "Honduras", "source_id": "footballdata_wc" },
-      { "alias": "Honduras", "source_id": "fifa_api" }
+      { "alias": "Honduras", "source_id": "fifa_api" },
+      { "alias": "Honduras", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -849,7 +1612,25 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "CRC",
-      "fifa_ranking": 48
+      "fifa_ranking": 48,
+      "nickname": "Los Ticos",
+      "coach": "Claudio Vivas",
+      "captain": "Keylor Navas",
+      "kit_supplier": "New Balance",
+      "world_cup_appearances": 6,
+      "best_world_cup_result": "Quarterfinals (2014)",
+      "group_2026": "G",
+      "colors": {
+        "primary": "#003DA5",
+        "secondary": "#CE1126",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#CE1126", "description": "Red with blue and white trim" },
+        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/FEDEFUTBOL_logo.svg/800px-FEDEFUTBOL_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/costa-rica"
     },
     "aliases": [
       { "alias": "Costa Rica", "source_id": null },
@@ -857,7 +1638,8 @@
       { "alias": "Los Ticos", "source_id": null },
       { "alias": "Costa Rica", "source_id": "espn_fifa" },
       { "alias": "Costa Rica", "source_id": "footballdata_wc" },
-      { "alias": "Costa Rica", "source_id": "fifa_api" }
+      { "alias": "Costa Rica", "source_id": "fifa_api" },
+      { "alias": "Costa Rica", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -868,16 +1650,35 @@
     "metadata": {
       "confederation": "CONCACAF",
       "fifa_code": "PAN",
-      "fifa_ranking": 50
+      "fifa_ranking": 50,
+      "nickname": "Los Canaleros",
+      "coach": "Thomas Christiansen",
+      "captain": "Aníbal Godoy",
+      "kit_supplier": "New Balance",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Group stage (2018, 2022)",
+      "group_2026": "L",
+      "colors": {
+        "primary": "#CE1126",
+        "secondary": "#003DA5",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue trim" },
+        "away": { "primary_color": "#CE1126", "description": "Red with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/FEPAFUT_logo.svg/800px-FEPAFUT_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama"
     },
     "aliases": [
       { "alias": "Panama", "source_id": null },
       { "alias": "PAN", "source_id": null },
       { "alias": "Los Canaleros", "source_id": null },
-      { "alias": "Panam\u00e1", "source_id": null },
+      { "alias": "Panamá", "source_id": null },
       { "alias": "Panama", "source_id": "espn_fifa" },
       { "alias": "Panama", "source_id": "footballdata_wc" },
-      { "alias": "Panama", "source_id": "fifa_api" }
+      { "alias": "Panama", "source_id": "fifa_api" },
+      { "alias": "Panama", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -888,7 +1689,25 @@
     "metadata": {
       "confederation": "CONMEBOL",
       "fifa_code": "CHI",
-      "fifa_ranking": 39
+      "fifa_ranking": 39,
+      "nickname": "La Roja",
+      "coach": "Ricardo Gareca",
+      "captain": "Arturo Vidal",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 9,
+      "best_world_cup_result": "Third place (1962)",
+      "group_2026": "A",
+      "colors": {
+        "primary": "#D52B1E",
+        "secondary": "#FFFFFF",
+        "tertiary": "#003DA5"
+      },
+      "kits": {
+        "home": { "primary_color": "#D52B1E", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red and blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Federacion_de_futbol_de_Chile_logo.svg/800px-Federacion_de_futbol_de_Chile_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/chile"
     },
     "aliases": [
       { "alias": "Chile", "source_id": null },
@@ -896,7 +1715,8 @@
       { "alias": "La Roja", "source_id": null },
       { "alias": "Chile", "source_id": "espn_fifa" },
       { "alias": "Chile", "source_id": "footballdata_wc" },
-      { "alias": "Chile", "source_id": "fifa_api" }
+      { "alias": "Chile", "source_id": "fifa_api" },
+      { "alias": "Chile", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -907,7 +1727,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "UZB",
-      "fifa_ranking": 40
+      "fifa_ranking": 40,
+      "nickname": "White Wolves",
+      "coach": "Srecko Katanec",
+      "captain": "Eldor Shomurodov",
+      "kit_supplier": "Joma",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "First appearance (2026)",
+      "group_2026": "E",
+      "colors": {
+        "primary": "#1EB53A",
+        "secondary": "#0099B5",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#1EB53A", "description": "Green with blue and white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green and blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/UFF_logo.svg/800px-UFF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan"
     },
     "aliases": [
       { "alias": "Uzbekistan", "source_id": null },
@@ -915,7 +1753,8 @@
       { "alias": "White Wolves", "source_id": null },
       { "alias": "Uzbekistan", "source_id": "espn_fifa" },
       { "alias": "Uzbekistan", "source_id": "footballdata_wc" },
-      { "alias": "Uzbekistan", "source_id": "fifa_api" }
+      { "alias": "Uzbekistan", "source_id": "fifa_api" },
+      { "alias": "Uzbekistan", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -926,7 +1765,25 @@
     "metadata": {
       "confederation": "AFC",
       "fifa_code": "IRQ",
-      "fifa_ranking": 43
+      "fifa_ranking": 43,
+      "nickname": "Lions of Mesopotamia",
+      "coach": "Jesús Casas",
+      "captain": "Amjed Attwan",
+      "kit_supplier": "Puma",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (1986)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#CE1126",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#CE1126", "description": "Red with white and black trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red and black accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/IFA_logo.svg/800px-IFA_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/IRQ"
     },
     "aliases": [
       { "alias": "Iraq", "source_id": null },
@@ -934,7 +1791,8 @@
       { "alias": "Lions of Mesopotamia", "source_id": null },
       { "alias": "Iraq", "source_id": "espn_fifa" },
       { "alias": "Iraq", "source_id": "footballdata_wc" },
-      { "alias": "Iraq", "source_id": "fifa_api" }
+      { "alias": "Iraq", "source_id": "fifa_api" },
+      { "alias": "Iraq", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -945,17 +1803,36 @@
     "metadata": {
       "confederation": "CAF",
       "fifa_code": "ALG",
-      "fifa_ranking": 36
+      "fifa_ranking": 36,
+      "nickname": "Les Fennecs",
+      "coach": "Vladimir Petkovic",
+      "captain": "Riyad Mahrez",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 4,
+      "best_world_cup_result": "Round of 16 (2014)",
+      "group_2026": null,
+      "colors": {
+        "primary": "#FFFFFF",
+        "secondary": "#006233",
+        "tertiary": "#D21034"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with green and red trim" },
+        "away": { "primary_color": "#006233", "description": "Green with white and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/FAF_logo.svg/800px-FAF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/ALG"
     },
     "aliases": [
       { "alias": "Algeria", "source_id": null },
       { "alias": "ALG", "source_id": null },
       { "alias": "Les Fennecs", "source_id": null },
       { "alias": "Desert Foxes", "source_id": null },
-      { "alias": "Alg\u00e9rie", "source_id": null },
+      { "alias": "Algérie", "source_id": null },
       { "alias": "Algeria", "source_id": "espn_fifa" },
       { "alias": "Algeria", "source_id": "footballdata_wc" },
-      { "alias": "Algeria", "source_id": "fifa_api" }
+      { "alias": "Algeria", "source_id": "fifa_api" },
+      { "alias": "Algeria", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -966,7 +1843,25 @@
     "metadata": {
       "confederation": "OFC",
       "fifa_code": "NZL",
-      "fifa_ranking": 80
+      "fifa_ranking": 80,
+      "nickname": "All Whites",
+      "coach": "Darren Bazeley",
+      "captain": "Chris Wood",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 2,
+      "best_world_cup_result": "Group stage (1982, 2010)",
+      "group_2026": "C",
+      "colors": {
+        "primary": "#FFFFFF",
+        "secondary": "#000000",
+        "tertiary": "#CC0000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with black trim" },
+        "away": { "primary_color": "#000000", "description": "Black with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/NZ_Football_logo.svg/800px-NZ_Football_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/new-zealand"
     },
     "aliases": [
       { "alias": "New Zealand", "source_id": null },
@@ -974,7 +1869,8 @@
       { "alias": "All Whites", "source_id": null },
       { "alias": "New Zealand", "source_id": "espn_fifa" },
       { "alias": "New Zealand", "source_id": "footballdata_wc" },
-      { "alias": "New Zealand", "source_id": "fifa_api" }
+      { "alias": "New Zealand", "source_id": "fifa_api" },
+      { "alias": "New Zealand", "source_id": "mollybet_fb" }
     ]
   },
   {
@@ -1035,7 +1931,354 @@
       { "alias": "South Africa", "source_id": "footballdata_wc" },
       { "alias": "South Africa", "source_id": "fifa_api" },
       { "alias": "South Africa National Football Team", "source_id": null },
-      { "alias": "Suid-Afrika", "source_id": null }
+      { "alias": "Suid-Afrika", "source_id": null },
+      { "alias": "South Africa", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-bolivia",
+    "name": "Bolivia",
+    "short_name": "BOL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "BOL",
+      "fifa_ranking": 75,
+      "nickname": "La Verde",
+      "coach": "Óscar Villegas",
+      "captain": "Marcelo Martins",
+      "kit_supplier": "Marathon",
+      "world_cup_appearances": 3,
+      "best_world_cup_result": "Group stage (1930, 1950, 1994)",
+      "group_2026": "B",
+      "colors": {
+        "primary": "#D52B1E",
+        "secondary": "#F9E300",
+        "tertiary": "#007A33"
+      },
+      "kits": {
+        "home": { "primary_color": "#007A33", "description": "Green with red and yellow trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with green and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/FBF_logo.svg/800px-FBF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bolivia"
+    },
+    "aliases": [
+      { "alias": "Bolivia", "source_id": null },
+      { "alias": "BOL", "source_id": null },
+      { "alias": "La Verde", "source_id": null },
+      { "alias": "Bolivia", "source_id": "espn_fifa" },
+      { "alias": "Bolivia", "source_id": "footballdata_wc" },
+      { "alias": "Bolivia", "source_id": "fifa_api" },
+      { "alias": "Bolivia", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-bahrain",
+    "name": "Bahrain",
+    "short_name": "BHR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "BHR",
+      "fifa_ranking": 82,
+      "nickname": "Red Falcons",
+      "coach": "Juan Antonio Pizzi",
+      "captain": "Sayed Dhiya Saeed",
+      "kit_supplier": "Macron",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "First appearance (2026)",
+      "group_2026": "B",
+      "colors": {
+        "primary": "#CE1126",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#CE1126", "description": "Red with white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Bahrain_FA.svg/800px-Bahrain_FA.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bahrain"
+    },
+    "aliases": [
+      { "alias": "Bahrain", "source_id": null },
+      { "alias": "BHR", "source_id": null },
+      { "alias": "Red Falcons", "source_id": null },
+      { "alias": "Bahrain", "source_id": "espn_fifa" },
+      { "alias": "Bahrain", "source_id": "footballdata_wc" },
+      { "alias": "Bahrain", "source_id": "fifa_api" },
+      { "alias": "Bahrain", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-china-pr",
+    "name": "China PR",
+    "short_name": "CHN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "CHN",
+      "fifa_ranking": 88,
+      "nickname": "The Steel Great Wall",
+      "coach": "Branko Ivanković",
+      "captain": "Wu Xi",
+      "kit_supplier": "Nike",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (2002)",
+      "group_2026": "D",
+      "colors": {
+        "primary": "#DE2910",
+        "secondary": "#FFDE00",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#DE2910", "description": "Red with yellow and white trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with red and yellow accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/CFA_logo.svg/800px-CFA_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/china-pr"
+    },
+    "aliases": [
+      { "alias": "China PR", "source_id": null },
+      { "alias": "CHN", "source_id": null },
+      { "alias": "China", "source_id": null },
+      { "alias": "China PR", "source_id": "espn_fifa" },
+      { "alias": "China PR", "source_id": "footballdata_wc" },
+      { "alias": "China PR", "source_id": "fifa_api" },
+      { "alias": "China PR", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-iceland",
+    "name": "Iceland",
+    "short_name": "ISL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "ISL",
+      "fifa_ranking": 52,
+      "nickname": "Strákarnir okkar",
+      "coach": "Åge Hareide",
+      "captain": "Aron Gunnarsson",
+      "kit_supplier": "Erreà",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (2018)",
+      "group_2026": "E",
+      "colors": {
+        "primary": "#003DA5",
+        "secondary": "#FFFFFF",
+        "tertiary": "#C8102E"
+      },
+      "kits": {
+        "home": { "primary_color": "#003DA5", "description": "Dark blue with white and red trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/KSI_logo.svg/800px-KSI_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/iceland"
+    },
+    "aliases": [
+      { "alias": "Iceland", "source_id": null },
+      { "alias": "ISL", "source_id": null },
+      { "alias": "Strákarnir okkar", "source_id": null },
+      { "alias": "Iceland", "source_id": "espn_fifa" },
+      { "alias": "Iceland", "source_id": "footballdata_wc" },
+      { "alias": "Iceland", "source_id": "fifa_api" },
+      { "alias": "Iceland", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-dr-congo",
+    "name": "DR Congo",
+    "short_name": "COD",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "COD",
+      "fifa_ranking": 45,
+      "nickname": "The Leopards",
+      "coach": "Sébastien Desabre",
+      "captain": "Chancel Mbemba",
+      "kit_supplier": "O'Neills",
+      "world_cup_appearances": 1,
+      "best_world_cup_result": "Group stage (1974 — as Zaire)",
+      "group_2026": "F",
+      "colors": {
+        "primary": "#007FFF",
+        "secondary": "#F7D700",
+        "tertiary": "#CE1126"
+      },
+      "kits": {
+        "home": { "primary_color": "#007FFF", "description": "Blue with yellow and red trim" },
+        "away": { "primary_color": "#F7D700", "description": "Yellow with blue and red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FECOFA_logo.svg/800px-FECOFA_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/dr-congo"
+    },
+    "aliases": [
+      { "alias": "DR Congo", "source_id": null },
+      { "alias": "COD", "source_id": null },
+      { "alias": "The Leopards", "source_id": null },
+      { "alias": "Congo DR", "source_id": null },
+      { "alias": "Democratic Republic of Congo", "source_id": null },
+      { "alias": "DR Congo", "source_id": "espn_fifa" },
+      { "alias": "DR Congo", "source_id": "footballdata_wc" },
+      { "alias": "DR Congo", "source_id": "fifa_api" },
+      { "alias": "DR Congo", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-kenya",
+    "name": "Kenya",
+    "short_name": "KEN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "KEN",
+      "fifa_ranking": 100,
+      "nickname": "Harambee Stars",
+      "coach": "Engin Firat",
+      "captain": "Michael Olunga",
+      "kit_supplier": "Mafro",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "First appearance (2026)",
+      "group_2026": "G",
+      "colors": {
+        "primary": "#006600",
+        "secondary": "#CC0001",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#CC0001", "description": "Red with green and black trim" },
+        "away": { "primary_color": "#006600", "description": "Green with red and white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Football_Kenya_Federation_logo.svg/800px-Football_Kenya_Federation_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/kenya"
+    },
+    "aliases": [
+      { "alias": "Kenya", "source_id": null },
+      { "alias": "KEN", "source_id": null },
+      { "alias": "Harambee Stars", "source_id": null },
+      { "alias": "Kenya", "source_id": "espn_fifa" },
+      { "alias": "Kenya", "source_id": "footballdata_wc" },
+      { "alias": "Kenya", "source_id": "fifa_api" },
+      { "alias": "Kenya", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-peru",
+    "name": "Peru",
+    "short_name": "PER",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "PER",
+      "fifa_ranking": 30,
+      "nickname": "La Blanquirroja",
+      "coach": "Jorge Fossati",
+      "captain": "Paolo Guerrero",
+      "kit_supplier": "Adidas",
+      "world_cup_appearances": 5,
+      "best_world_cup_result": "Quarterfinals (1970)",
+      "group_2026": "H",
+      "colors": {
+        "primary": "#D91023",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#FFFFFF", "description": "White with red vertical stripe" },
+        "away": { "primary_color": "#D91023", "description": "Red with white accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/FPF_escudo.svg/800px-FPF_escudo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/peru"
+    },
+    "aliases": [
+      { "alias": "Peru", "source_id": null },
+      { "alias": "PER", "source_id": null },
+      { "alias": "La Blanquirroja", "source_id": null },
+      { "alias": "Perú", "source_id": null },
+      { "alias": "Peru", "source_id": "espn_fifa" },
+      { "alias": "Peru", "source_id": "footballdata_wc" },
+      { "alias": "Peru", "source_id": "fifa_api" },
+      { "alias": "Peru", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-albania",
+    "name": "Albania",
+    "short_name": "ALB",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "ALB",
+      "fifa_ranking": 55,
+      "nickname": "Kuqezinjtë",
+      "coach": "Sylvinho",
+      "captain": "Berat Djimsiti",
+      "kit_supplier": "Macron",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "First appearance (2026)",
+      "group_2026": "I",
+      "colors": {
+        "primary": "#E41E20",
+        "secondary": "#000000",
+        "tertiary": "#FFFFFF"
+      },
+      "kits": {
+        "home": { "primary_color": "#E41E20", "description": "Red with black trim" },
+        "away": { "primary_color": "#000000", "description": "Black with red accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/FSHF_logo.svg/800px-FSHF_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/albania"
+    },
+    "aliases": [
+      { "alias": "Albania", "source_id": null },
+      { "alias": "ALB", "source_id": null },
+      { "alias": "Kuqezinjtë", "source_id": null },
+      { "alias": "Shqipëria", "source_id": null },
+      { "alias": "Albania", "source_id": "espn_fifa" },
+      { "alias": "Albania", "source_id": "footballdata_wc" },
+      { "alias": "Albania", "source_id": "fifa_api" },
+      { "alias": "Albania", "source_id": "mollybet_fb" }
+    ]
+  },
+  {
+    "id": "football-guatemala",
+    "name": "Guatemala",
+    "short_name": "GUA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "GUA",
+      "fifa_ranking": 85,
+      "nickname": "Los Chapines",
+      "coach": "Luis Fernando Tena",
+      "captain": "José Rosales",
+      "kit_supplier": "Umbro",
+      "world_cup_appearances": 0,
+      "best_world_cup_result": "First appearance (2026)",
+      "group_2026": "K",
+      "colors": {
+        "primary": "#4997D0",
+        "secondary": "#FFFFFF",
+        "tertiary": "#000000"
+      },
+      "kits": {
+        "home": { "primary_color": "#4997D0", "description": "Sky blue and white with blue trim" },
+        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+      },
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/FEDEFUT_GUATE_logo.svg/800px-FEDEFUT_GUATE_logo.svg.png",
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/guatemala"
+    },
+    "aliases": [
+      { "alias": "Guatemala", "source_id": null },
+      { "alias": "GUA", "source_id": null },
+      { "alias": "Los Chapines", "source_id": null },
+      { "alias": "Guatemala", "source_id": "espn_fifa" },
+      { "alias": "Guatemala", "source_id": "footballdata_wc" },
+      { "alias": "Guatemala", "source_id": "fifa_api" },
+      { "alias": "Guatemala", "source_id": "mollybet_fb" }
     ]
   }
 ]
