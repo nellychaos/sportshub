@@ -1,0 +1,85 @@
+{
+  "count": 3,
+  "filters": {
+    "status": "SCHEDULED"
+  },
+  "competition": {
+    "id": 2000,
+    "name": "FIFA World Cup",
+    "code": "WC"
+  },
+  "matches": [
+    {
+      "id": 500001,
+      "utcDate": "2026-06-11T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": 1,
+      "stage": "GROUP_STAGE",
+      "group": "Group A",
+      "homeTeam": {
+        "id": 769,
+        "name": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.png"
+      },
+      "awayTeam": {
+        "id": 804,
+        "name": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/804.png"
+      },
+      "venue": "Estadio Azteca",
+      "competition": {
+        "id": 2000
+      }
+    },
+    {
+      "id": 500002,
+      "utcDate": "2026-06-12T20:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": 1,
+      "stage": "GROUP_STAGE",
+      "group": "Group B",
+      "homeTeam": {
+        "id": 764,
+        "name": "Brazil",
+        "tla": "BRA",
+        "crest": "https://crests.football-data.org/764.png"
+      },
+      "awayTeam": {
+        "id": 780,
+        "name": "Serbia",
+        "tla": "SRB",
+        "crest": "https://crests.football-data.org/780.png"
+      },
+      "venue": "MetLife Stadium",
+      "competition": {
+        "id": 2000
+      }
+    },
+    {
+      "id": 500099,
+      "utcDate": "2026-07-10T20:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "QUARTER_FINALS",
+      "group": null,
+      "homeTeam": {
+        "id": null,
+        "name": null,
+        "tla": null,
+        "crest": null
+      },
+      "awayTeam": {
+        "id": null,
+        "name": null,
+        "tla": null,
+        "crest": null
+      },
+      "venue": "",
+      "competition": {
+        "id": 2000
+      }
+    }
+  ]
+}

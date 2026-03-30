@@ -1,0 +1,143 @@
+[
+  {
+    "id": "nba-2025-26-regular-season",
+    "name": "NBA 2025-26 Regular Season",
+    "short_name": "NBA-RS",
+    "sport": "nba",
+    "season": "2025-26",
+    "region": "North America",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "82-game regular season",
+      "start_date": "2025-10-21",
+      "end_date": "2026-04-12",
+      "teams": 30,
+      "governing_body": "NBA"
+    }
+  },
+  {
+    "id": "nba-2025-26-playoffs",
+    "name": "NBA 2025-26 Playoffs",
+    "short_name": "NBA-PO",
+    "sport": "nba",
+    "season": "2025-26",
+    "region": "North America",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Best-of-7 bracket",
+      "start_date": "2026-04-18",
+      "end_date": "2026-06-22",
+      "teams": 16,
+      "governing_body": "NBA",
+      "includes_play_in": true
+    }
+  },
+  {
+    "id": "lck-2026-spring",
+    "name": "LCK 2026 Spring",
+    "short_name": "LCK",
+    "sport": "lol",
+    "season": "2026 Spring",
+    "region": "Korea",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Double round-robin group stage + playoffs",
+      "organizer": "Riot Games Korea",
+      "teams": 10,
+      "qualifying_for": "MSI 2026"
+    }
+  },
+  {
+    "id": "lpl-2026-spring",
+    "name": "LPL 2026 Spring",
+    "short_name": "LPL",
+    "sport": "lol",
+    "season": "2026 Spring",
+    "region": "China",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Double round-robin group stage + playoffs",
+      "organizer": "Riot Games China / TJ Sports",
+      "teams": 17,
+      "qualifying_for": "MSI 2026"
+    }
+  },
+  {
+    "id": "lec-2026-winter",
+    "name": "LEC 2026 Winter",
+    "short_name": "LEC",
+    "sport": "lol",
+    "season": "2026 Winter",
+    "region": "Europe",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Group stage + playoffs",
+      "organizer": "Riot Games EMEA",
+      "teams": 10,
+      "qualifying_for": "LEC 2026 Spring"
+    }
+  },
+  {
+    "id": "lcs-2026-spring",
+    "name": "LCS 2026 Spring",
+    "short_name": "LCS",
+    "sport": "lol",
+    "season": "2026 Spring",
+    "region": "North America",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Group stage + playoffs",
+      "organizer": "Riot Games North America",
+      "teams": 8,
+      "qualifying_for": "MSI 2026"
+    }
+  },
+  {
+    "id": "msi-2026",
+    "name": "MSI 2026",
+    "short_name": "MSI",
+    "sport": "lol",
+    "season": "2026 Spring",
+    "region": "International",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "International tournament",
+      "organizer": "Riot Games",
+      "description": "Mid-Season Invitational featuring top teams from each regional league"
+    }
+  },
+  {
+    "id": "worlds-2026",
+    "name": "Worlds 2026",
+    "short_name": "WORLDS",
+    "sport": "lol",
+    "season": "2026",
+    "region": "International",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "Play-ins, Swiss stage, bracket stage",
+      "organizer": "Riot Games",
+      "description": "League of Legends World Championship, the premier annual international tournament"
+    }
+  },
+  {
+    "id": "fifa-world-cup-2026",
+    "name": "FIFA World Cup 2026",
+    "short_name": "WC2026",
+    "sport": "football",
+    "season": "2026",
+    "region": "International",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "48-team tournament: 12 groups of 4, knockout rounds from Round of 32",
+      "start_date": "2026-06-11",
+      "end_date": "2026-07-19",
+      "teams": 48,
+      "governing_body": "FIFA",
+      "host_countries": ["United States", "Mexico", "Canada"],
+      "venues": 16,
+      "total_matches": 104,
+      "description": "First FIFA World Cup with 48 teams, hosted across North America"
+    }
+  }
+]

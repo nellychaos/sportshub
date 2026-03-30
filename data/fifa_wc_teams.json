@@ -1,0 +1,947 @@
+[
+  {
+    "id": "football-usa",
+    "name": "United States",
+    "short_name": "USA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "USA",
+      "fifa_ranking": 14
+    },
+    "aliases": [
+      { "alias": "United States", "source_id": null },
+      { "alias": "USA", "source_id": null },
+      { "alias": "United States Men's National Team", "source_id": null },
+      { "alias": "USMNT", "source_id": null },
+      { "alias": "US", "source_id": null },
+      { "alias": "United States", "source_id": "espn_fifa" },
+      { "alias": "United States of America", "source_id": "footballdata_wc" },
+      { "alias": "USA", "source_id": "fifa_api" },
+      { "alias": "Estados Unidos", "source_id": null }
+    ]
+  },
+  {
+    "id": "football-mexico",
+    "name": "Mexico",
+    "short_name": "MEX",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "MEX",
+      "fifa_ranking": 15
+    },
+    "aliases": [
+      { "alias": "Mexico", "source_id": null },
+      { "alias": "MEX", "source_id": null },
+      { "alias": "El Tri", "source_id": null },
+      { "alias": "Mexico", "source_id": "espn_fifa" },
+      { "alias": "Mexico", "source_id": "footballdata_wc" },
+      { "alias": "Mexico", "source_id": "fifa_api" },
+      { "alias": "M\u00e9xico", "source_id": null }
+    ]
+  },
+  {
+    "id": "football-canada",
+    "name": "Canada",
+    "short_name": "CAN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "CAN",
+      "fifa_ranking": 41
+    },
+    "aliases": [
+      { "alias": "Canada", "source_id": null },
+      { "alias": "CAN", "source_id": null },
+      { "alias": "Les Rouges", "source_id": null },
+      { "alias": "Canada", "source_id": "espn_fifa" },
+      { "alias": "Canada", "source_id": "footballdata_wc" },
+      { "alias": "Canada", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-argentina",
+    "name": "Argentina",
+    "short_name": "ARG",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "ARG",
+      "fifa_ranking": 1
+    },
+    "aliases": [
+      { "alias": "Argentina", "source_id": null },
+      { "alias": "ARG", "source_id": null },
+      { "alias": "La Albiceleste", "source_id": null },
+      { "alias": "Argentina", "source_id": "espn_fifa" },
+      { "alias": "Argentina", "source_id": "footballdata_wc" },
+      { "alias": "Argentina", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-brazil",
+    "name": "Brazil",
+    "short_name": "BRA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "BRA",
+      "fifa_ranking": 5
+    },
+    "aliases": [
+      { "alias": "Brazil", "source_id": null },
+      { "alias": "BRA", "source_id": null },
+      { "alias": "Sele\u00e7\u00e3o", "source_id": null },
+      { "alias": "Brasil", "source_id": null },
+      { "alias": "Brazil", "source_id": "espn_fifa" },
+      { "alias": "Brazil", "source_id": "footballdata_wc" },
+      { "alias": "Brazil", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-france",
+    "name": "France",
+    "short_name": "FRA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "FRA",
+      "fifa_ranking": 2
+    },
+    "aliases": [
+      { "alias": "France", "source_id": null },
+      { "alias": "FRA", "source_id": null },
+      { "alias": "Les Bleus", "source_id": null },
+      { "alias": "France", "source_id": "espn_fifa" },
+      { "alias": "France", "source_id": "footballdata_wc" },
+      { "alias": "France", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-england",
+    "name": "England",
+    "short_name": "ENG",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "ENG",
+      "fifa_ranking": 4
+    },
+    "aliases": [
+      { "alias": "England", "source_id": null },
+      { "alias": "ENG", "source_id": null },
+      { "alias": "Three Lions", "source_id": null },
+      { "alias": "England", "source_id": "espn_fifa" },
+      { "alias": "England", "source_id": "footballdata_wc" },
+      { "alias": "England", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-spain",
+    "name": "Spain",
+    "short_name": "ESP",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "ESP",
+      "fifa_ranking": 3
+    },
+    "aliases": [
+      { "alias": "Spain", "source_id": null },
+      { "alias": "ESP", "source_id": null },
+      { "alias": "La Roja", "source_id": null },
+      { "alias": "Espa\u00f1a", "source_id": null },
+      { "alias": "Spain", "source_id": "espn_fifa" },
+      { "alias": "Spain", "source_id": "footballdata_wc" },
+      { "alias": "Spain", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-germany",
+    "name": "Germany",
+    "short_name": "GER",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "GER",
+      "fifa_ranking": 8
+    },
+    "aliases": [
+      { "alias": "Germany", "source_id": null },
+      { "alias": "GER", "source_id": null },
+      { "alias": "Die Mannschaft", "source_id": null },
+      { "alias": "Deutschland", "source_id": null },
+      { "alias": "Germany", "source_id": "espn_fifa" },
+      { "alias": "Germany", "source_id": "footballdata_wc" },
+      { "alias": "Germany", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-portugal",
+    "name": "Portugal",
+    "short_name": "POR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "POR",
+      "fifa_ranking": 6
+    },
+    "aliases": [
+      { "alias": "Portugal", "source_id": null },
+      { "alias": "POR", "source_id": null },
+      { "alias": "Sele\u00e7\u00e3o das Quinas", "source_id": null },
+      { "alias": "Portugal", "source_id": "espn_fifa" },
+      { "alias": "Portugal", "source_id": "footballdata_wc" },
+      { "alias": "Portugal", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-netherlands",
+    "name": "Netherlands",
+    "short_name": "NED",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "NED",
+      "fifa_ranking": 7
+    },
+    "aliases": [
+      { "alias": "Netherlands", "source_id": null },
+      { "alias": "NED", "source_id": null },
+      { "alias": "Holland", "source_id": null },
+      { "alias": "Oranje", "source_id": null },
+      { "alias": "The Netherlands", "source_id": null },
+      { "alias": "Netherlands", "source_id": "espn_fifa" },
+      { "alias": "Netherlands", "source_id": "footballdata_wc" },
+      { "alias": "Netherlands", "source_id": "fifa_api" },
+      { "alias": "Nederland", "source_id": null }
+    ]
+  },
+  {
+    "id": "football-belgium",
+    "name": "Belgium",
+    "short_name": "BEL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "BEL",
+      "fifa_ranking": 9
+    },
+    "aliases": [
+      { "alias": "Belgium", "source_id": null },
+      { "alias": "BEL", "source_id": null },
+      { "alias": "Red Devils", "source_id": null },
+      { "alias": "Belgique", "source_id": null },
+      { "alias": "Belgi\u00eb", "source_id": null },
+      { "alias": "Belgium", "source_id": "espn_fifa" },
+      { "alias": "Belgium", "source_id": "footballdata_wc" },
+      { "alias": "Belgium", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-italy",
+    "name": "Italy",
+    "short_name": "ITA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "ITA",
+      "fifa_ranking": 10
+    },
+    "aliases": [
+      { "alias": "Italy", "source_id": null },
+      { "alias": "ITA", "source_id": null },
+      { "alias": "Gli Azzurri", "source_id": null },
+      { "alias": "Azzurri", "source_id": null },
+      { "alias": "Italia", "source_id": null },
+      { "alias": "Italy", "source_id": "espn_fifa" },
+      { "alias": "Italy", "source_id": "footballdata_wc" },
+      { "alias": "Italy", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-croatia",
+    "name": "Croatia",
+    "short_name": "CRO",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "CRO",
+      "fifa_ranking": 11
+    },
+    "aliases": [
+      { "alias": "Croatia", "source_id": null },
+      { "alias": "CRO", "source_id": null },
+      { "alias": "Vatreni", "source_id": null },
+      { "alias": "Hrvatska", "source_id": null },
+      { "alias": "Croatia", "source_id": "espn_fifa" },
+      { "alias": "Croatia", "source_id": "footballdata_wc" },
+      { "alias": "Croatia", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-colombia",
+    "name": "Colombia",
+    "short_name": "COL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "COL",
+      "fifa_ranking": 12
+    },
+    "aliases": [
+      { "alias": "Colombia", "source_id": null },
+      { "alias": "COL", "source_id": null },
+      { "alias": "Los Cafeteros", "source_id": null },
+      { "alias": "Colombia", "source_id": "espn_fifa" },
+      { "alias": "Colombia", "source_id": "footballdata_wc" },
+      { "alias": "Colombia", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-uruguay",
+    "name": "Uruguay",
+    "short_name": "URU",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "URU",
+      "fifa_ranking": 13
+    },
+    "aliases": [
+      { "alias": "Uruguay", "source_id": null },
+      { "alias": "URU", "source_id": null },
+      { "alias": "La Celeste", "source_id": null },
+      { "alias": "Uruguay", "source_id": "espn_fifa" },
+      { "alias": "Uruguay", "source_id": "footballdata_wc" },
+      { "alias": "Uruguay", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-japan",
+    "name": "Japan",
+    "short_name": "JPN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "JPN",
+      "fifa_ranking": 16
+    },
+    "aliases": [
+      { "alias": "Japan", "source_id": null },
+      { "alias": "JPN", "source_id": null },
+      { "alias": "Samurai Blue", "source_id": null },
+      { "alias": "Nippon", "source_id": null },
+      { "alias": "Japan", "source_id": "espn_fifa" },
+      { "alias": "Japan", "source_id": "footballdata_wc" },
+      { "alias": "Japan", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-morocco",
+    "name": "Morocco",
+    "short_name": "MAR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "MAR",
+      "fifa_ranking": 17
+    },
+    "aliases": [
+      { "alias": "Morocco", "source_id": null },
+      { "alias": "MAR", "source_id": null },
+      { "alias": "Atlas Lions", "source_id": null },
+      { "alias": "Maroc", "source_id": null },
+      { "alias": "Al-Maghrib", "source_id": null },
+      { "alias": "Morocco", "source_id": "espn_fifa" },
+      { "alias": "Morocco", "source_id": "footballdata_wc" },
+      { "alias": "Morocco", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-switzerland",
+    "name": "Switzerland",
+    "short_name": "SUI",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "SUI",
+      "fifa_ranking": 18
+    },
+    "aliases": [
+      { "alias": "Switzerland", "source_id": null },
+      { "alias": "SUI", "source_id": null },
+      { "alias": "Nati", "source_id": null },
+      { "alias": "Schweiz", "source_id": null },
+      { "alias": "Suisse", "source_id": null },
+      { "alias": "Switzerland", "source_id": "espn_fifa" },
+      { "alias": "Switzerland", "source_id": "footballdata_wc" },
+      { "alias": "Switzerland", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-denmark",
+    "name": "Denmark",
+    "short_name": "DEN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "DEN",
+      "fifa_ranking": 19
+    },
+    "aliases": [
+      { "alias": "Denmark", "source_id": null },
+      { "alias": "DEN", "source_id": null },
+      { "alias": "Danish Dynamite", "source_id": null },
+      { "alias": "Danmark", "source_id": null },
+      { "alias": "Denmark", "source_id": "espn_fifa" },
+      { "alias": "Denmark", "source_id": "footballdata_wc" },
+      { "alias": "Denmark", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-austria",
+    "name": "Austria",
+    "short_name": "AUT",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "AUT",
+      "fifa_ranking": 20
+    },
+    "aliases": [
+      { "alias": "Austria", "source_id": null },
+      { "alias": "AUT", "source_id": null },
+      { "alias": "\u00d6sterreich", "source_id": null },
+      { "alias": "Austria", "source_id": "espn_fifa" },
+      { "alias": "Austria", "source_id": "footballdata_wc" },
+      { "alias": "Austria", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-senegal",
+    "name": "Senegal",
+    "short_name": "SEN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "SEN",
+      "fifa_ranking": 21
+    },
+    "aliases": [
+      { "alias": "Senegal", "source_id": null },
+      { "alias": "SEN", "source_id": null },
+      { "alias": "Lions of Teranga", "source_id": null },
+      { "alias": "S\u00e9n\u00e9gal", "source_id": null },
+      { "alias": "Senegal", "source_id": "espn_fifa" },
+      { "alias": "Senegal", "source_id": "footballdata_wc" },
+      { "alias": "Senegal", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-australia",
+    "name": "Australia",
+    "short_name": "AUS",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "AUS",
+      "fifa_ranking": 22
+    },
+    "aliases": [
+      { "alias": "Australia", "source_id": null },
+      { "alias": "AUS", "source_id": null },
+      { "alias": "Socceroos", "source_id": null },
+      { "alias": "Australia", "source_id": "espn_fifa" },
+      { "alias": "Australia", "source_id": "footballdata_wc" },
+      { "alias": "Australia", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-korea-republic",
+    "name": "Korea Republic",
+    "short_name": "KOR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "KOR",
+      "fifa_ranking": 23
+    },
+    "aliases": [
+      { "alias": "Korea Republic", "source_id": null },
+      { "alias": "KOR", "source_id": null },
+      { "alias": "South Korea", "source_id": null },
+      { "alias": "Korea", "source_id": null },
+      { "alias": "Taegeuk Warriors", "source_id": null },
+      { "alias": "South Korea", "source_id": "espn_fifa" },
+      { "alias": "Korea Republic", "source_id": "footballdata_wc" },
+      { "alias": "Korea Republic", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-poland",
+    "name": "Poland",
+    "short_name": "POL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "POL",
+      "fifa_ranking": 24
+    },
+    "aliases": [
+      { "alias": "Poland", "source_id": null },
+      { "alias": "POL", "source_id": null },
+      { "alias": "Bia\u0142o-Czerwoni", "source_id": null },
+      { "alias": "Polska", "source_id": null },
+      { "alias": "Poland", "source_id": "espn_fifa" },
+      { "alias": "Poland", "source_id": "footballdata_wc" },
+      { "alias": "Poland", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-ecuador",
+    "name": "Ecuador",
+    "short_name": "ECU",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "ECU",
+      "fifa_ranking": 25
+    },
+    "aliases": [
+      { "alias": "Ecuador", "source_id": null },
+      { "alias": "ECU", "source_id": null },
+      { "alias": "La Tri", "source_id": null },
+      { "alias": "Ecuador", "source_id": "espn_fifa" },
+      { "alias": "Ecuador", "source_id": "footballdata_wc" },
+      { "alias": "Ecuador", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-serbia",
+    "name": "Serbia",
+    "short_name": "SRB",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "SRB",
+      "fifa_ranking": 26
+    },
+    "aliases": [
+      { "alias": "Serbia", "source_id": null },
+      { "alias": "SRB", "source_id": null },
+      { "alias": "Orlovi", "source_id": null },
+      { "alias": "Srbija", "source_id": null },
+      { "alias": "Serbia", "source_id": "espn_fifa" },
+      { "alias": "Serbia", "source_id": "footballdata_wc" },
+      { "alias": "Serbia", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-turkey",
+    "name": "Turkey",
+    "short_name": "TUR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "TUR",
+      "fifa_ranking": 27
+    },
+    "aliases": [
+      { "alias": "Turkey", "source_id": null },
+      { "alias": "TUR", "source_id": null },
+      { "alias": "T\u00fcrkiye", "source_id": null },
+      { "alias": "Turkey", "source_id": "espn_fifa" },
+      { "alias": "Turkey", "source_id": "footballdata_wc" },
+      { "alias": "T\u00fcrkiye", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-iran",
+    "name": "Iran",
+    "short_name": "IRN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "IRN",
+      "fifa_ranking": 28
+    },
+    "aliases": [
+      { "alias": "Iran", "source_id": null },
+      { "alias": "IRN", "source_id": null },
+      { "alias": "IR Iran", "source_id": null },
+      { "alias": "Team Melli", "source_id": null },
+      { "alias": "Iran", "source_id": "espn_fifa" },
+      { "alias": "Iran", "source_id": "footballdata_wc" },
+      { "alias": "IR Iran", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-ukraine",
+    "name": "Ukraine",
+    "short_name": "UKR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "UKR",
+      "fifa_ranking": 29
+    },
+    "aliases": [
+      { "alias": "Ukraine", "source_id": null },
+      { "alias": "UKR", "source_id": null },
+      { "alias": "\u0423\u043a\u0440\u0430\u0457\u043d\u0430", "source_id": null },
+      { "alias": "Ukraine", "source_id": "espn_fifa" },
+      { "alias": "Ukraine", "source_id": "footballdata_wc" },
+      { "alias": "Ukraine", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-scotland",
+    "name": "Scotland",
+    "short_name": "SCO",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "SCO",
+      "fifa_ranking": 30
+    },
+    "aliases": [
+      { "alias": "Scotland", "source_id": null },
+      { "alias": "SCO", "source_id": null },
+      { "alias": "Tartan Army", "source_id": null },
+      { "alias": "Scotland", "source_id": "espn_fifa" },
+      { "alias": "Scotland", "source_id": "footballdata_wc" },
+      { "alias": "Scotland", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-wales",
+    "name": "Wales",
+    "short_name": "WAL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "UEFA",
+      "fifa_code": "WAL",
+      "fifa_ranking": 31
+    },
+    "aliases": [
+      { "alias": "Wales", "source_id": null },
+      { "alias": "WAL", "source_id": null },
+      { "alias": "The Dragons", "source_id": null },
+      { "alias": "Cymru", "source_id": null },
+      { "alias": "Wales", "source_id": "espn_fifa" },
+      { "alias": "Wales", "source_id": "footballdata_wc" },
+      { "alias": "Wales", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-nigeria",
+    "name": "Nigeria",
+    "short_name": "NGA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "NGA",
+      "fifa_ranking": 32
+    },
+    "aliases": [
+      { "alias": "Nigeria", "source_id": null },
+      { "alias": "NGA", "source_id": null },
+      { "alias": "Super Eagles", "source_id": null },
+      { "alias": "Nigeria", "source_id": "espn_fifa" },
+      { "alias": "Nigeria", "source_id": "footballdata_wc" },
+      { "alias": "Nigeria", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-cameroon",
+    "name": "Cameroon",
+    "short_name": "CMR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "CMR",
+      "fifa_ranking": 33
+    },
+    "aliases": [
+      { "alias": "Cameroon", "source_id": null },
+      { "alias": "CMR", "source_id": null },
+      { "alias": "Indomitable Lions", "source_id": null },
+      { "alias": "Cameroun", "source_id": null },
+      { "alias": "Cameroon", "source_id": "espn_fifa" },
+      { "alias": "Cameroon", "source_id": "footballdata_wc" },
+      { "alias": "Cameroon", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-egypt",
+    "name": "Egypt",
+    "short_name": "EGY",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "EGY",
+      "fifa_ranking": 34
+    },
+    "aliases": [
+      { "alias": "Egypt", "source_id": null },
+      { "alias": "EGY", "source_id": null },
+      { "alias": "The Pharaohs", "source_id": null },
+      { "alias": "Misr", "source_id": null },
+      { "alias": "Egypt", "source_id": "espn_fifa" },
+      { "alias": "Egypt", "source_id": "footballdata_wc" },
+      { "alias": "Egypt", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-saudi-arabia",
+    "name": "Saudi Arabia",
+    "short_name": "KSA",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "KSA",
+      "fifa_ranking": 35
+    },
+    "aliases": [
+      { "alias": "Saudi Arabia", "source_id": null },
+      { "alias": "KSA", "source_id": null },
+      { "alias": "The Green Falcons", "source_id": null },
+      { "alias": "Saudi Arabia", "source_id": "espn_fifa" },
+      { "alias": "Saudi Arabia", "source_id": "footballdata_wc" },
+      { "alias": "Saudi Arabia", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-qatar",
+    "name": "Qatar",
+    "short_name": "QAT",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "QAT",
+      "fifa_ranking": 36
+    },
+    "aliases": [
+      { "alias": "Qatar", "source_id": null },
+      { "alias": "QAT", "source_id": null },
+      { "alias": "The Maroons", "source_id": null },
+      { "alias": "Qatar", "source_id": "espn_fifa" },
+      { "alias": "Qatar", "source_id": "footballdata_wc" },
+      { "alias": "Qatar", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-paraguay",
+    "name": "Paraguay",
+    "short_name": "PAR",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "PAR",
+      "fifa_ranking": 37
+    },
+    "aliases": [
+      { "alias": "Paraguay", "source_id": null },
+      { "alias": "PAR", "source_id": null },
+      { "alias": "La Albirroja", "source_id": null },
+      { "alias": "Paraguay", "source_id": "espn_fifa" },
+      { "alias": "Paraguay", "source_id": "footballdata_wc" },
+      { "alias": "Paraguay", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-venezuela",
+    "name": "Venezuela",
+    "short_name": "VEN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "VEN",
+      "fifa_ranking": 38
+    },
+    "aliases": [
+      { "alias": "Venezuela", "source_id": null },
+      { "alias": "VEN", "source_id": null },
+      { "alias": "La Vinotinto", "source_id": null },
+      { "alias": "Venezuela", "source_id": "espn_fifa" },
+      { "alias": "Venezuela", "source_id": "footballdata_wc" },
+      { "alias": "Venezuela", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-jamaica",
+    "name": "Jamaica",
+    "short_name": "JAM",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "JAM",
+      "fifa_ranking": 42
+    },
+    "aliases": [
+      { "alias": "Jamaica", "source_id": null },
+      { "alias": "JAM", "source_id": null },
+      { "alias": "Reggae Boyz", "source_id": null },
+      { "alias": "Jamaica", "source_id": "espn_fifa" },
+      { "alias": "Jamaica", "source_id": "footballdata_wc" },
+      { "alias": "Jamaica", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-honduras",
+    "name": "Honduras",
+    "short_name": "HON",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "HON",
+      "fifa_ranking": 55
+    },
+    "aliases": [
+      { "alias": "Honduras", "source_id": null },
+      { "alias": "HON", "source_id": null },
+      { "alias": "Los Catrachos", "source_id": null },
+      { "alias": "Honduras", "source_id": "espn_fifa" },
+      { "alias": "Honduras", "source_id": "footballdata_wc" },
+      { "alias": "Honduras", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-costa-rica",
+    "name": "Costa Rica",
+    "short_name": "CRC",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "CRC",
+      "fifa_ranking": 48
+    },
+    "aliases": [
+      { "alias": "Costa Rica", "source_id": null },
+      { "alias": "CRC", "source_id": null },
+      { "alias": "Los Ticos", "source_id": null },
+      { "alias": "Costa Rica", "source_id": "espn_fifa" },
+      { "alias": "Costa Rica", "source_id": "footballdata_wc" },
+      { "alias": "Costa Rica", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-panama",
+    "name": "Panama",
+    "short_name": "PAN",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONCACAF",
+      "fifa_code": "PAN",
+      "fifa_ranking": 50
+    },
+    "aliases": [
+      { "alias": "Panama", "source_id": null },
+      { "alias": "PAN", "source_id": null },
+      { "alias": "Los Canaleros", "source_id": null },
+      { "alias": "Panam\u00e1", "source_id": null },
+      { "alias": "Panama", "source_id": "espn_fifa" },
+      { "alias": "Panama", "source_id": "footballdata_wc" },
+      { "alias": "Panama", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-chile",
+    "name": "Chile",
+    "short_name": "CHI",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CONMEBOL",
+      "fifa_code": "CHI",
+      "fifa_ranking": 39
+    },
+    "aliases": [
+      { "alias": "Chile", "source_id": null },
+      { "alias": "CHI", "source_id": null },
+      { "alias": "La Roja", "source_id": null },
+      { "alias": "Chile", "source_id": "espn_fifa" },
+      { "alias": "Chile", "source_id": "footballdata_wc" },
+      { "alias": "Chile", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-uzbekistan",
+    "name": "Uzbekistan",
+    "short_name": "UZB",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "UZB",
+      "fifa_ranking": 40
+    },
+    "aliases": [
+      { "alias": "Uzbekistan", "source_id": null },
+      { "alias": "UZB", "source_id": null },
+      { "alias": "White Wolves", "source_id": null },
+      { "alias": "Uzbekistan", "source_id": "espn_fifa" },
+      { "alias": "Uzbekistan", "source_id": "footballdata_wc" },
+      { "alias": "Uzbekistan", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-iraq",
+    "name": "Iraq",
+    "short_name": "IRQ",
+    "sport": "football",
+    "metadata": {
+      "confederation": "AFC",
+      "fifa_code": "IRQ",
+      "fifa_ranking": 43
+    },
+    "aliases": [
+      { "alias": "Iraq", "source_id": null },
+      { "alias": "IRQ", "source_id": null },
+      { "alias": "Lions of Mesopotamia", "source_id": null },
+      { "alias": "Iraq", "source_id": "espn_fifa" },
+      { "alias": "Iraq", "source_id": "footballdata_wc" },
+      { "alias": "Iraq", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-algeria",
+    "name": "Algeria",
+    "short_name": "ALG",
+    "sport": "football",
+    "metadata": {
+      "confederation": "CAF",
+      "fifa_code": "ALG",
+      "fifa_ranking": 36
+    },
+    "aliases": [
+      { "alias": "Algeria", "source_id": null },
+      { "alias": "ALG", "source_id": null },
+      { "alias": "Les Fennecs", "source_id": null },
+      { "alias": "Desert Foxes", "source_id": null },
+      { "alias": "Alg\u00e9rie", "source_id": null },
+      { "alias": "Algeria", "source_id": "espn_fifa" },
+      { "alias": "Algeria", "source_id": "footballdata_wc" },
+      { "alias": "Algeria", "source_id": "fifa_api" }
+    ]
+  },
+  {
+    "id": "football-new-zealand",
+    "name": "New Zealand",
+    "short_name": "NZL",
+    "sport": "football",
+    "metadata": {
+      "confederation": "OFC",
+      "fifa_code": "NZL",
+      "fifa_ranking": 80
+    },
+    "aliases": [
+      { "alias": "New Zealand", "source_id": null },
+      { "alias": "NZL", "source_id": null },
+      { "alias": "All Whites", "source_id": null },
+      { "alias": "New Zealand", "source_id": "espn_fifa" },
+      { "alias": "New Zealand", "source_id": "footballdata_wc" },
+      { "alias": "New Zealand", "source_id": "fifa_api" }
+    ]
+  }
+]

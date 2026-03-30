@@ -1,0 +1,98 @@
+{% if llm.total_calls > 0 %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <!-- KPI Cards -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-sm font-medium text-gray-300 mb-4">Resolution Metrics</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <div class="text-2xl font-bold text-white">{{ llm.total_calls }}</div>
+        <div class="text-xs text-gray-500">Total Calls</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold {% if llm.acceptance_rate >= 0.8 %}text-emerald-400{% elif llm.acceptance_rate >= 0.5 %}text-yellow-400{% else %}text-red-400{% endif %}">
+          {{ '%.1f' % (llm.acceptance_rate * 100) }}%
+        </div>
+        <div class="text-xs text-gray-500">Acceptance Rate</div>
+      </div>
+      <div>
+        <div class="text-lg font-semibold text-blue-400">{{ llm.aliases_created }}</div>
+        <div class="text-xs text-gray-500">Aliases Created</div>
+      </div>
+      <div>
+        <div class="text-lg font-semibold text-purple-400">{{ '%.1f' % (llm.self_healing_rate * 100) }}%</div>
+        <div class="text-xs text-gray-500">Self-Healing Rate</div>
+      </div>
+    </div>
+
+    <div class="mt-4 pt-4 border-t border-gray-800 grid grid-cols-3 gap-3 text-center">
+      <div>
+        <div class="text-sm font-mono text-gray-300">{{ '%.1f' % llm.avg_latency_ms }}ms</div>
+        <div class="text-[10px] text-gray-500">Avg Latency</div>
+      </div>
+      <div>
+        <div class="text-sm font-mono text-gray-300">{{ '%.1f' % llm.p95_latency_ms }}ms</div>
+        <div class="text-[10px] text-gray-500">P95 Latency</div>
+      </div>
+      <div>
+        <div class="text-sm font-mono text-gray-300">${{ '%.4f' % llm.estimated_cost_usd }}</div>
+        <div class="text-[10px] text-gray-500">Est. Cost</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Decisions -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-sm font-medium text-gray-300 mb-3">Recent Decisions</h3>
+    {% if llm.recent_decisions %}
+    <div class="space-y-2 max-h-64 overflow-y-auto">
+      {% for d in llm.recent_decisions[:10] %}
+      <div class="flex items-center gap-2 text-xs">
+        {% if d.accepted %}
+          <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        {% else %}
+          <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-500"></span>
+        {% endif %}
+        <span class="text-gray-400 truncate flex-1" title="{{ d.input_text }}">{{ d.input_text[:50] }}</span>
+        <span class="text-gray-500 font-mono flex-shrink-0">{{ '%.0f' % (d.confidence * 100) if d.confidence else '?' }}%</span>
+        {% if d.alias_created %}
+          <span class="text-[10px] text-purple-400 flex-shrink-0">+alias</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-xs text-gray-500">No recent decisions</p>
+    {% endif %}
+  </div>
+</div>
+
+{% if llm.daily_trend %}
+<!-- Daily Trend -->
+<div class="bg-gray-900 rounded-xl border border-gray-800 p-5 mt-4">
+  <h3 class="text-sm font-medium text-gray-300 mb-3">Daily Trend</h3>
+  <div class="flex items-end gap-1 h-24">
+    {% set max_val = llm.daily_trend | map(attribute='accepted') | list | max if llm.daily_trend else 1 %}
+    {% for day in llm.daily_trend %}
+    <div class="flex-1 flex flex-col items-center gap-0.5">
+      <div class="w-full flex flex-col-reverse">
+        <div class="w-full bg-emerald-500/70 rounded-t" style="height: {{ (day.accepted / max_val * 80) if max_val else 0 }}px" title="Accepted: {{ day.accepted }}"></div>
+        <div class="w-full bg-red-500/70 rounded-t" style="height: {{ (day.rejected / max_val * 80) if max_val else 0 }}px" title="Rejected: {{ day.rejected }}"></div>
+      </div>
+      <span class="text-[9px] text-gray-600">{{ day.day[5:10] }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="flex items-center gap-4 mt-2 text-[10px] text-gray-500">
+    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-emerald-500/70"></span> Accepted</span>
+    <span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-red-500/70"></span> Rejected</span>
+  </div>
+</div>
+{% endif %}
+
+{% else %}
+<div class="bg-gray-900 rounded-xl border border-gray-800 p-8 text-center">
+  <svg class="mx-auto w-10 h-10 text-gray-700 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+  <p class="text-sm text-gray-400">LLM Resolution not active</p>
+  <p class="text-xs text-gray-600 mt-1">Enable with SPORTSHUB_LLM_RESOLUTION_ENABLED=true and provide an ANTHROPIC_API_KEY</p>
+</div>
+{% endif %}

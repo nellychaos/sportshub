@@ -1,0 +1,45 @@
+{% set status_color = 'emerald' if overview.status == 'healthy' else ('yellow' if overview.status == 'degraded' else 'red') %}
+
+<div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <!-- System Status -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <div class="w-3 h-3 rounded-full bg-{{ status_color }}-500 pulse-dot"></div>
+      </div>
+      <div>
+        <span class="text-lg font-semibold text-{{ status_color }}-400 capitalize">{{ overview.status }}</span>
+        <p class="text-xs text-gray-500">
+          {% if overview.last_successful_ingestion %}
+            Last ingestion: {{ overview.last_successful_ingestion.strftime('%H:%M:%S') if overview.last_successful_ingestion else 'Never' }}
+          {% else %}
+            No ingestion runs yet
+          {% endif %}
+          &middot; Uptime: {{ '%d:%02d:%02d' % (overview.uptime_seconds // 3600, (overview.uptime_seconds % 3600) // 60, overview.uptime_seconds % 60) }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="flex items-center gap-6">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-white">{{ overview.total_events }}</div>
+        <div class="text-xs text-gray-500">Events</div>
+      </div>
+      {% for sport, count in overview.events_by_sport.items() %}
+      <div class="text-center">
+        <div class="text-lg font-semibold text-gray-300">{{ count }}</div>
+        <div class="text-xs text-gray-500 uppercase">{{ sport }}</div>
+      </div>
+      {% endfor %}
+      <div class="text-center border-l border-gray-700 pl-6">
+        <div class="text-lg font-semibold text-gray-300">{{ overview.total_teams }}</div>
+        <div class="text-xs text-gray-500">Teams</div>
+      </div>
+      <div class="text-center">
+        <div class="text-lg font-semibold text-gray-300">{{ overview.total_competitions }}</div>
+        <div class="text-xs text-gray-500">Competitions</div>
+      </div>
+    </div>
+  </div>
+</div>

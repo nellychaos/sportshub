@@ -1,0 +1,154 @@
+{
+  "Results": [
+    {
+      "IdMatch": "300001",
+      "Date": "/Date(1781362800000)/",
+      "MatchNumber": 1,
+      "MatchStatus": 1,
+      "Home": {
+        "TeamName": [
+          {"Locale": "en", "Description": "Mexico"},
+          {"Locale": "es", "Description": "México"}
+        ],
+        "Abbreviation": "MEX",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "Mexico"}
+        ]
+      },
+      "Away": {
+        "TeamName": [
+          {"Locale": "en", "Description": "Canada"},
+          {"Locale": "fr", "Description": "Canada"}
+        ],
+        "Abbreviation": "CAN",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "Canada"}
+        ]
+      },
+      "Stadium": {
+        "IdStadium": "400090001",
+        "Name": [
+          {"Locale": "en", "Description": "Estadio Azteca"}
+        ],
+        "CityName": [
+          {"Locale": "en", "Description": "Mexico City"}
+        ]
+      },
+      "StageName": [
+        {"Locale": "en", "Description": "Group Stage"}
+      ],
+      "GroupName": [
+        {"Locale": "en", "Description": "Group A"}
+      ]
+    },
+    {
+      "IdMatch": "300002",
+      "Date": "2026-06-12T20:00:00Z",
+      "MatchNumber": 2,
+      "MatchStatus": 1,
+      "Home": {
+        "TeamName": [
+          {"Locale": "en", "Description": "Brazil"},
+          {"Locale": "pt", "Description": "Brasil"}
+        ],
+        "Abbreviation": "BRA",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "Brazil"}
+        ]
+      },
+      "Away": {
+        "TeamName": [
+          {"Locale": "en", "Description": "Serbia"},
+          {"Locale": "sr", "Description": "Srbija"}
+        ],
+        "Abbreviation": "SRB",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "Serbia"}
+        ]
+      },
+      "Stadium": {
+        "IdStadium": "400090002",
+        "Name": [
+          {"Locale": "en", "Description": "MetLife Stadium"}
+        ],
+        "CityName": [
+          {"Locale": "en", "Description": "East Rutherford"}
+        ]
+      },
+      "StageName": [
+        {"Locale": "en", "Description": "Group Stage"}
+      ],
+      "GroupName": [
+        {"Locale": "en", "Description": "Group B"}
+      ]
+    },
+    {
+      "IdMatch": "300099",
+      "Date": "/Date(1783868400000+0000)/",
+      "MatchNumber": 60,
+      "MatchStatus": 1,
+      "Home": {
+        "TeamName": [],
+        "Abbreviation": "",
+        "ShortClubName": []
+      },
+      "Away": {
+        "TeamName": [],
+        "Abbreviation": "",
+        "ShortClubName": []
+      },
+      "Stadium": {
+        "IdStadium": "400090003",
+        "Name": [
+          {"Locale": "en", "Description": "AT&T Stadium"}
+        ],
+        "CityName": [
+          {"Locale": "en", "Description": "Arlington"}
+        ]
+      },
+      "StageName": [
+        {"Locale": "en", "Description": "Quarter-finals"}
+      ],
+      "GroupName": []
+    },
+    {
+      "IdMatch": "300050",
+      "Date": "/Date(1782572400000)/",
+      "MatchNumber": 30,
+      "MatchStatus": 3,
+      "Home": {
+        "TeamName": [
+          {"Locale": "en", "Description": "France"}
+        ],
+        "Abbreviation": "FRA",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "France"}
+        ]
+      },
+      "Away": {
+        "TeamName": [
+          {"Locale": "en", "Description": "Argentina"}
+        ],
+        "Abbreviation": "ARG",
+        "ShortClubName": [
+          {"Locale": "en", "Description": "Argentina"}
+        ]
+      },
+      "Stadium": {
+        "IdStadium": "400090004",
+        "Name": [
+          {"Locale": "en", "Description": "SoFi Stadium"}
+        ],
+        "CityName": [
+          {"Locale": "en", "Description": "Inglewood"}
+        ]
+      },
+      "StageName": [
+        {"Locale": "en", "Description": "Group Stage"}
+      ],
+      "GroupName": [
+        {"Locale": "en", "Description": "Group C"}
+      ]
+    }
+  ]
+}

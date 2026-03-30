@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-950">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sportshub Operations Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <style>
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+    .fade-in { animation: fadeIn 0.3s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#f0f7ff', 100: '#e0effe', 200: '#b9dffc', 300: '#7cc8fa', 400: '#36adf5', 500: '#0c93e6', 600: '#0074c4', 700: '#005c9f', 800: '#044f83', 900: '#04426d', 950: '#032a49' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full" hx-headers='{"X-Requested-With": "XMLHttpRequest"}'>
+
+<div class="min-h-full">
+  <!-- Header -->
+  <header class="bg-gray-900 border-b border-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-600">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">Sportshub</h1>
+            <p class="text-xs text-gray-400">Operations Dashboard</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-gray-500">Auto-refresh: 30s</span>
+          <a href="/docs" target="_blank" class="text-xs text-brand-400 hover:text-brand-300">API Docs</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- Status Banner -->
+    <div id="status-banner" hx-get="/dashboard/partials/status" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+      {% include "dashboard/partials/status_banner.html" %}
+    </div>
+
+    <!-- Source Adapters -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Source Adapters</h2>
+      <div id="source-cards" hx-get="/dashboard/partials/sources" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/source_cards.html" %}
+      </div>
+    </section>
+
+    <!-- Two-column: Ingestion Timeline + Alerts -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <section class="lg:col-span-2">
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Ingestion Timeline (24h)</h2>
+        <div id="ingestion-table" hx-get="/dashboard/partials/ingestion" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+          {% include "dashboard/partials/ingestion_table.html" %}
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Alerts</h2>
+        <div id="alerts-panel" hx-get="/dashboard/partials/alerts" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+          {% include "dashboard/partials/alerts.html" %}
+        </div>
+      </section>
+    </div>
+
+    <!-- Schedule Violations -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Schedule Constraint Violations</h2>
+      <div id="violations-panel" hx-get="/dashboard/partials/violations" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/violations.html" %}
+      </div>
+    </section>
+
+    <!-- Data Quality -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Data Quality</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Confidence Distribution -->
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+          <h3 class="text-sm font-medium text-gray-300 mb-3">Confidence Distribution</h3>
+          {% if quality.confidence_distribution %}
+          <div class="space-y-2">
+            {% for item in quality.confidence_distribution %}
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 w-20">
+                {% if item.bucket == 'very_high' %}Very High
+                {% elif item.bucket == 'high' %}High
+                {% elif item.bucket == 'medium' %}Medium
+                {% else %}Low{% endif %}
+              </span>
+              <div class="flex-1 mx-3 h-2 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full rounded-full {% if item.bucket == 'very_high' %}bg-emerald-500{% elif item.bucket == 'high' %}bg-blue-500{% elif item.bucket == 'medium' %}bg-yellow-500{% else %}bg-red-500{% endif %}" style="width: {{ (item.count / (quality.confidence_distribution | map(attribute='count') | sum) * 100) if quality.confidence_distribution else 0 }}%"></div>
+              </div>
+              <span class="text-xs font-mono text-gray-300 w-8 text-right">{{ item.count }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-sm text-gray-500">No events yet</p>
+          {% endif %}
+        </div>
+
+        <!-- Source Coverage -->
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+          <h3 class="text-sm font-medium text-gray-300 mb-3">Source Coverage</h3>
+          {% if quality.source_coverage %}
+          <div class="space-y-2">
+            {% for item in quality.source_coverage %}
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400">{{ item.sources }} source{{ 's' if item.sources != '1' }}</span>
+              <span class="text-sm font-mono text-gray-200">{{ item.count }} events</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-sm text-gray-500">No events yet</p>
+          {% endif %}
+        </div>
+
+        <!-- Unmatched Records -->
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+          <h3 class="text-sm font-medium text-gray-300 mb-3">Unmatched Records</h3>
+          <div class="text-3xl font-bold {% if quality.total_unmatched > 10 %}text-red-400{% elif quality.total_unmatched > 0 %}text-yellow-400{% else %}text-emerald-400{% endif %} mb-2">
+            {{ quality.total_unmatched }}
+          </div>
+          {% if quality.unmatched_by_source %}
+          <div class="space-y-1">
+            {% for item in quality.unmatched_by_source %}
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-gray-400">{{ item.source_id }}</span>
+              <span class="text-gray-300 font-mono">{{ item.count }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="text-xs text-gray-500">All records matched</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Effectiveness -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">LLM Resolution (7d)</h2>
+      <div id="llm-panel" hx-get="/dashboard/partials/llm" hx-trigger="every 60s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/llm_effectiveness.html" %}
+      </div>
+    </section>
+
+    <!-- Post-Event Reconciliation -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Post-Event Reconciliation (30d)</h2>
+      <div id="reconciliation-panel" hx-get="/dashboard/partials/reconciliation" hx-trigger="every 60s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/reconciliation.html" %}
+      </div>
+    </section>
+
+    <!-- Source Reliability Scoring -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Source Reliability Scoring</h2>
+      <div id="reliability-panel" hx-get="/dashboard/partials/reliability" hx-trigger="every 60s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/reliability.html" %}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <p class="text-xs text-gray-600 text-center">Sportshub v0.1.0 &middot; Data refreshes every 30 seconds via HTMX</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

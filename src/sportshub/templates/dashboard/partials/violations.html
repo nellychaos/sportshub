@@ -1,0 +1,63 @@
+<div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+  {% if violations %}
+  <div class="overflow-x-auto">
+    <table class="w-full text-left">
+      <thead>
+        <tr class="border-b border-gray-800 text-xs text-gray-500 uppercase tracking-wider">
+          <th class="px-4 py-3 font-medium">Severity</th>
+          <th class="px-4 py-3 font-medium">Sport</th>
+          <th class="px-4 py-3 font-medium">Matchup</th>
+          <th class="px-4 py-3 font-medium">Scheduled</th>
+          <th class="px-4 py-3 font-medium">Constraint</th>
+          <th class="px-4 py-3 font-medium">Message</th>
+          <th class="px-4 py-3 font-medium">Confidence</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800/50">
+        {% for v in violations %}
+        <tr class="hover:bg-gray-800/30 transition-colors">
+          <td class="px-4 py-3">
+            {% if v.severity == 'error' %}
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-red-500/10 text-red-400 border border-red-500/20">Error</span>
+            {% else %}
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Warning</span>
+            {% endif %}
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-xs font-mono text-gray-300 uppercase">{{ v.sport }}</span>
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-xs text-gray-200">{{ v.home_team }}</span>
+            <span class="text-xs text-gray-600 mx-1">vs</span>
+            <span class="text-xs text-gray-200">{{ v.away_team }}</span>
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-xs text-gray-400">{{ v.scheduled_at.strftime('%Y-%m-%d %H:%M') if v.scheduled_at else 'N/A' }}</span>
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-xs font-mono text-brand-400">{{ v.constraint_name }}</span>
+          </td>
+          <td class="px-4 py-3 max-w-xs">
+            <p class="text-xs text-gray-300 truncate" title="{{ v.message }}">{{ v.message }}</p>
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-xs font-mono {% if v.confidence_score < 0.5 %}text-red-400{% elif v.confidence_score < 0.7 %}text-yellow-400{% else %}text-gray-300{% endif %}">
+              {{ '%.2f' | format(v.confidence_score) }}
+            </span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="px-4 py-2 border-t border-gray-800 bg-gray-900/50">
+    <p class="text-[10px] text-gray-600">{{ violations | length }} violation{{ 's' if violations | length != 1 }} across scheduled events</p>
+  </div>
+  {% else %}
+  <div class="px-6 py-10 text-center">
+    <svg class="mx-auto w-8 h-8 text-emerald-800 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <p class="text-sm text-gray-500">No constraint violations</p>
+    <p class="text-xs text-gray-600 mt-1">All scheduled events pass validation</p>
+  </div>
+  {% endif %}
+</div>

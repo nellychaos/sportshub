@@ -1,0 +1,129 @@
+<!-- Post-Event Reconciliation Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+    <p class="text-xs text-gray-400 mb-1">Total Reconciled</p>
+    <p class="text-2xl font-bold text-white">{{ reconciliation.summary.total_reconciled }}</p>
+  </div>
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+    <p class="text-xs text-gray-400 mb-1">Teams Accuracy</p>
+    <p class="text-2xl font-bold {% if reconciliation.summary.teams_accuracy_rate >= 0.9 %}text-emerald-400{% elif reconciliation.summary.teams_accuracy_rate >= 0.7 %}text-yellow-400{% else %}text-red-400{% endif %}">
+      {{ (reconciliation.summary.teams_accuracy_rate * 100) | round(1) }}%
+    </p>
+  </div>
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+    <p class="text-xs text-gray-400 mb-1">Venue Accuracy</p>
+    <p class="text-2xl font-bold {% if reconciliation.summary.venue_accuracy_rate >= 0.9 %}text-emerald-400{% elif reconciliation.summary.venue_accuracy_rate >= 0.7 %}text-yellow-400{% else %}text-red-400{% endif %}">
+      {{ (reconciliation.summary.venue_accuracy_rate * 100) | round(1) }}%
+    </p>
+  </div>
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-4">
+    <p class="text-xs text-gray-400 mb-1">Avg Time Diff</p>
+    <p class="text-2xl font-bold {% if reconciliation.summary.avg_time_diff_seconds <= 900 %}text-emerald-400{% elif reconciliation.summary.avg_time_diff_seconds <= 3600 %}text-yellow-400{% else %}text-red-400{% endif %}">
+      {{ reconciliation.summary.avg_time_diff_seconds | round(0) | int }}s
+    </p>
+  </div>
+</div>
+
+{% if reconciliation.by_source %}
+<div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b border-gray-800">
+        <th class="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Source</th>
+        <th class="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Sport</th>
+        <th class="text-right px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Events</th>
+        <th class="text-right px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Time Acc.</th>
+        <th class="text-right px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Teams Acc.</th>
+        <th class="text-right px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Venue Acc.</th>
+        <th class="text-right px-4 py-3 text-xs font-semibold text-gray-400 uppercase">Avg Time Diff</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800">
+      {% for row in reconciliation.by_source %}
+      <tr class="hover:bg-gray-800/50">
+        <td class="px-4 py-2.5 text-gray-200 font-mono text-xs">{{ row.source_id }}</td>
+        <td class="px-4 py-2.5">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium
+            {% if row.sport == 'nba' %}bg-orange-900/40 text-orange-300
+            {% elif row.sport == 'lol' %}bg-purple-900/40 text-purple-300
+            {% else %}bg-green-900/40 text-green-300{% endif %}">
+            {{ row.sport | upper }}
+          </span>
+        </td>
+        <td class="px-4 py-2.5 text-right text-gray-300 font-mono">{{ row.total }}</td>
+        <td class="px-4 py-2.5 text-right font-mono">
+          <span class="{% if row.time_accuracy_rate >= 0.9 %}text-emerald-400{% elif row.time_accuracy_rate >= 0.7 %}text-yellow-400{% else %}text-red-400{% endif %}">
+            {{ (row.time_accuracy_rate * 100) | round(1) }}%
+          </span>
+        </td>
+        <td class="px-4 py-2.5 text-right font-mono">
+          <span class="{% if row.teams_accuracy_rate >= 0.9 %}text-emerald-400{% elif row.teams_accuracy_rate >= 0.7 %}text-yellow-400{% else %}text-red-400{% endif %}">
+            {{ (row.teams_accuracy_rate * 100) | round(1) }}%
+          </span>
+        </td>
+        <td class="px-4 py-2.5 text-right font-mono">
+          <span class="{% if row.venue_accuracy_rate >= 0.9 %}text-emerald-400{% elif row.venue_accuracy_rate >= 0.7 %}text-yellow-400{% else %}text-red-400{% endif %}">
+            {{ (row.venue_accuracy_rate * 100) | round(1) }}%
+          </span>
+        </td>
+        <td class="px-4 py-2.5 text-right text-gray-300 font-mono">{{ row.avg_time_diff_seconds | round(0) | int }}s</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+  <p class="text-sm text-gray-500">No reconciliation data yet. Results will appear after events are completed and reconciled.</p>
+</div>
+{% endif %}
+
+{% if reconciliation.recent_reports %}
+<div class="mt-4 bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+  <h4 class="px-4 py-3 text-xs font-semibold text-gray-400 uppercase border-b border-gray-800">Recent Reconciliations</h4>
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b border-gray-800">
+        <th class="text-left px-4 py-2 text-xs text-gray-500">Event ID</th>
+        <th class="text-center px-4 py-2 text-xs text-gray-500">Occurred</th>
+        <th class="text-center px-4 py-2 text-xs text-gray-500">Teams</th>
+        <th class="text-center px-4 py-2 text-xs text-gray-500">Venue</th>
+        <th class="text-right px-4 py-2 text-xs text-gray-500">Time Diff</th>
+        <th class="text-right px-4 py-2 text-xs text-gray-500">Reconciled</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800/50">
+      {% for rpt in reconciliation.recent_reports %}
+      <tr class="hover:bg-gray-800/30">
+        <td class="px-4 py-2 text-gray-400 font-mono text-xs">{{ rpt.event_id[:8] }}...</td>
+        <td class="px-4 py-2 text-center">
+          {% if rpt.event_occurred %}
+          <span class="text-emerald-400">Yes</span>
+          {% else %}
+          <span class="text-red-400">No</span>
+          {% endif %}
+        </td>
+        <td class="px-4 py-2 text-center">
+          {% if rpt.teams_correct %}
+          <span class="text-emerald-400">Correct</span>
+          {% else %}
+          <span class="text-red-400">Mismatch</span>
+          {% endif %}
+        </td>
+        <td class="px-4 py-2 text-center">
+          {% if rpt.venue_correct %}
+          <span class="text-emerald-400">Correct</span>
+          {% else %}
+          <span class="text-red-400">Mismatch</span>
+          {% endif %}
+        </td>
+        <td class="px-4 py-2 text-right text-gray-300 font-mono text-xs">
+          {% if rpt.time_diff_seconds is not none %}{{ rpt.time_diff_seconds }}s{% else %}-{% endif %}
+        </td>
+        <td class="px-4 py-2 text-right text-gray-500 text-xs">{{ rpt.reconciled_at.strftime('%m/%d %H:%M') if rpt.reconciled_at else '-' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}

@@ -1,0 +1,610 @@
+[
+  {
+    "name": "T1",
+    "short_name": "T1",
+    "abbreviation": "T1",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "T1", "source_id": "global" },
+      { "alias": "SK Telecom T1", "source_id": "global" },
+      { "alias": "SKT T1", "source_id": "global" },
+      { "alias": "SKT", "source_id": "global" },
+      { "alias": "t1", "source_id": "lolesports" },
+      { "alias": "T1", "source_id": "pandascore_lol" },
+      { "alias": "T1", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Gen.G",
+    "short_name": "Gen.G",
+    "abbreviation": "GEN",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "Gen.G", "source_id": "global" },
+      { "alias": "Gen.G Esports", "source_id": "global" },
+      { "alias": "GEN", "source_id": "global" },
+      { "alias": "Samsung Galaxy", "source_id": "global" },
+      { "alias": "SSG", "source_id": "global" },
+      { "alias": "KSV Esports", "source_id": "global" },
+      { "alias": "gen-g", "source_id": "lolesports" },
+      { "alias": "Gen.G", "source_id": "pandascore_lol" },
+      { "alias": "Gen.G", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Hanwha Life Esports",
+    "short_name": "Hanwha Life",
+    "abbreviation": "HLE",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "Hanwha Life Esports", "source_id": "global" },
+      { "alias": "HLE", "source_id": "global" },
+      { "alias": "Hanwha Life", "source_id": "global" },
+      { "alias": "hanwha-life-esports", "source_id": "lolesports" },
+      { "alias": "Hanwha Life Esports", "source_id": "pandascore_lol" },
+      { "alias": "Hanwha Life Esports", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "DRX",
+    "short_name": "DRX",
+    "abbreviation": "DRX",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "DRX", "source_id": "global" },
+      { "alias": "DragonX", "source_id": "global" },
+      { "alias": "Kingzone DragonX", "source_id": "global" },
+      { "alias": "KZ", "source_id": "global" },
+      { "alias": "Longzhu Gaming", "source_id": "global" },
+      { "alias": "drx", "source_id": "lolesports" },
+      { "alias": "DRX", "source_id": "pandascore_lol" },
+      { "alias": "DRX", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "KT Rolster",
+    "short_name": "KT Rolster",
+    "abbreviation": "KT",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "KT Rolster", "source_id": "global" },
+      { "alias": "KT", "source_id": "global" },
+      { "alias": "kt-rolster", "source_id": "lolesports" },
+      { "alias": "KT Rolster", "source_id": "pandascore_lol" },
+      { "alias": "KT Rolster", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Dplus KIA",
+    "short_name": "Dplus",
+    "abbreviation": "DK",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "Dplus KIA", "source_id": "global" },
+      { "alias": "DK", "source_id": "global" },
+      { "alias": "DWG KIA", "source_id": "global" },
+      { "alias": "DAMWON Gaming", "source_id": "global" },
+      { "alias": "DWG", "source_id": "global" },
+      { "alias": "DAMWON", "source_id": "global" },
+      { "alias": "dplus-kia", "source_id": "lolesports" },
+      { "alias": "Dplus KIA", "source_id": "pandascore_lol" },
+      { "alias": "Dplus KIA", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Kwangdong Freecs",
+    "short_name": "Kwangdong",
+    "abbreviation": "KDF",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "Kwangdong Freecs", "source_id": "global" },
+      { "alias": "KDF", "source_id": "global" },
+      { "alias": "Afreeca Freecs", "source_id": "global" },
+      { "alias": "AF", "source_id": "global" },
+      { "alias": "kwangdong-freecs", "source_id": "lolesports" },
+      { "alias": "Kwangdong Freecs", "source_id": "pandascore_lol" },
+      { "alias": "Kwangdong Freecs", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Nongshim RedForce",
+    "short_name": "Nongshim",
+    "abbreviation": "NS",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "Nongshim RedForce", "source_id": "global" },
+      { "alias": "NS", "source_id": "global" },
+      { "alias": "NS RedForce", "source_id": "global" },
+      { "alias": "nongshim-redforce", "source_id": "lolesports" },
+      { "alias": "Nongshim RedForce", "source_id": "pandascore_lol" },
+      { "alias": "Nongshim RedForce", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "BNK FearX",
+    "short_name": "FearX",
+    "abbreviation": "FOX",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "BNK FearX", "source_id": "global" },
+      { "alias": "FearX", "source_id": "global" },
+      { "alias": "FOX", "source_id": "global" },
+      { "alias": "Liiv SANDBOX", "source_id": "global" },
+      { "alias": "LSB", "source_id": "global" },
+      { "alias": "SANDBOX Gaming", "source_id": "global" },
+      { "alias": "bnk-fearx", "source_id": "lolesports" },
+      { "alias": "BNK FearX", "source_id": "pandascore_lol" },
+      { "alias": "BNK FearX", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "OKSavingsBank BRION",
+    "short_name": "BRION",
+    "abbreviation": "BRO",
+    "sport": "lol",
+    "metadata": { "region": "LCK" },
+    "aliases": [
+      { "alias": "OKSavingsBank BRION", "source_id": "global" },
+      { "alias": "BRION", "source_id": "global" },
+      { "alias": "BRO", "source_id": "global" },
+      { "alias": "Fredit BRION", "source_id": "global" },
+      { "alias": "ok-savingsbank-brion", "source_id": "lolesports" },
+      { "alias": "OKSavingsBank BRION", "source_id": "pandascore_lol" },
+      { "alias": "OKSavingsBank BRION", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "JD Gaming",
+    "short_name": "JDG",
+    "abbreviation": "JDG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "JD Gaming", "source_id": "global" },
+      { "alias": "JDG", "source_id": "global" },
+      { "alias": "JDG Intel", "source_id": "global" },
+      { "alias": "jd-gaming", "source_id": "lolesports" },
+      { "alias": "JD Gaming", "source_id": "pandascore_lol" },
+      { "alias": "JD Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Bilibili Gaming",
+    "short_name": "BLG",
+    "abbreviation": "BLG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Bilibili Gaming", "source_id": "global" },
+      { "alias": "BLG", "source_id": "global" },
+      { "alias": "bilibili-gaming", "source_id": "lolesports" },
+      { "alias": "Bilibili Gaming", "source_id": "pandascore_lol" },
+      { "alias": "Bilibili Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Weibo Gaming",
+    "short_name": "Weibo",
+    "abbreviation": "WBG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Weibo Gaming", "source_id": "global" },
+      { "alias": "WBG", "source_id": "global" },
+      { "alias": "Suning", "source_id": "global" },
+      { "alias": "SN", "source_id": "global" },
+      { "alias": "weibo-gaming", "source_id": "lolesports" },
+      { "alias": "Weibo Gaming", "source_id": "pandascore_lol" },
+      { "alias": "Weibo Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Top Esports",
+    "short_name": "TES",
+    "abbreviation": "TES",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Top Esports", "source_id": "global" },
+      { "alias": "TES", "source_id": "global" },
+      { "alias": "Topsports Gaming", "source_id": "global" },
+      { "alias": "top-esports", "source_id": "lolesports" },
+      { "alias": "Top Esports", "source_id": "pandascore_lol" },
+      { "alias": "Top Esports", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Edward Gaming",
+    "short_name": "EDG",
+    "abbreviation": "EDG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Edward Gaming", "source_id": "global" },
+      { "alias": "EDG", "source_id": "global" },
+      { "alias": "EDward Gaming", "source_id": "global" },
+      { "alias": "edward-gaming", "source_id": "lolesports" },
+      { "alias": "Edward Gaming", "source_id": "pandascore_lol" },
+      { "alias": "Edward Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Royal Never Give Up",
+    "short_name": "RNG",
+    "abbreviation": "RNG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Royal Never Give Up", "source_id": "global" },
+      { "alias": "RNG", "source_id": "global" },
+      { "alias": "Royal Club", "source_id": "global" },
+      { "alias": "royal-never-give-up", "source_id": "lolesports" },
+      { "alias": "Royal Never Give Up", "source_id": "pandascore_lol" },
+      { "alias": "Royal Never Give Up", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "LNG Esports",
+    "short_name": "LNG",
+    "abbreviation": "LNG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "LNG Esports", "source_id": "global" },
+      { "alias": "LNG", "source_id": "global" },
+      { "alias": "Li-Ning Gaming", "source_id": "global" },
+      { "alias": "lng-esports", "source_id": "lolesports" },
+      { "alias": "LNG Esports", "source_id": "pandascore_lol" },
+      { "alias": "LNG Esports", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "FunPlus Phoenix",
+    "short_name": "FPX",
+    "abbreviation": "FPX",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "FunPlus Phoenix", "source_id": "global" },
+      { "alias": "FPX", "source_id": "global" },
+      { "alias": "funplus-phoenix", "source_id": "lolesports" },
+      { "alias": "FunPlus Phoenix", "source_id": "pandascore_lol" },
+      { "alias": "FunPlus Phoenix", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Anyone's Legend",
+    "short_name": "AL",
+    "abbreviation": "AL",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Anyone's Legend", "source_id": "global" },
+      { "alias": "AL", "source_id": "global" },
+      { "alias": "Rogue Warriors", "source_id": "global" },
+      { "alias": "RW", "source_id": "global" },
+      { "alias": "anyones-legend", "source_id": "lolesports" },
+      { "alias": "Anyone's Legend", "source_id": "pandascore_lol" },
+      { "alias": "Anyone's Legend", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Invictus Gaming",
+    "short_name": "IG",
+    "abbreviation": "IG",
+    "sport": "lol",
+    "metadata": { "region": "LPL" },
+    "aliases": [
+      { "alias": "Invictus Gaming", "source_id": "global" },
+      { "alias": "IG", "source_id": "global" },
+      { "alias": "iG", "source_id": "global" },
+      { "alias": "invictus-gaming", "source_id": "lolesports" },
+      { "alias": "Invictus Gaming", "source_id": "pandascore_lol" },
+      { "alias": "Invictus Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "G2 Esports",
+    "short_name": "G2",
+    "abbreviation": "G2",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "G2 Esports", "source_id": "global" },
+      { "alias": "G2", "source_id": "global" },
+      { "alias": "Gamers2", "source_id": "global" },
+      { "alias": "g2-esports", "source_id": "lolesports" },
+      { "alias": "G2 Esports", "source_id": "pandascore_lol" },
+      { "alias": "G2 Esports", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Fnatic",
+    "short_name": "Fnatic",
+    "abbreviation": "FNC",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Fnatic", "source_id": "global" },
+      { "alias": "FNC", "source_id": "global" },
+      { "alias": "fnatic", "source_id": "lolesports" },
+      { "alias": "Fnatic", "source_id": "pandascore_lol" },
+      { "alias": "Fnatic", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "MAD Lions KOI",
+    "short_name": "MAD Lions",
+    "abbreviation": "MAD",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "MAD Lions KOI", "source_id": "global" },
+      { "alias": "MAD Lions", "source_id": "global" },
+      { "alias": "MAD", "source_id": "global" },
+      { "alias": "mad-lions-koi", "source_id": "lolesports" },
+      { "alias": "MAD Lions KOI", "source_id": "pandascore_lol" },
+      { "alias": "MAD Lions KOI", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Team Vitality",
+    "short_name": "Vitality",
+    "abbreviation": "VIT",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Team Vitality", "source_id": "global" },
+      { "alias": "Vitality", "source_id": "global" },
+      { "alias": "VIT", "source_id": "global" },
+      { "alias": "team-vitality", "source_id": "lolesports" },
+      { "alias": "Team Vitality", "source_id": "pandascore_lol" },
+      { "alias": "Team Vitality", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Rogue",
+    "short_name": "Rogue",
+    "abbreviation": "RGE",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Rogue", "source_id": "global" },
+      { "alias": "RGE", "source_id": "global" },
+      { "alias": "rogue", "source_id": "lolesports" },
+      { "alias": "Rogue", "source_id": "pandascore_lol" },
+      { "alias": "Rogue", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Team BDS",
+    "short_name": "BDS",
+    "abbreviation": "BDS",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Team BDS", "source_id": "global" },
+      { "alias": "BDS", "source_id": "global" },
+      { "alias": "team-bds", "source_id": "lolesports" },
+      { "alias": "Team BDS", "source_id": "pandascore_lol" },
+      { "alias": "Team BDS", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Team Heretics",
+    "short_name": "Heretics",
+    "abbreviation": "TH",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Team Heretics", "source_id": "global" },
+      { "alias": "Heretics", "source_id": "global" },
+      { "alias": "TH", "source_id": "global" },
+      { "alias": "team-heretics", "source_id": "lolesports" },
+      { "alias": "Team Heretics", "source_id": "pandascore_lol" },
+      { "alias": "Team Heretics", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "SK Gaming",
+    "short_name": "SK",
+    "abbreviation": "SK",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "SK Gaming", "source_id": "global" },
+      { "alias": "SK", "source_id": "global" },
+      { "alias": "sk-gaming", "source_id": "lolesports" },
+      { "alias": "SK Gaming", "source_id": "pandascore_lol" },
+      { "alias": "SK Gaming", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Karmine Corp",
+    "short_name": "Karmine Corp",
+    "abbreviation": "KC",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "Karmine Corp", "source_id": "global" },
+      { "alias": "KC", "source_id": "global" },
+      { "alias": "karmine-corp", "source_id": "lolesports" },
+      { "alias": "Karmine Corp", "source_id": "pandascore_lol" },
+      { "alias": "Karmine Corp", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "GiantX",
+    "short_name": "GiantX",
+    "abbreviation": "GX",
+    "sport": "lol",
+    "metadata": { "region": "LEC" },
+    "aliases": [
+      { "alias": "GiantX", "source_id": "global" },
+      { "alias": "GX", "source_id": "global" },
+      { "alias": "Excel Esports", "source_id": "global" },
+      { "alias": "XL", "source_id": "global" },
+      { "alias": "giantx", "source_id": "lolesports" },
+      { "alias": "GiantX", "source_id": "pandascore_lol" },
+      { "alias": "GiantX", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Cloud9",
+    "short_name": "Cloud9",
+    "abbreviation": "C9",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Cloud9", "source_id": "global" },
+      { "alias": "C9", "source_id": "global" },
+      { "alias": "cloud9", "source_id": "lolesports" },
+      { "alias": "Cloud9", "source_id": "pandascore_lol" },
+      { "alias": "Cloud9", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Team Liquid",
+    "short_name": "Liquid",
+    "abbreviation": "TL",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Team Liquid", "source_id": "global" },
+      { "alias": "Liquid", "source_id": "global" },
+      { "alias": "TL", "source_id": "global" },
+      { "alias": "Team Liquid Honda", "source_id": "global" },
+      { "alias": "team-liquid", "source_id": "lolesports" },
+      { "alias": "Team Liquid", "source_id": "pandascore_lol" },
+      { "alias": "Team Liquid", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "100 Thieves",
+    "short_name": "100T",
+    "abbreviation": "100",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "100 Thieves", "source_id": "global" },
+      { "alias": "100T", "source_id": "global" },
+      { "alias": "100", "source_id": "global" },
+      { "alias": "100-thieves", "source_id": "lolesports" },
+      { "alias": "100 Thieves", "source_id": "pandascore_lol" },
+      { "alias": "100 Thieves", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "FlyQuest",
+    "short_name": "FlyQuest",
+    "abbreviation": "FLY",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "FlyQuest", "source_id": "global" },
+      { "alias": "FLY", "source_id": "global" },
+      { "alias": "flyquest", "source_id": "lolesports" },
+      { "alias": "FlyQuest", "source_id": "pandascore_lol" },
+      { "alias": "FlyQuest", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "NRG",
+    "short_name": "NRG",
+    "abbreviation": "NRG",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "NRG", "source_id": "global" },
+      { "alias": "NRG Esports", "source_id": "global" },
+      { "alias": "Counter Logic Gaming", "source_id": "global" },
+      { "alias": "CLG", "source_id": "global" },
+      { "alias": "nrg", "source_id": "lolesports" },
+      { "alias": "NRG", "source_id": "pandascore_lol" },
+      { "alias": "NRG", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Dignitas",
+    "short_name": "Dignitas",
+    "abbreviation": "DIG",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Dignitas", "source_id": "global" },
+      { "alias": "DIG", "source_id": "global" },
+      { "alias": "Team Dignitas", "source_id": "global" },
+      { "alias": "dignitas", "source_id": "lolesports" },
+      { "alias": "Dignitas", "source_id": "pandascore_lol" },
+      { "alias": "Dignitas", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Evil Geniuses",
+    "short_name": "EG",
+    "abbreviation": "EG",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Evil Geniuses", "source_id": "global" },
+      { "alias": "EG", "source_id": "global" },
+      { "alias": "evil-geniuses", "source_id": "lolesports" },
+      { "alias": "Evil Geniuses", "source_id": "pandascore_lol" },
+      { "alias": "Evil Geniuses", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "TSM",
+    "short_name": "TSM",
+    "abbreviation": "TSM",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "TSM", "source_id": "global" },
+      { "alias": "Team SoloMid", "source_id": "global" },
+      { "alias": "Team Solo Mid", "source_id": "global" },
+      { "alias": "tsm", "source_id": "lolesports" },
+      { "alias": "TSM", "source_id": "pandascore_lol" },
+      { "alias": "TSM", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Golden Guardians",
+    "short_name": "Golden Guardians",
+    "abbreviation": "GG",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Golden Guardians", "source_id": "global" },
+      { "alias": "GG", "source_id": "global" },
+      { "alias": "GGS", "source_id": "global" },
+      { "alias": "golden-guardians", "source_id": "lolesports" },
+      { "alias": "Golden Guardians", "source_id": "pandascore_lol" },
+      { "alias": "Golden Guardians", "source_id": "liquipedia_lol" }
+    ]
+  },
+  {
+    "name": "Immortals",
+    "short_name": "Immortals",
+    "abbreviation": "IMT",
+    "sport": "lol",
+    "metadata": { "region": "LCS" },
+    "aliases": [
+      { "alias": "Immortals", "source_id": "global" },
+      { "alias": "IMT", "source_id": "global" },
+      { "alias": "Immortals Progressive", "source_id": "global" },
+      { "alias": "immortals", "source_id": "lolesports" },
+      { "alias": "Immortals", "source_id": "pandascore_lol" },
+      { "alias": "Immortals", "source_id": "liquipedia_lol" }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  {% for src in sources %}
+  {% set sport_colors = {'nba': 'orange', 'lol': 'purple', 'football': 'emerald'} %}
+  {% set sc = sport_colors.get(src.sport, 'gray') %}
+
+  <div class="bg-gray-900 rounded-lg border border-gray-800 p-4 hover:border-gray-700 transition-colors">
+    <div class="flex items-start justify-between mb-2">
+      <div>
+        <span class="text-sm font-medium text-gray-200">{{ src.source_id }}</span>
+        <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-{{ sc }}-500/10 text-{{ sc }}-400 uppercase">{{ src.sport }}</span>
+      </div>
+      <!-- Status indicator -->
+      {% if src.circuit_breaker_open %}
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-red-500/10 text-red-400">OPEN</span>
+      {% elif src.last_run_status == 'success' %}
+        <div class="w-2 h-2 rounded-full bg-emerald-500 mt-1.5"></div>
+      {% elif src.last_run_status == 'failed' %}
+        <div class="w-2 h-2 rounded-full bg-red-500 mt-1.5"></div>
+      {% else %}
+        <div class="w-2 h-2 rounded-full bg-gray-600 mt-1.5"></div>
+      {% endif %}
+    </div>
+
+    <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+      <div>
+        <span class="text-gray-500">Last run</span>
+        <p class="text-gray-300 font-mono">
+          {% if src.last_run_at %}{{ src.last_run_at.strftime('%H:%M') }}{% else %}&mdash;{% endif %}
+        </p>
+      </div>
+      <div>
+        <span class="text-gray-500">Records</span>
+        <p class="text-gray-300 font-mono">{{ src.records_fetched_last or 0 }}</p>
+      </div>
+      <div>
+        <span class="text-gray-500">Last success</span>
+        <p class="text-gray-300 font-mono">
+          {% if src.last_success_at %}{{ src.last_success_at.strftime('%H:%M') }}{% else %}&mdash;{% endif %}
+        </p>
+      </div>
+      <div>
+        <span class="text-gray-500">Failures</span>
+        <p class="{% if src.consecutive_failures >= 3 %}text-red-400{% elif src.consecutive_failures > 0 %}text-yellow-400{% else %}text-gray-300{% endif %} font-mono">{{ src.consecutive_failures }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

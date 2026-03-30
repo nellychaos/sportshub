@@ -1,0 +1,522 @@
+[
+  {
+    "name": "Atlanta Hawks",
+    "short_name": "Hawks",
+    "abbreviation": "ATL",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    "aliases": [
+      { "alias": "Atlanta Hawks", "source_id": "global" },
+      { "alias": "Hawks", "source_id": "global" },
+      { "alias": "ATL", "source_id": "global" },
+      { "alias": "Atlanta", "source_id": "espn_nba" },
+      { "alias": "ATL Hawks", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Boston Celtics",
+    "short_name": "Celtics",
+    "abbreviation": "BOS",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    "aliases": [
+      { "alias": "Boston Celtics", "source_id": "global" },
+      { "alias": "Celtics", "source_id": "global" },
+      { "alias": "BOS", "source_id": "global" },
+      { "alias": "Boston", "source_id": "espn_nba" },
+      { "alias": "BOS Celtics", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Brooklyn Nets",
+    "short_name": "Nets",
+    "abbreviation": "BKN",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    "aliases": [
+      { "alias": "Brooklyn Nets", "source_id": "global" },
+      { "alias": "Nets", "source_id": "global" },
+      { "alias": "BKN", "source_id": "global" },
+      { "alias": "Brooklyn", "source_id": "espn_nba" },
+      { "alias": "BKN Nets", "source_id": "balldontlie_nba" },
+      { "alias": "NJN", "source_id": "nbacom_cdn" }
+    ]
+  },
+  {
+    "name": "Charlotte Hornets",
+    "short_name": "Hornets",
+    "abbreviation": "CHA",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    "aliases": [
+      { "alias": "Charlotte Hornets", "source_id": "global" },
+      { "alias": "Hornets", "source_id": "global" },
+      { "alias": "CHA", "source_id": "global" },
+      { "alias": "Charlotte", "source_id": "espn_nba" },
+      { "alias": "CHA Hornets", "source_id": "balldontlie_nba" },
+      { "alias": "CHO", "source_id": "nbacom_cdn" }
+    ]
+  },
+  {
+    "name": "Chicago Bulls",
+    "short_name": "Bulls",
+    "abbreviation": "CHI",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    "aliases": [
+      { "alias": "Chicago Bulls", "source_id": "global" },
+      { "alias": "Bulls", "source_id": "global" },
+      { "alias": "CHI", "source_id": "global" },
+      { "alias": "Chicago", "source_id": "espn_nba" },
+      { "alias": "CHI Bulls", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Cleveland Cavaliers",
+    "short_name": "Cavaliers",
+    "abbreviation": "CLE",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    "aliases": [
+      { "alias": "Cleveland Cavaliers", "source_id": "global" },
+      { "alias": "Cavaliers", "source_id": "global" },
+      { "alias": "CLE", "source_id": "global" },
+      { "alias": "Cleveland", "source_id": "espn_nba" },
+      { "alias": "Cavs", "source_id": "global" },
+      { "alias": "CLE Cavaliers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Dallas Mavericks",
+    "short_name": "Mavericks",
+    "abbreviation": "DAL",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    "aliases": [
+      { "alias": "Dallas Mavericks", "source_id": "global" },
+      { "alias": "Mavericks", "source_id": "global" },
+      { "alias": "DAL", "source_id": "global" },
+      { "alias": "Dallas", "source_id": "espn_nba" },
+      { "alias": "Mavs", "source_id": "global" },
+      { "alias": "DAL Mavericks", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Denver Nuggets",
+    "short_name": "Nuggets",
+    "abbreviation": "DEN",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    "aliases": [
+      { "alias": "Denver Nuggets", "source_id": "global" },
+      { "alias": "Nuggets", "source_id": "global" },
+      { "alias": "DEN", "source_id": "global" },
+      { "alias": "Denver", "source_id": "espn_nba" },
+      { "alias": "DEN Nuggets", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Detroit Pistons",
+    "short_name": "Pistons",
+    "abbreviation": "DET",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    "aliases": [
+      { "alias": "Detroit Pistons", "source_id": "global" },
+      { "alias": "Pistons", "source_id": "global" },
+      { "alias": "DET", "source_id": "global" },
+      { "alias": "Detroit", "source_id": "espn_nba" },
+      { "alias": "DET Pistons", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Golden State Warriors",
+    "short_name": "Warriors",
+    "abbreviation": "GSW",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    "aliases": [
+      { "alias": "Golden State Warriors", "source_id": "global" },
+      { "alias": "Warriors", "source_id": "global" },
+      { "alias": "GSW", "source_id": "global" },
+      { "alias": "Golden State", "source_id": "espn_nba" },
+      { "alias": "GS Warriors", "source_id": "balldontlie_nba" },
+      { "alias": "GS", "source_id": "nbacom_cdn" }
+    ]
+  },
+  {
+    "name": "Houston Rockets",
+    "short_name": "Rockets",
+    "abbreviation": "HOU",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    "aliases": [
+      { "alias": "Houston Rockets", "source_id": "global" },
+      { "alias": "Rockets", "source_id": "global" },
+      { "alias": "HOU", "source_id": "global" },
+      { "alias": "Houston", "source_id": "espn_nba" },
+      { "alias": "HOU Rockets", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Indiana Pacers",
+    "short_name": "Pacers",
+    "abbreviation": "IND",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    "aliases": [
+      { "alias": "Indiana Pacers", "source_id": "global" },
+      { "alias": "Pacers", "source_id": "global" },
+      { "alias": "IND", "source_id": "global" },
+      { "alias": "Indiana", "source_id": "espn_nba" },
+      { "alias": "IND Pacers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Los Angeles Clippers",
+    "short_name": "Clippers",
+    "abbreviation": "LAC",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    "aliases": [
+      { "alias": "Los Angeles Clippers", "source_id": "global" },
+      { "alias": "Clippers", "source_id": "global" },
+      { "alias": "LAC", "source_id": "global" },
+      { "alias": "LA Clippers", "source_id": "espn_nba" },
+      { "alias": "LAC Clippers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Los Angeles Lakers",
+    "short_name": "Lakers",
+    "abbreviation": "LAL",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    "aliases": [
+      { "alias": "Los Angeles Lakers", "source_id": "global" },
+      { "alias": "Lakers", "source_id": "global" },
+      { "alias": "LAL", "source_id": "global" },
+      { "alias": "LA Lakers", "source_id": "espn_nba" },
+      { "alias": "LAL Lakers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Memphis Grizzlies",
+    "short_name": "Grizzlies",
+    "abbreviation": "MEM",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    "aliases": [
+      { "alias": "Memphis Grizzlies", "source_id": "global" },
+      { "alias": "Grizzlies", "source_id": "global" },
+      { "alias": "MEM", "source_id": "global" },
+      { "alias": "Memphis", "source_id": "espn_nba" },
+      { "alias": "MEM Grizzlies", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Miami Heat",
+    "short_name": "Heat",
+    "abbreviation": "MIA",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    "aliases": [
+      { "alias": "Miami Heat", "source_id": "global" },
+      { "alias": "Heat", "source_id": "global" },
+      { "alias": "MIA", "source_id": "global" },
+      { "alias": "Miami", "source_id": "espn_nba" },
+      { "alias": "MIA Heat", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Milwaukee Bucks",
+    "short_name": "Bucks",
+    "abbreviation": "MIL",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    "aliases": [
+      { "alias": "Milwaukee Bucks", "source_id": "global" },
+      { "alias": "Bucks", "source_id": "global" },
+      { "alias": "MIL", "source_id": "global" },
+      { "alias": "Milwaukee", "source_id": "espn_nba" },
+      { "alias": "MIL Bucks", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Minnesota Timberwolves",
+    "short_name": "Timberwolves",
+    "abbreviation": "MIN",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    "aliases": [
+      { "alias": "Minnesota Timberwolves", "source_id": "global" },
+      { "alias": "Timberwolves", "source_id": "global" },
+      { "alias": "MIN", "source_id": "global" },
+      { "alias": "Minnesota", "source_id": "espn_nba" },
+      { "alias": "Wolves", "source_id": "global" },
+      { "alias": "MIN Timberwolves", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "New Orleans Pelicans",
+    "short_name": "Pelicans",
+    "abbreviation": "NOP",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    "aliases": [
+      { "alias": "New Orleans Pelicans", "source_id": "global" },
+      { "alias": "Pelicans", "source_id": "global" },
+      { "alias": "NOP", "source_id": "global" },
+      { "alias": "New Orleans", "source_id": "espn_nba" },
+      { "alias": "NO Pelicans", "source_id": "balldontlie_nba" },
+      { "alias": "NOH", "source_id": "nbacom_cdn" }
+    ]
+  },
+  {
+    "name": "New York Knicks",
+    "short_name": "Knicks",
+    "abbreviation": "NYK",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    "aliases": [
+      { "alias": "New York Knicks", "source_id": "global" },
+      { "alias": "Knicks", "source_id": "global" },
+      { "alias": "NYK", "source_id": "global" },
+      { "alias": "New York", "source_id": "espn_nba" },
+      { "alias": "NY Knicks", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Oklahoma City Thunder",
+    "short_name": "Thunder",
+    "abbreviation": "OKC",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    "aliases": [
+      { "alias": "Oklahoma City Thunder", "source_id": "global" },
+      { "alias": "Thunder", "source_id": "global" },
+      { "alias": "OKC", "source_id": "global" },
+      { "alias": "Oklahoma City", "source_id": "espn_nba" },
+      { "alias": "OKC Thunder", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Orlando Magic",
+    "short_name": "Magic",
+    "abbreviation": "ORL",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    "aliases": [
+      { "alias": "Orlando Magic", "source_id": "global" },
+      { "alias": "Magic", "source_id": "global" },
+      { "alias": "ORL", "source_id": "global" },
+      { "alias": "Orlando", "source_id": "espn_nba" },
+      { "alias": "ORL Magic", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Philadelphia 76ers",
+    "short_name": "76ers",
+    "abbreviation": "PHI",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    "aliases": [
+      { "alias": "Philadelphia 76ers", "source_id": "global" },
+      { "alias": "76ers", "source_id": "global" },
+      { "alias": "PHI", "source_id": "global" },
+      { "alias": "Philadelphia", "source_id": "espn_nba" },
+      { "alias": "Sixers", "source_id": "global" },
+      { "alias": "PHI 76ers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Phoenix Suns",
+    "short_name": "Suns",
+    "abbreviation": "PHX",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    "aliases": [
+      { "alias": "Phoenix Suns", "source_id": "global" },
+      { "alias": "Suns", "source_id": "global" },
+      { "alias": "PHX", "source_id": "global" },
+      { "alias": "Phoenix", "source_id": "espn_nba" },
+      { "alias": "PHX Suns", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Portland Trail Blazers",
+    "short_name": "Trail Blazers",
+    "abbreviation": "POR",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    "aliases": [
+      { "alias": "Portland Trail Blazers", "source_id": "global" },
+      { "alias": "Trail Blazers", "source_id": "global" },
+      { "alias": "POR", "source_id": "global" },
+      { "alias": "Portland", "source_id": "espn_nba" },
+      { "alias": "Blazers", "source_id": "global" },
+      { "alias": "POR Trail Blazers", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Sacramento Kings",
+    "short_name": "Kings",
+    "abbreviation": "SAC",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    "aliases": [
+      { "alias": "Sacramento Kings", "source_id": "global" },
+      { "alias": "Kings", "source_id": "global" },
+      { "alias": "SAC", "source_id": "global" },
+      { "alias": "Sacramento", "source_id": "espn_nba" },
+      { "alias": "SAC Kings", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "San Antonio Spurs",
+    "short_name": "Spurs",
+    "abbreviation": "SAS",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    "aliases": [
+      { "alias": "San Antonio Spurs", "source_id": "global" },
+      { "alias": "Spurs", "source_id": "global" },
+      { "alias": "SAS", "source_id": "global" },
+      { "alias": "San Antonio", "source_id": "espn_nba" },
+      { "alias": "SA Spurs", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Toronto Raptors",
+    "short_name": "Raptors",
+    "abbreviation": "TOR",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    "aliases": [
+      { "alias": "Toronto Raptors", "source_id": "global" },
+      { "alias": "Raptors", "source_id": "global" },
+      { "alias": "TOR", "source_id": "global" },
+      { "alias": "Toronto", "source_id": "espn_nba" },
+      { "alias": "TOR Raptors", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Utah Jazz",
+    "short_name": "Jazz",
+    "abbreviation": "UTA",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    "aliases": [
+      { "alias": "Utah Jazz", "source_id": "global" },
+      { "alias": "Jazz", "source_id": "global" },
+      { "alias": "UTA", "source_id": "global" },
+      { "alias": "Utah", "source_id": "espn_nba" },
+      { "alias": "UTA Jazz", "source_id": "balldontlie_nba" }
+    ]
+  },
+  {
+    "name": "Washington Wizards",
+    "short_name": "Wizards",
+    "abbreviation": "WAS",
+    "sport": "nba",
+    "metadata": {
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    "aliases": [
+      { "alias": "Washington Wizards", "source_id": "global" },
+      { "alias": "Wizards", "source_id": "global" },
+      { "alias": "WAS", "source_id": "global" },
+      { "alias": "Washington", "source_id": "espn_nba" },
+      { "alias": "WAS Wizards", "source_id": "balldontlie_nba" },
+      { "alias": "WSH", "source_id": "nbacom_cdn" }
+    ]
+  }
+]

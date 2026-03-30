@@ -1,0 +1,150 @@
+{
+  "leagues": [
+    {
+      "id": "4",
+      "name": "FIFA World Cup",
+      "slug": "fifa.world"
+    }
+  ],
+  "events": [
+    {
+      "id": "700001",
+      "date": "2026-06-11T18:00:00Z",
+      "name": "Mexico vs Canada",
+      "status": {
+        "type": {
+          "name": "STATUS_SCHEDULED",
+          "description": "Scheduled"
+        }
+      },
+      "competitions": [
+        {
+          "id": "700001",
+          "date": "2026-06-11T18:00:00Z",
+          "competitors": [
+            {
+              "id": "100",
+              "homeAway": "home",
+              "team": {
+                "id": "100",
+                "displayName": "Mexico",
+                "abbreviation": "MEX"
+              }
+            },
+            {
+              "id": "101",
+              "homeAway": "away",
+              "team": {
+                "id": "101",
+                "displayName": "Canada",
+                "abbreviation": "CAN"
+              }
+            }
+          ],
+          "venue": {
+            "fullName": "Estadio Azteca",
+            "address": {
+              "city": "Mexico City"
+            }
+          },
+          "notes": [
+            {
+              "headline": "Group A - Matchday 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "700002",
+      "date": "2026-06-12T20:00:00Z",
+      "name": "Brazil vs Serbia",
+      "status": {
+        "type": {
+          "name": "STATUS_SCHEDULED",
+          "description": "Scheduled"
+        }
+      },
+      "competitions": [
+        {
+          "id": "700002",
+          "date": "2026-06-12T20:00:00Z",
+          "competitors": [
+            {
+              "id": "200",
+              "homeAway": "home",
+              "team": {
+                "id": "200",
+                "displayName": "Brazil",
+                "abbreviation": "BRA"
+              }
+            },
+            {
+              "id": "201",
+              "homeAway": "away",
+              "team": {
+                "id": "201",
+                "displayName": "Serbia",
+                "abbreviation": "SRB"
+              }
+            }
+          ],
+          "venue": {
+            "fullName": "MetLife Stadium",
+            "address": {
+              "city": "East Rutherford"
+            }
+          },
+          "notes": [
+            {
+              "headline": "Group B - Matchday 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "700099",
+      "date": "2026-07-10T20:00:00Z",
+      "name": "TBD vs TBD",
+      "status": {
+        "type": {
+          "name": "STATUS_SCHEDULED",
+          "description": "Scheduled"
+        }
+      },
+      "competitions": [
+        {
+          "id": "700099",
+          "date": "2026-07-10T20:00:00Z",
+          "competitors": [
+            {
+              "id": "900",
+              "homeAway": "home",
+              "team": {
+                "id": "900",
+                "displayName": "TBD",
+                "abbreviation": "TBD"
+              }
+            },
+            {
+              "id": "901",
+              "homeAway": "away",
+              "team": {
+                "id": "901",
+                "displayName": "TBD",
+                "abbreviation": "TBD"
+              }
+            }
+          ],
+          "venue": {},
+          "notes": [
+            {
+              "headline": "Quarterfinal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

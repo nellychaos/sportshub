@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Sportshub API",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": ["-m", "uvicorn", "sportshub.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "PostgreSQL",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["run", "--rm", "--name", "sportshub-db", "-e", "POSTGRES_USER=sportshub", "-e", "POSTGRES_PASSWORD=sportshub_dev", "-e", "POSTGRES_DB=sportshub", "-p", "5432:5432", "postgres:16-alpine"],
+      "port": 5432
+    },
+    {
+      "name": "Redis",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["run", "--rm", "--name", "sportshub-redis", "-p", "6379:6379", "redis:7-alpine"],
+      "port": 6379
+    }
+  ]
+}
