@@ -11,8 +11,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.templating import Jinja2Templates
 
 from sportshub.config import get_settings
-from sportshub.db.engine import close_db, init_db
+from sportshub.db.engine import close_db, init_db, get_session_factory
 from sportshub.cache.client import RedisClient
+from sportshub.ingestion.registry import create_registry
+from sportshub.scheduling.scheduler import SportshubScheduler
 
 logger = structlog.get_logger()
 
@@ -46,10 +48,26 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     # Set up Jinja2 templates
     app.state.templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
+    # Build adapter registry and start scheduler
+    registry = create_registry(settings)
+    await registry.initialize_all()
+
+    scheduler = SportshubScheduler()
+    session_factory = get_session_factory()
+    scheduler.configure(
+        registry=registry,
+        session_factory=session_factory,
+        cache=redis_client,
+    )
+    scheduler.start()
+    app.state.scheduler = scheduler
+
     yield
 
     # Shutdown
     logger.info("shutting_down_sportshub")
+    scheduler.shutdown()
+    await registry.shutdown_all()
     await redis_client.close()
     await close_db()
     logger.info("shutdown_complete")
