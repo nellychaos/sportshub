@@ -54,6 +54,10 @@ class SportshubScheduler:
             "fifa_api": IntervalTrigger(hours=2),
             "footballdata_wc": IntervalTrigger(hours=3),
             "espn_fifa": IntervalTrigger(hours=1),
+            # Mollybet (multi-bookie aggregator — one job per sport)
+            "mollybet_fb": IntervalTrigger(hours=2),
+            "mollybet_basket": IntervalTrigger(hours=2),
+            "mollybet_esports": IntervalTrigger(hours=2),
         }
 
         for adapter in registry.get_all():

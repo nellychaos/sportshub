@@ -19,6 +19,10 @@ SOURCE_PRIORITY: dict[str, int] = {
     "fifa_api": 10,
     "footballdata_wc": 8,
     "espn_fifa": 7,
+    # Mollybet — multi-bookie verified; high priority for kickoff accuracy
+    "mollybet_fb": 9,
+    "mollybet_basket": 9,
+    "mollybet_esports": 8,
 }
 
 # Confidence thresholds

@@ -14,6 +14,7 @@ from sportshub.config import get_settings
 from sportshub.db.engine import close_db, init_db, get_session_factory
 from sportshub.cache.client import RedisClient
 from sportshub.ingestion.registry import create_registry
+from sportshub.ingestion.confirmation.registry import ConfirmationRegistry
 from sportshub.scheduling.scheduler import SportshubScheduler
 
 logger = structlog.get_logger()
@@ -52,12 +53,42 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     registry = create_registry(settings)
     await registry.initialize_all()
 
+    # Build confirmation registry
+    confirmation_registry = ConfirmationRegistry()
+    if settings.mollybet_username and settings.mollybet_password:
+        from sportshub.ingestion.confirmation.mollybet import MollybetConfirmationSource
+
+        mollybet_confirmation = MollybetConfirmationSource(
+            username=settings.mollybet_username,
+            password=settings.mollybet_password,
+            api_url=settings.mollybet_api_url,
+            cache=redis_client,
+        )
+        await mollybet_confirmation.initialize()
+        confirmation_registry.register(mollybet_confirmation)
+        logger.info("mollybet_confirmation_registered")
+    else:
+        logger.warning("mollybet_confirmation_skipped", reason="No credentials configured")
+
+    if settings.odds_api_key:
+        from sportshub.ingestion.confirmation.odds_adapter import OddsConfirmationAdapter
+
+        odds_confirmation = OddsConfirmationAdapter(
+            api_key=settings.odds_api_key,
+            api_url=settings.odds_api_url,
+            cache=redis_client,
+        )
+        await odds_confirmation.initialize()
+        confirmation_registry.register(odds_confirmation)
+        logger.info("odds_confirmation_registered")
+
     scheduler = SportshubScheduler()
     session_factory = get_session_factory()
     scheduler.configure(
         registry=registry,
         session_factory=session_factory,
         cache=redis_client,
+        confirmation_registry=confirmation_registry if confirmation_registry.get_all() else None,
     )
     scheduler.start()
     app.state.scheduler = scheduler
@@ -68,6 +99,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("shutting_down_sportshub")
     scheduler.shutdown()
     await registry.shutdown_all()
+    for source in confirmation_registry.get_all():
+        try:
+            await source.shutdown()
+        except Exception:
+            pass
     await redis_client.close()
     await close_db()
     logger.info("shutdown_complete")

@@ -1,0 +1,74 @@
+[
+  {
+    "sportshub_id": "fifa-world-cup-2026",
+    "sportshub_short_name": "WC2026",
+    "mollybet_sport": "fb",
+    "mollybet_competition_id": "",
+    "country": "World",
+    "notes": "FIFA World Cup 2026 — run scripts/discover_mollybet_competitions.py to fill IDs"
+  },
+  {
+    "sportshub_id": "nba-2025-26-regular-season",
+    "sportshub_short_name": "NBA-RS",
+    "mollybet_sport": "basket",
+    "mollybet_competition_id": "",
+    "country": "USA",
+    "notes": "NBA 2025-26 Regular Season"
+  },
+  {
+    "sportshub_id": "nba-2025-26-playoffs",
+    "sportshub_short_name": "NBA-PO",
+    "mollybet_sport": "basket",
+    "mollybet_competition_id": "",
+    "country": "USA",
+    "notes": "NBA 2025-26 Playoffs"
+  },
+  {
+    "sportshub_id": "lck-2026-spring",
+    "sportshub_short_name": "LCK",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "South Korea",
+    "notes": "LCK 2026 Spring"
+  },
+  {
+    "sportshub_id": "lpl-2026-spring",
+    "sportshub_short_name": "LPL",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "China",
+    "notes": "LPL 2026 Spring"
+  },
+  {
+    "sportshub_id": "lec-2026-winter",
+    "sportshub_short_name": "LEC",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "Europe",
+    "notes": "LEC 2026 Winter"
+  },
+  {
+    "sportshub_id": "lcs-2026-spring",
+    "sportshub_short_name": "LCS",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "USA",
+    "notes": "LCS 2026 Spring"
+  },
+  {
+    "sportshub_id": "msi-2026",
+    "sportshub_short_name": "MSI",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "International",
+    "notes": "MSI 2026"
+  },
+  {
+    "sportshub_id": "worlds-2026",
+    "sportshub_short_name": "WORLDS",
+    "mollybet_sport": "esports",
+    "mollybet_competition_id": "",
+    "country": "International",
+    "notes": "LoL Worlds 2026"
+  }
+]

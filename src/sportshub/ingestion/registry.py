@@ -86,4 +86,25 @@ def create_registry(settings: Settings) -> AdapterRegistry:
     else:
         logger.warning("footballdata_skipped", reason="No API key configured")
 
+    # Mollybet adapters (one per sport)
+    if settings.mollybet_username and settings.mollybet_password:
+        from sportshub.ingestion.adapters.mollybet import MollybetAdapter
+
+        for sport, code in [
+            (Sport.FOOTBALL, "fb"),
+            (Sport.NBA, "basket"),
+            (Sport.LOL, "esports"),
+        ]:
+            registry.register(
+                MollybetAdapter(
+                    username=settings.mollybet_username,
+                    password=settings.mollybet_password,
+                    sport=sport,
+                    mollybet_sport=code,
+                    api_url=settings.mollybet_api_url,
+                )
+            )
+    else:
+        logger.warning("mollybet_skipped", reason="No credentials configured")
+
     return registry

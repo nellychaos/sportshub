@@ -47,6 +47,11 @@ class Settings(BaseSettings):
     odds_api_key: str | None = None
     odds_api_url: str = "https://api.the-odds-api.com/v4"
 
+    # Mollybet (ingestion + confirmation)
+    mollybet_username: str | None = None   # SPORTSHUB_MOLLYBET_USERNAME
+    mollybet_password: str | None = None   # SPORTSHUB_MOLLYBET_PASSWORD
+    mollybet_api_url: str = "https://api.mollybet.com"
+
     # Logging
     log_level: str = "INFO"
 
