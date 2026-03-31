@@ -22,23 +22,63 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue trim" },
-        "away": { "primary_color": "#002868", "description": "Navy blue with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and blue trim"
+        },
+        "away": {
+          "primary_color": "#002868",
+          "description": "Navy blue with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/US_Soccer_logo_%282022%29.svg/800px-US_Soccer_logo_%282022%29.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/united-states"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/united-states",
+      "flag_url": "https://flagcdn.com/w320/us.png",
+      "flag_svg_url": "https://flagcdn.com/us.svg",
+      "iso_code": "US",
+      "flag_emoji": "🇺🇸"
     },
     "aliases": [
-      { "alias": "United States", "source_id": null },
-      { "alias": "USA", "source_id": null },
-      { "alias": "United States Men's National Team", "source_id": null },
-      { "alias": "USMNT", "source_id": null },
-      { "alias": "US", "source_id": null },
-      { "alias": "United States", "source_id": "espn_fifa" },
-      { "alias": "United States of America", "source_id": "footballdata_wc" },
-      { "alias": "USA", "source_id": "fifa_api" },
-      { "alias": "Estados Unidos", "source_id": null },
-      { "alias": "USA", "source_id": "mollybet_fb" }
+      {
+        "alias": "United States",
+        "source_id": null
+      },
+      {
+        "alias": "USA",
+        "source_id": null
+      },
+      {
+        "alias": "United States Men's National Team",
+        "source_id": null
+      },
+      {
+        "alias": "USMNT",
+        "source_id": null
+      },
+      {
+        "alias": "US",
+        "source_id": null
+      },
+      {
+        "alias": "United States",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "United States of America",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "USA",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Estados Unidos",
+        "source_id": null
+      },
+      {
+        "alias": "USA",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -67,8 +107,16 @@
         "tertiary_name": "White"
       },
       "kits": {
-        "home": { "primary_color": "#006847", "secondary_color": "#CE1126", "description": "Green with red and white trim" },
-        "away": { "primary_color": "#FFFFFF", "secondary_color": "#006847", "description": "White with green trim" }
+        "home": {
+          "primary_color": "#006847",
+          "secondary_color": "#CE1126",
+          "description": "Green with red and white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "secondary_color": "#006847",
+          "description": "White with green trim"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Mexico_national_football_team_crest.svg/800px-Mexico_national_football_team_crest.svg.png",
       "logo_svg_url": "https://upload.wikimedia.org/wikipedia/en/b/bd/Mexico_national_football_team_crest.svg",
@@ -81,18 +129,49 @@
         "venue": "Estadio Azteca",
         "city": "Mexico City",
         "group": "A"
-      }
+      },
+      "flag_url": "https://flagcdn.com/w320/mx.png",
+      "flag_svg_url": "https://flagcdn.com/mx.svg",
+      "iso_code": "MX",
+      "flag_emoji": "🇲🇽"
     },
     "aliases": [
-      { "alias": "Mexico", "source_id": null },
-      { "alias": "MEX", "source_id": null },
-      { "alias": "El Tri", "source_id": null },
-      { "alias": "Mexico", "source_id": "espn_fifa" },
-      { "alias": "Mexico", "source_id": "footballdata_wc" },
-      { "alias": "Mexico", "source_id": "fifa_api" },
-      { "alias": "México", "source_id": null },
-      { "alias": "Mexico National Football Team", "source_id": null },
-      { "alias": "Mexico", "source_id": "mollybet_fb" }
+      {
+        "alias": "Mexico",
+        "source_id": null
+      },
+      {
+        "alias": "MEX",
+        "source_id": null
+      },
+      {
+        "alias": "El Tri",
+        "source_id": null
+      },
+      {
+        "alias": "Mexico",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Mexico",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Mexico",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "México",
+        "source_id": null
+      },
+      {
+        "alias": "Mexico National Football Team",
+        "source_id": null
+      },
+      {
+        "alias": "Mexico",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -118,20 +197,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#FF0000", "description": "Red with white accents" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red trim" }
+        "home": {
+          "primary_color": "#FF0000",
+          "description": "Red with white accents"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red trim"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Canada_Soccer_Logo.svg/800px-Canada_Soccer_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
+      "flag_url": "https://flagcdn.com/w320/ca.png",
+      "flag_svg_url": "https://flagcdn.com/ca.svg",
+      "iso_code": "CA",
+      "flag_emoji": "🇨🇦"
     },
     "aliases": [
-      { "alias": "Canada", "source_id": null },
-      { "alias": "CAN", "source_id": null },
-      { "alias": "Les Rouges", "source_id": null },
-      { "alias": "Canada", "source_id": "espn_fifa" },
-      { "alias": "Canada", "source_id": "footballdata_wc" },
-      { "alias": "Canada", "source_id": "fifa_api" },
-      { "alias": "Canada", "source_id": "mollybet_fb" }
+      {
+        "alias": "Canada",
+        "source_id": null
+      },
+      {
+        "alias": "CAN",
+        "source_id": null
+      },
+      {
+        "alias": "Les Rouges",
+        "source_id": null
+      },
+      {
+        "alias": "Canada",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Canada",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Canada",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Canada",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -156,20 +266,51 @@
         "tertiary": "#F6B40E"
       },
       "kits": {
-        "home": { "primary_color": "#75AADB", "description": "Light blue and white vertical stripes" },
-        "away": { "primary_color": "#1A1A2E", "description": "Dark navy with light blue accents" }
+        "home": {
+          "primary_color": "#75AADB",
+          "description": "Light blue and white vertical stripes"
+        },
+        "away": {
+          "primary_color": "#1A1A2E",
+          "description": "Dark navy with light blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Argentina_national_football_team_logo.svg/800px-Argentina_national_football_team_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina",
+      "flag_url": "https://flagcdn.com/w320/ar.png",
+      "flag_svg_url": "https://flagcdn.com/ar.svg",
+      "iso_code": "AR",
+      "flag_emoji": "🇦🇷"
     },
     "aliases": [
-      { "alias": "Argentina", "source_id": null },
-      { "alias": "ARG", "source_id": null },
-      { "alias": "La Albiceleste", "source_id": null },
-      { "alias": "Argentina", "source_id": "espn_fifa" },
-      { "alias": "Argentina", "source_id": "footballdata_wc" },
-      { "alias": "Argentina", "source_id": "fifa_api" },
-      { "alias": "Argentina", "source_id": "mollybet_fb" }
+      {
+        "alias": "Argentina",
+        "source_id": null
+      },
+      {
+        "alias": "ARG",
+        "source_id": null
+      },
+      {
+        "alias": "La Albiceleste",
+        "source_id": null
+      },
+      {
+        "alias": "Argentina",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Argentina",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Argentina",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Argentina",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -194,21 +335,55 @@
         "tertiary": "#002776"
       },
       "kits": {
-        "home": { "primary_color": "#FFDF00", "description": "Yellow with green collar and blue trim" },
-        "away": { "primary_color": "#002776", "description": "Blue with green and yellow accents" }
+        "home": {
+          "primary_color": "#FFDF00",
+          "description": "Yellow with green collar and blue trim"
+        },
+        "away": {
+          "primary_color": "#002776",
+          "description": "Blue with green and yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Brazil_national_football_team_crest.svg/800px-Brazil_national_football_team_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil",
+      "flag_url": "https://flagcdn.com/w320/br.png",
+      "flag_svg_url": "https://flagcdn.com/br.svg",
+      "iso_code": "BR",
+      "flag_emoji": "🇧🇷"
     },
     "aliases": [
-      { "alias": "Brazil", "source_id": null },
-      { "alias": "BRA", "source_id": null },
-      { "alias": "Seleção", "source_id": null },
-      { "alias": "Brasil", "source_id": null },
-      { "alias": "Brazil", "source_id": "espn_fifa" },
-      { "alias": "Brazil", "source_id": "footballdata_wc" },
-      { "alias": "Brazil", "source_id": "fifa_api" },
-      { "alias": "Brazil", "source_id": "mollybet_fb" }
+      {
+        "alias": "Brazil",
+        "source_id": null
+      },
+      {
+        "alias": "BRA",
+        "source_id": null
+      },
+      {
+        "alias": "Seleção",
+        "source_id": null
+      },
+      {
+        "alias": "Brasil",
+        "source_id": null
+      },
+      {
+        "alias": "Brazil",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Brazil",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Brazil",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Brazil",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -233,20 +408,51 @@
         "tertiary": "#ED2939"
       },
       "kits": {
-        "home": { "primary_color": "#002395", "description": "Dark blue with white and red trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue and red accents" }
+        "home": {
+          "primary_color": "#002395",
+          "description": "Dark blue with white and red trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/FFF_2022_Logo.svg/800px-FFF_2022_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france",
+      "flag_url": "https://flagcdn.com/w320/fr.png",
+      "flag_svg_url": "https://flagcdn.com/fr.svg",
+      "iso_code": "FR",
+      "flag_emoji": "🇫🇷"
     },
     "aliases": [
-      { "alias": "France", "source_id": null },
-      { "alias": "FRA", "source_id": null },
-      { "alias": "Les Bleus", "source_id": null },
-      { "alias": "France", "source_id": "espn_fifa" },
-      { "alias": "France", "source_id": "footballdata_wc" },
-      { "alias": "France", "source_id": "fifa_api" },
-      { "alias": "France", "source_id": "mollybet_fb" }
+      {
+        "alias": "France",
+        "source_id": null
+      },
+      {
+        "alias": "FRA",
+        "source_id": null
+      },
+      {
+        "alias": "Les Bleus",
+        "source_id": null
+      },
+      {
+        "alias": "France",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "France",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "France",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "France",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -271,20 +477,51 @@
         "tertiary": "#CC0000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with navy blue shorts" },
-        "away": { "primary_color": "#CC0000", "description": "Red with white trim" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with navy blue shorts"
+        },
+        "away": {
+          "primary_color": "#CC0000",
+          "description": "Red with white trim"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/2022_FIFA_World_Cup_England_crest.svg/800px-2022_FIFA_World_Cup_England_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england",
+      "flag_url": "https://flagcdn.com/w320/gb-eng.png",
+      "flag_svg_url": "https://flagcdn.com/gb-eng.svg",
+      "iso_code": "GB-ENG",
+      "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     "aliases": [
-      { "alias": "England", "source_id": null },
-      { "alias": "ENG", "source_id": null },
-      { "alias": "Three Lions", "source_id": null },
-      { "alias": "England", "source_id": "espn_fifa" },
-      { "alias": "England", "source_id": "footballdata_wc" },
-      { "alias": "England", "source_id": "fifa_api" },
-      { "alias": "England", "source_id": "mollybet_fb" }
+      {
+        "alias": "England",
+        "source_id": null
+      },
+      {
+        "alias": "ENG",
+        "source_id": null
+      },
+      {
+        "alias": "Three Lions",
+        "source_id": null
+      },
+      {
+        "alias": "England",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "England",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "England",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "England",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -309,21 +546,55 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#AA151B", "description": "Red with yellow trim" },
-        "away": { "primary_color": "#002D62", "description": "Dark blue with red accents" }
+        "home": {
+          "primary_color": "#AA151B",
+          "description": "Red with yellow trim"
+        },
+        "away": {
+          "primary_color": "#002D62",
+          "description": "Dark blue with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spain_national_football_team_crest.svg/800px-Spain_national_football_team_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain",
+      "flag_url": "https://flagcdn.com/w320/es.png",
+      "flag_svg_url": "https://flagcdn.com/es.svg",
+      "iso_code": "ES",
+      "flag_emoji": "🇪🇸"
     },
     "aliases": [
-      { "alias": "Spain", "source_id": null },
-      { "alias": "ESP", "source_id": null },
-      { "alias": "La Roja", "source_id": null },
-      { "alias": "España", "source_id": null },
-      { "alias": "Spain", "source_id": "espn_fifa" },
-      { "alias": "Spain", "source_id": "footballdata_wc" },
-      { "alias": "Spain", "source_id": "fifa_api" },
-      { "alias": "Spain", "source_id": "mollybet_fb" }
+      {
+        "alias": "Spain",
+        "source_id": null
+      },
+      {
+        "alias": "ESP",
+        "source_id": null
+      },
+      {
+        "alias": "La Roja",
+        "source_id": null
+      },
+      {
+        "alias": "España",
+        "source_id": null
+      },
+      {
+        "alias": "Spain",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Spain",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Spain",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Spain",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -348,21 +619,55 @@
         "tertiary": "#DD0000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with black trim" },
-        "away": { "primary_color": "#000000", "description": "Black with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with black trim"
+        },
+        "away": {
+          "primary_color": "#000000",
+          "description": "Black with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/German_Football_Association_%28DFB%29_logo_2017.svg/800px-German_Football_Association_%28DFB%29_logo_2017.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany",
+      "flag_url": "https://flagcdn.com/w320/de.png",
+      "flag_svg_url": "https://flagcdn.com/de.svg",
+      "iso_code": "DE",
+      "flag_emoji": "🇩🇪"
     },
     "aliases": [
-      { "alias": "Germany", "source_id": null },
-      { "alias": "GER", "source_id": null },
-      { "alias": "Die Mannschaft", "source_id": null },
-      { "alias": "Deutschland", "source_id": null },
-      { "alias": "Germany", "source_id": "espn_fifa" },
-      { "alias": "Germany", "source_id": "footballdata_wc" },
-      { "alias": "Germany", "source_id": "fifa_api" },
-      { "alias": "Germany", "source_id": "mollybet_fb" }
+      {
+        "alias": "Germany",
+        "source_id": null
+      },
+      {
+        "alias": "GER",
+        "source_id": null
+      },
+      {
+        "alias": "Die Mannschaft",
+        "source_id": null
+      },
+      {
+        "alias": "Deutschland",
+        "source_id": null
+      },
+      {
+        "alias": "Germany",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Germany",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Germany",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Germany",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -387,20 +692,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#FF0000", "description": "Red with green trim" },
-        "away": { "primary_color": "#006600", "description": "Green with red accents" }
+        "home": {
+          "primary_color": "#FF0000",
+          "description": "Red with green trim"
+        },
+        "away": {
+          "primary_color": "#006600",
+          "description": "Green with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/FPF_%28logo%29.svg/800px-FPF_%28logo%29.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal",
+      "flag_url": "https://flagcdn.com/w320/pt.png",
+      "flag_svg_url": "https://flagcdn.com/pt.svg",
+      "iso_code": "PT",
+      "flag_emoji": "🇵🇹"
     },
     "aliases": [
-      { "alias": "Portugal", "source_id": null },
-      { "alias": "POR", "source_id": null },
-      { "alias": "Seleção das Quinas", "source_id": null },
-      { "alias": "Portugal", "source_id": "espn_fifa" },
-      { "alias": "Portugal", "source_id": "footballdata_wc" },
-      { "alias": "Portugal", "source_id": "fifa_api" },
-      { "alias": "Portugal", "source_id": "mollybet_fb" }
+      {
+        "alias": "Portugal",
+        "source_id": null
+      },
+      {
+        "alias": "POR",
+        "source_id": null
+      },
+      {
+        "alias": "Seleção das Quinas",
+        "source_id": null
+      },
+      {
+        "alias": "Portugal",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Portugal",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Portugal",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Portugal",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -425,23 +761,63 @@
         "tertiary": "#003DA5"
       },
       "kits": {
-        "home": { "primary_color": "#FF6600", "description": "Orange with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with orange accents" }
+        "home": {
+          "primary_color": "#FF6600",
+          "description": "Orange with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with orange accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Royal_Dutch_Football_Association_logo.svg/800px-Royal_Dutch_Football_Association_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands",
+      "flag_url": "https://flagcdn.com/w320/nl.png",
+      "flag_svg_url": "https://flagcdn.com/nl.svg",
+      "iso_code": "NL",
+      "flag_emoji": "🇳🇱"
     },
     "aliases": [
-      { "alias": "Netherlands", "source_id": null },
-      { "alias": "NED", "source_id": null },
-      { "alias": "Holland", "source_id": null },
-      { "alias": "Oranje", "source_id": null },
-      { "alias": "The Netherlands", "source_id": null },
-      { "alias": "Netherlands", "source_id": "espn_fifa" },
-      { "alias": "Netherlands", "source_id": "footballdata_wc" },
-      { "alias": "Netherlands", "source_id": "fifa_api" },
-      { "alias": "Nederland", "source_id": null },
-      { "alias": "Netherlands", "source_id": "mollybet_fb" }
+      {
+        "alias": "Netherlands",
+        "source_id": null
+      },
+      {
+        "alias": "NED",
+        "source_id": null
+      },
+      {
+        "alias": "Holland",
+        "source_id": null
+      },
+      {
+        "alias": "Oranje",
+        "source_id": null
+      },
+      {
+        "alias": "The Netherlands",
+        "source_id": null
+      },
+      {
+        "alias": "Netherlands",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Netherlands",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Netherlands",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Nederland",
+        "source_id": null
+      },
+      {
+        "alias": "Netherlands",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -466,22 +842,59 @@
         "tertiary": "#EF3340"
       },
       "kits": {
-        "home": { "primary_color": "#EF3340", "description": "Red with black and gold trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red and black accents" }
+        "home": {
+          "primary_color": "#EF3340",
+          "description": "Red with black and gold trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and black accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Royal_Belgian_FA_logo.svg/800px-Royal_Belgian_FA_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium",
+      "flag_url": "https://flagcdn.com/w320/be.png",
+      "flag_svg_url": "https://flagcdn.com/be.svg",
+      "iso_code": "BE",
+      "flag_emoji": "🇧🇪"
     },
     "aliases": [
-      { "alias": "Belgium", "source_id": null },
-      { "alias": "BEL", "source_id": null },
-      { "alias": "Red Devils", "source_id": null },
-      { "alias": "Belgique", "source_id": null },
-      { "alias": "België", "source_id": null },
-      { "alias": "Belgium", "source_id": "espn_fifa" },
-      { "alias": "Belgium", "source_id": "footballdata_wc" },
-      { "alias": "Belgium", "source_id": "fifa_api" },
-      { "alias": "Belgium", "source_id": "mollybet_fb" }
+      {
+        "alias": "Belgium",
+        "source_id": null
+      },
+      {
+        "alias": "BEL",
+        "source_id": null
+      },
+      {
+        "alias": "Red Devils",
+        "source_id": null
+      },
+      {
+        "alias": "Belgique",
+        "source_id": null
+      },
+      {
+        "alias": "België",
+        "source_id": null
+      },
+      {
+        "alias": "Belgium",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Belgium",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Belgium",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Belgium",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -506,22 +919,59 @@
         "tertiary": "#009246"
       },
       "kits": {
-        "home": { "primary_color": "#003DA5", "description": "Azzurri blue with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+        "home": {
+          "primary_color": "#003DA5",
+          "description": "Azzurri blue with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/2022_FIFA_World_Cup_Italy_crest.svg/800px-2022_FIFA_World_Cup_Italy_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/italy"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/italy",
+      "flag_url": "https://flagcdn.com/w320/it.png",
+      "flag_svg_url": "https://flagcdn.com/it.svg",
+      "iso_code": "IT",
+      "flag_emoji": "🇮🇹"
     },
     "aliases": [
-      { "alias": "Italy", "source_id": null },
-      { "alias": "ITA", "source_id": null },
-      { "alias": "Gli Azzurri", "source_id": null },
-      { "alias": "Azzurri", "source_id": null },
-      { "alias": "Italia", "source_id": null },
-      { "alias": "Italy", "source_id": "espn_fifa" },
-      { "alias": "Italy", "source_id": "footballdata_wc" },
-      { "alias": "Italy", "source_id": "fifa_api" },
-      { "alias": "Italy", "source_id": "mollybet_fb" }
+      {
+        "alias": "Italy",
+        "source_id": null
+      },
+      {
+        "alias": "ITA",
+        "source_id": null
+      },
+      {
+        "alias": "Gli Azzurri",
+        "source_id": null
+      },
+      {
+        "alias": "Azzurri",
+        "source_id": null
+      },
+      {
+        "alias": "Italia",
+        "source_id": null
+      },
+      {
+        "alias": "Italy",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Italy",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Italy",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Italy",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -546,21 +996,55 @@
         "tertiary": "#003DA5"
       },
       "kits": {
-        "home": { "primary_color": "#FF0000", "description": "Red and white checkerboard" },
-        "away": { "primary_color": "#003DA5", "description": "Blue with red and white checkerboard accents" }
+        "home": {
+          "primary_color": "#FF0000",
+          "description": "Red and white checkerboard"
+        },
+        "away": {
+          "primary_color": "#003DA5",
+          "description": "Blue with red and white checkerboard accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/HNS_crest.svg/800px-HNS_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia",
+      "flag_url": "https://flagcdn.com/w320/hr.png",
+      "flag_svg_url": "https://flagcdn.com/hr.svg",
+      "iso_code": "HR",
+      "flag_emoji": "🇭🇷"
     },
     "aliases": [
-      { "alias": "Croatia", "source_id": null },
-      { "alias": "CRO", "source_id": null },
-      { "alias": "Vatreni", "source_id": null },
-      { "alias": "Hrvatska", "source_id": null },
-      { "alias": "Croatia", "source_id": "espn_fifa" },
-      { "alias": "Croatia", "source_id": "footballdata_wc" },
-      { "alias": "Croatia", "source_id": "fifa_api" },
-      { "alias": "Croatia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Croatia",
+        "source_id": null
+      },
+      {
+        "alias": "CRO",
+        "source_id": null
+      },
+      {
+        "alias": "Vatreni",
+        "source_id": null
+      },
+      {
+        "alias": "Hrvatska",
+        "source_id": null
+      },
+      {
+        "alias": "Croatia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Croatia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Croatia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Croatia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -585,20 +1069,51 @@
         "tertiary": "#CE1126"
       },
       "kits": {
-        "home": { "primary_color": "#FCD116", "description": "Yellow with red and blue trim" },
-        "away": { "primary_color": "#003087", "description": "Blue with yellow and red accents" }
+        "home": {
+          "primary_color": "#FCD116",
+          "description": "Yellow with red and blue trim"
+        },
+        "away": {
+          "primary_color": "#003087",
+          "description": "Blue with yellow and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/FCF_%28crest%29.svg/800px-FCF_%28crest%29.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia",
+      "flag_url": "https://flagcdn.com/w320/co.png",
+      "flag_svg_url": "https://flagcdn.com/co.svg",
+      "iso_code": "CO",
+      "flag_emoji": "🇨🇴"
     },
     "aliases": [
-      { "alias": "Colombia", "source_id": null },
-      { "alias": "COL", "source_id": null },
-      { "alias": "Los Cafeteros", "source_id": null },
-      { "alias": "Colombia", "source_id": "espn_fifa" },
-      { "alias": "Colombia", "source_id": "footballdata_wc" },
-      { "alias": "Colombia", "source_id": "fifa_api" },
-      { "alias": "Colombia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Colombia",
+        "source_id": null
+      },
+      {
+        "alias": "COL",
+        "source_id": null
+      },
+      {
+        "alias": "Los Cafeteros",
+        "source_id": null
+      },
+      {
+        "alias": "Colombia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Colombia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Colombia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Colombia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -623,20 +1138,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#75AADB", "description": "Sky blue with white trim" },
-        "away": { "primary_color": "#000000", "description": "Black with sky blue accents" }
+        "home": {
+          "primary_color": "#75AADB",
+          "description": "Sky blue with white trim"
+        },
+        "away": {
+          "primary_color": "#000000",
+          "description": "Black with sky blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/AUF_logo.svg/800px-AUF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay",
+      "flag_url": "https://flagcdn.com/w320/uy.png",
+      "flag_svg_url": "https://flagcdn.com/uy.svg",
+      "iso_code": "UY",
+      "flag_emoji": "🇺🇾"
     },
     "aliases": [
-      { "alias": "Uruguay", "source_id": null },
-      { "alias": "URU", "source_id": null },
-      { "alias": "La Celeste", "source_id": null },
-      { "alias": "Uruguay", "source_id": "espn_fifa" },
-      { "alias": "Uruguay", "source_id": "footballdata_wc" },
-      { "alias": "Uruguay", "source_id": "fifa_api" },
-      { "alias": "Uruguay", "source_id": "mollybet_fb" }
+      {
+        "alias": "Uruguay",
+        "source_id": null
+      },
+      {
+        "alias": "URU",
+        "source_id": null
+      },
+      {
+        "alias": "La Celeste",
+        "source_id": null
+      },
+      {
+        "alias": "Uruguay",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Uruguay",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Uruguay",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Uruguay",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -661,21 +1207,55 @@
         "tertiary": "#BC002D"
       },
       "kits": {
-        "home": { "primary_color": "#003087", "description": "Dark blue with white accents" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue trim" }
+        "home": {
+          "primary_color": "#003087",
+          "description": "Dark blue with white accents"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue trim"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Japan_Football_Association.svg/800px-Japan_Football_Association.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan",
+      "flag_url": "https://flagcdn.com/w320/jp.png",
+      "flag_svg_url": "https://flagcdn.com/jp.svg",
+      "iso_code": "JP",
+      "flag_emoji": "🇯🇵"
     },
     "aliases": [
-      { "alias": "Japan", "source_id": null },
-      { "alias": "JPN", "source_id": null },
-      { "alias": "Samurai Blue", "source_id": null },
-      { "alias": "Nippon", "source_id": null },
-      { "alias": "Japan", "source_id": "espn_fifa" },
-      { "alias": "Japan", "source_id": "footballdata_wc" },
-      { "alias": "Japan", "source_id": "fifa_api" },
-      { "alias": "Japan", "source_id": "mollybet_fb" }
+      {
+        "alias": "Japan",
+        "source_id": null
+      },
+      {
+        "alias": "JPN",
+        "source_id": null
+      },
+      {
+        "alias": "Samurai Blue",
+        "source_id": null
+      },
+      {
+        "alias": "Nippon",
+        "source_id": null
+      },
+      {
+        "alias": "Japan",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Japan",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Japan",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Japan",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -700,22 +1280,59 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#C1272D", "description": "Red with green trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red and green accents" }
+        "home": {
+          "primary_color": "#C1272D",
+          "description": "Red with green trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and green accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/FRMF_crest.svg/800px-FRMF_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco",
+      "flag_url": "https://flagcdn.com/w320/ma.png",
+      "flag_svg_url": "https://flagcdn.com/ma.svg",
+      "iso_code": "MA",
+      "flag_emoji": "🇲🇦"
     },
     "aliases": [
-      { "alias": "Morocco", "source_id": null },
-      { "alias": "MAR", "source_id": null },
-      { "alias": "Atlas Lions", "source_id": null },
-      { "alias": "Maroc", "source_id": null },
-      { "alias": "Al-Maghrib", "source_id": null },
-      { "alias": "Morocco", "source_id": "espn_fifa" },
-      { "alias": "Morocco", "source_id": "footballdata_wc" },
-      { "alias": "Morocco", "source_id": "fifa_api" },
-      { "alias": "Morocco", "source_id": "mollybet_fb" }
+      {
+        "alias": "Morocco",
+        "source_id": null
+      },
+      {
+        "alias": "MAR",
+        "source_id": null
+      },
+      {
+        "alias": "Atlas Lions",
+        "source_id": null
+      },
+      {
+        "alias": "Maroc",
+        "source_id": null
+      },
+      {
+        "alias": "Al-Maghrib",
+        "source_id": null
+      },
+      {
+        "alias": "Morocco",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Morocco",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Morocco",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Morocco",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -740,22 +1357,59 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#FF0000", "description": "Red with white cross motif" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#FF0000",
+          "description": "Red with white cross motif"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/SFV-ASF_logo.svg/800px-SFV-ASF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SUI"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SUI",
+      "flag_url": "https://flagcdn.com/w320/ch.png",
+      "flag_svg_url": "https://flagcdn.com/ch.svg",
+      "iso_code": "CH",
+      "flag_emoji": "🇨🇭"
     },
     "aliases": [
-      { "alias": "Switzerland", "source_id": null },
-      { "alias": "SUI", "source_id": null },
-      { "alias": "Nati", "source_id": null },
-      { "alias": "Schweiz", "source_id": null },
-      { "alias": "Suisse", "source_id": null },
-      { "alias": "Switzerland", "source_id": "espn_fifa" },
-      { "alias": "Switzerland", "source_id": "footballdata_wc" },
-      { "alias": "Switzerland", "source_id": "fifa_api" },
-      { "alias": "Switzerland", "source_id": "mollybet_fb" }
+      {
+        "alias": "Switzerland",
+        "source_id": null
+      },
+      {
+        "alias": "SUI",
+        "source_id": null
+      },
+      {
+        "alias": "Nati",
+        "source_id": null
+      },
+      {
+        "alias": "Schweiz",
+        "source_id": null
+      },
+      {
+        "alias": "Suisse",
+        "source_id": null
+      },
+      {
+        "alias": "Switzerland",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Switzerland",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Switzerland",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Switzerland",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -780,21 +1434,55 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#C60C30", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#C60C30",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/DBU_logo.svg/800px-DBU_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/denmark"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/denmark",
+      "flag_url": "https://flagcdn.com/w320/dk.png",
+      "flag_svg_url": "https://flagcdn.com/dk.svg",
+      "iso_code": "DK",
+      "flag_emoji": "🇩🇰"
     },
     "aliases": [
-      { "alias": "Denmark", "source_id": null },
-      { "alias": "DEN", "source_id": null },
-      { "alias": "Danish Dynamite", "source_id": null },
-      { "alias": "Danmark", "source_id": null },
-      { "alias": "Denmark", "source_id": "espn_fifa" },
-      { "alias": "Denmark", "source_id": "footballdata_wc" },
-      { "alias": "Denmark", "source_id": "fifa_api" },
-      { "alias": "Denmark", "source_id": "mollybet_fb" }
+      {
+        "alias": "Denmark",
+        "source_id": null
+      },
+      {
+        "alias": "DEN",
+        "source_id": null
+      },
+      {
+        "alias": "Danish Dynamite",
+        "source_id": null
+      },
+      {
+        "alias": "Danmark",
+        "source_id": null
+      },
+      {
+        "alias": "Denmark",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Denmark",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Denmark",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Denmark",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -819,20 +1507,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#ED2939", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#ED2939",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/ÖFB_logo_2018.svg/800px-ÖFB_logo_2018.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/AUT"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/AUT",
+      "flag_url": "https://flagcdn.com/w320/at.png",
+      "flag_svg_url": "https://flagcdn.com/at.svg",
+      "iso_code": "AT",
+      "flag_emoji": "🇦🇹"
     },
     "aliases": [
-      { "alias": "Austria", "source_id": null },
-      { "alias": "AUT", "source_id": null },
-      { "alias": "Österreich", "source_id": null },
-      { "alias": "Austria", "source_id": "espn_fifa" },
-      { "alias": "Austria", "source_id": "footballdata_wc" },
-      { "alias": "Austria", "source_id": "fifa_api" },
-      { "alias": "Austria", "source_id": "mollybet_fb" }
+      {
+        "alias": "Austria",
+        "source_id": null
+      },
+      {
+        "alias": "AUT",
+        "source_id": null
+      },
+      {
+        "alias": "Österreich",
+        "source_id": null
+      },
+      {
+        "alias": "Austria",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Austria",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Austria",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Austria",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -857,21 +1576,55 @@
         "tertiary": "#E31B23"
       },
       "kits": {
-        "home": { "primary_color": "#00853F", "description": "Green with yellow and red trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green and yellow accents" }
+        "home": {
+          "primary_color": "#00853F",
+          "description": "Green with yellow and red trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green and yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/FSF_%28logo%29.svg/800px-FSF_%28logo%29.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal",
+      "flag_url": "https://flagcdn.com/w320/sn.png",
+      "flag_svg_url": "https://flagcdn.com/sn.svg",
+      "iso_code": "SN",
+      "flag_emoji": "🇸🇳"
     },
     "aliases": [
-      { "alias": "Senegal", "source_id": null },
-      { "alias": "SEN", "source_id": null },
-      { "alias": "Lions of Teranga", "source_id": null },
-      { "alias": "Sénégal", "source_id": null },
-      { "alias": "Senegal", "source_id": "espn_fifa" },
-      { "alias": "Senegal", "source_id": "footballdata_wc" },
-      { "alias": "Senegal", "source_id": "fifa_api" },
-      { "alias": "Senegal", "source_id": "mollybet_fb" }
+      {
+        "alias": "Senegal",
+        "source_id": null
+      },
+      {
+        "alias": "SEN",
+        "source_id": null
+      },
+      {
+        "alias": "Lions of Teranga",
+        "source_id": null
+      },
+      {
+        "alias": "Sénégal",
+        "source_id": null
+      },
+      {
+        "alias": "Senegal",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Senegal",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Senegal",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Senegal",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -896,20 +1649,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#00843D", "description": "Green with gold trim" },
-        "away": { "primary_color": "#FFCD00", "description": "Gold with green accents" }
+        "home": {
+          "primary_color": "#00843D",
+          "description": "Green with gold trim"
+        },
+        "away": {
+          "primary_color": "#FFCD00",
+          "description": "Gold with green accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Football_Federation_Australia_logo.svg/800px-Football_Federation_Australia_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia",
+      "flag_url": "https://flagcdn.com/w320/au.png",
+      "flag_svg_url": "https://flagcdn.com/au.svg",
+      "iso_code": "AU",
+      "flag_emoji": "🇦🇺"
     },
     "aliases": [
-      { "alias": "Australia", "source_id": null },
-      { "alias": "AUS", "source_id": null },
-      { "alias": "Socceroos", "source_id": null },
-      { "alias": "Australia", "source_id": "espn_fifa" },
-      { "alias": "Australia", "source_id": "footballdata_wc" },
-      { "alias": "Australia", "source_id": "fifa_api" },
-      { "alias": "Australia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Australia",
+        "source_id": null
+      },
+      {
+        "alias": "AUS",
+        "source_id": null
+      },
+      {
+        "alias": "Socceroos",
+        "source_id": null
+      },
+      {
+        "alias": "Australia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Australia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Australia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Australia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -934,22 +1718,59 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#C60C30", "description": "Red with blue and white trim" },
-        "away": { "primary_color": "#003478", "description": "Blue with red and white accents" }
+        "home": {
+          "primary_color": "#C60C30",
+          "description": "Red with blue and white trim"
+        },
+        "away": {
+          "primary_color": "#003478",
+          "description": "Blue with red and white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Korea_Football_Association_Logo.svg/800px-Korea_Football_Association_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/KOR"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/KOR",
+      "flag_url": "https://flagcdn.com/w320/kr.png",
+      "flag_svg_url": "https://flagcdn.com/kr.svg",
+      "iso_code": "KR",
+      "flag_emoji": "🇰🇷"
     },
     "aliases": [
-      { "alias": "Korea Republic", "source_id": null },
-      { "alias": "KOR", "source_id": null },
-      { "alias": "South Korea", "source_id": null },
-      { "alias": "Korea", "source_id": null },
-      { "alias": "Taegeuk Warriors", "source_id": null },
-      { "alias": "South Korea", "source_id": "espn_fifa" },
-      { "alias": "Korea Republic", "source_id": "footballdata_wc" },
-      { "alias": "Korea Republic", "source_id": "fifa_api" },
-      { "alias": "Korea Republic", "source_id": "mollybet_fb" }
+      {
+        "alias": "Korea Republic",
+        "source_id": null
+      },
+      {
+        "alias": "KOR",
+        "source_id": null
+      },
+      {
+        "alias": "South Korea",
+        "source_id": null
+      },
+      {
+        "alias": "Korea",
+        "source_id": null
+      },
+      {
+        "alias": "Taegeuk Warriors",
+        "source_id": null
+      },
+      {
+        "alias": "South Korea",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Korea Republic",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Korea Republic",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Korea Republic",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -974,21 +1795,55 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with red trim" },
-        "away": { "primary_color": "#DC143C", "description": "Red with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red trim"
+        },
+        "away": {
+          "primary_color": "#DC143C",
+          "description": "Red with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/PZPN_logo.svg/800px-PZPN_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/poland"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/poland",
+      "flag_url": "https://flagcdn.com/w320/pl.png",
+      "flag_svg_url": "https://flagcdn.com/pl.svg",
+      "iso_code": "PL",
+      "flag_emoji": "🇵🇱"
     },
     "aliases": [
-      { "alias": "Poland", "source_id": null },
-      { "alias": "POL", "source_id": null },
-      { "alias": "Biało-Czerwoni", "source_id": null },
-      { "alias": "Polska", "source_id": null },
-      { "alias": "Poland", "source_id": "espn_fifa" },
-      { "alias": "Poland", "source_id": "footballdata_wc" },
-      { "alias": "Poland", "source_id": "fifa_api" },
-      { "alias": "Poland", "source_id": "mollybet_fb" }
+      {
+        "alias": "Poland",
+        "source_id": null
+      },
+      {
+        "alias": "POL",
+        "source_id": null
+      },
+      {
+        "alias": "Biało-Czerwoni",
+        "source_id": null
+      },
+      {
+        "alias": "Polska",
+        "source_id": null
+      },
+      {
+        "alias": "Poland",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Poland",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Poland",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Poland",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1013,20 +1868,51 @@
         "tertiary": "#C8102E"
       },
       "kits": {
-        "home": { "primary_color": "#FFD100", "description": "Yellow with blue and red trim" },
-        "away": { "primary_color": "#003DA5", "description": "Blue with yellow accents" }
+        "home": {
+          "primary_color": "#FFD100",
+          "description": "Yellow with blue and red trim"
+        },
+        "away": {
+          "primary_color": "#003DA5",
+          "description": "Blue with yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/FEF_logo.svg/800px-FEF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador",
+      "flag_url": "https://flagcdn.com/w320/ec.png",
+      "flag_svg_url": "https://flagcdn.com/ec.svg",
+      "iso_code": "EC",
+      "flag_emoji": "🇪🇨"
     },
     "aliases": [
-      { "alias": "Ecuador", "source_id": null },
-      { "alias": "ECU", "source_id": null },
-      { "alias": "La Tri", "source_id": null },
-      { "alias": "Ecuador", "source_id": "espn_fifa" },
-      { "alias": "Ecuador", "source_id": "footballdata_wc" },
-      { "alias": "Ecuador", "source_id": "fifa_api" },
-      { "alias": "Ecuador", "source_id": "mollybet_fb" }
+      {
+        "alias": "Ecuador",
+        "source_id": null
+      },
+      {
+        "alias": "ECU",
+        "source_id": null
+      },
+      {
+        "alias": "La Tri",
+        "source_id": null
+      },
+      {
+        "alias": "Ecuador",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Ecuador",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Ecuador",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Ecuador",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1051,21 +1937,55 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#C6363C", "description": "Red with blue and white trim" },
-        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+        "home": {
+          "primary_color": "#C6363C",
+          "description": "Red with blue and white trim"
+        },
+        "away": {
+          "primary_color": "#003DA5",
+          "description": "Blue with red and white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/FSS_logo.svg/800px-FSS_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/serbia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/serbia",
+      "flag_url": "https://flagcdn.com/w320/rs.png",
+      "flag_svg_url": "https://flagcdn.com/rs.svg",
+      "iso_code": "RS",
+      "flag_emoji": "🇷🇸"
     },
     "aliases": [
-      { "alias": "Serbia", "source_id": null },
-      { "alias": "SRB", "source_id": null },
-      { "alias": "Orlovi", "source_id": null },
-      { "alias": "Srbija", "source_id": null },
-      { "alias": "Serbia", "source_id": "espn_fifa" },
-      { "alias": "Serbia", "source_id": "footballdata_wc" },
-      { "alias": "Serbia", "source_id": "fifa_api" },
-      { "alias": "Serbia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Serbia",
+        "source_id": null
+      },
+      {
+        "alias": "SRB",
+        "source_id": null
+      },
+      {
+        "alias": "Orlovi",
+        "source_id": null
+      },
+      {
+        "alias": "Srbija",
+        "source_id": null
+      },
+      {
+        "alias": "Serbia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Serbia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Serbia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Serbia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1090,20 +2010,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#E30A17", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#E30A17",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/TFF_logo.svg/800px-TFF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkey"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkey",
+      "flag_url": "https://flagcdn.com/w320/tr.png",
+      "flag_svg_url": "https://flagcdn.com/tr.svg",
+      "iso_code": "TR",
+      "flag_emoji": "🇹🇷"
     },
     "aliases": [
-      { "alias": "Turkey", "source_id": null },
-      { "alias": "TUR", "source_id": null },
-      { "alias": "Türkiye", "source_id": null },
-      { "alias": "Turkey", "source_id": "espn_fifa" },
-      { "alias": "Turkey", "source_id": "footballdata_wc" },
-      { "alias": "Türkiye", "source_id": "fifa_api" },
-      { "alias": "Turkey", "source_id": "mollybet_fb" }
+      {
+        "alias": "Turkey",
+        "source_id": null
+      },
+      {
+        "alias": "TUR",
+        "source_id": null
+      },
+      {
+        "alias": "Türkiye",
+        "source_id": null
+      },
+      {
+        "alias": "Turkey",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Turkey",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Türkiye",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Turkey",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1128,21 +2079,55 @@
         "tertiary": "#DA0000"
       },
       "kits": {
-        "home": { "primary_color": "#239F40", "description": "Green with white and red trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green and red accents" }
+        "home": {
+          "primary_color": "#239F40",
+          "description": "Green with white and red trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Football_Federation_IR_Iran.svg/800px-Football_Federation_IR_Iran.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ir-iran"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ir-iran",
+      "flag_url": "https://flagcdn.com/w320/ir.png",
+      "flag_svg_url": "https://flagcdn.com/ir.svg",
+      "iso_code": "IR",
+      "flag_emoji": "🇮🇷"
     },
     "aliases": [
-      { "alias": "Iran", "source_id": null },
-      { "alias": "IRN", "source_id": null },
-      { "alias": "IR Iran", "source_id": null },
-      { "alias": "Team Melli", "source_id": null },
-      { "alias": "Iran", "source_id": "espn_fifa" },
-      { "alias": "Iran", "source_id": "footballdata_wc" },
-      { "alias": "IR Iran", "source_id": "fifa_api" },
-      { "alias": "Iran", "source_id": "mollybet_fb" }
+      {
+        "alias": "Iran",
+        "source_id": null
+      },
+      {
+        "alias": "IRN",
+        "source_id": null
+      },
+      {
+        "alias": "IR Iran",
+        "source_id": null
+      },
+      {
+        "alias": "Team Melli",
+        "source_id": null
+      },
+      {
+        "alias": "Iran",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Iran",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "IR Iran",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Iran",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1167,20 +2152,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#FFD500", "description": "Yellow with blue trim" },
-        "away": { "primary_color": "#005BBB", "description": "Blue with yellow accents" }
+        "home": {
+          "primary_color": "#FFD500",
+          "description": "Yellow with blue trim"
+        },
+        "away": {
+          "primary_color": "#005BBB",
+          "description": "Blue with yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Football_Federation_of_Ukraine_Logo.svg/800px-Football_Federation_of_Ukraine_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/UKR"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/UKR",
+      "flag_url": "https://flagcdn.com/w320/ua.png",
+      "flag_svg_url": "https://flagcdn.com/ua.svg",
+      "iso_code": "UA",
+      "flag_emoji": "🇺🇦"
     },
     "aliases": [
-      { "alias": "Ukraine", "source_id": null },
-      { "alias": "UKR", "source_id": null },
-      { "alias": "Україна", "source_id": null },
-      { "alias": "Ukraine", "source_id": "espn_fifa" },
-      { "alias": "Ukraine", "source_id": "footballdata_wc" },
-      { "alias": "Ukraine", "source_id": "fifa_api" },
-      { "alias": "Ukraine", "source_id": "mollybet_fb" }
+      {
+        "alias": "Ukraine",
+        "source_id": null
+      },
+      {
+        "alias": "UKR",
+        "source_id": null
+      },
+      {
+        "alias": "Україна",
+        "source_id": null
+      },
+      {
+        "alias": "Ukraine",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Ukraine",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Ukraine",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Ukraine",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1205,20 +2221,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#003DA5", "description": "Dark blue with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+        "home": {
+          "primary_color": "#003DA5",
+          "description": "Dark blue with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Scottish_FA_crest.svg/800px-Scottish_FA_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SCO"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/SCO",
+      "flag_url": "https://flagcdn.com/w320/gb-sct.png",
+      "flag_svg_url": "https://flagcdn.com/gb-sct.svg",
+      "iso_code": "GB-SCT",
+      "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
     "aliases": [
-      { "alias": "Scotland", "source_id": null },
-      { "alias": "SCO", "source_id": null },
-      { "alias": "Tartan Army", "source_id": null },
-      { "alias": "Scotland", "source_id": "espn_fifa" },
-      { "alias": "Scotland", "source_id": "footballdata_wc" },
-      { "alias": "Scotland", "source_id": "fifa_api" },
-      { "alias": "Scotland", "source_id": "mollybet_fb" }
+      {
+        "alias": "Scotland",
+        "source_id": null
+      },
+      {
+        "alias": "SCO",
+        "source_id": null
+      },
+      {
+        "alias": "Tartan Army",
+        "source_id": null
+      },
+      {
+        "alias": "Scotland",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Scotland",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Scotland",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Scotland",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1243,21 +2290,55 @@
         "tertiary": "#00AB4E"
       },
       "kits": {
-        "home": { "primary_color": "#C8102E", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#C8102E",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Football_Association_of_Wales_crest.svg/800px-Football_Association_of_Wales_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/WAL"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/WAL",
+      "flag_url": "https://flagcdn.com/w320/gb-wls.png",
+      "flag_svg_url": "https://flagcdn.com/gb-wls.svg",
+      "iso_code": "GB-WLS",
+      "flag_emoji": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
     },
     "aliases": [
-      { "alias": "Wales", "source_id": null },
-      { "alias": "WAL", "source_id": null },
-      { "alias": "The Dragons", "source_id": null },
-      { "alias": "Cymru", "source_id": null },
-      { "alias": "Wales", "source_id": "espn_fifa" },
-      { "alias": "Wales", "source_id": "footballdata_wc" },
-      { "alias": "Wales", "source_id": "fifa_api" },
-      { "alias": "Wales", "source_id": "mollybet_fb" }
+      {
+        "alias": "Wales",
+        "source_id": null
+      },
+      {
+        "alias": "WAL",
+        "source_id": null
+      },
+      {
+        "alias": "The Dragons",
+        "source_id": null
+      },
+      {
+        "alias": "Cymru",
+        "source_id": null
+      },
+      {
+        "alias": "Wales",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Wales",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Wales",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Wales",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1282,20 +2363,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#008751", "description": "Green with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green accents" }
+        "home": {
+          "primary_color": "#008751",
+          "description": "Green with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Nigeria_Football_Federation_logo.svg/800px-Nigeria_Football_Federation_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/nigeria"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/nigeria",
+      "flag_url": "https://flagcdn.com/w320/ng.png",
+      "flag_svg_url": "https://flagcdn.com/ng.svg",
+      "iso_code": "NG",
+      "flag_emoji": "🇳🇬"
     },
     "aliases": [
-      { "alias": "Nigeria", "source_id": null },
-      { "alias": "NGA", "source_id": null },
-      { "alias": "Super Eagles", "source_id": null },
-      { "alias": "Nigeria", "source_id": "espn_fifa" },
-      { "alias": "Nigeria", "source_id": "footballdata_wc" },
-      { "alias": "Nigeria", "source_id": "fifa_api" },
-      { "alias": "Nigeria", "source_id": "mollybet_fb" }
+      {
+        "alias": "Nigeria",
+        "source_id": null
+      },
+      {
+        "alias": "NGA",
+        "source_id": null
+      },
+      {
+        "alias": "Super Eagles",
+        "source_id": null
+      },
+      {
+        "alias": "Nigeria",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Nigeria",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Nigeria",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Nigeria",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1320,21 +2432,55 @@
         "tertiary": "#FCD116"
       },
       "kits": {
-        "home": { "primary_color": "#007A5E", "description": "Green with red and yellow trim" },
-        "away": { "primary_color": "#CE1126", "description": "Red with green and yellow accents" }
+        "home": {
+          "primary_color": "#007A5E",
+          "description": "Green with red and yellow trim"
+        },
+        "away": {
+          "primary_color": "#CE1126",
+          "description": "Red with green and yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/FECAFOOT_logo.svg/800px-FECAFOOT_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cameroon"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cameroon",
+      "flag_url": "https://flagcdn.com/w320/cm.png",
+      "flag_svg_url": "https://flagcdn.com/cm.svg",
+      "iso_code": "CM",
+      "flag_emoji": "🇨🇲"
     },
     "aliases": [
-      { "alias": "Cameroon", "source_id": null },
-      { "alias": "CMR", "source_id": null },
-      { "alias": "Indomitable Lions", "source_id": null },
-      { "alias": "Cameroun", "source_id": null },
-      { "alias": "Cameroon", "source_id": "espn_fifa" },
-      { "alias": "Cameroon", "source_id": "footballdata_wc" },
-      { "alias": "Cameroon", "source_id": "fifa_api" },
-      { "alias": "Cameroon", "source_id": "mollybet_fb" }
+      {
+        "alias": "Cameroon",
+        "source_id": null
+      },
+      {
+        "alias": "CMR",
+        "source_id": null
+      },
+      {
+        "alias": "Indomitable Lions",
+        "source_id": null
+      },
+      {
+        "alias": "Cameroun",
+        "source_id": null
+      },
+      {
+        "alias": "Cameroon",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Cameroon",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Cameroon",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Cameroon",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1359,21 +2505,55 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#CE1126", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#CE1126",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/EFA_crest_2022.svg/800px-EFA_crest_2022.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt",
+      "flag_url": "https://flagcdn.com/w320/eg.png",
+      "flag_svg_url": "https://flagcdn.com/eg.svg",
+      "iso_code": "EG",
+      "flag_emoji": "🇪🇬"
     },
     "aliases": [
-      { "alias": "Egypt", "source_id": null },
-      { "alias": "EGY", "source_id": null },
-      { "alias": "The Pharaohs", "source_id": null },
-      { "alias": "Misr", "source_id": null },
-      { "alias": "Egypt", "source_id": "espn_fifa" },
-      { "alias": "Egypt", "source_id": "footballdata_wc" },
-      { "alias": "Egypt", "source_id": "fifa_api" },
-      { "alias": "Egypt", "source_id": "mollybet_fb" }
+      {
+        "alias": "Egypt",
+        "source_id": null
+      },
+      {
+        "alias": "EGY",
+        "source_id": null
+      },
+      {
+        "alias": "The Pharaohs",
+        "source_id": null
+      },
+      {
+        "alias": "Misr",
+        "source_id": null
+      },
+      {
+        "alias": "Egypt",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Egypt",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Egypt",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Egypt",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1398,20 +2578,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#006C35", "description": "Green with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green accents" }
+        "home": {
+          "primary_color": "#006C35",
+          "description": "Green with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Saudi_Arabia_Football_Federation_Logo.svg/800px-Saudi_Arabia_Football_Federation_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia",
+      "flag_url": "https://flagcdn.com/w320/sa.png",
+      "flag_svg_url": "https://flagcdn.com/sa.svg",
+      "iso_code": "SA",
+      "flag_emoji": "🇸🇦"
     },
     "aliases": [
-      { "alias": "Saudi Arabia", "source_id": null },
-      { "alias": "KSA", "source_id": null },
-      { "alias": "The Green Falcons", "source_id": null },
-      { "alias": "Saudi Arabia", "source_id": "espn_fifa" },
-      { "alias": "Saudi Arabia", "source_id": "footballdata_wc" },
-      { "alias": "Saudi Arabia", "source_id": "fifa_api" },
-      { "alias": "Saudi Arabia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Saudi Arabia",
+        "source_id": null
+      },
+      {
+        "alias": "KSA",
+        "source_id": null
+      },
+      {
+        "alias": "The Green Falcons",
+        "source_id": null
+      },
+      {
+        "alias": "Saudi Arabia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Saudi Arabia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Saudi Arabia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Saudi Arabia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1436,20 +2647,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#8D1B3D", "description": "Maroon with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with maroon accents" }
+        "home": {
+          "primary_color": "#8D1B3D",
+          "description": "Maroon with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with maroon accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ea/Qatar_Football_Association_Logo.svg/800px-Qatar_Football_Association_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/QAT"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/QAT",
+      "flag_url": "https://flagcdn.com/w320/qa.png",
+      "flag_svg_url": "https://flagcdn.com/qa.svg",
+      "iso_code": "QA",
+      "flag_emoji": "🇶🇦"
     },
     "aliases": [
-      { "alias": "Qatar", "source_id": null },
-      { "alias": "QAT", "source_id": null },
-      { "alias": "The Maroons", "source_id": null },
-      { "alias": "Qatar", "source_id": "espn_fifa" },
-      { "alias": "Qatar", "source_id": "footballdata_wc" },
-      { "alias": "Qatar", "source_id": "fifa_api" },
-      { "alias": "Qatar", "source_id": "mollybet_fb" }
+      {
+        "alias": "Qatar",
+        "source_id": null
+      },
+      {
+        "alias": "QAT",
+        "source_id": null
+      },
+      {
+        "alias": "The Maroons",
+        "source_id": null
+      },
+      {
+        "alias": "Qatar",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Qatar",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Qatar",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Qatar",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1474,20 +2716,51 @@
         "tertiary": "#003DA5"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue stripes" },
-        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and blue stripes"
+        },
+        "away": {
+          "primary_color": "#003DA5",
+          "description": "Blue with red and white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/APF_Logo.svg/800px-APF_Logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay",
+      "flag_url": "https://flagcdn.com/w320/py.png",
+      "flag_svg_url": "https://flagcdn.com/py.svg",
+      "iso_code": "PY",
+      "flag_emoji": "🇵🇾"
     },
     "aliases": [
-      { "alias": "Paraguay", "source_id": null },
-      { "alias": "PAR", "source_id": null },
-      { "alias": "La Albirroja", "source_id": null },
-      { "alias": "Paraguay", "source_id": "espn_fifa" },
-      { "alias": "Paraguay", "source_id": "footballdata_wc" },
-      { "alias": "Paraguay", "source_id": "fifa_api" },
-      { "alias": "Paraguay", "source_id": "mollybet_fb" }
+      {
+        "alias": "Paraguay",
+        "source_id": null
+      },
+      {
+        "alias": "PAR",
+        "source_id": null
+      },
+      {
+        "alias": "La Albirroja",
+        "source_id": null
+      },
+      {
+        "alias": "Paraguay",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Paraguay",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Paraguay",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Paraguay",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1512,20 +2785,51 @@
         "tertiary": "#003DA5"
       },
       "kits": {
-        "home": { "primary_color": "#8B0000", "description": "Burgundy/wine red with gold trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with burgundy accents" }
+        "home": {
+          "primary_color": "#8B0000",
+          "description": "Burgundy/wine red with gold trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with burgundy accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/FVF_logo.svg/800px-FVF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/VEN"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/VEN",
+      "flag_url": "https://flagcdn.com/w320/ve.png",
+      "flag_svg_url": "https://flagcdn.com/ve.svg",
+      "iso_code": "VE",
+      "flag_emoji": "🇻🇪"
     },
     "aliases": [
-      { "alias": "Venezuela", "source_id": null },
-      { "alias": "VEN", "source_id": null },
-      { "alias": "La Vinotinto", "source_id": null },
-      { "alias": "Venezuela", "source_id": "espn_fifa" },
-      { "alias": "Venezuela", "source_id": "footballdata_wc" },
-      { "alias": "Venezuela", "source_id": "fifa_api" },
-      { "alias": "Venezuela", "source_id": "mollybet_fb" }
+      {
+        "alias": "Venezuela",
+        "source_id": null
+      },
+      {
+        "alias": "VEN",
+        "source_id": null
+      },
+      {
+        "alias": "La Vinotinto",
+        "source_id": null
+      },
+      {
+        "alias": "Venezuela",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Venezuela",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Venezuela",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Venezuela",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1550,20 +2854,51 @@
         "tertiary": "#009B77"
       },
       "kits": {
-        "home": { "primary_color": "#000000", "description": "Black with gold and green trim" },
-        "away": { "primary_color": "#FED100", "description": "Gold with black and green accents" }
+        "home": {
+          "primary_color": "#000000",
+          "description": "Black with gold and green trim"
+        },
+        "away": {
+          "primary_color": "#FED100",
+          "description": "Gold with black and green accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Jamaica_football_federation_crest.svg/800px-Jamaica_football_federation_crest.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jamaica"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jamaica",
+      "flag_url": "https://flagcdn.com/w320/jm.png",
+      "flag_svg_url": "https://flagcdn.com/jm.svg",
+      "iso_code": "JM",
+      "flag_emoji": "🇯🇲"
     },
     "aliases": [
-      { "alias": "Jamaica", "source_id": null },
-      { "alias": "JAM", "source_id": null },
-      { "alias": "Reggae Boyz", "source_id": null },
-      { "alias": "Jamaica", "source_id": "espn_fifa" },
-      { "alias": "Jamaica", "source_id": "footballdata_wc" },
-      { "alias": "Jamaica", "source_id": "fifa_api" },
-      { "alias": "Jamaica", "source_id": "mollybet_fb" }
+      {
+        "alias": "Jamaica",
+        "source_id": null
+      },
+      {
+        "alias": "JAM",
+        "source_id": null
+      },
+      {
+        "alias": "Reggae Boyz",
+        "source_id": null
+      },
+      {
+        "alias": "Jamaica",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Jamaica",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Jamaica",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Jamaica",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1588,20 +2923,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with blue trim" },
-        "away": { "primary_color": "#0073CF", "description": "Blue with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue trim"
+        },
+        "away": {
+          "primary_color": "#0073CF",
+          "description": "Blue with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/FENAFUTH_logo.svg/800px-FENAFUTH_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/honduras"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/honduras",
+      "flag_url": "https://flagcdn.com/w320/hn.png",
+      "flag_svg_url": "https://flagcdn.com/hn.svg",
+      "iso_code": "HN",
+      "flag_emoji": "🇭🇳"
     },
     "aliases": [
-      { "alias": "Honduras", "source_id": null },
-      { "alias": "HON", "source_id": null },
-      { "alias": "Los Catrachos", "source_id": null },
-      { "alias": "Honduras", "source_id": "espn_fifa" },
-      { "alias": "Honduras", "source_id": "footballdata_wc" },
-      { "alias": "Honduras", "source_id": "fifa_api" },
-      { "alias": "Honduras", "source_id": "mollybet_fb" }
+      {
+        "alias": "Honduras",
+        "source_id": null
+      },
+      {
+        "alias": "HON",
+        "source_id": null
+      },
+      {
+        "alias": "Los Catrachos",
+        "source_id": null
+      },
+      {
+        "alias": "Honduras",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Honduras",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Honduras",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Honduras",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1626,20 +2992,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#CE1126", "description": "Red with blue and white trim" },
-        "away": { "primary_color": "#003DA5", "description": "Blue with red and white accents" }
+        "home": {
+          "primary_color": "#CE1126",
+          "description": "Red with blue and white trim"
+        },
+        "away": {
+          "primary_color": "#003DA5",
+          "description": "Blue with red and white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/FEDEFUTBOL_logo.svg/800px-FEDEFUTBOL_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/costa-rica"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/costa-rica",
+      "flag_url": "https://flagcdn.com/w320/cr.png",
+      "flag_svg_url": "https://flagcdn.com/cr.svg",
+      "iso_code": "CR",
+      "flag_emoji": "🇨🇷"
     },
     "aliases": [
-      { "alias": "Costa Rica", "source_id": null },
-      { "alias": "CRC", "source_id": null },
-      { "alias": "Los Ticos", "source_id": null },
-      { "alias": "Costa Rica", "source_id": "espn_fifa" },
-      { "alias": "Costa Rica", "source_id": "footballdata_wc" },
-      { "alias": "Costa Rica", "source_id": "fifa_api" },
-      { "alias": "Costa Rica", "source_id": "mollybet_fb" }
+      {
+        "alias": "Costa Rica",
+        "source_id": null
+      },
+      {
+        "alias": "CRC",
+        "source_id": null
+      },
+      {
+        "alias": "Los Ticos",
+        "source_id": null
+      },
+      {
+        "alias": "Costa Rica",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Costa Rica",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Costa Rica",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Costa Rica",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1664,21 +3061,55 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with red and blue trim" },
-        "away": { "primary_color": "#CE1126", "description": "Red with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and blue trim"
+        },
+        "away": {
+          "primary_color": "#CE1126",
+          "description": "Red with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/FEPAFUT_logo.svg/800px-FEPAFUT_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama",
+      "flag_url": "https://flagcdn.com/w320/pa.png",
+      "flag_svg_url": "https://flagcdn.com/pa.svg",
+      "iso_code": "PA",
+      "flag_emoji": "🇵🇦"
     },
     "aliases": [
-      { "alias": "Panama", "source_id": null },
-      { "alias": "PAN", "source_id": null },
-      { "alias": "Los Canaleros", "source_id": null },
-      { "alias": "Panamá", "source_id": null },
-      { "alias": "Panama", "source_id": "espn_fifa" },
-      { "alias": "Panama", "source_id": "footballdata_wc" },
-      { "alias": "Panama", "source_id": "fifa_api" },
-      { "alias": "Panama", "source_id": "mollybet_fb" }
+      {
+        "alias": "Panama",
+        "source_id": null
+      },
+      {
+        "alias": "PAN",
+        "source_id": null
+      },
+      {
+        "alias": "Los Canaleros",
+        "source_id": null
+      },
+      {
+        "alias": "Panamá",
+        "source_id": null
+      },
+      {
+        "alias": "Panama",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Panama",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Panama",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Panama",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1703,20 +3134,51 @@
         "tertiary": "#003DA5"
       },
       "kits": {
-        "home": { "primary_color": "#D52B1E", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red and blue accents" }
+        "home": {
+          "primary_color": "#D52B1E",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Federacion_de_futbol_de_Chile_logo.svg/800px-Federacion_de_futbol_de_Chile_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/chile"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/chile",
+      "flag_url": "https://flagcdn.com/w320/cl.png",
+      "flag_svg_url": "https://flagcdn.com/cl.svg",
+      "iso_code": "CL",
+      "flag_emoji": "🇨🇱"
     },
     "aliases": [
-      { "alias": "Chile", "source_id": null },
-      { "alias": "CHI", "source_id": null },
-      { "alias": "La Roja", "source_id": null },
-      { "alias": "Chile", "source_id": "espn_fifa" },
-      { "alias": "Chile", "source_id": "footballdata_wc" },
-      { "alias": "Chile", "source_id": "fifa_api" },
-      { "alias": "Chile", "source_id": "mollybet_fb" }
+      {
+        "alias": "Chile",
+        "source_id": null
+      },
+      {
+        "alias": "CHI",
+        "source_id": null
+      },
+      {
+        "alias": "La Roja",
+        "source_id": null
+      },
+      {
+        "alias": "Chile",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Chile",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Chile",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Chile",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1741,20 +3203,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#1EB53A", "description": "Green with blue and white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green and blue accents" }
+        "home": {
+          "primary_color": "#1EB53A",
+          "description": "Green with blue and white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green and blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/UFF_logo.svg/800px-UFF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan",
+      "flag_url": "https://flagcdn.com/w320/uz.png",
+      "flag_svg_url": "https://flagcdn.com/uz.svg",
+      "iso_code": "UZ",
+      "flag_emoji": "🇺🇿"
     },
     "aliases": [
-      { "alias": "Uzbekistan", "source_id": null },
-      { "alias": "UZB", "source_id": null },
-      { "alias": "White Wolves", "source_id": null },
-      { "alias": "Uzbekistan", "source_id": "espn_fifa" },
-      { "alias": "Uzbekistan", "source_id": "footballdata_wc" },
-      { "alias": "Uzbekistan", "source_id": "fifa_api" },
-      { "alias": "Uzbekistan", "source_id": "mollybet_fb" }
+      {
+        "alias": "Uzbekistan",
+        "source_id": null
+      },
+      {
+        "alias": "UZB",
+        "source_id": null
+      },
+      {
+        "alias": "White Wolves",
+        "source_id": null
+      },
+      {
+        "alias": "Uzbekistan",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Uzbekistan",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Uzbekistan",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Uzbekistan",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1779,20 +3272,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#CE1126", "description": "Red with white and black trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red and black accents" }
+        "home": {
+          "primary_color": "#CE1126",
+          "description": "Red with white and black trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and black accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/IFA_logo.svg/800px-IFA_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/IRQ"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/IRQ",
+      "flag_url": "https://flagcdn.com/w320/iq.png",
+      "flag_svg_url": "https://flagcdn.com/iq.svg",
+      "iso_code": "IQ",
+      "flag_emoji": "🇮🇶"
     },
     "aliases": [
-      { "alias": "Iraq", "source_id": null },
-      { "alias": "IRQ", "source_id": null },
-      { "alias": "Lions of Mesopotamia", "source_id": null },
-      { "alias": "Iraq", "source_id": "espn_fifa" },
-      { "alias": "Iraq", "source_id": "footballdata_wc" },
-      { "alias": "Iraq", "source_id": "fifa_api" },
-      { "alias": "Iraq", "source_id": "mollybet_fb" }
+      {
+        "alias": "Iraq",
+        "source_id": null
+      },
+      {
+        "alias": "IRQ",
+        "source_id": null
+      },
+      {
+        "alias": "Lions of Mesopotamia",
+        "source_id": null
+      },
+      {
+        "alias": "Iraq",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Iraq",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Iraq",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Iraq",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1817,22 +3341,59 @@
         "tertiary": "#D21034"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with green and red trim" },
-        "away": { "primary_color": "#006233", "description": "Green with white and red accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green and red trim"
+        },
+        "away": {
+          "primary_color": "#006233",
+          "description": "Green with white and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/FAF_logo.svg/800px-FAF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/associations/association/ALG"
+      "fifa_profile_url": "https://www.fifa.com/en/associations/association/ALG",
+      "flag_url": "https://flagcdn.com/w320/dz.png",
+      "flag_svg_url": "https://flagcdn.com/dz.svg",
+      "iso_code": "DZ",
+      "flag_emoji": "🇩🇿"
     },
     "aliases": [
-      { "alias": "Algeria", "source_id": null },
-      { "alias": "ALG", "source_id": null },
-      { "alias": "Les Fennecs", "source_id": null },
-      { "alias": "Desert Foxes", "source_id": null },
-      { "alias": "Algérie", "source_id": null },
-      { "alias": "Algeria", "source_id": "espn_fifa" },
-      { "alias": "Algeria", "source_id": "footballdata_wc" },
-      { "alias": "Algeria", "source_id": "fifa_api" },
-      { "alias": "Algeria", "source_id": "mollybet_fb" }
+      {
+        "alias": "Algeria",
+        "source_id": null
+      },
+      {
+        "alias": "ALG",
+        "source_id": null
+      },
+      {
+        "alias": "Les Fennecs",
+        "source_id": null
+      },
+      {
+        "alias": "Desert Foxes",
+        "source_id": null
+      },
+      {
+        "alias": "Algérie",
+        "source_id": null
+      },
+      {
+        "alias": "Algeria",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Algeria",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Algeria",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Algeria",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1857,20 +3418,51 @@
         "tertiary": "#CC0000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with black trim" },
-        "away": { "primary_color": "#000000", "description": "Black with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with black trim"
+        },
+        "away": {
+          "primary_color": "#000000",
+          "description": "Black with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/NZ_Football_logo.svg/800px-NZ_Football_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/new-zealand"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/new-zealand",
+      "flag_url": "https://flagcdn.com/w320/nz.png",
+      "flag_svg_url": "https://flagcdn.com/nz.svg",
+      "iso_code": "NZ",
+      "flag_emoji": "🇳🇿"
     },
     "aliases": [
-      { "alias": "New Zealand", "source_id": null },
-      { "alias": "NZL", "source_id": null },
-      { "alias": "All Whites", "source_id": null },
-      { "alias": "New Zealand", "source_id": "espn_fifa" },
-      { "alias": "New Zealand", "source_id": "footballdata_wc" },
-      { "alias": "New Zealand", "source_id": "fifa_api" },
-      { "alias": "New Zealand", "source_id": "mollybet_fb" }
+      {
+        "alias": "New Zealand",
+        "source_id": null
+      },
+      {
+        "alias": "NZL",
+        "source_id": null
+      },
+      {
+        "alias": "All Whites",
+        "source_id": null
+      },
+      {
+        "alias": "New Zealand",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "New Zealand",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "New Zealand",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "New Zealand",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1921,18 +3513,49 @@
         "venue": "Estadio Azteca",
         "city": "Mexico City",
         "group": "A"
-      }
+      },
+      "flag_url": "https://flagcdn.com/w320/za.png",
+      "flag_svg_url": "https://flagcdn.com/za.svg",
+      "iso_code": "ZA",
+      "flag_emoji": "🇿🇦"
     },
     "aliases": [
-      { "alias": "South Africa", "source_id": null },
-      { "alias": "RSA", "source_id": null },
-      { "alias": "Bafana Bafana", "source_id": null },
-      { "alias": "South Africa", "source_id": "espn_fifa" },
-      { "alias": "South Africa", "source_id": "footballdata_wc" },
-      { "alias": "South Africa", "source_id": "fifa_api" },
-      { "alias": "South Africa National Football Team", "source_id": null },
-      { "alias": "Suid-Afrika", "source_id": null },
-      { "alias": "South Africa", "source_id": "mollybet_fb" }
+      {
+        "alias": "South Africa",
+        "source_id": null
+      },
+      {
+        "alias": "RSA",
+        "source_id": null
+      },
+      {
+        "alias": "Bafana Bafana",
+        "source_id": null
+      },
+      {
+        "alias": "South Africa",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "South Africa",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "South Africa",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "South Africa National Football Team",
+        "source_id": null
+      },
+      {
+        "alias": "Suid-Afrika",
+        "source_id": null
+      },
+      {
+        "alias": "South Africa",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1957,20 +3580,51 @@
         "tertiary": "#007A33"
       },
       "kits": {
-        "home": { "primary_color": "#007A33", "description": "Green with red and yellow trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with green and red accents" }
+        "home": {
+          "primary_color": "#007A33",
+          "description": "Green with red and yellow trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with green and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/FBF_logo.svg/800px-FBF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bolivia"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bolivia",
+      "flag_url": "https://flagcdn.com/w320/bo.png",
+      "flag_svg_url": "https://flagcdn.com/bo.svg",
+      "iso_code": "BO",
+      "flag_emoji": "🇧🇴"
     },
     "aliases": [
-      { "alias": "Bolivia", "source_id": null },
-      { "alias": "BOL", "source_id": null },
-      { "alias": "La Verde", "source_id": null },
-      { "alias": "Bolivia", "source_id": "espn_fifa" },
-      { "alias": "Bolivia", "source_id": "footballdata_wc" },
-      { "alias": "Bolivia", "source_id": "fifa_api" },
-      { "alias": "Bolivia", "source_id": "mollybet_fb" }
+      {
+        "alias": "Bolivia",
+        "source_id": null
+      },
+      {
+        "alias": "BOL",
+        "source_id": null
+      },
+      {
+        "alias": "La Verde",
+        "source_id": null
+      },
+      {
+        "alias": "Bolivia",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Bolivia",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Bolivia",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Bolivia",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -1995,20 +3649,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#CE1126", "description": "Red with white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red accents" }
+        "home": {
+          "primary_color": "#CE1126",
+          "description": "Red with white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Bahrain_FA.svg/800px-Bahrain_FA.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bahrain"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bahrain",
+      "flag_url": "https://flagcdn.com/w320/bh.png",
+      "flag_svg_url": "https://flagcdn.com/bh.svg",
+      "iso_code": "BH",
+      "flag_emoji": "🇧🇭"
     },
     "aliases": [
-      { "alias": "Bahrain", "source_id": null },
-      { "alias": "BHR", "source_id": null },
-      { "alias": "Red Falcons", "source_id": null },
-      { "alias": "Bahrain", "source_id": "espn_fifa" },
-      { "alias": "Bahrain", "source_id": "footballdata_wc" },
-      { "alias": "Bahrain", "source_id": "fifa_api" },
-      { "alias": "Bahrain", "source_id": "mollybet_fb" }
+      {
+        "alias": "Bahrain",
+        "source_id": null
+      },
+      {
+        "alias": "BHR",
+        "source_id": null
+      },
+      {
+        "alias": "Red Falcons",
+        "source_id": null
+      },
+      {
+        "alias": "Bahrain",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Bahrain",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Bahrain",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Bahrain",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2033,20 +3718,51 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#DE2910", "description": "Red with yellow and white trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with red and yellow accents" }
+        "home": {
+          "primary_color": "#DE2910",
+          "description": "Red with yellow and white trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red and yellow accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/CFA_logo.svg/800px-CFA_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/china-pr"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/china-pr",
+      "flag_url": "https://flagcdn.com/w320/cn.png",
+      "flag_svg_url": "https://flagcdn.com/cn.svg",
+      "iso_code": "CN",
+      "flag_emoji": "🇨🇳"
     },
     "aliases": [
-      { "alias": "China PR", "source_id": null },
-      { "alias": "CHN", "source_id": null },
-      { "alias": "China", "source_id": null },
-      { "alias": "China PR", "source_id": "espn_fifa" },
-      { "alias": "China PR", "source_id": "footballdata_wc" },
-      { "alias": "China PR", "source_id": "fifa_api" },
-      { "alias": "China PR", "source_id": "mollybet_fb" }
+      {
+        "alias": "China PR",
+        "source_id": null
+      },
+      {
+        "alias": "CHN",
+        "source_id": null
+      },
+      {
+        "alias": "China",
+        "source_id": null
+      },
+      {
+        "alias": "China PR",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "China PR",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "China PR",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "China PR",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2071,20 +3787,51 @@
         "tertiary": "#C8102E"
       },
       "kits": {
-        "home": { "primary_color": "#003DA5", "description": "Dark blue with white and red trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue and red accents" }
+        "home": {
+          "primary_color": "#003DA5",
+          "description": "Dark blue with white and red trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/KSI_logo.svg/800px-KSI_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/iceland"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/iceland",
+      "flag_url": "https://flagcdn.com/w320/is.png",
+      "flag_svg_url": "https://flagcdn.com/is.svg",
+      "iso_code": "IS",
+      "flag_emoji": "🇮🇸"
     },
     "aliases": [
-      { "alias": "Iceland", "source_id": null },
-      { "alias": "ISL", "source_id": null },
-      { "alias": "Strákarnir okkar", "source_id": null },
-      { "alias": "Iceland", "source_id": "espn_fifa" },
-      { "alias": "Iceland", "source_id": "footballdata_wc" },
-      { "alias": "Iceland", "source_id": "fifa_api" },
-      { "alias": "Iceland", "source_id": "mollybet_fb" }
+      {
+        "alias": "Iceland",
+        "source_id": null
+      },
+      {
+        "alias": "ISL",
+        "source_id": null
+      },
+      {
+        "alias": "Strákarnir okkar",
+        "source_id": null
+      },
+      {
+        "alias": "Iceland",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Iceland",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Iceland",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Iceland",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2109,22 +3856,59 @@
         "tertiary": "#CE1126"
       },
       "kits": {
-        "home": { "primary_color": "#007FFF", "description": "Blue with yellow and red trim" },
-        "away": { "primary_color": "#F7D700", "description": "Yellow with blue and red accents" }
+        "home": {
+          "primary_color": "#007FFF",
+          "description": "Blue with yellow and red trim"
+        },
+        "away": {
+          "primary_color": "#F7D700",
+          "description": "Yellow with blue and red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FECOFA_logo.svg/800px-FECOFA_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/dr-congo"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/dr-congo",
+      "flag_url": "https://flagcdn.com/w320/cd.png",
+      "flag_svg_url": "https://flagcdn.com/cd.svg",
+      "iso_code": "CD",
+      "flag_emoji": "🇨🇩"
     },
     "aliases": [
-      { "alias": "DR Congo", "source_id": null },
-      { "alias": "COD", "source_id": null },
-      { "alias": "The Leopards", "source_id": null },
-      { "alias": "Congo DR", "source_id": null },
-      { "alias": "Democratic Republic of Congo", "source_id": null },
-      { "alias": "DR Congo", "source_id": "espn_fifa" },
-      { "alias": "DR Congo", "source_id": "footballdata_wc" },
-      { "alias": "DR Congo", "source_id": "fifa_api" },
-      { "alias": "DR Congo", "source_id": "mollybet_fb" }
+      {
+        "alias": "DR Congo",
+        "source_id": null
+      },
+      {
+        "alias": "COD",
+        "source_id": null
+      },
+      {
+        "alias": "The Leopards",
+        "source_id": null
+      },
+      {
+        "alias": "Congo DR",
+        "source_id": null
+      },
+      {
+        "alias": "Democratic Republic of Congo",
+        "source_id": null
+      },
+      {
+        "alias": "DR Congo",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "DR Congo",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "DR Congo",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "DR Congo",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2149,20 +3933,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#CC0001", "description": "Red with green and black trim" },
-        "away": { "primary_color": "#006600", "description": "Green with red and white accents" }
+        "home": {
+          "primary_color": "#CC0001",
+          "description": "Red with green and black trim"
+        },
+        "away": {
+          "primary_color": "#006600",
+          "description": "Green with red and white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Football_Kenya_Federation_logo.svg/800px-Football_Kenya_Federation_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/kenya"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/kenya",
+      "flag_url": "https://flagcdn.com/w320/ke.png",
+      "flag_svg_url": "https://flagcdn.com/ke.svg",
+      "iso_code": "KE",
+      "flag_emoji": "🇰🇪"
     },
     "aliases": [
-      { "alias": "Kenya", "source_id": null },
-      { "alias": "KEN", "source_id": null },
-      { "alias": "Harambee Stars", "source_id": null },
-      { "alias": "Kenya", "source_id": "espn_fifa" },
-      { "alias": "Kenya", "source_id": "footballdata_wc" },
-      { "alias": "Kenya", "source_id": "fifa_api" },
-      { "alias": "Kenya", "source_id": "mollybet_fb" }
+      {
+        "alias": "Kenya",
+        "source_id": null
+      },
+      {
+        "alias": "KEN",
+        "source_id": null
+      },
+      {
+        "alias": "Harambee Stars",
+        "source_id": null
+      },
+      {
+        "alias": "Kenya",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Kenya",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Kenya",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Kenya",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2187,21 +4002,55 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#FFFFFF", "description": "White with red vertical stripe" },
-        "away": { "primary_color": "#D91023", "description": "Red with white accents" }
+        "home": {
+          "primary_color": "#FFFFFF",
+          "description": "White with red vertical stripe"
+        },
+        "away": {
+          "primary_color": "#D91023",
+          "description": "Red with white accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/FPF_escudo.svg/800px-FPF_escudo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/peru"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/peru",
+      "flag_url": "https://flagcdn.com/w320/pe.png",
+      "flag_svg_url": "https://flagcdn.com/pe.svg",
+      "iso_code": "PE",
+      "flag_emoji": "🇵🇪"
     },
     "aliases": [
-      { "alias": "Peru", "source_id": null },
-      { "alias": "PER", "source_id": null },
-      { "alias": "La Blanquirroja", "source_id": null },
-      { "alias": "Perú", "source_id": null },
-      { "alias": "Peru", "source_id": "espn_fifa" },
-      { "alias": "Peru", "source_id": "footballdata_wc" },
-      { "alias": "Peru", "source_id": "fifa_api" },
-      { "alias": "Peru", "source_id": "mollybet_fb" }
+      {
+        "alias": "Peru",
+        "source_id": null
+      },
+      {
+        "alias": "PER",
+        "source_id": null
+      },
+      {
+        "alias": "La Blanquirroja",
+        "source_id": null
+      },
+      {
+        "alias": "Perú",
+        "source_id": null
+      },
+      {
+        "alias": "Peru",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Peru",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Peru",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Peru",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2226,21 +4075,55 @@
         "tertiary": "#FFFFFF"
       },
       "kits": {
-        "home": { "primary_color": "#E41E20", "description": "Red with black trim" },
-        "away": { "primary_color": "#000000", "description": "Black with red accents" }
+        "home": {
+          "primary_color": "#E41E20",
+          "description": "Red with black trim"
+        },
+        "away": {
+          "primary_color": "#000000",
+          "description": "Black with red accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/FSHF_logo.svg/800px-FSHF_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/albania"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/albania",
+      "flag_url": "https://flagcdn.com/w320/al.png",
+      "flag_svg_url": "https://flagcdn.com/al.svg",
+      "iso_code": "AL",
+      "flag_emoji": "🇦🇱"
     },
     "aliases": [
-      { "alias": "Albania", "source_id": null },
-      { "alias": "ALB", "source_id": null },
-      { "alias": "Kuqezinjtë", "source_id": null },
-      { "alias": "Shqipëria", "source_id": null },
-      { "alias": "Albania", "source_id": "espn_fifa" },
-      { "alias": "Albania", "source_id": "footballdata_wc" },
-      { "alias": "Albania", "source_id": "fifa_api" },
-      { "alias": "Albania", "source_id": "mollybet_fb" }
+      {
+        "alias": "Albania",
+        "source_id": null
+      },
+      {
+        "alias": "ALB",
+        "source_id": null
+      },
+      {
+        "alias": "Kuqezinjtë",
+        "source_id": null
+      },
+      {
+        "alias": "Shqipëria",
+        "source_id": null
+      },
+      {
+        "alias": "Albania",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Albania",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Albania",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Albania",
+        "source_id": "mollybet_fb"
+      }
     ]
   },
   {
@@ -2265,20 +4148,51 @@
         "tertiary": "#000000"
       },
       "kits": {
-        "home": { "primary_color": "#4997D0", "description": "Sky blue and white with blue trim" },
-        "away": { "primary_color": "#FFFFFF", "description": "White with blue accents" }
+        "home": {
+          "primary_color": "#4997D0",
+          "description": "Sky blue and white with blue trim"
+        },
+        "away": {
+          "primary_color": "#FFFFFF",
+          "description": "White with blue accents"
+        }
       },
       "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/FEDEFUT_GUATE_logo.svg/800px-FEDEFUT_GUATE_logo.svg.png",
-      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/guatemala"
+      "fifa_profile_url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/guatemala",
+      "flag_url": "https://flagcdn.com/w320/gt.png",
+      "flag_svg_url": "https://flagcdn.com/gt.svg",
+      "iso_code": "GT",
+      "flag_emoji": "🇬🇹"
     },
     "aliases": [
-      { "alias": "Guatemala", "source_id": null },
-      { "alias": "GUA", "source_id": null },
-      { "alias": "Los Chapines", "source_id": null },
-      { "alias": "Guatemala", "source_id": "espn_fifa" },
-      { "alias": "Guatemala", "source_id": "footballdata_wc" },
-      { "alias": "Guatemala", "source_id": "fifa_api" },
-      { "alias": "Guatemala", "source_id": "mollybet_fb" }
+      {
+        "alias": "Guatemala",
+        "source_id": null
+      },
+      {
+        "alias": "GUA",
+        "source_id": null
+      },
+      {
+        "alias": "Los Chapines",
+        "source_id": null
+      },
+      {
+        "alias": "Guatemala",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "Guatemala",
+        "source_id": "footballdata_wc"
+      },
+      {
+        "alias": "Guatemala",
+        "source_id": "fifa_api"
+      },
+      {
+        "alias": "Guatemala",
+        "source_id": "mollybet_fb"
+      }
     ]
   }
 ]
