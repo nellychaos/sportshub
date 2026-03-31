@@ -32,7 +32,11 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+Icon?
 
 # Docker volumes (local)
 pgdata/
 redisdata/
+
+# Large data files (downloaded at runtime)
+data/reep/

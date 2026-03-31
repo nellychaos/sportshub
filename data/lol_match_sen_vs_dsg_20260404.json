@@ -1,0 +1,401 @@
+{
+  "match": {
+    "id": "lcs-2026-spring-w1-sen-dsg",
+    "tournament": "LCS 2026 Spring",
+    "tournament_short": "LCS",
+    "stage": "Regular Season",
+    "week": 1,
+    "format": "Bo3",
+    "rules": "Fearless Draft",
+    "date": "2026-04-04",
+    "kickoff_utc": "23:00",
+    "kickoff_local": "16:00 PDT",
+    "venue": "Riot Games Arena",
+    "city": "Los Angeles",
+    "country": "USA",
+    "broadcast": {
+      "english": "https://lolesports.com/live",
+      "twitch": "https://twitch.tv/lcs"
+    },
+    "tournament_context": {
+      "format": "Single Round Robin, all matches Bo3",
+      "playoffs": "Double Elimination, all matches Bo5",
+      "stakes": "Top 2 qualify for MSI 2026",
+      "total_teams": 8,
+      "season_dates": {
+        "start": "2026-04-04",
+        "end": "2026-06-14"
+      }
+    }
+  },
+  "teams": {
+    "home": {
+      "name": "Sentinels",
+      "short_name": "SEN",
+      "sport": "lol",
+      "region": "North America",
+      "founded": "2018-06-06",
+      "previously_known_as": "Phoenix1",
+      "joined_lcs": "2025-10-10",
+      "replaced": "100 Thieves",
+      "logo": {
+        "svg_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Sentinels_logo.svg",
+        "png_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Sentinels_logo.svg/200px-Sentinels_logo.svg.png"
+      },
+      "leadership": {
+        "ceo": "Rob Moore",
+        "president_marketing": "Michael Moore",
+        "co_president": "Eric Ma",
+        "director_esports": "Charlie Lipsie"
+      },
+      "roster": [
+        {
+          "ign": "Impact",
+          "name": "Jeong Eon-young",
+          "role": "Top",
+          "nationality": "South Korean"
+        },
+        {
+          "ign": "HamBak",
+          "name": "Ham Yoo-jin",
+          "role": "Jungle",
+          "nationality": "South Korean"
+        },
+        {
+          "ign": "DARKWINGS",
+          "name": "Isaac Chou",
+          "role": "Mid",
+          "nationality": "American"
+        },
+        {
+          "ign": "Rahel",
+          "name": "Cho Min-seong",
+          "role": "Bot",
+          "nationality": "South Korean"
+        },
+        {
+          "ign": "huhi",
+          "name": "Choi Jae-hyun",
+          "role": "Support",
+          "nationality": "American"
+        }
+      ],
+      "coaching_staff": [
+        {
+          "ign": "Goldenglue",
+          "name": "Greyson Gilmer",
+          "role": "Head Coach",
+          "nationality": "American",
+          "joined": "2025-11-26"
+        },
+        {
+          "ign": "Dayos",
+          "name": "Mervin-Angelo Lachica",
+          "role": "Assistant Coach",
+          "nationality": "Canadian",
+          "joined": "2026-01-30"
+        },
+        {
+          "ign": "Kez",
+          "name": "Kevin Jeon",
+          "role": "Team Manager",
+          "nationality": "American",
+          "joined": "2025-11-23"
+        }
+      ],
+      "form_guide": {
+        "last_5_results": ["W", "L", "L", "L", "L"],
+        "recent_matches": [
+          {
+            "date": "2026-03-07",
+            "tournament": "2026 Americas Cup",
+            "opponent": "Cloud9",
+            "score": "1-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Lower Bracket Final"
+          },
+          {
+            "date": "2026-03-06",
+            "tournament": "2026 Americas Cup",
+            "opponent": "FURIA",
+            "score": "0-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Upper Bracket Final"
+          },
+          {
+            "date": "2026-03-04",
+            "tournament": "2026 Americas Cup",
+            "opponent": "RED Canids",
+            "score": "2-0",
+            "result": "win",
+            "format": "Bo3",
+            "note": "Upper Bracket Semi"
+          },
+          {
+            "date": "2026-02-28",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "LYON",
+            "score": "1-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Upper Bracket Final"
+          },
+          {
+            "date": "2026-02-22",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "Cloud9",
+            "score": "0-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Winners Final"
+          },
+          {
+            "date": "2026-02-14",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "Disguised",
+            "score": "3-2",
+            "result": "win",
+            "format": "Bo5",
+            "note": "Upper Bracket Semi"
+          }
+        ],
+        "lock_in_record": {
+          "swiss_stage": "2-1",
+          "swiss_game_record": "5-3",
+          "playoff_finish": "3rd",
+          "summary": "Strong swiss showing, fell to Cloud9 and LYON in playoffs"
+        },
+        "americas_cup": {
+          "finish": "3rd",
+          "summary": "Beat RED Canids, swept by FURIA, lost to Cloud9 in lower bracket"
+        }
+      }
+    },
+    "away": {
+      "name": "Disguised",
+      "short_name": "DSG",
+      "sport": "lol",
+      "region": "North America",
+      "founded": "2023-01-08",
+      "lol_entry": "2023-05-24",
+      "logo": {
+        "svg_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Disguised_logo.svg",
+        "png_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Disguised_%28esports%29_logo.png"
+      },
+      "leadership": {
+        "ceo_founder": {
+          "name": "Jeremy Wang",
+          "known_as": "Disguised Toast",
+          "nationality": "Canadian"
+        },
+        "team_ops_manager": {
+          "name": "Chris Yong",
+          "known_as": "chrisyong",
+          "nationality": "Canadian"
+        }
+      },
+      "roster": [
+        {
+          "ign": "Castle",
+          "name": "Cho Hyeon-seong",
+          "role": "Top",
+          "nationality": "South Korean",
+          "joined": "2025-11-26"
+        },
+        {
+          "ign": "KryRa",
+          "name": "Christian Rahaian",
+          "role": "Jungle",
+          "nationality": "Canadian",
+          "joined": "2025-12-03"
+        },
+        {
+          "ign": "callme",
+          "name": "Oh Ji-hoon",
+          "role": "Mid",
+          "nationality": "South Korean",
+          "joined": "2025-12-03"
+        },
+        {
+          "ign": "Sajed",
+          "name": "Sajed Ziade",
+          "role": "Bot",
+          "nationality": "American",
+          "joined": "2025-12-03"
+        },
+        {
+          "ign": "Lyonz",
+          "name": "Pedro Luis Peralta",
+          "role": "Support",
+          "nationality": "Argentine",
+          "joined": "2025-12-03"
+        }
+      ],
+      "coaching_staff": [
+        {
+          "ign": "Ido",
+          "name": "Ian McCormick",
+          "role": "Head Coach",
+          "nationality": "American",
+          "joined": "2025-05-05"
+        },
+        {
+          "ign": "Brandini",
+          "name": "Brandon Chen",
+          "role": "Assistant Coach",
+          "nationality": "American",
+          "joined": "2025-01-22"
+        }
+      ],
+      "form_guide": {
+        "last_5_results": ["L", "L", "W", "L", "W"],
+        "recent_matches": [
+          {
+            "date": "2026-02-20",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "Team Liquid",
+            "score": "0-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Lower Bracket Round 2"
+          },
+          {
+            "date": "2026-02-14",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "Sentinels",
+            "score": "2-3",
+            "result": "loss",
+            "format": "Bo5",
+            "note": "Upper Bracket Semi"
+          },
+          {
+            "date": "2026-02-08",
+            "tournament": "LCS 2026 Lock-In Playoffs",
+            "opponent": "LYON",
+            "score": "2-1",
+            "result": "win",
+            "format": "Bo3",
+            "note": "Round 3"
+          },
+          {
+            "date": "2026-02-01",
+            "tournament": "LCS 2026 Lock-In Swiss",
+            "opponent": "FlyQuest",
+            "score": "1-2",
+            "result": "loss",
+            "format": "Bo3",
+            "note": "Swiss Round 3"
+          },
+          {
+            "date": "2026-01-24",
+            "tournament": "LCS 2026 Lock-In Swiss",
+            "opponent": "Sentinels",
+            "score": "2-1",
+            "result": "win",
+            "format": "Bo3",
+            "note": "Swiss Round 1"
+          }
+        ],
+        "lock_in_record": {
+          "swiss_stage": "2-1",
+          "swiss_game_record": "5-4",
+          "playoff_finish": "5th-6th",
+          "summary": "Competitive in swiss, lost to Sentinels then Team Liquid in playoffs"
+        },
+        "notable_achievement": "NACL 2023 Summer Champions (3-1 in finals)"
+      }
+    }
+  },
+  "head_to_head": {
+    "total_series": 2,
+    "sentinels_wins": 1,
+    "disguised_wins": 1,
+    "total_games": 8,
+    "sentinels_games": 5,
+    "disguised_games": 3,
+    "matches": [
+      {
+        "date": "2026-02-14",
+        "tournament": "LCS 2026 Lock-In Playoffs",
+        "stage": "Upper Bracket Semi",
+        "format": "Bo5",
+        "winner": "Sentinels",
+        "score": "3-2",
+        "note": "Five-game thriller; Sentinels reverse swept after being down"
+      },
+      {
+        "date": "2026-01-24",
+        "tournament": "LCS 2026 Lock-In Swiss",
+        "stage": "Swiss Round 1",
+        "format": "Bo3",
+        "winner": "Disguised",
+        "score": "2-1",
+        "note": "First meeting; Disguised upset Sentinels in the opening round"
+      }
+    ],
+    "narrative": "Split head-to-head: Disguised won their first meeting in swiss (2-1 Bo3) but Sentinels took revenge in the playoff Bo5 (3-2). This April 4th match is the rubber match."
+  },
+  "lcs_2026_spring_teams": [
+    {"name": "Cloud9", "short": "C9"},
+    {"name": "Dignitas", "short": "DIG"},
+    {"name": "Disguised", "short": "DSG"},
+    {"name": "FlyQuest", "short": "FLY"},
+    {"name": "LYON", "short": "LYN"},
+    {"name": "Sentinels", "short": "SEN"},
+    {"name": "Shopify Rebellion", "short": "SR"},
+    {"name": "Team Liquid", "short": "TL"}
+  ],
+  "pre_match_analysis": {
+    "sentinels_strengths": [
+      "Veteran top laner Impact brings international experience",
+      "Strong playoff performer - 3rd in Lock-In, 3rd at Americas Cup",
+      "Won the crucial Bo5 against Disguised when it mattered most",
+      "Former mid laner Goldenglue coaching provides player-centric strategy"
+    ],
+    "sentinels_concerns": [
+      "Lost 4 of last 5 series heading into spring",
+      "Swept 0-3 by both Cloud9 and FURIA in recent Bo5s",
+      "Month-long break since Americas Cup may cause rust"
+    ],
+    "disguised_strengths": [
+      "Won the first meeting (swiss Bo3) showing they can take games",
+      "Castle-callme Korean core provides lane stability",
+      "Younger roster with growth potential across the season",
+      "Coach Ido has been with team since May 2025 providing continuity"
+    ],
+    "disguised_concerns": [
+      "Eliminated early from Lock-In playoffs (5th-6th)",
+      "Swept 0-3 by Team Liquid - struggles against top teams in Bo5",
+      "No international experience as an org in LoL",
+      "Longest break of any LCS team since last competitive match (Feb 20)"
+    ],
+    "key_matchups": [
+      {
+        "lane": "Top",
+        "sentinels": "Impact",
+        "disguised": "Castle",
+        "note": "Impact's experience vs Castle's mechanical ceiling. Impact has competed at Worlds multiple times; Castle is proving himself in his first LCS season."
+      },
+      {
+        "lane": "Mid",
+        "sentinels": "DARKWINGS",
+        "disguised": "callme",
+        "note": "Both relatively newer to top-tier play. This matchup likely determines mid-game tempo."
+      },
+      {
+        "lane": "Bot",
+        "sentinels": "Rahel/huhi",
+        "disguised": "Sajed/Lyonz",
+        "note": "Korean ADC vs NA ADC. Rahel-huhi have played together since Lock-In; Sajed-Lyonz are the underdog duo."
+      }
+    ]
+  },
+  "data_sources": [
+    "Liquipedia (team rosters, match history, tournament data)",
+    "Wikimedia Commons (team logos)",
+    "LCS 2026 Spring schedule (Liquipedia)"
+  ],
+  "scraped_at": "2026-03-31"
+}
