@@ -6,15 +6,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Southeast"
+      "division": "Southeast",
+      "team_color_primary": "#c8102e",
+      "team_color_secondary": "#fdb927",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+      "espn_team_id": "1",
+      "arena": "State Farm Arena",
+      "arena_city": "Atlanta",
+      "arena_state": "GA",
+      "head_coach": "Quin Snyder"
     },
     "aliases": [
-      { "alias": "Atlanta Hawks", "source_id": "global" },
-      { "alias": "Hawks", "source_id": "global" },
-      { "alias": "ATL", "source_id": "global" },
-      { "alias": "Atlanta", "source_id": "espn_nba" },
-      { "alias": "ATL Hawks", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Atlanta Hawks",
+        "source_id": "global"
+      },
+      {
+        "alias": "Hawks",
+        "source_id": "global"
+      },
+      {
+        "alias": "ATL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Atlanta",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "ATL Hawks",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-atl"
   },
   {
     "name": "Boston Celtics",
@@ -23,15 +47,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Atlantic"
+      "division": "Atlantic",
+      "team_color_primary": "#008348",
+      "team_color_secondary": "#ffffff",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+      "espn_team_id": "2",
+      "arena": "TD Garden",
+      "arena_city": "Boston",
+      "arena_state": "MA",
+      "head_coach": "Joe Mazzulla"
     },
     "aliases": [
-      { "alias": "Boston Celtics", "source_id": "global" },
-      { "alias": "Celtics", "source_id": "global" },
-      { "alias": "BOS", "source_id": "global" },
-      { "alias": "Boston", "source_id": "espn_nba" },
-      { "alias": "BOS Celtics", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Boston Celtics",
+        "source_id": "global"
+      },
+      {
+        "alias": "Celtics",
+        "source_id": "global"
+      },
+      {
+        "alias": "BOS",
+        "source_id": "global"
+      },
+      {
+        "alias": "Boston",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "BOS Celtics",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-bos"
   },
   {
     "name": "Brooklyn Nets",
@@ -40,16 +88,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Atlantic"
+      "division": "Atlantic",
+      "team_color_primary": "#000000",
+      "team_color_secondary": "#ffffff",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+      "espn_team_id": "17",
+      "arena": "Prudential Center",
+      "arena_city": "Newark",
+      "arena_state": "NJ",
+      "head_coach": "Jordi Fernandez"
     },
     "aliases": [
-      { "alias": "Brooklyn Nets", "source_id": "global" },
-      { "alias": "Nets", "source_id": "global" },
-      { "alias": "BKN", "source_id": "global" },
-      { "alias": "Brooklyn", "source_id": "espn_nba" },
-      { "alias": "BKN Nets", "source_id": "balldontlie_nba" },
-      { "alias": "NJN", "source_id": "nbacom_cdn" }
-    ]
+      {
+        "alias": "Brooklyn Nets",
+        "source_id": "global"
+      },
+      {
+        "alias": "Nets",
+        "source_id": "global"
+      },
+      {
+        "alias": "BKN",
+        "source_id": "global"
+      },
+      {
+        "alias": "Brooklyn",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "BKN Nets",
+        "source_id": "balldontlie_nba"
+      },
+      {
+        "alias": "NJN",
+        "source_id": "nbacom_cdn"
+      }
+    ],
+    "id": "nba-bkn"
   },
   {
     "name": "Charlotte Hornets",
@@ -58,16 +133,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Southeast"
+      "division": "Southeast",
+      "team_color_primary": "#008ca8",
+      "team_color_secondary": "#1d1060",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+      "espn_team_id": "30",
+      "arena": "Spectrum Center",
+      "arena_city": "Charlotte",
+      "arena_state": "NC",
+      "head_coach": "Charles Lee"
     },
     "aliases": [
-      { "alias": "Charlotte Hornets", "source_id": "global" },
-      { "alias": "Hornets", "source_id": "global" },
-      { "alias": "CHA", "source_id": "global" },
-      { "alias": "Charlotte", "source_id": "espn_nba" },
-      { "alias": "CHA Hornets", "source_id": "balldontlie_nba" },
-      { "alias": "CHO", "source_id": "nbacom_cdn" }
-    ]
+      {
+        "alias": "Charlotte Hornets",
+        "source_id": "global"
+      },
+      {
+        "alias": "Hornets",
+        "source_id": "global"
+      },
+      {
+        "alias": "CHA",
+        "source_id": "global"
+      },
+      {
+        "alias": "Charlotte",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "CHA Hornets",
+        "source_id": "balldontlie_nba"
+      },
+      {
+        "alias": "CHO",
+        "source_id": "nbacom_cdn"
+      }
+    ],
+    "id": "nba-cha"
   },
   {
     "name": "Chicago Bulls",
@@ -76,15 +178,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Central"
+      "division": "Central",
+      "team_color_primary": "#ce1141",
+      "team_color_secondary": "#000000",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+      "espn_team_id": "4",
+      "arena": "United Center",
+      "arena_city": "Chicago",
+      "arena_state": "IL",
+      "head_coach": "Billy Donovan"
     },
     "aliases": [
-      { "alias": "Chicago Bulls", "source_id": "global" },
-      { "alias": "Bulls", "source_id": "global" },
-      { "alias": "CHI", "source_id": "global" },
-      { "alias": "Chicago", "source_id": "espn_nba" },
-      { "alias": "CHI Bulls", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Chicago Bulls",
+        "source_id": "global"
+      },
+      {
+        "alias": "Bulls",
+        "source_id": "global"
+      },
+      {
+        "alias": "CHI",
+        "source_id": "global"
+      },
+      {
+        "alias": "Chicago",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "CHI Bulls",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-chi"
   },
   {
     "name": "Cleveland Cavaliers",
@@ -93,16 +219,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Central"
+      "division": "Central",
+      "team_color_primary": "#860038",
+      "team_color_secondary": "#bc945c",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+      "espn_team_id": "5",
+      "arena": "Rocket Arena",
+      "arena_city": "Cleveland",
+      "arena_state": "OH",
+      "head_coach": "Kenny Atkinson"
     },
     "aliases": [
-      { "alias": "Cleveland Cavaliers", "source_id": "global" },
-      { "alias": "Cavaliers", "source_id": "global" },
-      { "alias": "CLE", "source_id": "global" },
-      { "alias": "Cleveland", "source_id": "espn_nba" },
-      { "alias": "Cavs", "source_id": "global" },
-      { "alias": "CLE Cavaliers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Cleveland Cavaliers",
+        "source_id": "global"
+      },
+      {
+        "alias": "Cavaliers",
+        "source_id": "global"
+      },
+      {
+        "alias": "CLE",
+        "source_id": "global"
+      },
+      {
+        "alias": "Cleveland",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "Cavs",
+        "source_id": "global"
+      },
+      {
+        "alias": "CLE Cavaliers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-cle"
   },
   {
     "name": "Dallas Mavericks",
@@ -111,16 +264,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Southwest"
+      "division": "Southwest",
+      "team_color_primary": "#0064b1",
+      "team_color_secondary": "#bbc4ca",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+      "espn_team_id": "6",
+      "arena": "American Airlines Center",
+      "arena_city": "Dallas",
+      "arena_state": "TX",
+      "head_coach": "Jason Kidd"
     },
     "aliases": [
-      { "alias": "Dallas Mavericks", "source_id": "global" },
-      { "alias": "Mavericks", "source_id": "global" },
-      { "alias": "DAL", "source_id": "global" },
-      { "alias": "Dallas", "source_id": "espn_nba" },
-      { "alias": "Mavs", "source_id": "global" },
-      { "alias": "DAL Mavericks", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Dallas Mavericks",
+        "source_id": "global"
+      },
+      {
+        "alias": "Mavericks",
+        "source_id": "global"
+      },
+      {
+        "alias": "DAL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Dallas",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "Mavs",
+        "source_id": "global"
+      },
+      {
+        "alias": "DAL Mavericks",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-dal"
   },
   {
     "name": "Denver Nuggets",
@@ -129,15 +309,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Northwest"
+      "division": "Northwest",
+      "team_color_primary": "#0e2240",
+      "team_color_secondary": "#fec524",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+      "espn_team_id": "7",
+      "arena": "Ball Arena",
+      "arena_city": "Denver",
+      "arena_state": "CO",
+      "head_coach": "David Adelman"
     },
     "aliases": [
-      { "alias": "Denver Nuggets", "source_id": "global" },
-      { "alias": "Nuggets", "source_id": "global" },
-      { "alias": "DEN", "source_id": "global" },
-      { "alias": "Denver", "source_id": "espn_nba" },
-      { "alias": "DEN Nuggets", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Denver Nuggets",
+        "source_id": "global"
+      },
+      {
+        "alias": "Nuggets",
+        "source_id": "global"
+      },
+      {
+        "alias": "DEN",
+        "source_id": "global"
+      },
+      {
+        "alias": "Denver",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "DEN Nuggets",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-den"
   },
   {
     "name": "Detroit Pistons",
@@ -146,15 +350,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Central"
+      "division": "Central",
+      "team_color_primary": "#1d428a",
+      "team_color_secondary": "#c8102e",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+      "espn_team_id": "8",
+      "arena": "Little Caesars Arena",
+      "arena_city": "",
+      "arena_state": "",
+      "head_coach": "J.B. Bickerstaff"
     },
     "aliases": [
-      { "alias": "Detroit Pistons", "source_id": "global" },
-      { "alias": "Pistons", "source_id": "global" },
-      { "alias": "DET", "source_id": "global" },
-      { "alias": "Detroit", "source_id": "espn_nba" },
-      { "alias": "DET Pistons", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Detroit Pistons",
+        "source_id": "global"
+      },
+      {
+        "alias": "Pistons",
+        "source_id": "global"
+      },
+      {
+        "alias": "DET",
+        "source_id": "global"
+      },
+      {
+        "alias": "Detroit",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "DET Pistons",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-det"
   },
   {
     "name": "Golden State Warriors",
@@ -163,16 +391,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Pacific"
+      "division": "Pacific",
+      "team_color_primary": "#fdb927",
+      "team_color_secondary": "#1d428a",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+      "espn_team_id": "9",
+      "arena": "Oracle Arena",
+      "arena_city": "Oakland",
+      "arena_state": "CA",
+      "head_coach": "Steve Kerr"
     },
     "aliases": [
-      { "alias": "Golden State Warriors", "source_id": "global" },
-      { "alias": "Warriors", "source_id": "global" },
-      { "alias": "GSW", "source_id": "global" },
-      { "alias": "Golden State", "source_id": "espn_nba" },
-      { "alias": "GS Warriors", "source_id": "balldontlie_nba" },
-      { "alias": "GS", "source_id": "nbacom_cdn" }
-    ]
+      {
+        "alias": "Golden State Warriors",
+        "source_id": "global"
+      },
+      {
+        "alias": "Warriors",
+        "source_id": "global"
+      },
+      {
+        "alias": "GSW",
+        "source_id": "global"
+      },
+      {
+        "alias": "Golden State",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "GS Warriors",
+        "source_id": "balldontlie_nba"
+      },
+      {
+        "alias": "GS",
+        "source_id": "nbacom_cdn"
+      }
+    ],
+    "id": "nba-gsw"
   },
   {
     "name": "Houston Rockets",
@@ -181,15 +436,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Southwest"
+      "division": "Southwest",
+      "team_color_primary": "#ce1141",
+      "team_color_secondary": "#000000",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+      "espn_team_id": "10",
+      "arena": "Toyota Center (Houston)",
+      "arena_city": "Houston",
+      "arena_state": "TX",
+      "head_coach": "Ime Udoka"
     },
     "aliases": [
-      { "alias": "Houston Rockets", "source_id": "global" },
-      { "alias": "Rockets", "source_id": "global" },
-      { "alias": "HOU", "source_id": "global" },
-      { "alias": "Houston", "source_id": "espn_nba" },
-      { "alias": "HOU Rockets", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Houston Rockets",
+        "source_id": "global"
+      },
+      {
+        "alias": "Rockets",
+        "source_id": "global"
+      },
+      {
+        "alias": "HOU",
+        "source_id": "global"
+      },
+      {
+        "alias": "Houston",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "HOU Rockets",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-hou"
   },
   {
     "name": "Indiana Pacers",
@@ -198,15 +477,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Central"
+      "division": "Central",
+      "team_color_primary": "#0c2340",
+      "team_color_secondary": "#ffd520",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+      "espn_team_id": "11",
+      "arena": "Gainbridge Fieldhouse",
+      "arena_city": "Indianapolis",
+      "arena_state": "IN",
+      "head_coach": "Rick Carlisle"
     },
     "aliases": [
-      { "alias": "Indiana Pacers", "source_id": "global" },
-      { "alias": "Pacers", "source_id": "global" },
-      { "alias": "IND", "source_id": "global" },
-      { "alias": "Indiana", "source_id": "espn_nba" },
-      { "alias": "IND Pacers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Indiana Pacers",
+        "source_id": "global"
+      },
+      {
+        "alias": "Pacers",
+        "source_id": "global"
+      },
+      {
+        "alias": "IND",
+        "source_id": "global"
+      },
+      {
+        "alias": "Indiana",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "IND Pacers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-ind"
   },
   {
     "name": "Los Angeles Clippers",
@@ -215,15 +518,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Pacific"
+      "division": "Pacific",
+      "team_color_primary": "#12173f",
+      "team_color_secondary": "#c8102e",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "espn_team_id": "12",
+      "arena": "crypto.com Arena",
+      "arena_city": "Los Angeles",
+      "arena_state": "CA",
+      "head_coach": "Tyronn Lue"
     },
     "aliases": [
-      { "alias": "Los Angeles Clippers", "source_id": "global" },
-      { "alias": "Clippers", "source_id": "global" },
-      { "alias": "LAC", "source_id": "global" },
-      { "alias": "LA Clippers", "source_id": "espn_nba" },
-      { "alias": "LAC Clippers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Los Angeles Clippers",
+        "source_id": "global"
+      },
+      {
+        "alias": "Clippers",
+        "source_id": "global"
+      },
+      {
+        "alias": "LAC",
+        "source_id": "global"
+      },
+      {
+        "alias": "LA Clippers",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "LAC Clippers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-lac"
   },
   {
     "name": "Los Angeles Lakers",
@@ -232,15 +559,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Pacific"
+      "division": "Pacific",
+      "team_color_primary": "#552583",
+      "team_color_secondary": "#fdb927",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+      "espn_team_id": "13",
+      "arena": "crypto.com Arena",
+      "arena_city": "Los Angeles",
+      "arena_state": "CA",
+      "head_coach": "JJ Redick"
     },
     "aliases": [
-      { "alias": "Los Angeles Lakers", "source_id": "global" },
-      { "alias": "Lakers", "source_id": "global" },
-      { "alias": "LAL", "source_id": "global" },
-      { "alias": "LA Lakers", "source_id": "espn_nba" },
-      { "alias": "LAL Lakers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Los Angeles Lakers",
+        "source_id": "global"
+      },
+      {
+        "alias": "Lakers",
+        "source_id": "global"
+      },
+      {
+        "alias": "LAL",
+        "source_id": "global"
+      },
+      {
+        "alias": "LA Lakers",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "LAL Lakers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-lal"
   },
   {
     "name": "Memphis Grizzlies",
@@ -249,15 +600,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Southwest"
+      "division": "Southwest",
+      "team_color_primary": "#5d76a9",
+      "team_color_secondary": "#12173f",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "espn_team_id": "29",
+      "arena": "FedExForum",
+      "arena_city": "Memphis",
+      "arena_state": "TN",
+      "head_coach": "Tuomas Iisalo"
     },
     "aliases": [
-      { "alias": "Memphis Grizzlies", "source_id": "global" },
-      { "alias": "Grizzlies", "source_id": "global" },
-      { "alias": "MEM", "source_id": "global" },
-      { "alias": "Memphis", "source_id": "espn_nba" },
-      { "alias": "MEM Grizzlies", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Memphis Grizzlies",
+        "source_id": "global"
+      },
+      {
+        "alias": "Grizzlies",
+        "source_id": "global"
+      },
+      {
+        "alias": "MEM",
+        "source_id": "global"
+      },
+      {
+        "alias": "Memphis",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "MEM Grizzlies",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-mem"
   },
   {
     "name": "Miami Heat",
@@ -266,15 +641,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Southeast"
+      "division": "Southeast",
+      "team_color_primary": "#98002e",
+      "team_color_secondary": "#000000",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+      "espn_team_id": "14",
+      "arena": "Kaseya Center",
+      "arena_city": "Miami",
+      "arena_state": "FL",
+      "head_coach": "Erik Spoelstra"
     },
     "aliases": [
-      { "alias": "Miami Heat", "source_id": "global" },
-      { "alias": "Heat", "source_id": "global" },
-      { "alias": "MIA", "source_id": "global" },
-      { "alias": "Miami", "source_id": "espn_nba" },
-      { "alias": "MIA Heat", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Miami Heat",
+        "source_id": "global"
+      },
+      {
+        "alias": "Heat",
+        "source_id": "global"
+      },
+      {
+        "alias": "MIA",
+        "source_id": "global"
+      },
+      {
+        "alias": "Miami",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "MIA Heat",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-mia"
   },
   {
     "name": "Milwaukee Bucks",
@@ -283,15 +682,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Central"
+      "division": "Central",
+      "team_color_primary": "#00471b",
+      "team_color_secondary": "#eee1c6",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+      "espn_team_id": "15",
+      "arena": "BMO Harris Bradley Center",
+      "arena_city": "Milwaukee",
+      "arena_state": "WI",
+      "head_coach": "Doc Rivers"
     },
     "aliases": [
-      { "alias": "Milwaukee Bucks", "source_id": "global" },
-      { "alias": "Bucks", "source_id": "global" },
-      { "alias": "MIL", "source_id": "global" },
-      { "alias": "Milwaukee", "source_id": "espn_nba" },
-      { "alias": "MIL Bucks", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Milwaukee Bucks",
+        "source_id": "global"
+      },
+      {
+        "alias": "Bucks",
+        "source_id": "global"
+      },
+      {
+        "alias": "MIL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Milwaukee",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "MIL Bucks",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-mil"
   },
   {
     "name": "Minnesota Timberwolves",
@@ -300,16 +723,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Northwest"
+      "division": "Northwest",
+      "team_color_primary": "#266092",
+      "team_color_secondary": "#79bc43",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
+      "espn_team_id": "16",
+      "arena": "Target Center",
+      "arena_city": "Minneapolis",
+      "arena_state": "MN",
+      "head_coach": "Chris Finch"
     },
     "aliases": [
-      { "alias": "Minnesota Timberwolves", "source_id": "global" },
-      { "alias": "Timberwolves", "source_id": "global" },
-      { "alias": "MIN", "source_id": "global" },
-      { "alias": "Minnesota", "source_id": "espn_nba" },
-      { "alias": "Wolves", "source_id": "global" },
-      { "alias": "MIN Timberwolves", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Minnesota Timberwolves",
+        "source_id": "global"
+      },
+      {
+        "alias": "Timberwolves",
+        "source_id": "global"
+      },
+      {
+        "alias": "MIN",
+        "source_id": "global"
+      },
+      {
+        "alias": "Minnesota",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "Wolves",
+        "source_id": "global"
+      },
+      {
+        "alias": "MIN Timberwolves",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-min"
   },
   {
     "name": "New Orleans Pelicans",
@@ -318,16 +768,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Southwest"
+      "division": "Southwest",
+      "team_color_primary": "#0a2240",
+      "team_color_secondary": "#b4975a",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
+      "espn_team_id": "3",
+      "arena": "Smoothie King Center",
+      "arena_city": "New Orleans",
+      "arena_state": "LA",
+      "head_coach": "James Borrego"
     },
     "aliases": [
-      { "alias": "New Orleans Pelicans", "source_id": "global" },
-      { "alias": "Pelicans", "source_id": "global" },
-      { "alias": "NOP", "source_id": "global" },
-      { "alias": "New Orleans", "source_id": "espn_nba" },
-      { "alias": "NO Pelicans", "source_id": "balldontlie_nba" },
-      { "alias": "NOH", "source_id": "nbacom_cdn" }
-    ]
+      {
+        "alias": "New Orleans Pelicans",
+        "source_id": "global"
+      },
+      {
+        "alias": "Pelicans",
+        "source_id": "global"
+      },
+      {
+        "alias": "NOP",
+        "source_id": "global"
+      },
+      {
+        "alias": "New Orleans",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "NO Pelicans",
+        "source_id": "balldontlie_nba"
+      },
+      {
+        "alias": "NOH",
+        "source_id": "nbacom_cdn"
+      }
+    ],
+    "id": "nba-nop"
   },
   {
     "name": "New York Knicks",
@@ -336,15 +813,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Atlantic"
+      "division": "Atlantic",
+      "team_color_primary": "#1d428a",
+      "team_color_secondary": "#f58426",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+      "espn_team_id": "18",
+      "arena": "Madison Square Garden",
+      "arena_city": "New York",
+      "arena_state": "NY",
+      "head_coach": "Mike Brown"
     },
     "aliases": [
-      { "alias": "New York Knicks", "source_id": "global" },
-      { "alias": "Knicks", "source_id": "global" },
-      { "alias": "NYK", "source_id": "global" },
-      { "alias": "New York", "source_id": "espn_nba" },
-      { "alias": "NY Knicks", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "New York Knicks",
+        "source_id": "global"
+      },
+      {
+        "alias": "Knicks",
+        "source_id": "global"
+      },
+      {
+        "alias": "NYK",
+        "source_id": "global"
+      },
+      {
+        "alias": "New York",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "NY Knicks",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-nyk"
   },
   {
     "name": "Oklahoma City Thunder",
@@ -353,15 +854,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Northwest"
+      "division": "Northwest",
+      "team_color_primary": "#007ac1",
+      "team_color_secondary": "#ef3b24",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+      "espn_team_id": "25",
+      "arena": "Paycom Center",
+      "arena_city": "Oklahoma City",
+      "arena_state": "OK",
+      "head_coach": "Mark Daigneault"
     },
     "aliases": [
-      { "alias": "Oklahoma City Thunder", "source_id": "global" },
-      { "alias": "Thunder", "source_id": "global" },
-      { "alias": "OKC", "source_id": "global" },
-      { "alias": "Oklahoma City", "source_id": "espn_nba" },
-      { "alias": "OKC Thunder", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Oklahoma City Thunder",
+        "source_id": "global"
+      },
+      {
+        "alias": "Thunder",
+        "source_id": "global"
+      },
+      {
+        "alias": "OKC",
+        "source_id": "global"
+      },
+      {
+        "alias": "Oklahoma City",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "OKC Thunder",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-okc"
   },
   {
     "name": "Orlando Magic",
@@ -370,15 +895,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Southeast"
+      "division": "Southeast",
+      "team_color_primary": "#0150b5",
+      "team_color_secondary": "#9ca0a3",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
+      "espn_team_id": "19",
+      "arena": "Kia Center",
+      "arena_city": "Orlando",
+      "arena_state": "FL",
+      "head_coach": "Jamahl Mosley"
     },
     "aliases": [
-      { "alias": "Orlando Magic", "source_id": "global" },
-      { "alias": "Magic", "source_id": "global" },
-      { "alias": "ORL", "source_id": "global" },
-      { "alias": "Orlando", "source_id": "espn_nba" },
-      { "alias": "ORL Magic", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Orlando Magic",
+        "source_id": "global"
+      },
+      {
+        "alias": "Magic",
+        "source_id": "global"
+      },
+      {
+        "alias": "ORL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Orlando",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "ORL Magic",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-orl"
   },
   {
     "name": "Philadelphia 76ers",
@@ -387,16 +936,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Atlantic"
+      "division": "Atlantic",
+      "team_color_primary": "#1d428a",
+      "team_color_secondary": "#e01234",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+      "espn_team_id": "20",
+      "arena": "Xfinity Mobile Arena",
+      "arena_city": "Philadelphia",
+      "arena_state": "PA",
+      "head_coach": "Nick Nurse"
     },
     "aliases": [
-      { "alias": "Philadelphia 76ers", "source_id": "global" },
-      { "alias": "76ers", "source_id": "global" },
-      { "alias": "PHI", "source_id": "global" },
-      { "alias": "Philadelphia", "source_id": "espn_nba" },
-      { "alias": "Sixers", "source_id": "global" },
-      { "alias": "PHI 76ers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Philadelphia 76ers",
+        "source_id": "global"
+      },
+      {
+        "alias": "76ers",
+        "source_id": "global"
+      },
+      {
+        "alias": "PHI",
+        "source_id": "global"
+      },
+      {
+        "alias": "Philadelphia",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "Sixers",
+        "source_id": "global"
+      },
+      {
+        "alias": "PHI 76ers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-phi"
   },
   {
     "name": "Phoenix Suns",
@@ -405,15 +981,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Pacific"
+      "division": "Pacific",
+      "team_color_primary": "#29127a",
+      "team_color_secondary": "#e56020",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+      "espn_team_id": "21",
+      "arena": "Mortgage Matchup Center",
+      "arena_city": "Phoenix",
+      "arena_state": "AZ",
+      "head_coach": "Jordan Ott"
     },
     "aliases": [
-      { "alias": "Phoenix Suns", "source_id": "global" },
-      { "alias": "Suns", "source_id": "global" },
-      { "alias": "PHX", "source_id": "global" },
-      { "alias": "Phoenix", "source_id": "espn_nba" },
-      { "alias": "PHX Suns", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Phoenix Suns",
+        "source_id": "global"
+      },
+      {
+        "alias": "Suns",
+        "source_id": "global"
+      },
+      {
+        "alias": "PHX",
+        "source_id": "global"
+      },
+      {
+        "alias": "Phoenix",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "PHX Suns",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-phx"
   },
   {
     "name": "Portland Trail Blazers",
@@ -422,16 +1022,43 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Northwest"
+      "division": "Northwest",
+      "team_color_primary": "#e03a3e",
+      "team_color_secondary": "#000000",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+      "espn_team_id": "22",
+      "arena": "Moda Center",
+      "arena_city": "Portland",
+      "arena_state": "OR",
+      "head_coach": "Chauncey Billups"
     },
     "aliases": [
-      { "alias": "Portland Trail Blazers", "source_id": "global" },
-      { "alias": "Trail Blazers", "source_id": "global" },
-      { "alias": "POR", "source_id": "global" },
-      { "alias": "Portland", "source_id": "espn_nba" },
-      { "alias": "Blazers", "source_id": "global" },
-      { "alias": "POR Trail Blazers", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Portland Trail Blazers",
+        "source_id": "global"
+      },
+      {
+        "alias": "Trail Blazers",
+        "source_id": "global"
+      },
+      {
+        "alias": "POR",
+        "source_id": "global"
+      },
+      {
+        "alias": "Portland",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "Blazers",
+        "source_id": "global"
+      },
+      {
+        "alias": "POR Trail Blazers",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-por"
   },
   {
     "name": "Sacramento Kings",
@@ -440,15 +1067,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Pacific"
+      "division": "Pacific",
+      "team_color_primary": "#5a2d81",
+      "team_color_secondary": "#6a7a82",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "espn_team_id": "23",
+      "arena": "Sleep Train Arena",
+      "arena_city": "Sacramento",
+      "arena_state": "CA",
+      "head_coach": "Doug Christie"
     },
     "aliases": [
-      { "alias": "Sacramento Kings", "source_id": "global" },
-      { "alias": "Kings", "source_id": "global" },
-      { "alias": "SAC", "source_id": "global" },
-      { "alias": "Sacramento", "source_id": "espn_nba" },
-      { "alias": "SAC Kings", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Sacramento Kings",
+        "source_id": "global"
+      },
+      {
+        "alias": "Kings",
+        "source_id": "global"
+      },
+      {
+        "alias": "SAC",
+        "source_id": "global"
+      },
+      {
+        "alias": "Sacramento",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "SAC Kings",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-sac"
   },
   {
     "name": "San Antonio Spurs",
@@ -457,15 +1108,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Southwest"
+      "division": "Southwest",
+      "team_color_primary": "#000000",
+      "team_color_secondary": "#c4ced4",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+      "espn_team_id": "24",
+      "arena": "Frost Bank Center",
+      "arena_city": "San Antonio",
+      "arena_state": "TX",
+      "head_coach": "Mitch Johnson"
     },
     "aliases": [
-      { "alias": "San Antonio Spurs", "source_id": "global" },
-      { "alias": "Spurs", "source_id": "global" },
-      { "alias": "SAS", "source_id": "global" },
-      { "alias": "San Antonio", "source_id": "espn_nba" },
-      { "alias": "SA Spurs", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "San Antonio Spurs",
+        "source_id": "global"
+      },
+      {
+        "alias": "Spurs",
+        "source_id": "global"
+      },
+      {
+        "alias": "SAS",
+        "source_id": "global"
+      },
+      {
+        "alias": "San Antonio",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "SA Spurs",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-sas"
   },
   {
     "name": "Toronto Raptors",
@@ -474,15 +1149,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Atlantic"
+      "division": "Atlantic",
+      "team_color_primary": "#d91244",
+      "team_color_secondary": "#000000",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "espn_team_id": "28",
+      "arena": "Scotiabank Arena",
+      "arena_city": "Toronto",
+      "arena_state": "ON",
+      "head_coach": "Darko Rajakovic"
     },
     "aliases": [
-      { "alias": "Toronto Raptors", "source_id": "global" },
-      { "alias": "Raptors", "source_id": "global" },
-      { "alias": "TOR", "source_id": "global" },
-      { "alias": "Toronto", "source_id": "espn_nba" },
-      { "alias": "TOR Raptors", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Toronto Raptors",
+        "source_id": "global"
+      },
+      {
+        "alias": "Raptors",
+        "source_id": "global"
+      },
+      {
+        "alias": "TOR",
+        "source_id": "global"
+      },
+      {
+        "alias": "Toronto",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "TOR Raptors",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-tor"
   },
   {
     "name": "Utah Jazz",
@@ -491,15 +1190,39 @@
     "sport": "nba",
     "metadata": {
       "conference": "Western",
-      "division": "Northwest"
+      "division": "Northwest",
+      "team_color_primary": "#4e008e",
+      "team_color_secondary": "#79a3dc",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+      "espn_team_id": "26",
+      "arena": "Delta Center",
+      "arena_city": "Salt Lake City",
+      "arena_state": "UT",
+      "head_coach": "Will Hardy"
     },
     "aliases": [
-      { "alias": "Utah Jazz", "source_id": "global" },
-      { "alias": "Jazz", "source_id": "global" },
-      { "alias": "UTA", "source_id": "global" },
-      { "alias": "Utah", "source_id": "espn_nba" },
-      { "alias": "UTA Jazz", "source_id": "balldontlie_nba" }
-    ]
+      {
+        "alias": "Utah Jazz",
+        "source_id": "global"
+      },
+      {
+        "alias": "Jazz",
+        "source_id": "global"
+      },
+      {
+        "alias": "UTA",
+        "source_id": "global"
+      },
+      {
+        "alias": "Utah",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "UTA Jazz",
+        "source_id": "balldontlie_nba"
+      }
+    ],
+    "id": "nba-uta"
   },
   {
     "name": "Washington Wizards",
@@ -508,15 +1231,42 @@
     "sport": "nba",
     "metadata": {
       "conference": "Eastern",
-      "division": "Southeast"
+      "division": "Southeast",
+      "team_color_primary": "#e31837",
+      "team_color_secondary": "#002b5c",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+      "espn_team_id": "27",
+      "arena": "Capital One Arena",
+      "arena_city": "Washington",
+      "arena_state": "DC",
+      "head_coach": "Brian Keefe"
     },
     "aliases": [
-      { "alias": "Washington Wizards", "source_id": "global" },
-      { "alias": "Wizards", "source_id": "global" },
-      { "alias": "WAS", "source_id": "global" },
-      { "alias": "Washington", "source_id": "espn_nba" },
-      { "alias": "WAS Wizards", "source_id": "balldontlie_nba" },
-      { "alias": "WSH", "source_id": "nbacom_cdn" }
-    ]
+      {
+        "alias": "Washington Wizards",
+        "source_id": "global"
+      },
+      {
+        "alias": "Wizards",
+        "source_id": "global"
+      },
+      {
+        "alias": "WAS",
+        "source_id": "global"
+      },
+      {
+        "alias": "Washington",
+        "source_id": "espn_nba"
+      },
+      {
+        "alias": "WAS Wizards",
+        "source_id": "balldontlie_nba"
+      },
+      {
+        "alias": "WSH",
+        "source_id": "nbacom_cdn"
+      }
+    ],
+    "id": "nba-was"
   }
 ]
