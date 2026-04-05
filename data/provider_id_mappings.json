@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "description": "Cross-provider entity ID mappings. Maps Sportshub internal IDs to provider-specific identifiers.",
+  "nba_teams": {
+    "entity_type": "team",
+    "sport": "nba",
+    "providers": ["espn_nba", "nbacom_cdn", "balldontlie_nba", "bref"],
+    "notes": {
+      "espn_nba": "Numeric team ID used in ESPN API endpoints",
+      "nbacom_cdn": "10-digit NBA team ID (1610612XXX) and tricode abbreviation",
+      "balldontlie_nba": "Numeric team ID from BallDontLie API",
+      "bref": "3-letter abbreviation used in Basketball Reference URLs (BRK=BKN, CHO=CHA, PHO=PHX)"
+    },
+    "mappings": {
+      "nba-atl": {
+        "abbreviation": "ATL",
+        "espn_nba": "1",
+        "nbacom_cdn": {"team_id": "1610612737", "tricode": "ATL"},
+        "balldontlie_nba": "1",
+        "bref": "ATL"
+      },
+      "nba-bos": {
+        "abbreviation": "BOS",
+        "espn_nba": "2",
+        "nbacom_cdn": {"team_id": "1610612738", "tricode": "BOS"},
+        "balldontlie_nba": "2",
+        "bref": "BOS"
+      },
+      "nba-bkn": {
+        "abbreviation": "BKN",
+        "espn_nba": "17",
+        "nbacom_cdn": {"team_id": "1610612751", "tricode": "BKN"},
+        "balldontlie_nba": "3",
+        "bref": "BRK"
+      },
+      "nba-cha": {
+        "abbreviation": "CHA",
+        "espn_nba": "30",
+        "nbacom_cdn": {"team_id": "1610612766", "tricode": "CHA"},
+        "balldontlie_nba": "4",
+        "bref": "CHO"
+      },
+      "nba-chi": {
+        "abbreviation": "CHI",
+        "espn_nba": "4",
+        "nbacom_cdn": {"team_id": "1610612741", "tricode": "CHI"},
+        "balldontlie_nba": "5",
+        "bref": "CHI"
+      },
+      "nba-cle": {
+        "abbreviation": "CLE",
+        "espn_nba": "5",
+        "nbacom_cdn": {"team_id": "1610612739", "tricode": "CLE"},
+        "balldontlie_nba": "6",
+        "bref": "CLE"
+      },
+      "nba-dal": {
+        "abbreviation": "DAL",
+        "espn_nba": "6",
+        "nbacom_cdn": {"team_id": "1610612742", "tricode": "DAL"},
+        "balldontlie_nba": "7",
+        "bref": "DAL"
+      },
+      "nba-den": {
+        "abbreviation": "DEN",
+        "espn_nba": "7",
+        "nbacom_cdn": {"team_id": "1610612743", "tricode": "DEN"},
+        "balldontlie_nba": "8",
+        "bref": "DEN"
+      },
+      "nba-det": {
+        "abbreviation": "DET",
+        "espn_nba": "8",
+        "nbacom_cdn": {"team_id": "1610612765", "tricode": "DET"},
+        "balldontlie_nba": "9",
+        "bref": "DET"
+      },
+      "nba-gsw": {
+        "abbreviation": "GSW",
+        "espn_nba": "9",
+        "nbacom_cdn": {"team_id": "1610612744", "tricode": "GS"},
+        "balldontlie_nba": "10",
+        "bref": "GSW"
+      },
+      "nba-hou": {
+        "abbreviation": "HOU",
+        "espn_nba": "10",
+        "nbacom_cdn": {"team_id": "1610612745", "tricode": "HOU"},
+        "balldontlie_nba": "11",
+        "bref": "HOU"
+      },
+      "nba-ind": {
+        "abbreviation": "IND",
+        "espn_nba": "11",
+        "nbacom_cdn": {"team_id": "1610612754", "tricode": "IND"},
+        "balldontlie_nba": "12",
+        "bref": "IND"
+      },
+      "nba-lac": {
+        "abbreviation": "LAC",
+        "espn_nba": "12",
+        "nbacom_cdn": {"team_id": "1610612746", "tricode": "LAC"},
+        "balldontlie_nba": "13",
+        "bref": "LAC"
+      },
+      "nba-lal": {
+        "abbreviation": "LAL",
+        "espn_nba": "13",
+        "nbacom_cdn": {"team_id": "1610612747", "tricode": "LAL"},
+        "balldontlie_nba": "14",
+        "bref": "LAL"
+      },
+      "nba-mem": {
+        "abbreviation": "MEM",
+        "espn_nba": "29",
+        "nbacom_cdn": {"team_id": "1610612763", "tricode": "MEM"},
+        "balldontlie_nba": "15",
+        "bref": "MEM"
+      },
+      "nba-mia": {
+        "abbreviation": "MIA",
+        "espn_nba": "14",
+        "nbacom_cdn": {"team_id": "1610612748", "tricode": "MIA"},
+        "balldontlie_nba": "16",
+        "bref": "MIA"
+      },
+      "nba-mil": {
+        "abbreviation": "MIL",
+        "espn_nba": "15",
+        "nbacom_cdn": {"team_id": "1610612749", "tricode": "MIL"},
+        "balldontlie_nba": "17",
+        "bref": "MIL"
+      },
+      "nba-min": {
+        "abbreviation": "MIN",
+        "espn_nba": "16",
+        "nbacom_cdn": {"team_id": "1610612750", "tricode": "MIN"},
+        "balldontlie_nba": "18",
+        "bref": "MIN"
+      },
+      "nba-nop": {
+        "abbreviation": "NOP",
+        "espn_nba": "3",
+        "nbacom_cdn": {"team_id": "1610612740", "tricode": "NO"},
+        "balldontlie_nba": "19",
+        "bref": "NOP"
+      },
+      "nba-nyk": {
+        "abbreviation": "NYK",
+        "espn_nba": "18",
+        "nbacom_cdn": {"team_id": "1610612752", "tricode": "NY"},
+        "balldontlie_nba": "20",
+        "bref": "NYK"
+      },
+      "nba-okc": {
+        "abbreviation": "OKC",
+        "espn_nba": "25",
+        "nbacom_cdn": {"team_id": "1610612760", "tricode": "OKC"},
+        "balldontlie_nba": "21",
+        "bref": "OKC"
+      },
+      "nba-orl": {
+        "abbreviation": "ORL",
+        "espn_nba": "19",
+        "nbacom_cdn": {"team_id": "1610612753", "tricode": "ORL"},
+        "balldontlie_nba": "22",
+        "bref": "ORL"
+      },
+      "nba-phi": {
+        "abbreviation": "PHI",
+        "espn_nba": "20",
+        "nbacom_cdn": {"team_id": "1610612755", "tricode": "PHI"},
+        "balldontlie_nba": "23",
+        "bref": "PHI"
+      },
+      "nba-phx": {
+        "abbreviation": "PHX",
+        "espn_nba": "21",
+        "nbacom_cdn": {"team_id": "1610612756", "tricode": "PHX"},
+        "balldontlie_nba": "24",
+        "bref": "PHO"
+      },
+      "nba-por": {
+        "abbreviation": "POR",
+        "espn_nba": "22",
+        "nbacom_cdn": {"team_id": "1610612757", "tricode": "POR"},
+        "balldontlie_nba": "25",
+        "bref": "POR"
+      },
+      "nba-sac": {
+        "abbreviation": "SAC",
+        "espn_nba": "23",
+        "nbacom_cdn": {"team_id": "1610612758", "tricode": "SAC"},
+        "balldontlie_nba": "26",
+        "bref": "SAC"
+      },
+      "nba-sas": {
+        "abbreviation": "SAS",
+        "espn_nba": "24",
+        "nbacom_cdn": {"team_id": "1610612759", "tricode": "SA"},
+        "balldontlie_nba": "27",
+        "bref": "SAS"
+      },
+      "nba-tor": {
+        "abbreviation": "TOR",
+        "espn_nba": "28",
+        "nbacom_cdn": {"team_id": "1610612761", "tricode": "TOR"},
+        "balldontlie_nba": "28",
+        "bref": "TOR"
+      },
+      "nba-uta": {
+        "abbreviation": "UTA",
+        "espn_nba": "26",
+        "nbacom_cdn": {"team_id": "1610612762", "tricode": "UTAH"},
+        "balldontlie_nba": "29",
+        "bref": "UTA"
+      },
+      "nba-was": {
+        "abbreviation": "WAS",
+        "espn_nba": "27",
+        "nbacom_cdn": {"team_id": "1610612764", "tricode": "WSH"},
+        "balldontlie_nba": "30",
+        "bref": "WAS"
+      }
+    }
+  }
+}

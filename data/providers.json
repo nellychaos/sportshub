@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "description": "Sportshub data provider registry. Centralizes provider metadata, endpoints, auth requirements, and quirks.",
+  "providers": [
+    {
+      "source_id": "espn_nba",
+      "display_name": "ESPN NBA",
+      "sport": "nba",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba",
+      "rate_limit_seconds": 5.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "scoreboard": "/scoreboard",
+        "teams": "/teams",
+        "team_detail": "/teams/{team_id}",
+        "roster": "/teams/{team_id}/roster",
+        "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
+        "player_overview": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{player_id}/overview",
+        "player_stats": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{player_id}/stats"
+      },
+      "entity_id_format": {
+        "team": "numeric (1-30)",
+        "player": "numeric (e.g., 4065648)",
+        "event": "numeric"
+      },
+      "abbreviation_map": {
+        "our_to_provider": {
+          "GSW": "GS",
+          "NOP": "NO",
+          "NYK": "NY",
+          "SAS": "SA",
+          "UTA": "UTAH",
+          "WAS": "WSH"
+        }
+      },
+      "notes": "Undocumented public API. No auth required. Team abbreviations differ from standard NBA codes. Player stats endpoint returns career history by season with FG made-attempted as combined string (e.g., '9.2-19.5')."
+    },
+    {
+      "source_id": "nbacom_cdn",
+      "display_name": "NBA.com CDN",
+      "sport": "nba",
+      "type": "cdn",
+      "reliability": "official",
+      "priority": 10,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://cdn.nba.com/static/json/staticData",
+      "rate_limit_seconds": null,
+      "source_timezone": "America/New_York",
+      "endpoints": {
+        "schedule": "/scheduleLeagueV2.json"
+      },
+      "entity_id_format": {
+        "team": "tricode (e.g., BOS, NYK, GS)",
+        "event": "10-digit game ID (002XXXXXXX = regular season, 001 = preseason)"
+      },
+      "abbreviation_map": {
+        "provider_to_ours": {
+          "GS": "GSW",
+          "NO": "NOP",
+          "NY": "NYK",
+          "SA": "SAS",
+          "UTAH": "UTA",
+          "UT": "UTA",
+          "WSH": "WAS"
+        }
+      },
+      "headers_required": {
+        "User-Agent": "Mozilla/5.0 (browser-like)",
+        "Referer": "https://www.nba.com/schedule",
+        "Accept-Language": "en-US,en;q=0.9"
+      },
+      "notes": "Single ~8MB static JSON file with full season schedule. Requires browser-like headers. 90-second timeout recommended. gameStatus: 1=scheduled, 2=in_progress, 3=final."
+    },
+    {
+      "source_id": "balldontlie_nba",
+      "display_name": "BallDontLie",
+      "sport": "nba",
+      "type": "api",
+      "reliability": "established",
+      "priority": 5,
+      "auth_required": true,
+      "auth_env_var": "BALLDONTLIE_API_KEY",
+      "base_url": "https://api.balldontlie.io/v1",
+      "rate_limit_seconds": 12.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "games": "/games",
+        "players": "/players",
+        "season_averages": "/season_averages"
+      },
+      "entity_id_format": {
+        "team": "numeric",
+        "player": "numeric",
+        "event": "numeric"
+      },
+      "notes": "Requires API key. 5 req/min rate limit. Only provides game date (no time) -- parsed as midnight UTC. Cursor-based pagination (100 per page). Good for player metadata (draft info) but limited stats."
+    },
+    {
+      "source_id": "bref",
+      "display_name": "Basketball Reference",
+      "sport": "nba",
+      "type": "web_scrape",
+      "reliability": "established",
+      "priority": 7,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://www.basketball-reference.com",
+      "rate_limit_seconds": 3.0,
+      "source_timezone": "America/New_York",
+      "endpoints": {
+        "per_game": "/leagues/NBA_{year}_per_game.html",
+        "advanced": "/leagues/NBA_{year}_advanced.html",
+        "totals": "/leagues/NBA_{year}_totals.html",
+        "per_36": "/leagues/NBA_{year}_per_minute.html",
+        "per_100": "/leagues/NBA_{year}_per_poss.html",
+        "adjusted_shooting": "/leagues/NBA_{year}_adj_shooting.html",
+        "standings": "/leagues/NBA_{year}_standings.html"
+      },
+      "entity_id_format": {
+        "team": "3-letter abbreviation (BOS, GSW, etc.)",
+        "player": "slug (e.g., tatumja01)"
+      },
+      "abbreviation_map": {
+        "provider_to_ours": {
+          "BRK": "BKN",
+          "CHO": "CHA",
+          "PHO": "PHX"
+        }
+      },
+      "notes": "Cloudflare-protected. Requires browser automation (Chrome MCP) for access. HTML table ID is the stat type (e.g., #advanced, #per_game). Year in URL is end-year of season (2025-26 = NBA_2026). Players traded mid-season have multiple rows; 'TOT' row has combined stats. Best source for advanced stats (PER, WS, BPM, VORP)."
+    },
+    {
+      "source_id": "espn_fifa",
+      "display_name": "ESPN FIFA",
+      "sport": "football",
+      "type": "api",
+      "reliability": "established",
+      "priority": 7,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "scoreboard": "/scoreboard"
+      },
+      "notes": "Public ESPN API. Scans next 14 days plus WC tournament window (Jun 11 - Jul 19, 2026). Filters TBD/placeholder matches."
+    },
+    {
+      "source_id": "fifa_api",
+      "display_name": "FIFA API",
+      "sport": "football",
+      "type": "api",
+      "reliability": "official",
+      "priority": 10,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://api.fifa.com/api/v3",
+      "rate_limit_seconds": 3.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "matches": "/calendar/matches",
+        "competitions": "/competitions",
+        "teams": "/teams"
+      },
+      "notes": "Official FIFA endpoints. WC 2026 competition ID: 17, season ID: 255711. Date format may be '/Date(millis)/' or ISO 8601. Returns 100 matches per request."
+    },
+    {
+      "source_id": "footballdata_wc",
+      "display_name": "Football-Data.org",
+      "sport": "football",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "FOOTBALLDATA_API_KEY",
+      "base_url": "https://api.football-data.org/v4",
+      "rate_limit_seconds": 6.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "matches": "/competitions/{competition}/matches",
+        "standings": "/competitions/{competition}/standings"
+      },
+      "notes": "Free tier: 10 req/min. Auth via X-Auth-Token header. Filters: status=SCHEDULED."
+    },
+    {
+      "source_id": "reep",
+      "display_name": "Reep Football Entity Register",
+      "sport": "football",
+      "type": "csv_github",
+      "reliability": "established",
+      "priority": null,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://github.com/withqwerty/reep",
+      "rate_limit_seconds": null,
+      "source_timezone": null,
+      "endpoints": {
+        "people_csv": "https://raw.githubusercontent.com/withqwerty/reep/main/data/people.csv",
+        "teams_csv": "https://raw.githubusercontent.com/withqwerty/reep/main/data/teams.csv",
+        "names_csv": "https://raw.githubusercontent.com/withqwerty/reep/main/data/names.csv"
+      },
+      "entity_id_format": {
+        "player": "Wikidata QID (e.g., Q21621995)",
+        "team": "Wikidata QID (clubs only, NOT national teams)"
+      },
+      "cross_provider_ids": [
+        "transfermarkt", "fbref", "sofascore", "flashscore", "opta",
+        "espn", "premier_league", "11v11", "worldfootball", "soccerway",
+        "whoscored", "understat", "api_football", "kicker", "lequipe",
+        "serie_a", "besoccer", "soccerbase", "footballcritic", "tmkt_news",
+        "national_football_teams", "eu_football", "worldfootball_net",
+        "bdfutbol", "zerozero", "fmdataba", "wikidata", "fotmob"
+      ],
+      "notes": "430K+ players/coaches, 45K+ clubs (no national teams), 149K+ name aliases. CSV files ~47MB total. Use token-indexed fuzzy matching (ReepPlayerIndex) for efficient lookup. Nationality stored as country name, not demonym. Provider IDs in key_{provider} columns."
+    },
+    {
+      "source_id": "lolesports",
+      "display_name": "LoL Esports API",
+      "sport": "lol",
+      "type": "api",
+      "reliability": "official",
+      "priority": 10,
+      "auth_required": true,
+      "auth_env_var": "LOLESPORTS_API_KEY",
+      "base_url": "https://esports-api.lolesports.com/persisted/gw",
+      "rate_limit_seconds": 5.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "schedule": "/getSchedule",
+        "leagues": "/getLeagues",
+        "standings": "/getStandings",
+        "live": "/getLive"
+      },
+      "notes": "Official Riot API. Covers 6 leagues: LCK, LPL, LEC, LCS, MSI, Worlds. Auth via x-api-key header. Pagination via pageToken."
+    },
+    {
+      "source_id": "pandascore_lol",
+      "display_name": "PandaScore LoL",
+      "sport": "lol",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "PANDASCORE_TOKEN",
+      "base_url": "https://api.pandascore.co",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "matches": "/lol/matches/upcoming",
+        "teams": "/lol/teams",
+        "players": "/lol/players"
+      },
+      "notes": "Auth via Bearer token. Page-based pagination (100 per page)."
+    },
+    {
+      "source_id": "liquipedia_lol",
+      "display_name": "Liquipedia LoL",
+      "sport": "lol",
+      "type": "web_scrape",
+      "reliability": "community",
+      "priority": 5,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://liquipedia.net/leagueoflegends/api.php",
+      "rate_limit_seconds": 2.0,
+      "source_timezone": "UTC",
+      "notes": "Community wiki. Strict rate limits (1 req/2s). Custom User-Agent required ('Sportshub/0.1'). Currently MVP mode -- used for tournament metadata and team roster context, not match schedules."
+    },
+    {
+      "source_id": "mollybet_fb",
+      "display_name": "Mollybet Football",
+      "sport": "football",
+      "type": "api_websocket",
+      "reliability": "established",
+      "priority": 9,
+      "auth_required": true,
+      "auth_env_var": "MOLLYBET_USERNAME",
+      "base_url": "https://api.mollybet.com",
+      "rate_limit_seconds": null,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "rest_login": "/v1/sessions/",
+        "websocket": "wss://api.mollybet.com/v1/stream/"
+      },
+      "notes": "Betting odds aggregator. REST login -> session token (24h expiry). WebSocket stream for events. Mollybet sport code: 'fb'. Multi-bookie verified -- strong confirmation signal."
+    },
+    {
+      "source_id": "mollybet_basket",
+      "display_name": "Mollybet Basketball",
+      "sport": "nba",
+      "type": "api_websocket",
+      "reliability": "established",
+      "priority": 9,
+      "auth_required": true,
+      "auth_env_var": "MOLLYBET_USERNAME",
+      "base_url": "https://api.mollybet.com",
+      "rate_limit_seconds": null,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "rest_login": "/v1/sessions/",
+        "websocket": "wss://api.mollybet.com/v1/stream/"
+      },
+      "notes": "Mollybet sport code: 'basket'. Same auth as mollybet_fb."
+    },
+    {
+      "source_id": "mollybet_esports",
+      "display_name": "Mollybet Esports",
+      "sport": "lol",
+      "type": "api_websocket",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "MOLLYBET_USERNAME",
+      "base_url": "https://api.mollybet.com",
+      "rate_limit_seconds": null,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "rest_login": "/v1/sessions/",
+        "websocket": "wss://api.mollybet.com/v1/stream/"
+      },
+      "notes": "Mollybet sport code: 'esports'. Slightly lower priority (8 vs 9) -- fewer esports bookies than football/NBA."
+    }
+  ]
+}
