@@ -120,6 +120,7 @@
         "per_36": "/leagues/NBA_{year}_per_minute.html",
         "per_100": "/leagues/NBA_{year}_per_poss.html",
         "adjusted_shooting": "/leagues/NBA_{year}_adj_shooting.html",
+        "play_by_play": "/leagues/NBA_{year}_play-by-play.html",
         "standings": "/leagues/NBA_{year}_standings.html"
       },
       "entity_id_format": {
@@ -326,6 +327,62 @@
         "websocket": "wss://api.mollybet.com/v1/stream/"
       },
       "notes": "Mollybet sport code: 'esports'. Slightly lower priority (8 vs 9) -- fewer esports bookies than football/NBA."
+    },
+    {
+      "source_id": "teamrankings_nba",
+      "display_name": "TeamRankings NBA",
+      "sport": "nba",
+      "type": "web_scrape",
+      "reliability": "established",
+      "priority": 4,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://www.teamrankings.com",
+      "rate_limit_seconds": 10.0,
+      "source_timezone": "America/New_York",
+      "endpoints": {
+        "power_ratings": "/nba/ranking/predictive-by-other",
+        "ats_trends": "/nba/trends/ats_trends/",
+        "ou_trends": "/nba/trends/ou_trends/"
+      },
+      "entity_id_format": {
+        "team": "display name (e.g., 'Okla City', 'LA Lakers')"
+      },
+      "abbreviation_map": {
+        "provider_to_ours": {
+          "Okla City": "OKC",
+          "LA Lakers": "LAL",
+          "LA Clippers": "LAC",
+          "Golden State": "GSW",
+          "San Antonio": "SAS",
+          "New York": "NYK",
+          "New Orleans": "NOP",
+          "Charlotte": "CHA",
+          "Boston": "BOS",
+          "Phoenix": "PHX",
+          "Miami": "MIA",
+          "Atlanta": "ATL",
+          "Portland": "POR",
+          "Philadelphia": "PHI",
+          "Detroit": "DET",
+          "Denver": "DEN",
+          "Toronto": "TOR",
+          "Utah": "UTA",
+          "Brooklyn": "BKN",
+          "Chicago": "CHI",
+          "Indiana": "IND",
+          "Memphis": "MEM",
+          "Milwaukee": "MIL",
+          "Minnesota": "MIN",
+          "Houston": "HOU",
+          "Dallas": "DAL",
+          "Sacramento": "SAC",
+          "Washington": "WAS",
+          "Orlando": "ORL",
+          "Cleveland": "CLE"
+        }
+      },
+      "notes": "Cloudflare-protected, requires browser automation. 10s crawl delay per robots.txt. Power ratings include predictive rank and record vs opponent tiers. ATS/O-U trends include season-long records, cover %, and margin. Team names use shortened display forms with record in parens on some pages."
     }
   ]
 }

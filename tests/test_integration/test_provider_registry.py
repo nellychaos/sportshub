@@ -26,9 +26,9 @@ def registry():
 class TestProviderRegistryLoading:
     """Verify the registry loads and indexes all expected data."""
 
-    def test_loads_all_14_providers(self, registry):
+    def test_loads_all_15_providers(self, registry):
         providers = registry.get_all_providers()
-        assert len(providers) == 14
+        assert len(providers) == 15
 
     def test_all_source_ids_unique(self, registry):
         ids = [p.source_id for p in registry.get_all_providers()]
@@ -41,6 +41,7 @@ class TestProviderRegistryLoading:
         assert "nbacom_cdn" in nba_ids
         assert "balldontlie_nba" in nba_ids
         assert "bref" in nba_ids
+        assert "teamrankings_nba" in nba_ids
 
     def test_football_providers(self, registry):
         fb = registry.get_providers_by_sport("football")
@@ -192,5 +193,40 @@ class TestRateLimits:
         """NBA.com CDN is a single static file, no rate limit."""
         assert registry.get_rate_limit("nbacom_cdn") is None
 
+    def test_teamrankings_rate_limit(self, registry):
+        assert registry.get_rate_limit("teamrankings_nba") == 10.0
+
     def test_unknown_provider_rate_limit(self, registry):
         assert registry.get_rate_limit("nonexistent") is None
+
+
+class TestTeamRankingsProvider:
+    """Verify TeamRankings provider config and abbreviation maps."""
+
+    def test_teamrankings_loads(self, registry):
+        tr = registry.get_provider("teamrankings_nba")
+        assert tr is not None
+        assert tr.sport == "nba"
+        assert tr.rate_limit_seconds == 10.0
+
+    def test_teamrankings_endpoints(self, registry):
+        url = registry.get_endpoint("teamrankings_nba", "power_ratings")
+        assert url == "https://www.teamrankings.com/nba/ranking/predictive-by-other"
+
+        url = registry.get_endpoint("teamrankings_nba", "ats_trends")
+        assert url == "https://www.teamrankings.com/nba/trends/ats_trends/"
+
+    def test_teamrankings_abbreviation_map(self, registry):
+        abbr_map = registry.get_abbreviation_map("teamrankings_nba", "provider_to_ours")
+        assert abbr_map is not None
+        assert abbr_map["Okla City"] == "OKC"
+        assert abbr_map["LA Lakers"] == "LAL"
+        assert abbr_map["Golden State"] == "GSW"
+
+    def test_teamrankings_all_30_teams_mapped(self, registry):
+        abbr_map = registry.get_abbreviation_map("teamrankings_nba", "provider_to_ours")
+        assert len(abbr_map) == 30
+
+    def test_bref_play_by_play_endpoint(self, registry):
+        url = registry.get_endpoint("bref", "play_by_play", year="2026")
+        assert url == "https://www.basketball-reference.com/leagues/NBA_2026_play-by-play.html"
