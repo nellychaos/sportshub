@@ -1,7 +1,10 @@
 """Dashboard data aggregation service."""
 
+import json
+import os
 import time
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import sqlalchemy as sa
 import structlog
@@ -17,34 +20,25 @@ from sportshub.db.tables import (
     source_records_table,
     teams_table,
 )
+from sportshub.providers.registry import ProviderRegistry
 from sportshub.resolution.reliability import DynamicReliabilityScorer
+from sportshub.scripts.io import DATA_DIR
 
 logger = structlog.get_logger()
 
-# Known source adapters and their sports
-SOURCE_ADAPTERS = [
-    ("espn_nba", "nba"),
-    ("nbacom_cdn", "nba"),
-    ("balldontlie_nba", "nba"),
-    ("lolesports", "lol"),
-    ("pandascore_lol", "lol"),
-    ("liquipedia_lol", "lol"),
-    ("espn_fifa", "football"),
-    ("fifa_api", "football"),
-    ("footballdata_wc", "football"),
-]
+# Lazily-loaded provider registry (shared across all service instances)
+_registry = ProviderRegistry()
 
-# Expected cadences in hours (for stale detection)
-SOURCE_CADENCES = {
-    "espn_nba": 1,
-    "nbacom_cdn": 2,
-    "balldontlie_nba": 6,
-    "lolesports": 1,
-    "pandascore_lol": 2,
-    "liquipedia_lol": 24,
-    "espn_fifa": 1,
-    "fifa_api": 2,
-    "footballdata_wc": 3,
+# Expected cadence multiplier for stale detection: alert if no success in N * cadence
+_STALE_MULTIPLIER = 2.0
+
+# Default cadences by provider type when rate_limit_seconds is unavailable
+_DEFAULT_CADENCES_HOURS = {
+    "api": 2,
+    "cdn": 4,
+    "web_scrape": 72,       # manually triggered
+    "api_websocket": None,  # skip stale detection
+    "csv_github": None,     # skip stale detection
 }
 
 HAIKU_INPUT_COST_PER_TOKEN = 0.80 / 1_000_000
@@ -53,6 +47,24 @@ HAIKU_OUTPUT_COST_PER_TOKEN = 4.00 / 1_000_000
 HAIKU_AVG_COST_PER_TOKEN = (
     0.80 * HAIKU_INPUT_COST_PER_TOKEN + 0.20 * HAIKU_OUTPUT_COST_PER_TOKEN
 )
+
+# Known primary collection keys for data files (filename -> dict key holding the list)
+_COLLECTION_KEYS = {
+    "nba_player_stats.json": "players",
+    "providers.json": "providers",
+    "provider_id_mappings.json": None,  # complex structure, count nba_teams.mappings
+}
+
+
+def _get_cadence_hours(provider) -> float | None:
+    """Determine expected ingestion cadence in hours for stale detection."""
+    if provider.rate_limit_seconds:
+        # For API sources, expect runs at roughly 2x the rate limit interval
+        # (rate_limit is per-request; a full run takes many requests)
+        # Use a sensible minimum of 1 hour
+        return max(1.0, provider.rate_limit_seconds / 60)
+
+    return _DEFAULT_CADENCES_HOURS.get(provider.type)
 
 
 class DashboardService:
@@ -125,7 +137,7 @@ class DashboardService:
         }
 
     async def get_source_statuses(self, circuit_breaker=None) -> list[dict]:
-        """Per-adapter status cards."""
+        """Per-provider status cards with rich metadata from ProviderRegistry."""
         # Get latest run per source
         stmt = sa.text("""
             SELECT DISTINCT ON (source_id)
@@ -150,7 +162,8 @@ class DashboardService:
         last_successes = {row.source_id: row.completed_at for row in result.all()}
 
         statuses = []
-        for source_id, sport in SOURCE_ADAPTERS:
+        for provider in _registry.get_all_providers():
+            source_id = provider.source_id
             run = latest_runs.get(source_id, {})
             cb_status = {}
             if circuit_breaker:
@@ -158,7 +171,12 @@ class DashboardService:
 
             statuses.append({
                 "source_id": source_id,
-                "sport": sport,
+                "display_name": provider.display_name,
+                "sport": provider.sport,
+                "provider_type": provider.type,
+                "reliability": provider.reliability,
+                "priority": provider.priority,
+                "rate_limit_seconds": provider.rate_limit_seconds,
                 "last_run_status": run.get("status"),
                 "last_run_at": run.get("started_at"),
                 "last_success_at": last_successes.get(source_id),
@@ -326,31 +344,36 @@ class DashboardService:
                 "details": {"count": low_conf_count},
             })
 
-        # Stale sources
-        for source_id, cadence_hours in SOURCE_CADENCES.items():
+        # Stale sources (derived from ProviderRegistry)
+        for provider in _registry.get_all_providers():
+            cadence = _get_cadence_hours(provider)
+            if cadence is None:
+                continue  # skip sources without expected cadence
+
             stmt = sa.select(
                 sa.func.max(ingestion_runs_table.c.completed_at)
             ).where(
                 sa.and_(
-                    ingestion_runs_table.c.source_id == source_id,
+                    ingestion_runs_table.c.source_id == provider.source_id,
                     ingestion_runs_table.c.status == "success",
                 )
             )
             result = await self._session.execute(stmt)
             last = result.scalar_one_or_none()
-            if last and (now - last).total_seconds() > cadence_hours * 7200:  # 2x cadence
+            threshold = cadence * 3600 * _STALE_MULTIPLIER
+            if last and (now - last).total_seconds() > threshold:
                 alerts.append({
                     "severity": "warning",
                     "alert_type": "stale_source",
                     "message": (
-                        f"{source_id}: no successful ingestion in "
+                        f"{provider.source_id}: no successful ingestion in "
                         f"{int((now - last).total_seconds() / 3600)}h "
-                        f"(expected every {cadence_hours}h)"
+                        f"(expected every {cadence:.0f}h)"
                     ),
                     "timestamp": last,
                     "details": {
-                        "source_id": source_id,
-                        "expected_hours": cadence_hours,
+                        "source_id": provider.source_id,
+                        "expected_hours": cadence,
                     },
                 })
 
@@ -366,7 +389,6 @@ class DashboardService:
 
     async def get_constraint_violations(self) -> list[dict]:
         """Query events that have constraint violations stored in metadata."""
-        # Use JSONB containment to find events with non-empty violations arrays
         t = events_table
         home = teams_table.alias("home_team")
         away = teams_table.alias("away_team")
@@ -416,7 +438,6 @@ class DashboardService:
                     "details": v.get("details", {}),
                 })
 
-        # Sort: errors first, then by scheduled_at desc
         severity_order = {"error": 0, "warning": 1}
         violations_list.sort(
             key=lambda x: (severity_order.get(x["severity"], 9), x.get("scheduled_at")),
@@ -647,21 +668,241 @@ class DashboardService:
         }
 
     async def get_source_reliability(self) -> list[dict]:
-        """Source reliability data showing dynamic vs hardcoded priority scores.
-
-        For each source, returns:
-        - Dynamic priority score (if sufficient data)
-        - Hardcoded fallback score
-        - Per-field accuracy breakdown (time, teams, venue)
-        - Sample count
-        - Whether dynamic or fallback is being used
-        """
+        """Source reliability data showing dynamic vs hardcoded priority scores."""
         scorer = DynamicReliabilityScorer(self._session)
         try:
             return await scorer.get_detailed_reliability()
         except Exception:
             logger.exception("reliability_dashboard_query_failed")
             return []
+
+    # ── New: Reference Data Inventory ─────────────────────────────────
+
+    def get_reference_data_inventory(self) -> dict:
+        """Scan data/ directory and return file inventory with schema status.
+
+        Synchronous -- reads local files, no DB needed.
+        """
+        from sportshub.validation.data_schemas import validate_data_file
+
+        files = []
+        for path in sorted(DATA_DIR.glob("*.json")):
+            if path.name == "script_activity.json":
+                continue  # skip the activity log itself
+
+            stat = path.stat()
+            size = stat.st_size
+            modified = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
+
+            # Count records
+            record_count = self._count_records(path)
+
+            # Categorize
+            category = self._categorize_file(path.name)
+
+            # Schema validation
+            errors = validate_data_file(path.name)
+            has_schema = self._has_schema(path.name)
+
+            files.append({
+                "name": path.name,
+                "category": category,
+                "record_count": record_count,
+                "size_bytes": size,
+                "size_display": self._format_size(size),
+                "modified_at": modified.isoformat(),
+                "modified_display": modified.strftime("%Y-%m-%d %H:%M"),
+                "has_schema": has_schema,
+                "schema_valid": has_schema and len(errors) == 0,
+                "validation_errors": errors if has_schema else [],
+            })
+
+        # Totals
+        total_size = sum(f["size_bytes"] for f in files)
+        schemas_defined = sum(1 for f in files if f["has_schema"])
+        schemas_passing = sum(1 for f in files if f["schema_valid"])
+
+        return {
+            "files": files,
+            "totals": {
+                "file_count": len(files),
+                "total_size_bytes": total_size,
+                "total_size_display": self._format_size(total_size),
+                "schemas_defined": schemas_defined,
+                "schemas_passing": schemas_passing,
+            },
+        }
+
+    def _count_records(self, path: Path) -> int | None:
+        """Count the primary collection in a JSON file."""
+        try:
+            with open(path) as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return None
+
+        if isinstance(data, list):
+            return len(data)
+
+        if isinstance(data, dict):
+            # Known nested structures
+            name = path.name
+            if name in _COLLECTION_KEYS:
+                key = _COLLECTION_KEYS[name]
+                if key is None and name == "provider_id_mappings.json":
+                    # Count mappings in nba_teams section
+                    return len(data.get("nba_teams", {}).get("mappings", {}))
+                if key and key in data:
+                    val = data[key]
+                    return len(val) if isinstance(val, (list, dict)) else None
+
+            # Try common collection keys
+            for key in ("players", "teams", "providers", "mappings", "competitions"):
+                if key in data and isinstance(data[key], (list, dict)):
+                    return len(data[key])
+
+        return None
+
+    def _has_schema(self, filename: str) -> bool:
+        """Check if a schema file exists for the given data file."""
+        stem = Path(filename).stem
+        return (DATA_DIR / "schemas" / f"{stem}.schema.json").exists()
+
+    @staticmethod
+    def _categorize_file(name: str) -> str:
+        """Categorize a data file by its name prefix."""
+        if name.startswith("nba_") or name.startswith("bref_"):
+            return "nba"
+        if name.startswith("teamrankings_"):
+            return "teamrankings"
+        if name.startswith("lol_"):
+            return "lol"
+        if name.startswith("fifa_") or name.startswith("wc_"):
+            return "football"
+        if name in ("providers.json", "provider_id_mappings.json",
+                     "competitions.json", "venue_timezones.json"):
+            return "system"
+        return "other"
+
+    @staticmethod
+    def _format_size(size_bytes: int) -> str:
+        """Format file size for display."""
+        if size_bytes < 1024:
+            return f"{size_bytes} B"
+        if size_bytes < 1024 * 1024:
+            return f"{size_bytes / 1024:.1f} KB"
+        return f"{size_bytes / (1024 * 1024):.1f} MB"
+
+    # ── New: Script Activity ──────────────────────────────────────────
+
+    def get_script_activity(self, limit: int = 50) -> list[dict]:
+        """Return recent script activity from the file-based log.
+
+        Synchronous -- reads data/script_activity.json.
+        """
+        from sportshub.scripts.activity_log import get_recent_activity
+        return get_recent_activity(limit=limit)
+
+    # ── New: Data Completeness ────────────────────────────────────────
+
+    async def get_data_completeness(self) -> dict:
+        """Compute data completeness metrics across player stats, team data, and events."""
+        player_stats = self._compute_player_completeness()
+        team_data = self._compute_team_completeness()
+        event_enrichment = await self._compute_event_enrichment()
+
+        return {
+            "player_stats": player_stats,
+            "team_data": team_data,
+            "event_enrichment": event_enrichment,
+        }
+
+    def _compute_player_completeness(self) -> dict:
+        """Count player stat coverage from nba_player_stats.json."""
+        try:
+            with open(DATA_DIR / "nba_player_stats.json") as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {"total_players": 0, "categories": {}, "coverage_pct": {}}
+
+        players = data.get("players", [])
+        total = len(players)
+        if total == 0:
+            return {"total_players": 0, "categories": {}, "coverage_pct": {}}
+
+        categories = {
+            "base_stats": sum(1 for p in players if p.get("stats")),
+            "advanced": sum(1 for p in players if p.get("advanced")),
+            "play_by_play": sum(1 for p in players if p.get("play_by_play")),
+            "adjusted_shooting": sum(1 for p in players if p.get("adjusted_shooting")),
+        }
+
+        fully_enriched = sum(
+            1 for p in players
+            if p.get("advanced") and p.get("play_by_play") and p.get("adjusted_shooting")
+        )
+        categories["fully_enriched"] = fully_enriched
+
+        coverage_pct = {
+            k: round(v / total * 100, 1) for k, v in categories.items()
+        }
+
+        return {
+            "total_players": total,
+            "categories": categories,
+            "coverage_pct": coverage_pct,
+        }
+
+    def _compute_team_completeness(self) -> dict:
+        """Count team data coverage from reference files."""
+        def _count_file(filename: str) -> int:
+            try:
+                with open(DATA_DIR / filename) as f:
+                    data = json.load(f)
+                return len(data) if isinstance(data, list) else 0
+            except (FileNotFoundError, json.JSONDecodeError):
+                return 0
+
+        total_teams = _count_file("nba_teams.json")
+
+        return {
+            "total_teams": total_teams,
+            "with_power_ratings": _count_file("teamrankings_power_ratings_2026.json"),
+            "with_ats_trends": _count_file("teamrankings_ats_trends_2026.json"),
+            "with_ou_trends": _count_file("teamrankings_ou_trends_2026.json"),
+        }
+
+    async def _compute_event_enrichment(self) -> dict:
+        """Count event enrichment coverage from the database."""
+        t = events_table
+
+        # Total scheduled events
+        stmt = sa.select(sa.func.count()).select_from(t).where(t.c.status == "scheduled")
+        result = await self._session.execute(stmt)
+        total = result.scalar_one()
+
+        if total == 0:
+            return {"total_scheduled": 0, "with_rosters": 0, "with_team_stats": 0, "with_injuries": 0}
+
+        # Events with enrichment data (metadata.teams is not null/empty)
+        stmt = (
+            sa.select(sa.func.count())
+            .select_from(t)
+            .where(
+                sa.and_(
+                    t.c.status == "scheduled",
+                    t.c.metadata.has_key("teams"),
+                )
+            )
+        )
+        result = await self._session.execute(stmt)
+        with_teams = result.scalar_one()
+
+        return {
+            "total_scheduled": total,
+            "with_enrichment": with_teams,
+            "enrichment_pct": round(with_teams / total * 100, 1) if total > 0 else 0.0,
+        }
 
     def _empty_llm_response(self) -> dict:
         return {

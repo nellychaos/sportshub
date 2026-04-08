@@ -36,6 +36,9 @@ async def dashboard_index(
     llm = await svc.get_llm_effectiveness(hours=168)
     reconciliation = await svc.get_reconciliation_stats(days=30)
     reliability = await svc.get_source_reliability()
+    reference_data = svc.get_reference_data_inventory()
+    script_activity = svc.get_script_activity()
+    completeness = await svc.get_data_completeness()
 
     return templates.TemplateResponse(
         request,
@@ -50,6 +53,9 @@ async def dashboard_index(
             "llm": llm,
             "reconciliation": reconciliation,
             "reliability": reliability,
+            "reference_data": reference_data,
+            "script_activity": script_activity,
+            "completeness": completeness,
         },
     )
 
@@ -165,4 +171,46 @@ async def partial_reliability(
         request,
         "dashboard/partials/reliability.html",
         {"reliability": reliability},
+    )
+
+
+@router.get("/dashboard/partials/reference-data", response_class=HTMLResponse)
+async def partial_reference_data(
+    request: Request, session: AsyncSession = Depends(get_db)
+):
+    svc = _get_service(request, session)
+    templates = request.app.state.templates
+    reference_data = svc.get_reference_data_inventory()
+    return templates.TemplateResponse(
+        request,
+        "dashboard/partials/reference_data.html",
+        {"reference_data": reference_data},
+    )
+
+
+@router.get("/dashboard/partials/script-activity", response_class=HTMLResponse)
+async def partial_script_activity(
+    request: Request, session: AsyncSession = Depends(get_db)
+):
+    svc = _get_service(request, session)
+    templates = request.app.state.templates
+    script_activity = svc.get_script_activity()
+    return templates.TemplateResponse(
+        request,
+        "dashboard/partials/script_activity.html",
+        {"script_activity": script_activity},
+    )
+
+
+@router.get("/dashboard/partials/completeness", response_class=HTMLResponse)
+async def partial_completeness(
+    request: Request, session: AsyncSession = Depends(get_db)
+):
+    svc = _get_service(request, session)
+    templates = request.app.state.templates
+    completeness = await svc.get_data_completeness()
+    return templates.TemplateResponse(
+        request,
+        "dashboard/partials/data_completeness.html",
+        {"completeness": completeness},
     )

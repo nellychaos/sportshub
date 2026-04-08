@@ -1,5 +1,7 @@
 """Dashboard API response schemas."""
 
+from __future__ import annotations
+
 from datetime import datetime
 from uuid import UUID
 
@@ -18,7 +20,12 @@ class SystemOverviewResponse(BaseModel):
 
 class SourceStatusResponse(BaseModel):
     source_id: str
+    display_name: str
     sport: str
+    provider_type: str
+    reliability: str
+    priority: int | None
+    rate_limit_seconds: float | None
     last_run_status: str | None
     last_run_at: datetime | None
     last_success_at: datetime | None
@@ -71,3 +78,50 @@ class LLMEffectivenessResponse(BaseModel):
     confidence_distribution: list[dict]
     daily_trend: list[dict]
     recent_decisions: list[dict]
+
+
+class ReferenceDataFileResponse(BaseModel):
+    name: str
+    category: str
+    record_count: int | None
+    size_bytes: int
+    size_display: str
+    modified_at: str
+    modified_display: str
+    has_schema: bool
+    schema_valid: bool
+    validation_errors: list[str]
+
+
+class ReferenceDataInventoryResponse(BaseModel):
+    files: list[ReferenceDataFileResponse]
+    totals: dict
+
+
+class ScriptActivityResponse(BaseModel):
+    script_name: str
+    started_at: str
+    completed_at: str | None
+    status: str
+    records_processed: int
+    summary: str
+    error_message: str | None
+
+
+class PlayerCompletenessResponse(BaseModel):
+    total_players: int
+    categories: dict[str, int]
+    coverage_pct: dict[str, float]
+
+
+class TeamCompletenessResponse(BaseModel):
+    total_teams: int
+    with_power_ratings: int
+    with_ats_trends: int
+    with_ou_trends: int
+
+
+class DataCompletenessResponse(BaseModel):
+    player_stats: PlayerCompletenessResponse
+    team_data: TeamCompletenessResponse
+    event_enrichment: dict

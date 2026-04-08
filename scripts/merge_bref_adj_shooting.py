@@ -17,6 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
+from sportshub.scripts.activity_log import log_script_run
 from sportshub.scripts.io import load_data, save_data, data_path
 from sportshub.scripts.normalization import normalize_player_name as normalize_name
 
@@ -92,64 +93,68 @@ def main():
         print(f"Error: {BREF_FILE} not found. Run the browser scrape first.")
         return
 
-    with open(BREF_FILE) as f:
-        bref_data = json.load(f)
+    with log_script_run("merge_bref_adj_shooting") as run:
+        with open(BREF_FILE) as f:
+            bref_data = json.load(f)
 
-    stats_data = load_data("nba_player_stats.json")
+        stats_data = load_data("nba_player_stats.json")
 
-    players = stats_data.get("players", [])
-    print(f"Basketball Reference adjusted shooting rows: {len(bref_data)}")
-    print(f"Our player stats: {len(players)}")
+        players = stats_data.get("players", [])
+        print(f"Basketball Reference adjusted shooting rows: {len(bref_data)}")
+        print(f"Our player stats: {len(players)}")
 
-    bref_lookup = build_bref_lookup(bref_data)
-    print(f"Unique Basketball Reference players: {len(bref_lookup)}")
+        bref_lookup = build_bref_lookup(bref_data)
+        print(f"Unique Basketball Reference players: {len(bref_lookup)}")
 
-    matched = 0
-    unmatched = []
+        matched = 0
+        unmatched = []
 
-    for player in players:
-        name = player.get("player_name", "")
-        norm_name = normalize_name(name)
+        for player in players:
+            name = player.get("player_name", "")
+            norm_name = normalize_name(name)
 
-        bref_row = bref_lookup.get(norm_name)
+            bref_row = bref_lookup.get(norm_name)
 
-        if not bref_row:
-            best_score = 0
-            best_key = None
-            for bref_name in bref_lookup:
-                score = SequenceMatcher(None, norm_name, bref_name).ratio()
-                if score > best_score and score > 0.85:
-                    best_score = score
-                    best_key = bref_name
+            if not bref_row:
+                best_score = 0
+                best_key = None
+                for bref_name in bref_lookup:
+                    score = SequenceMatcher(None, norm_name, bref_name).ratio()
+                    if score > best_score and score > 0.85:
+                        best_score = score
+                        best_key = bref_name
 
-            if best_key:
-                bref_row = bref_lookup[best_key]
+                if best_key:
+                    bref_row = bref_lookup[best_key]
 
-        if bref_row:
-            merge_adj_shooting(player, bref_row)
-            matched += 1
-        else:
-            unmatched.append(name)
+            if bref_row:
+                merge_adj_shooting(player, bref_row)
+                matched += 1
+            else:
+                unmatched.append(name)
 
-    stats_data["adj_shooting_source"] = "basketball-reference.com"
-    stats_data["adj_shooting_season"] = "2025-26"
+        stats_data["adj_shooting_source"] = "basketball-reference.com"
+        stats_data["adj_shooting_season"] = "2025-26"
 
-    save_data("nba_player_stats.json", stats_data)
+        save_data("nba_player_stats.json", stats_data)
 
-    print(f"\nMatched: {matched}/{len(players)}")
-    print(f"Unmatched: {len(unmatched)}")
-    if unmatched[:10]:
-        print(f"Sample unmatched: {unmatched[:10]}")
+        run.records_processed = matched
+        run.summary = f"Merged adjusted shooting for {matched}/{len(players)} players"
 
-    # Show top 5 by TS+
-    with_ts = [(p["player_name"], p["adjusted_shooting"]["ts_plus"])
-               for p in players if p.get("adjusted_shooting", {}).get("ts_plus")]
-    with_ts.sort(key=lambda x: x[1], reverse=True)
-    print("\nTop 5 by TS+ (league-adjusted true shooting):")
-    for name, val in with_ts[:5]:
-        print(f"  {name}: {val:.0f}")
+        print(f"\nMatched: {matched}/{len(players)}")
+        print(f"Unmatched: {len(unmatched)}")
+        if unmatched[:10]:
+            print(f"Sample unmatched: {unmatched[:10]}")
 
-    print(f"\nWritten to nba_player_stats.json")
+        # Show top 5 by TS+
+        with_ts = [(p["player_name"], p["adjusted_shooting"]["ts_plus"])
+                   for p in players if p.get("adjusted_shooting", {}).get("ts_plus")]
+        with_ts.sort(key=lambda x: x[1], reverse=True)
+        print("\nTop 5 by TS+ (league-adjusted true shooting):")
+        for name, val in with_ts[:5]:
+            print(f"  {name}: {val:.0f}")
+
+        print(f"\nWritten to nba_player_stats.json")
 
 
 if __name__ == "__main__":

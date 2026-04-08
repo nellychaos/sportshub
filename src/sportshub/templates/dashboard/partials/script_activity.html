@@ -1,0 +1,47 @@
+{% if script_activity %}
+<div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+  <div class="overflow-x-auto max-h-64 overflow-y-auto">
+    <table class="w-full text-xs">
+      <thead class="bg-gray-800/50 sticky top-0">
+        <tr>
+          <th class="text-left text-gray-400 font-medium px-4 py-2">Script</th>
+          <th class="text-left text-gray-400 font-medium px-3 py-2">Status</th>
+          <th class="text-left text-gray-400 font-medium px-3 py-2">Started</th>
+          <th class="text-right text-gray-400 font-medium px-3 py-2">Records</th>
+          <th class="text-left text-gray-400 font-medium px-3 py-2">Summary</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800/50">
+        {% for run in script_activity[:20] %}
+        <tr class="hover:bg-gray-800/30">
+          <td class="px-4 py-1.5 font-mono text-gray-300">{{ run.script_name }}</td>
+          <td class="px-3 py-1.5">
+            {% if run.status == 'success' %}
+              <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400">OK</span>
+            {% elif run.status == 'failed' %}
+              <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-red-500/10 text-red-400">FAIL</span>
+            {% else %}
+              <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-yellow-500/10 text-yellow-400">RUN</span>
+            {% endif %}
+          </td>
+          <td class="px-3 py-1.5 text-gray-400 font-mono">{{ run.started_at[:16] | replace('T', ' ') }}</td>
+          <td class="px-3 py-1.5 text-right font-mono text-gray-300">{{ run.records_processed or 0 }}</td>
+          <td class="px-3 py-1.5 text-gray-400 truncate max-w-xs" title="{{ run.summary }}">
+            {% if run.error_message %}
+              <span class="text-red-400">{{ run.error_message[:60] }}</span>
+            {% else %}
+              {{ run.summary[:60] }}{% if run.summary | length > 60 %}...{% endif %}
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<div class="bg-gray-900 rounded-xl border border-gray-800 p-6 text-center">
+  <p class="text-sm text-gray-500">No script runs recorded yet</p>
+  <p class="text-xs text-gray-600 mt-1">Script activity will appear here once scripts use the activity log</p>
+</div>
+{% endif %}

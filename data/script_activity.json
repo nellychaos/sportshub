@@ -1,0 +1,29 @@
+[
+  {
+    "script_name": "merge_bref_adj_shooting",
+    "started_at": "2026-04-08T09:59:58.074108+00:00",
+    "completed_at": "2026-04-08T09:59:58.253983+00:00",
+    "status": "success",
+    "records_processed": 527,
+    "summary": "Merged adjusted shooting for 527/535 players",
+    "error_message": null
+  },
+  {
+    "script_name": "merge_bref_pbp",
+    "started_at": "2026-04-08T10:02:39.303997+00:00",
+    "completed_at": "2026-04-08T10:02:39.510357+00:00",
+    "status": "success",
+    "records_processed": 527,
+    "summary": "Merged PBP stats for 527/535 players",
+    "error_message": null
+  },
+  {
+    "script_name": "merge_bref_advanced",
+    "started_at": "2026-04-08T10:02:50.659098+00:00",
+    "completed_at": "2026-04-08T10:02:50.846051+00:00",
+    "status": "success",
+    "records_processed": 527,
+    "summary": "Merged advanced stats for 527/535 players",
+    "error_message": null
+  }
+]

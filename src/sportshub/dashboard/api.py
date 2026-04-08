@@ -82,3 +82,21 @@ async def get_reliability(
 ):
     svc = _get_service(request, session)
     return await svc.get_source_reliability()
+
+
+@router.get("/reference-data")
+async def get_reference_data(request: Request, session: AsyncSession = Depends(get_db)):
+    svc = _get_service(request, session)
+    return svc.get_reference_data_inventory()
+
+
+@router.get("/script-activity")
+async def get_script_activity(request: Request, session: AsyncSession = Depends(get_db)):
+    svc = _get_service(request, session)
+    return svc.get_script_activity()
+
+
+@router.get("/completeness")
+async def get_completeness(request: Request, session: AsyncSession = Depends(get_db)):
+    svc = _get_service(request, session)
+    return await svc.get_data_completeness()

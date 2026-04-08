@@ -11,6 +11,9 @@
     .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
     .fade-in { animation: fadeIn 0.3s ease-in; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .tab-active { color: #e5e7eb; border-bottom-color: #0c93e6; }
+    .tab-inactive { color: #6b7280; border-bottom-color: transparent; }
+    .tab-inactive:hover { color: #9ca3af; }
   </style>
   <script>
     tailwind.config = {
@@ -21,6 +24,15 @@
           }
         }
       }
+    }
+    function switchTab(tabId, contentId, url) {
+      // Update tab styles
+      document.querySelectorAll('[data-tab-group="' + contentId + '"]').forEach(function(tab) {
+        tab.className = tab.className.replace('tab-active', 'tab-inactive');
+      });
+      document.getElementById(tabId).className = document.getElementById(tabId).className.replace('tab-inactive', 'tab-active');
+      // Load content
+      htmx.ajax('GET', url, '#' + contentId);
     }
   </script>
 </head>
@@ -57,17 +69,35 @@
 
     <!-- Source Adapters -->
     <section>
-      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Source Adapters</h2>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Data Sources ({{ sources | length }})</h2>
       <div id="source-cards" hx-get="/dashboard/partials/sources" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
         {% include "dashboard/partials/source_cards.html" %}
       </div>
     </section>
 
-    <!-- Two-column: Ingestion Timeline + Alerts -->
+    <!-- Reference Data Inventory -->
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Reference Data</h2>
+      <div id="reference-data" hx-get="/dashboard/partials/reference-data" hx-trigger="every 120s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/reference_data.html" %}
+      </div>
+    </section>
+
+    <!-- Activity: Ingestion + Scripts (tabbed) + Alerts -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <section class="lg:col-span-2">
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Ingestion Timeline (24h)</h2>
-        <div id="ingestion-table" hx-get="/dashboard/partials/ingestion" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
+        <div class="flex items-center gap-4 mb-3">
+          <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Activity</h2>
+          <div class="flex gap-1 border-b border-gray-800">
+            <button id="tab-ingestion" data-tab-group="activity-content"
+                    onclick="switchTab('tab-ingestion', 'activity-content', '/dashboard/partials/ingestion')"
+                    class="px-3 py-1.5 text-xs font-medium border-b-2 tab-active">Ingestion (24h)</button>
+            <button id="tab-scripts" data-tab-group="activity-content"
+                    onclick="switchTab('tab-scripts', 'activity-content', '/dashboard/partials/script-activity')"
+                    class="px-3 py-1.5 text-xs font-medium border-b-2 tab-inactive">Script Activity</button>
+          </div>
+        </div>
+        <div id="activity-content" hx-get="/dashboard/partials/ingestion" hx-trigger="every 30s" hx-swap="innerHTML" class="fade-in">
           {% include "dashboard/partials/ingestion_table.html" %}
         </div>
       </section>
@@ -88,7 +118,7 @@
       </div>
     </section>
 
-    <!-- Data Quality -->
+    <!-- Data Quality + Completeness -->
     <section>
       <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Data Quality</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -153,6 +183,11 @@
           <p class="text-xs text-gray-500">All records matched</p>
           {% endif %}
         </div>
+      </div>
+
+      <!-- Data Completeness -->
+      <div id="completeness-panel" hx-get="/dashboard/partials/completeness" hx-trigger="every 120s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/data_completeness.html" %}
       </div>
     </section>
 

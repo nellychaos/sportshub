@@ -1,0 +1,49 @@
+{% set cat_colors = {'nba': 'orange', 'teamrankings': 'cyan', 'lol': 'purple', 'football': 'emerald', 'system': 'blue', 'other': 'gray'} %}
+
+<div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+  <div class="overflow-x-auto max-h-80 overflow-y-auto">
+    <table class="w-full text-xs">
+      <thead class="bg-gray-800/50 sticky top-0">
+        <tr>
+          <th class="text-left text-gray-400 font-medium px-4 py-2">File</th>
+          <th class="text-left text-gray-400 font-medium px-3 py-2">Category</th>
+          <th class="text-right text-gray-400 font-medium px-3 py-2">Records</th>
+          <th class="text-right text-gray-400 font-medium px-3 py-2">Size</th>
+          <th class="text-left text-gray-400 font-medium px-3 py-2">Modified</th>
+          <th class="text-center text-gray-400 font-medium px-3 py-2">Schema</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800/50">
+        {% for f in reference_data.files %}
+        {% set cc = cat_colors.get(f.category, 'gray') %}
+        <tr class="hover:bg-gray-800/30">
+          <td class="px-4 py-1.5 font-mono text-gray-300">{{ f.name }}</td>
+          <td class="px-3 py-1.5">
+            <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-{{ cc }}-500/10 text-{{ cc }}-400 uppercase">{{ f.category }}</span>
+          </td>
+          <td class="px-3 py-1.5 text-right font-mono text-gray-300">
+            {% if f.record_count is not none %}{{ f.record_count | string }}{% else %}&mdash;{% endif %}
+          </td>
+          <td class="px-3 py-1.5 text-right font-mono text-gray-400">{{ f.size_display }}</td>
+          <td class="px-3 py-1.5 text-gray-400">{{ f.modified_display }}</td>
+          <td class="px-3 py-1.5 text-center">
+            {% if f.has_schema and f.schema_valid %}
+              <span class="text-emerald-400" title="Schema valid">&#10003;</span>
+            {% elif f.has_schema and not f.schema_valid %}
+              <span class="text-red-400" title="{{ f.validation_errors | join(', ') }}">&#10007;</span>
+            {% else %}
+              <span class="text-gray-600">&mdash;</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Summary footer -->
+  <div class="border-t border-gray-800 px-4 py-2 flex items-center justify-between text-xs text-gray-500">
+    <span>{{ reference_data.totals.file_count }} files &middot; {{ reference_data.totals.total_size_display }}</span>
+    <span>Schemas: {{ reference_data.totals.schemas_passing }}/{{ reference_data.totals.schemas_defined }} passing</span>
+  </div>
+</div>
