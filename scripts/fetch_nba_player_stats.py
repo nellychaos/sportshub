@@ -14,39 +14,24 @@ Usage: python3 -m scripts.fetch_nba_player_stats
 
 import argparse
 import json
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-PLAYERS_FILE = DATA_DIR / "nba_players.json"
-STATS_FILE = DATA_DIR / "nba_player_stats.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-# Overview endpoint: lighter, has basic season averages
-OVERVIEW_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{player_id}/overview"
-# Stats endpoint: heavier, has full splits with made/attempted breakdowns
-STATS_URL = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/{player_id}/stats"
+from sportshub.scripts.http import ScriptHttpClient
+from sportshub.scripts.io import load_data, save_data
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "application/json",
-}
-
-# ESPN abbreviation -> our abbreviation
-ESPN_TO_OUR_ABBR = {
-    "GS": "GSW", "NO": "NOP", "NY": "NYK",
-    "SA": "SAS", "UTAH": "UTA", "WSH": "WAS",
-}
+_client = ScriptHttpClient("espn_nba")
 
 
 def fetch_json(url: str) -> dict | None:
-    req = Request(url, headers=HEADERS)
     try:
-        with urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read())
-    except (HTTPError, URLError, TimeoutError):
+        return _client.get(url, timeout=15)
+    except (HTTPError, URLError, TimeoutError, Exception):
         return None
 
 
@@ -187,8 +172,7 @@ def main():
                         help="Fetch detailed splits (FG made/attempted, OREB/DREB) - slower")
     args = parser.parse_args()
 
-    with open(PLAYERS_FILE) as f:
-        players = json.load(f)
+    players = load_data("nba_players.json")
 
     if args.team:
         team_id = f"nba-{args.team.lower()}"
@@ -215,11 +199,11 @@ def main():
             print(f"  [{i}/{len(players)}] {fetched} fetched, {errors} errors...")
 
         if args.detailed:
-            url = STATS_URL.format(player_id=espn_id)
+            url = _client._registry.get_endpoint("espn_nba", "player_stats", player_id=espn_id)
             data = fetch_json(url)
             stat_data = parse_detailed_stats(data) if data else None
         else:
-            url = OVERVIEW_URL.format(player_id=espn_id)
+            url = _client._registry.get_endpoint("espn_nba", "player_overview", player_id=espn_id)
             data = fetch_json(url)
             stat_data = parse_overview_stats(data) if data else None
 
@@ -236,8 +220,7 @@ def main():
         else:
             skipped += 1  # Player has 0 games played
 
-        # Rate limit: ~1 req/sec
-        time.sleep(0.8)
+        # Rate limiting handled by ScriptHttpClient
 
     # Sort by PPG descending
     results.sort(key=lambda p: p.get("stats", {}).get("points_per_game", 0), reverse=True)
@@ -250,9 +233,7 @@ def main():
         "players": results,
     }
 
-    with open(STATS_FILE, "w") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_data("nba_player_stats.json", output)
 
     print(f"\nDone: {fetched} players with stats")
     print(f"  Skipped (no ESPN ID or 0 GP): {skipped}")
@@ -266,7 +247,7 @@ def main():
               f"{s['points_per_game']} PPG, {s['rebounds_per_game']} RPG, "
               f"{s['assists_per_game']} APG in {p['games_played']} games")
 
-    print(f"\nWritten to {STATS_FILE.name}")
+    print(f"\nWritten to nba_player_stats.json")
 
 
 if __name__ == "__main__":

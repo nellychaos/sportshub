@@ -1,0 +1,156 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: pip install ruff
+
+      - name: Check formatting
+        run: ruff format --check src/ scripts/ tests/
+
+      - name: Check lint rules
+        run: ruff check src/ scripts/ tests/
+
+  typecheck:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          pip install -e ".[dev]"
+          pip install types-redis
+
+      - name: Run mypy
+        run: mypy src/sportshub/ --ignore-missing-imports
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: sportshub
+          POSTGRES_PASSWORD: sportshub_test
+          POSTGRES_DB: sportshub_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      SPORTSHUB_DATABASE_URL: postgresql+asyncpg://sportshub:sportshub_test@localhost:5432/sportshub_test
+      SPORTSHUB_REDIS_URL: redis://localhost:6379/0
+      SPORTSHUB_API_KEY: test_key
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('pyproject.toml') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]" jsonschema
+
+      - name: Install PostgreSQL extensions
+        run: |
+          PGPASSWORD=sportshub_test psql -h localhost -U sportshub -d sportshub_test -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+          PGPASSWORD=sportshub_test psql -h localhost -U sportshub -d sportshub_test -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+
+  data-validation:
+    name: Validate Data Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: pip install jsonschema pydantic structlog
+
+      - name: Validate JSON schemas
+        run: |
+          python -c "
+          import json, sys
+          from pathlib import Path
+
+          schema_dir = Path('data/schemas')
+          if not schema_dir.exists():
+              print('No schemas directory found, skipping')
+              sys.exit(0)
+
+          import jsonschema
+
+          errors = []
+          for schema_file in sorted(schema_dir.glob('*.schema.json')):
+              data_name = schema_file.stem.replace('.schema', '') + '.json'
+              data_file = Path('data') / data_name
+              if not data_file.exists():
+                  print(f'  SKIP {data_name} (no data file)')
+                  continue
+
+              with open(schema_file) as f:
+                  schema = json.load(f)
+              with open(data_file) as f:
+                  data = json.load(f)
+
+              try:
+                  jsonschema.validate(data, schema)
+                  print(f'  OK   {data_name}')
+              except jsonschema.ValidationError as e:
+                  errors.append((data_name, str(e.message)[:200]))
+                  print(f'  FAIL {data_name}: {e.message[:100]}')
+
+          if errors:
+              print(f'\n{len(errors)} validation error(s)')
+              sys.exit(1)
+          else:
+              print(f'\nAll data files valid')
+          "

@@ -11,37 +11,25 @@ Usage: python3 -m scripts.merge_bref_advanced
 """
 
 import json
+import sys
 from difflib import SequenceMatcher
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-BREF_FILE = DATA_DIR / "bref_advanced_2026_raw.json"
-STATS_FILE = DATA_DIR / "nba_player_stats.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-# Basketball Reference team abbreviations -> our team_id mapping
-BREF_TEAM_MAP = {
-    "ATL": "nba-atl", "BOS": "nba-bos", "BRK": "nba-bkn", "CHO": "nba-cha",
-    "CHI": "nba-chi", "CLE": "nba-cle", "DAL": "nba-dal", "DEN": "nba-den",
-    "DET": "nba-det", "GSW": "nba-gsw", "HOU": "nba-hou", "IND": "nba-ind",
-    "LAC": "nba-lac", "LAL": "nba-lal", "MEM": "nba-mem", "MIA": "nba-mia",
-    "MIL": "nba-mil", "MIN": "nba-min", "NOP": "nba-nop", "NYK": "nba-nyk",
-    "OKC": "nba-okc", "ORL": "nba-orl", "PHI": "nba-phi", "PHO": "nba-phx",
-    "POR": "nba-por", "SAC": "nba-sac", "SAS": "nba-sas", "TOR": "nba-tor",
-    "UTA": "nba-uta", "WAS": "nba-was",
-    # Traded players have 'TOT' for combined stats
-    "TOT": None,
-    # Handle possible alternate abbreviations
-    "PHX": "nba-phx", "BKN": "nba-bkn", "CHA": "nba-cha",
-    "2TM": None, "3TM": None, "4TM": None,
-}
+from sportshub.providers.abbreviations import bref_to_standard
+from sportshub.scripts.io import load_data, save_data, data_path
+from sportshub.scripts.normalization import normalize_player_name as normalize_name
+
+BREF_FILE = data_path("bref_advanced_2026_raw.json")
 
 
-def normalize_name(name: str) -> str:
-    """Normalize a player name for fuzzy matching."""
-    import unicodedata
-    name = unicodedata.normalize("NFKD", name)
-    name = "".join(c for c in name if not unicodedata.combining(c))
-    return name.lower().strip().replace(".", "").replace("'", "").replace("-", " ")
+def bref_team_to_id(bref_abbr: str) -> str | None:
+    """Convert a Basketball Reference team abbreviation to our team ID."""
+    if bref_abbr in ("TOT", "2TM", "3TM", "4TM"):
+        return None
+    standard = bref_to_standard(bref_abbr)
+    return f"nba-{standard.lower()}"
 
 
 def build_bref_lookup(bref_data: list[dict]) -> dict[str, dict]:
@@ -122,8 +110,7 @@ def main():
     with open(BREF_FILE) as f:
         bref_data = json.load(f)
 
-    with open(STATS_FILE) as f:
-        stats_data = json.load(f)
+    stats_data = load_data("nba_player_stats.json")
 
     players = stats_data.get("players", [])
     print(f"Basketball Reference rows: {len(bref_data)}")
@@ -167,9 +154,7 @@ def main():
     stats_data["advanced_stats_source"] = "basketball-reference.com"
     stats_data["advanced_stats_season"] = "2025-26"
 
-    with open(STATS_FILE, "w") as f:
-        json.dump(stats_data, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_data("nba_player_stats.json", stats_data)
 
     print(f"\nMatched: {matched}/{len(players)}")
     print(f"Unmatched: {len(unmatched)}")
@@ -184,7 +169,7 @@ def main():
     for name, per in with_per[:5]:
         print(f"  {name}: {per}")
 
-    print(f"\nWritten to {STATS_FILE.name}")
+    print(f"\nWritten to nba_player_stats.json")
 
 
 if __name__ == "__main__":

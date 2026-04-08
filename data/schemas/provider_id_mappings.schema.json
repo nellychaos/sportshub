@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Provider ID Mappings",
+  "description": "Cross-provider entity ID mappings",
+  "type": "object",
+  "required": ["version", "description", "nba_teams"],
+  "properties": {
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "nba_teams": {
+      "type": "object",
+      "required": ["entity_type", "sport", "providers", "mappings"],
+      "properties": {
+        "entity_type": { "type": "string", "const": "team" },
+        "sport": { "type": "string", "const": "nba" },
+        "providers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "object" },
+        "mappings": {
+          "type": "object",
+          "minProperties": 30,
+          "patternProperties": {
+            "^nba-[a-z]{2,4}$": {
+              "type": "object",
+              "required": ["abbreviation", "espn_nba", "bref"],
+              "properties": {
+                "abbreviation": { "type": "string", "pattern": "^[A-Z]{2,4}$" },
+                "espn_nba": { "type": "string" },
+                "nbacom_cdn": {
+                  "type": "object",
+                  "required": ["team_id", "tricode"],
+                  "properties": {
+                    "team_id": { "type": "string", "pattern": "^\\d{10}$" },
+                    "tricode": { "type": "string" }
+                  }
+                },
+                "balldontlie_nba": { "type": "string" },
+                "bref": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,34 +7,17 @@ Usage: python3 -m scripts.fetch_nba_schedule
 """
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import Request, urlopen
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-TEAMS_FILE = DATA_DIR / "nba_teams.json"
-SCHEDULE_FILE = DATA_DIR / "nba_schedule.json"
-VENUE_TZ_FILE = DATA_DIR / "venue_timezones.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-CDN_URL = "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+from sportshub.providers.abbreviations import nbacom_to_standard
+from sportshub.scripts.http import ScriptHttpClient
+from sportshub.scripts.io import load_data, save_data
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "application/json",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.nba.com/schedule",
-}
-
-# NBA tricode -> our abbreviation (where they differ)
-TRICODE_TO_ABBR = {
-    "GS": "GSW",
-    "NO": "NOP",
-    "NY": "NYK",
-    "SA": "SAS",
-    "UTAH": "UTA",
-    "WSH": "WAS",
-    "UT": "UTA",
-}
+_client = ScriptHttpClient("nbacom_cdn")
 
 # gameStatus values: 1 = scheduled, 2 = in progress, 3 = final
 STATUS_MAP = {
@@ -45,13 +28,11 @@ STATUS_MAP = {
 
 
 def fetch_cdn() -> dict:
-    req = Request(CDN_URL, headers=HEADERS)
-    with urlopen(req, timeout=120) as resp:
-        return json.loads(resp.read())
+    return _client.get_endpoint("schedule", timeout=120)
 
 
 def tricode_to_team_id(tricode: str) -> str:
-    abbr = TRICODE_TO_ABBR.get(tricode, tricode)
+    abbr = nbacom_to_standard(tricode)
     return f"nba-{abbr.lower()}"
 
 
@@ -112,10 +93,11 @@ def is_preseason_game(game_id: str) -> bool:
 def main():
     # Load venue timezones
     venue_timezones = {}
-    if VENUE_TZ_FILE.exists():
-        with open(VENUE_TZ_FILE) as f:
-            vt = json.load(f)
-            venue_timezones = vt.get("venues", vt)
+    try:
+        vt = load_data("venue_timezones.json")
+        venue_timezones = vt.get("venues", vt)
+    except FileNotFoundError:
+        pass
 
     print("Fetching NBA.com CDN schedule (this may take a moment)...")
     data = fetch_cdn()
@@ -165,9 +147,7 @@ def main():
         "games": regular_season,
     }
 
-    with open(SCHEDULE_FILE, "w") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_data("nba_schedule.json", output)
 
     print(f"\nRegular season: {len(regular_season)} games")
     print(f"  Completed: {completed}")
@@ -175,7 +155,7 @@ def main():
     print(f"  In progress: {in_progress}")
     print(f"Preseason: {len(preseason)} games (excluded)")
     print(f"Other (playoffs/play-in/etc): {len(other)} games (excluded)")
-    print(f"\nWritten to {SCHEDULE_FILE.name}")
+    print(f"\nWritten to nba_schedule.json")
 
 
 if __name__ == "__main__":

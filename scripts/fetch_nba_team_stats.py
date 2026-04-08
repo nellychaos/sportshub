@@ -7,36 +7,17 @@ Usage: python3 -m scripts.fetch_nba_team_stats
 """
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import Request, urlopen
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-TEAMS_FILE = DATA_DIR / "nba_teams.json"
-STATS_FILE = DATA_DIR / "nba_team_stats.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
+from sportshub.providers.abbreviations import espn_to_standard
+from sportshub.scripts.http import ScriptHttpClient
+from sportshub.scripts.io import load_data, save_data
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "application/json",
-}
-
-# ESPN abbreviation -> our abbreviation
-ESPN_TO_OUR_ABBR = {
-    "GS": "GSW",
-    "NO": "NOP",
-    "NY": "NYK",
-    "SA": "SAS",
-    "UTAH": "UTA",
-    "WSH": "WAS",
-}
-
-
-def fetch_json(url: str) -> dict:
-    req = Request(url, headers=HEADERS)
-    with urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())
+_client = ScriptHttpClient("espn_nba")
 
 
 def get_stat(stats: list[dict], stat_name: str) -> str | int | float | None:
@@ -54,7 +35,7 @@ def parse_entry(entry: dict, conference: str, rank: int) -> dict:
     stats = entry.get("stats", [])
 
     espn_abbr = team_data.get("abbreviation", "")
-    our_abbr = ESPN_TO_OUR_ABBR.get(espn_abbr, espn_abbr)
+    our_abbr = espn_to_standard(espn_abbr)
     team_id = f"nba-{our_abbr.lower()}"
 
     wins = int(get_stat(stats, "wins") or 0)
@@ -87,12 +68,11 @@ def parse_entry(entry: dict, conference: str, rank: int) -> dict:
 
 def main():
     # Load teams for validation
-    with open(TEAMS_FILE) as f:
-        teams = json.load(f)
+    teams = load_data("nba_teams.json")
     team_ids = {t["id"] for t in teams}
 
     print("Fetching ESPN standings...")
-    data = fetch_json(STANDINGS_URL)
+    data = _client.get_endpoint("standings")
 
     conferences = data.get("children", [])
     print(f"  Found {len(conferences)} conferences")
@@ -124,9 +104,7 @@ def main():
         "standings": standings,
     }
 
-    with open(STATS_FILE, "w") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_data("nba_team_stats.json", output)
 
     # Summary
     total = len(standings["eastern"]) + len(standings["western"])
@@ -139,7 +117,7 @@ def main():
             print(f"    {team['conference_rank']}. {team['team_name']} ({team['wins']}-{team['losses']}) "
                   f"PPG: {team['points_per_game']} | Diff: {team['point_differential']}")
 
-    print(f"\nWritten to {STATS_FILE.name}")
+    print(f"\nWritten to nba_team_stats.json")
 
 
 if __name__ == "__main__":

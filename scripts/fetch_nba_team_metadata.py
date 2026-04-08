@@ -7,31 +7,23 @@ Usage: python3 -m scripts.fetch_nba_team_metadata
 """
 
 import json
-import time
+import sys
 from pathlib import Path
-from urllib.request import Request, urlopen
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-TEAMS_FILE = DATA_DIR / "nba_teams.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-ESPN_TEAMS_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams"
-ESPN_TEAM_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}"
+from sportshub.providers.abbreviations import standard_to_espn
+from sportshub.providers.registry import ProviderRegistry
+from sportshub.scripts.http import ScriptHttpClient
+from sportshub.scripts.io import load_data, save_data
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "application/json",
-}
-
-
-def fetch_json(url: str) -> dict:
-    req = Request(url, headers=HEADERS)
-    with urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())
+_registry = ProviderRegistry()
+_client = ScriptHttpClient("espn_nba", registry=_registry)
 
 
 def get_espn_team_id_map() -> dict[str, dict]:
     """Fetch all teams from ESPN list endpoint, keyed by abbreviation."""
-    data = fetch_json(ESPN_TEAMS_URL)
+    data = _client.get_endpoint("teams")
     teams = {}
     for entry in data["sports"][0]["leagues"][0]["teams"]:
         t = entry["team"]
@@ -81,8 +73,7 @@ def enrich_team(our_team: dict, espn_list_data: dict, espn_detail: dict) -> dict
 def add_coach_from_roster(our_team: dict, espn_team_id: str) -> dict:
     """Fetch roster endpoint to get head coach name."""
     try:
-        url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{espn_team_id}/roster"
-        data = fetch_json(url)
+        data = _client.get_endpoint("roster", team_id=espn_team_id)
         coaches = data.get("coach", [])
         if coaches:
             coach = coaches[0]
@@ -93,30 +84,19 @@ def add_coach_from_roster(our_team: dict, espn_team_id: str) -> dict:
 
 
 def main():
-    with open(TEAMS_FILE) as f:
-        teams = json.load(f)
+    teams = load_data("nba_teams.json")
 
-    print(f"Loaded {len(teams)} teams from {TEAMS_FILE.name}")
+    print(f"Loaded {len(teams)} teams from nba_teams.json")
 
     # Fetch ESPN team list (single request)
     print("Fetching ESPN team list...")
     espn_map = get_espn_team_id_map()
     print(f"  Got {len(espn_map)} ESPN teams")
 
-    # Map our abbreviations to ESPN abbreviations where they differ
-    ABBREV_MAP = {
-        "GSW": "GS",
-        "NOP": "NO",
-        "NYK": "NY",
-        "SAS": "SA",
-        "UTA": "UTAH",
-        "WAS": "WSH",
-    }
-
     enriched = 0
     for team in teams:
         abbr = team["abbreviation"]
-        espn_abbr = ABBREV_MAP.get(abbr, abbr)
+        espn_abbr = standard_to_espn(abbr)
 
         # Add id field
         team["id"] = f"nba-{abbr.lower()}"
@@ -129,28 +109,19 @@ def main():
         espn_id = espn_data["id"]
         print(f"  [{enriched+1}/30] {team['name']} (ESPN ID: {espn_id})...")
 
-        # Fetch detail for venue info
-        time.sleep(1)
         try:
-            detail = fetch_json(ESPN_TEAM_URL.format(team_id=espn_id))
+            detail = _client.get_endpoint("team_detail", team_id=espn_id)
         except Exception as e:
             print(f"    Warning: detail fetch failed: {e}")
             detail = {"team": {}}
 
         enrich_team(team, espn_data, detail)
-
-        # Fetch roster for coach
-        time.sleep(1)
         add_coach_from_roster(team, espn_id)
 
         enriched += 1
 
-    # Write back
-    with open(TEAMS_FILE, "w") as f:
-        json.dump(teams, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-
-    print(f"\nDone: enriched {enriched}/30 teams in {TEAMS_FILE.name}")
+    save_data("nba_teams.json", teams)
+    print(f"\nDone: enriched {enriched}/30 teams in nba_teams.json")
 
 
 if __name__ == "__main__":

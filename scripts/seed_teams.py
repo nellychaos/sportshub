@@ -5,24 +5,11 @@ Usage: python -m scripts.seed_teams
 
 import asyncio
 import json
-import re
-import unicodedata
 from pathlib import Path
 
-from sportshub.config import get_settings
 from sportshub.db.engine import init_db, get_session_factory, close_db
 from sportshub.models import Sport, Team, TeamAlias
-
-
-def normalize_alias(raw: str) -> str:
-    """Normalize an alias for storage in alias_normalized column."""
-    name = raw.strip().lower()
-    name = unicodedata.normalize("NFKD", name)
-    name = "".join(c for c in name if not unicodedata.combining(c))
-    name = re.sub(r"\b(esports?|gaming|team|club|fc|sc|national football team|national team|men'?s)\b", "", name)
-    name = re.sub(r"[^\w\s]", "", name)
-    name = re.sub(r"\s+", " ", name).strip()
-    return name
+from sportshub.scripts.normalization import normalize_alias
 
 
 async def seed_teams() -> None:

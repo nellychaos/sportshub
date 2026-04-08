@@ -11,20 +11,17 @@ Usage: python3 -m scripts.fetch_nba_players
 import argparse
 import json
 import math
-import time
+import sys
 from pathlib import Path
-from urllib.request import Request, urlopen
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-TEAMS_FILE = DATA_DIR / "nba_teams.json"
-PLAYERS_FILE = DATA_DIR / "nba_players.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-ESPN_ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/roster"
+from sportshub.providers.registry import ProviderRegistry
+from sportshub.scripts.http import ScriptHttpClient
+from sportshub.scripts.io import load_data, save_data, data_path
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "application/json",
-}
+_registry = ProviderRegistry()
+_client = ScriptHttpClient("espn_nba", registry=_registry)
 
 # ESPN position abbreviation normalization
 POSITION_MAP = {
@@ -46,9 +43,8 @@ POSITION_MAP = {
 
 
 def fetch_json(url: str) -> dict:
-    req = Request(url, headers=HEADERS)
-    with urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())
+    """Fetch JSON using the shared HTTP client with rate limiting."""
+    return _client.get(url)
 
 
 def inches_to_cm(inches: float) -> int:
@@ -232,8 +228,7 @@ def main():
     parser.add_argument("--team", type=str, help="Fetch only one team by abbreviation (e.g., BOS)")
     args = parser.parse_args()
 
-    with open(TEAMS_FILE) as f:
-        teams = json.load(f)
+    teams = load_data("nba_teams.json")
 
     if args.team:
         teams = [t for t in teams if t["abbreviation"] == args.team.upper()]
@@ -256,7 +251,7 @@ def main():
         print(f"  [{i+1}/{len(teams)}] {team_name}...", end="", flush=True)
 
         try:
-            data = fetch_json(ESPN_ROSTER_URL.format(team_id=espn_id))
+            data = _client.get_endpoint("roster", team_id=espn_id)
             athletes = data.get("athletes", [])
 
             team_players = []
@@ -270,19 +265,15 @@ def main():
         except Exception as e:
             print(f" ERROR: {e}")
 
-        time.sleep(1.5)
-
     # Sort by team, then by name
     all_players.sort(key=lambda p: (p["team_id"], p["name"]))
 
-    with open(PLAYERS_FILE, "w") as f:
-        json.dump(all_players, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_data("nba_players.json", all_players)
 
     # Summary
     teams_with_players = len(set(p["team_id"] for p in all_players))
     print(f"\nDone: {len(all_players)} players across {teams_with_players} teams")
-    print(f"Written to {PLAYERS_FILE.name}")
+    print(f"Written to nba_players.json")
 
 
 if __name__ == "__main__":

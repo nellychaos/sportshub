@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Provider Registry",
+  "description": "Centralized provider metadata registry",
+  "type": "object",
+  "required": ["version", "description", "providers"],
+  "properties": {
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "providers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "display_name", "sport", "type", "reliability"],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]+$"
+          },
+          "display_name": { "type": "string", "minLength": 2 },
+          "sport": {
+            "type": "string",
+            "enum": ["nba", "lol", "football"]
+          },
+          "type": {
+            "type": "string",
+            "enum": ["api", "cdn", "web_scrape", "csv_github", "api_websocket"]
+          },
+          "reliability": {
+            "type": "string",
+            "enum": ["official", "established", "community"]
+          },
+          "priority": { "type": ["integer", "null"] },
+          "auth_required": { "type": "boolean" },
+          "auth_env_var": { "type": ["string", "null"] },
+          "base_url": { "type": ["string", "null"] },
+          "rate_limit_seconds": { "type": ["number", "null"] },
+          "source_timezone": { "type": ["string", "null"] },
+          "endpoints": { "type": "object" },
+          "abbreviation_map": { "type": "object" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
