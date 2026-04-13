@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-950">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sportshub -- Data Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes count-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .count-up { animation: count-up 0.6s ease-out both; }
+    .count-up-d1 { animation-delay: 0.1s; }
+    .count-up-d2 { animation-delay: 0.2s; }
+    .count-up-d3 { animation-delay: 0.3s; }
+    .count-up-d4 { animation-delay: 0.4s; }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .shimmer-border {
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    .stat-tier-nba { border-left: 3px solid #f97316; }
+    .stat-tier-adv { border-left: 3px solid #06b6d4; }
+    .stat-tier-pbp { border-left: 3px solid #8b5cf6; }
+    .stat-tier-adj { border-left: 3px solid #10b981; }
+    .sport-nba { --accent: #f97316; --accent-dim: #7c2d12; }
+    .sport-fifa { --accent: #10b981; --accent-dim: #064e3b; }
+    .sport-lol { --accent: #8b5cf6; --accent-dim: #4c1d95; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#f0f7ff',100:'#e0effe',200:'#b9dffc',300:'#7cc8fa',400:'#36adf5',500:'#0c93e6',600:'#0074c4',700:'#005c9f',800:'#044f83',900:'#04426d',950:'#032a49' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full text-gray-200">
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════════════════ -->
+<header class="bg-gray-900 border-b border-gray-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-600">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-white tracking-tight">Sportshub</h1>
+          <p class="text-xs text-gray-400">Data Explorer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/demo" class="px-3 py-1.5 text-xs font-medium text-white bg-brand-600 rounded-md">Explorer</a>
+        <a href="/dashboard" class="px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white border border-gray-700 rounded-md">Dashboard</a>
+        <a href="/docs" target="_blank" class="px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white border border-gray-700 rounded-md">API</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO: PLATFORM STATS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-brand-950 border border-gray-800 p-8 md:p-12">
+    <div class="absolute inset-0 shimmer-border rounded-2xl pointer-events-none"></div>
+    <div class="relative">
+      <p class="text-xs font-semibold text-brand-400 uppercase tracking-widest mb-2">Multi-Source Aggregation Platform</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Every stat, from every source, reconciled.</h2>
+      <p class="text-gray-400 max-w-2xl mb-8">{{ data.coverage.provider_count }} data providers feeding {{ '{:,}'.format(data.coverage.total_athletes) }} athlete profiles and {{ data.coverage.total_teams }} teams across {{ data.coverage.sport_count }} sports -- deduplicated, cross-verified, and enriched with AI entity resolution.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="count-up">
+          <div class="text-3xl font-bold text-white">{{ data.coverage.provider_count }}</div>
+          <div class="text-xs text-gray-500 mt-1">Data Providers</div>
+        </div>
+        <div class="count-up count-up-d1">
+          <div class="text-3xl font-bold text-white">{{ '{:,}'.format(data.coverage.total_athletes) }}</div>
+          <div class="text-xs text-gray-500 mt-1">Athlete Profiles</div>
+        </div>
+        <div class="count-up count-up-d2">
+          <div class="text-3xl font-bold text-white">{{ data.coverage.total_teams }}</div>
+          <div class="text-xs text-gray-500 mt-1">Teams Tracked</div>
+        </div>
+        <div class="count-up count-up-d3">
+          <div class="text-3xl font-bold text-white">{{ data.coverage.sport_count }}</div>
+          <div class="text-xs text-gray-500 mt-1">Sports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NBA PLAYER DEEP DIVE
+       ═══════════════════════════════════════════════════════════════ -->
+  {% if data.nba.featured %}
+  {% set p = data.nba.featured %}
+  <section class="sport-nba">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-lg bg-orange-600/20 flex items-center justify-center">
+        <svg class="w-4 h-4 text-orange-400" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20M2 12h20M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-bold text-white">NBA {{ data.nba.season }}</h2>
+        <p class="text-xs text-gray-500">{{ data.nba.total_players }} players &middot; {{ data.nba.field_count }} stats per player &middot; 4 enrichment tiers</p>
+      </div>
+    </div>
+
+    <!-- Player Hero Card -->
+    <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden">
+      <div class="bg-gradient-to-r from-orange-900/30 via-gray-900 to-gray-900 p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <!-- Player Identity -->
+          <div>
+            <p class="text-xs text-orange-400 font-semibold uppercase tracking-wider mb-1">Featured Player</p>
+            <h3 class="text-3xl font-extrabold text-white">{{ p.player_name }}</h3>
+            <p class="text-sm text-gray-400 mt-1">{{ p.team_id | replace('nba-','') | upper }} &middot; {{ p.play_by_play.position_estimate_pg_pct | default(0) }}% PG / {{ p.play_by_play.position_estimate_sg_pct | default(0) }}% SG &middot; {{ p.games_played }} GP</p>
+          </div>
+
+          <!-- Headline Numbers -->
+          <div class="flex gap-6 md:gap-10">
+            <div class="text-center">
+              <div class="text-4xl font-black text-white">{{ p.stats.points_per_game }}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">PPG</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-white">{{ p.stats.rebounds_per_game }}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">RPG</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-white">{{ p.stats.assists_per_game }}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">APG</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400">{{ p.advanced.player_efficiency_rating }}</div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">PER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Stat Tiers -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-800">
+
+        <!-- Tier 1: Base Stats -->
+        <div class="p-5 stat-tier-nba">
+          <p class="text-[10px] font-bold text-orange-400 uppercase tracking-widest mb-3">Base Stats</p>
+          <div class="space-y-2.5">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-400">FG%</span>
+                <span class="font-mono text-white">{{ p.stats.field_goal_pct }}%</span>
+              </div>
+              <div class="h-1.5 bg-gray-800 rounded-full"><div class="h-full bg-orange-500 rounded-full" style="width:{{ p.stats.field_goal_pct }}%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-400">3P%</span>
+                <span class="font-mono text-white">{{ p.stats.three_point_pct }}%</span>
+              </div>
+              <div class="h-1.5 bg-gray-800 rounded-full"><div class="h-full bg-orange-500 rounded-full" style="width:{{ p.stats.three_point_pct * 2 }}%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-400">FT%</span>
+                <span class="font-mono text-white">{{ p.stats.free_throw_pct }}%</span>
+              </div>
+              <div class="h-1.5 bg-gray-800 rounded-full"><div class="h-full bg-orange-500 rounded-full" style="width:{{ p.stats.free_throw_pct }}%"></div></div>
+            </div>
+            <div class="flex justify-between text-xs pt-1">
+              <span class="text-gray-500">STL</span>
+              <span class="font-mono text-gray-300">{{ p.stats.steals_per_game }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-500">BLK</span>
+              <span class="font-mono text-gray-300">{{ p.stats.blocks_per_game }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-500">TO</span>
+              <span class="font-mono text-gray-300">{{ p.stats.turnovers_per_game }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 2: Advanced -->
+        <div class="p-5 stat-tier-adv">
+          <p class="text-[10px] font-bold text-cyan-400 uppercase tracking-widest mb-3">Advanced</p>
+          <div class="space-y-2.5">
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">True Shooting</span>
+              <span class="font-mono text-white">{{ (p.advanced.true_shooting_pct * 100) | round(1) }}%</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Usage Rate</span>
+              <span class="font-mono text-white">{{ p.advanced.usage_rate }}%</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Assist %</span>
+              <span class="font-mono text-white">{{ p.advanced.assist_pct }}%</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Win Shares</span>
+              <span class="font-mono text-white">{{ p.advanced.win_shares }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">BPM</span>
+              <span class="font-mono text-white">+{{ p.advanced.box_plus_minus }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">VORP</span>
+              <span class="font-mono text-white">{{ p.advanced.value_over_replacement }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 3: Play-by-Play -->
+        <div class="p-5 stat-tier-pbp">
+          <p class="text-[10px] font-bold text-violet-400 uppercase tracking-widest mb-3">Play-by-Play</p>
+          <div class="space-y-2.5">
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">On/Off +/-</span>
+              <span class="font-mono text-white">+{{ p.play_by_play.on_off_plus_minus_per_100 }}/100</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Pts Gen by AST</span>
+              <span class="font-mono text-white">{{ '{:,}'.format(p.play_by_play.points_generated_by_assists) }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Fouls Drawn</span>
+              <span class="font-mono text-white">{{ p.play_by_play.shooting_fouls_drawn }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">And-1 Plays</span>
+              <span class="font-mono text-white">{{ p.play_by_play.and_one_plays }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Bad Pass TO</span>
+              <span class="font-mono text-gray-300">{{ p.play_by_play.bad_pass_turnovers }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">Shots Blocked</span>
+              <span class="font-mono text-gray-300">{{ p.play_by_play.shots_blocked }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 4: Adjusted Shooting -->
+        <div class="p-5 stat-tier-adj">
+          <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">Adjusted Shooting</p>
+          <div class="space-y-2.5">
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">eFG+ (vs league)</span>
+              <span class="font-mono {% if p.adjusted_shooting.efg_plus >= 100 %}text-emerald-400{% else %}text-red-400{% endif %}">{{ p.adjusted_shooting.efg_plus | int }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">TS+ (vs league)</span>
+              <span class="font-mono {% if p.adjusted_shooting.ts_plus >= 100 %}text-emerald-400{% else %}text-red-400{% endif %}">{{ p.adjusted_shooting.ts_plus | int }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">3P+ (vs league)</span>
+              <span class="font-mono {% if p.adjusted_shooting.three_pt_plus >= 100 %}text-emerald-400{% else %}text-red-400{% endif %}">{{ p.adjusted_shooting.three_pt_plus | int }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">FTR+ (vs league)</span>
+              <span class="font-mono text-emerald-400">{{ p.adjusted_shooting.ftr_plus | int }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">FG Pts Added</span>
+              <span class="font-mono text-white">+{{ p.adjusted_shooting.fg_points_added }}</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-gray-400">TS Pts Added</span>
+              <span class="font-mono text-white">+{{ p.adjusted_shooting.ts_points_added }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prop Bet Insight Bar -->
+      <div class="bg-gray-800/50 px-6 py-3 flex flex-wrap items-center gap-x-6 gap-y-2">
+        <span class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Prop Insights</span>
+        <span class="text-xs text-gray-300">
+          <span class="text-orange-400 font-semibold">{{ p.stats.three_pointers_made_per_game }}</span> 3PM/g on {{ p.stats.three_pointers_attempted_per_game }} attempts
+        </span>
+        <span class="text-xs text-gray-300">
+          <span class="text-orange-400 font-semibold">{{ p.stats.free_throws_made_per_game }}</span> FTM/g ({{ p.stats.free_throw_pct }}%)
+        </span>
+        <span class="text-xs text-gray-300">
+          <span class="text-orange-400 font-semibold">{{ p.advanced.usage_rate }}%</span> usage &middot; ball in hands constantly
+        </span>
+        <span class="text-xs text-gray-300">
+          <span class="text-orange-400 font-semibold">{{ p.play_by_play.shooting_fouls_drawn }}</span> fouls drawn season
+        </span>
+      </div>
+    </div>
+
+    <!-- Scoring Leaders Mini-Board -->
+    {% if data.nba.top_scorers %}
+    <div class="mt-4 bg-gray-900 rounded-xl border border-gray-800 p-5">
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Scoring Leaders (40+ GP)</p>
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+        {% for s in data.nba.top_scorers %}
+        <div class="flex items-center gap-3 {% if loop.first %}bg-orange-900/20 border border-orange-800/30{% else %}bg-gray-800/40{% endif %} rounded-lg px-4 py-3">
+          <span class="text-lg font-black {% if loop.first %}text-orange-400{% else %}text-gray-600{% endif %}">{{ loop.index }}</span>
+          <div class="min-w-0">
+            <p class="text-sm font-semibold text-white truncate">{{ s.player_name }}</p>
+            <p class="text-xs text-gray-500">{{ s.stats.points_per_game }} PPG &middot; {{ s.stats.assists_per_game }} APG</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FIFA WORLD CUP 2026
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="sport-fifa">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-lg bg-emerald-600/20 flex items-center justify-center">
+        <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7zM2 12l7-3v6l-7-3zM22 12l-7 3v-6l7 3zM12 22l-3-7h6l-3 7z"/></svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-bold text-white">FIFA World Cup 2026</h2>
+        <p class="text-xs text-gray-500">{{ data.fifa.total_players }} players &middot; {{ data.fifa.total_teams }} teams &middot; {{ data.fifa.avg_aliases }} cross-provider IDs per player</p>
+      </div>
+    </div>
+
+    <!-- Team Showcase -->
+    {% if data.fifa.featured_teams %}
+    <div class="grid grid-cols-1 md:grid-cols-{{ data.fifa.featured_teams | length }} gap-4 mb-4">
+      {% for team in data.fifa.featured_teams %}
+      {% set meta = team.metadata %}
+      {% set hist = meta.get('historical_wc_stats', {}) %}
+      {% set colors = meta.get('colors', {}) %}
+      <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden relative">
+        <!-- Team color accent bar -->
+        <div class="h-1.5" style="background: linear-gradient(90deg, {{ colors.get('primary','#333') }}, {{ colors.get('secondary','#555') }})"></div>
+        <div class="p-5">
+          <div class="flex items-start justify-between mb-3">
+            <div class="flex items-center gap-3">
+              {% if meta.get('flag_svg_url') %}
+              <img src="{{ meta.flag_svg_url }}" alt="{{ team.short_name }}" class="w-10 h-7 object-cover rounded shadow-sm">
+              {% endif %}
+              <div>
+                <h3 class="text-lg font-bold text-white">{{ team.name }}</h3>
+                <p class="text-xs text-gray-500">{{ meta.get('nickname','') }} &middot; FIFA #{{ meta.get('fifa_ranking','?') }}</p>
+              </div>
+            </div>
+            {% if meta.get('group_2026') %}
+            <span class="px-2 py-0.5 text-xs font-bold rounded" style="background: {{ colors.get('primary','#333') }}20; color: {{ colors.get('primary','#999') }}">Group {{ meta.group_2026 }}</span>
+            {% endif %}
+          </div>
+
+          <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mb-4">
+            <div class="flex justify-between"><span class="text-gray-500">Coach</span><span class="text-gray-300">{{ meta.get('coach','--') }}</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Captain</span><span class="text-gray-300">{{ meta.get('captain','--') }}</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">WC Apps</span><span class="font-mono text-gray-300">{{ meta.get('world_cup_appearances','--') }}</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Best Result</span><span class="text-gray-300 truncate ml-1">{{ meta.get('best_world_cup_result','--') | truncate(20) }}</span></div>
+          </div>
+
+          {% if hist %}
+          <div class="pt-3 border-t border-gray-800">
+            <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2">All-Time World Cup Record</p>
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div>
+                <div class="text-xl font-black text-white">{{ hist.get('total_matches',0) }}</div>
+                <div class="text-[10px] text-gray-500">Matches</div>
+              </div>
+              <div>
+                <div class="text-xl font-black text-emerald-400">{{ hist.get('total_wins',0) }}</div>
+                <div class="text-[10px] text-gray-500">Wins</div>
+              </div>
+              <div>
+                <div class="text-xl font-black text-white">{{ hist.get('total_goals_for',0) }}</div>
+                <div class="text-[10px] text-gray-500">Goals</div>
+              </div>
+              <div>
+                <div class="text-xl font-black {% if hist.get('titles',0) > 0 %}text-yellow-400{% else %}text-gray-500{% endif %}">{{ hist.get('titles',0) }}</div>
+                <div class="text-[10px] text-gray-500">Titles</div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Kits -->
+          {% if meta.get('kits') %}
+          <div class="flex gap-2 mt-3">
+            {% for kit_type, kit in meta.kits.items() %}
+            <div class="flex items-center gap-1.5 px-2 py-1 rounded bg-gray-800/60">
+              <div class="w-3 h-3 rounded-full border border-gray-700" style="background:{{ kit.get('primary_color','#333') }}"></div>
+              <span class="text-[10px] text-gray-400">{{ kit_type | capitalize }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Featured Player: Mbappe -->
+    {% if data.fifa.featured_player %}
+    {% set fp = data.fifa.featured_player %}
+    {% set fm = fp.metadata %}
+    <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden">
+      <div class="bg-gradient-to-r from-emerald-900/20 via-gray-900 to-gray-900 p-6">
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+          <div>
+            <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider mb-1">Player Spotlight</p>
+            <h3 class="text-2xl font-extrabold text-white">{{ fp.name }}</h3>
+            <p class="text-sm text-gray-400 mt-1">
+              {{ fp.position }} #{{ fp.jersey_number }} &middot; {{ fm.get('club','') }} ({{ fm.get('club_country','') }}) &middot; {{ fm.get('team','') }}
+            </p>
+            {% if fm.get('notable') %}
+            <p class="text-xs text-gray-500 mt-2 italic max-w-lg">{{ fm.notable }}</p>
+            {% endif %}
+          </div>
+          <div class="flex gap-8">
+            {% if fm.get('club_goals_2025_26') is not none %}
+            <div class="text-center">
+              <div class="text-3xl font-black text-emerald-400">{{ fm.club_goals_2025_26 }}</div>
+              <div class="text-[10px] text-gray-500 uppercase mt-1">Club Goals</div>
+            </div>
+            {% endif %}
+            {% if fm.get('club_assists_2025_26') is not none %}
+            <div class="text-center">
+              <div class="text-3xl font-black text-white">{{ fm.club_assists_2025_26 }}</div>
+              <div class="text-[10px] text-gray-500 uppercase mt-1">Assists</div>
+            </div>
+            {% endif %}
+            <div class="text-center">
+              <div class="text-3xl font-black text-white">{{ fm.get('caps','--') }}</div>
+              <div class="text-[10px] text-gray-500 uppercase mt-1">Int'l Caps</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player Details Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+          <div class="bg-gray-800/40 rounded-lg p-3">
+            <p class="text-[10px] text-gray-500 uppercase mb-1">Age / DOB</p>
+            <p class="text-sm font-mono text-gray-200">{{ fm.get('age','--') }} &middot; {{ fm.get('date_of_birth','--') }}</p>
+          </div>
+          <div class="bg-gray-800/40 rounded-lg p-3">
+            <p class="text-[10px] text-gray-500 uppercase mb-1">Physical</p>
+            <p class="text-sm font-mono text-gray-200">{{ fm.get('height_cm','--') }}cm &middot; {{ fm.get('preferred_foot','--') }}-footed</p>
+          </div>
+          <div class="bg-gray-800/40 rounded-lg p-3">
+            <p class="text-[10px] text-gray-500 uppercase mb-1">Club Season 25/26</p>
+            <p class="text-sm font-mono text-gray-200">{{ fm.get('club_appearances_2025_26','--') }} apps &middot; {{ fm.get('yellow_cards','0') }} YC</p>
+          </div>
+          <div class="bg-gray-800/40 rounded-lg p-3">
+            <p class="text-[10px] text-gray-500 uppercase mb-1">World Cups</p>
+            <p class="text-sm text-gray-200">
+              {% for wc in fm.get('world_cups', []) %}
+              <span class="font-mono {% if wc == '2018' %}text-yellow-400{% else %}text-gray-300{% endif %}">{{ wc }}</span>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cross-Provider Identity Resolution -->
+      <div class="bg-gray-800/30 px-6 py-4">
+        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Cross-Provider Entity Resolution ({{ fp.aliases | length }} identifiers)</p>
+        <div class="flex flex-wrap gap-1.5">
+          {% for alias in fp.aliases %}
+          {% set src = alias.source_id or 'manual' %}
+          {% set is_reep = src.startswith('reep') %}
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono
+            {% if is_reep %}bg-violet-900/30 text-violet-300 border border-violet-800/40
+            {% elif src == 'espn_fifa' %}bg-red-900/30 text-red-300 border border-red-800/40
+            {% elif src == 'fifa_api' %}bg-emerald-900/30 text-emerald-300 border border-emerald-800/40
+            {% elif src == 'opta' %}bg-blue-900/30 text-blue-300 border border-blue-800/40
+            {% else %}bg-gray-800 text-gray-400 border border-gray-700{% endif %}">
+            <span class="opacity-60 mr-1">{{ src }}:</span>{{ alias.alias | truncate(30) }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       LOL ESPORTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="sport-lol">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-lg bg-violet-600/20 flex items-center justify-center">
+        <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-bold text-white">LoL Esports</h2>
+        <p class="text-xs text-gray-500">{{ data.lol.total_teams }} teams across LCK, LPL, LEC, LCS</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      <!-- Featured Team: Gen.G -->
+      {% if data.lol.featured %}
+      {% set geng = data.lol.featured %}
+      {% set gm = geng.metadata %}
+      <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden">
+        <div class="h-1.5 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+        <div class="p-5">
+          <p class="text-xs text-violet-400 font-semibold uppercase tracking-wider mb-1">Dominant Force</p>
+          <h3 class="text-2xl font-extrabold text-white">{{ geng.name }}</h3>
+          <p class="text-xs text-gray-500 mt-1">{{ gm.get('league','') }} &middot; #{{ gm.get('region_standing','') }}</p>
+
+          <div class="flex items-end gap-6 mt-4">
+            <div>
+              <div class="text-4xl font-black text-violet-400">{{ gm.get('win_rate','--') }}%</div>
+              <div class="text-[10px] text-gray-500 uppercase mt-1">Win Rate</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">{{ gm.get('wins',0) }}-{{ gm.get('losses',0) }}</div>
+              <div class="text-[10px] text-gray-500 uppercase mt-1">Record</div>
+            </div>
+          </div>
+
+          <!-- Win Rate Bar -->
+          <div class="mt-4">
+            <div class="h-3 bg-gray-800 rounded-full overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500" style="width:{{ gm.get('win_rate',0) }}%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-gray-600 mt-1">
+              <span>0%</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <!-- Aliases -->
+          <div class="mt-4 pt-3 border-t border-gray-800">
+            <p class="text-[10px] text-gray-600 mb-1.5">Also known as:</p>
+            <div class="flex flex-wrap gap-1">
+              {% for a in geng.aliases[:6] %}
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 font-mono">{{ a.alias }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Power Rankings Table -->
+      <div class="lg:col-span-2 bg-gray-900 rounded-2xl border border-gray-800 p-5">
+        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Global Power Rankings</p>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="text-[10px] text-gray-600 uppercase border-b border-gray-800">
+                <th class="text-left py-2 pr-2">#</th>
+                <th class="text-left py-2">Team</th>
+                <th class="text-left py-2">League</th>
+                <th class="text-right py-2">W</th>
+                <th class="text-right py-2">L</th>
+                <th class="text-right py-2">Win%</th>
+                <th class="text-left py-2 pl-3 w-32">Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for team in data.lol.leaderboard %}
+              {% set tm = team.metadata %}
+              <tr class="border-b border-gray-800/50 {% if loop.first %}bg-violet-900/10{% endif %}">
+                <td class="py-2.5 pr-2 text-sm font-black {% if loop.first %}text-violet-400{% else %}text-gray-600{% endif %}">{{ loop.index }}</td>
+                <td class="py-2.5">
+                  <span class="text-sm font-semibold text-white">{{ team.name }}</span>
+                  <span class="text-xs text-gray-600 ml-1">{{ team.abbreviation }}</span>
+                </td>
+                <td class="py-2.5">
+                  {% set league = tm.get('league','') %}
+                  <span class="text-xs px-1.5 py-0.5 rounded font-medium
+                    {% if league == 'LCK' %}bg-blue-900/30 text-blue-300
+                    {% elif league == 'LPL' %}bg-red-900/30 text-red-300
+                    {% elif league == 'LEC' %}bg-emerald-900/30 text-emerald-300
+                    {% elif league == 'LCS' %}bg-orange-900/30 text-orange-300
+                    {% else %}bg-gray-800 text-gray-400{% endif %}">{{ league }}</span>
+                </td>
+                <td class="py-2.5 text-right text-sm font-mono text-emerald-400">{{ tm.get('wins',0) }}</td>
+                <td class="py-2.5 text-right text-sm font-mono text-red-400">{{ tm.get('losses',0) }}</td>
+                <td class="py-2.5 text-right text-sm font-mono text-white font-bold">{{ tm.get('win_rate',0) }}%</td>
+                <td class="py-2.5 pl-3">
+                  <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full {% if tm.get('win_rate',0) >= 80 %}bg-violet-500{% elif tm.get('win_rate',0) >= 65 %}bg-blue-500{% else %}bg-gray-600{% endif %}" style="width:{{ tm.get('win_rate',0) }}%"></div>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       DATA PROVENANCE / PROVIDERS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section>
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-lg bg-brand-600/20 flex items-center justify-center">
+        <svg class="w-4 h-4 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-bold text-white">Data Provenance</h2>
+        <p class="text-xs text-gray-500">Every data point traced back to its source</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 rounded-2xl border border-gray-800 p-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {% for prov in data.coverage.providers %}
+        <div class="flex items-center gap-2.5 bg-gray-800/50 rounded-lg px-3 py-2.5 border border-gray-800">
+          <div class="w-2 h-2 rounded-full flex-shrink-0
+            {% if prov.sport == 'nba' %}bg-orange-500
+            {% elif prov.sport == 'football' %}bg-emerald-500
+            {% elif prov.sport == 'lol' %}bg-violet-500
+            {% else %}bg-gray-500{% endif %}"></div>
+          <div class="min-w-0">
+            <p class="text-xs font-medium text-gray-200 truncate">{{ prov.name }}</p>
+            <p class="text-[10px] text-gray-600">{{ prov.type }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-gray-800 flex flex-wrap gap-6 text-xs text-gray-500">
+        <span><span class="inline-block w-2 h-2 rounded-full bg-orange-500 mr-1"></span> NBA</span>
+        <span><span class="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-1"></span> Football</span>
+        <span><span class="inline-block w-2 h-2 rounded-full bg-violet-500 mr-1"></span> LoL Esports</span>
+        <span class="text-gray-600 ml-auto">API &middot; CDN &middot; Web Scrape &middot; WebSocket &middot; CSV</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-gray-800 mt-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+    <p class="text-xs text-gray-600 text-center">Sportshub v0.1.0 &middot; Multi-source sports data aggregation platform</p>
+  </div>
+</footer>
+
+</body>
+</html>

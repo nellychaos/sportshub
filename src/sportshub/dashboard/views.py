@@ -39,6 +39,7 @@ async def dashboard_index(
     reference_data = svc.get_reference_data_inventory()
     script_activity = svc.get_script_activity()
     completeness = await svc.get_data_completeness()
+    scorecard = svc.get_thesis_scorecard()
 
     return templates.TemplateResponse(
         request,
@@ -56,6 +57,7 @@ async def dashboard_index(
             "reference_data": reference_data,
             "script_activity": script_activity,
             "completeness": completeness,
+            "scorecard": scorecard,
         },
     )
 

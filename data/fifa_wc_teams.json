@@ -36,7 +36,19 @@
       "flag_url": "https://flagcdn.com/w320/us.png",
       "flag_svg_url": "https://flagcdn.com/us.svg",
       "iso_code": "US",
-      "flag_emoji": "🇺🇸"
+      "flag_emoji": "🇺🇸",
+      "historical_wc_stats": {
+        "total_matches": 36,
+        "total_wins": 10,
+        "total_draws": 6,
+        "total_losses": 20,
+        "total_goals_for": 40,
+        "total_goals_against": 64,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 1,
+        "best_result": "3rd place (1930)"
+      }
     },
     "aliases": [
       {
@@ -133,7 +145,19 @@
       "flag_url": "https://flagcdn.com/w320/mx.png",
       "flag_svg_url": "https://flagcdn.com/mx.svg",
       "iso_code": "MX",
-      "flag_emoji": "🇲🇽"
+      "flag_emoji": "🇲🇽",
+      "historical_wc_stats": {
+        "total_matches": 60,
+        "total_wins": 17,
+        "total_draws": 15,
+        "total_losses": 28,
+        "total_goals_for": 62,
+        "total_goals_against": 98,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Quarter-finals (1970, 1986)"
+      }
     },
     "aliases": [
       {
@@ -211,7 +235,19 @@
       "flag_url": "https://flagcdn.com/w320/ca.png",
       "flag_svg_url": "https://flagcdn.com/ca.svg",
       "iso_code": "CA",
-      "flag_emoji": "🇨🇦"
+      "flag_emoji": "🇨🇦",
+      "historical_wc_stats": {
+        "total_matches": 4,
+        "total_wins": 0,
+        "total_draws": 0,
+        "total_losses": 4,
+        "total_goals_for": 0,
+        "total_goals_against": 5,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Group stage (1986, 2022)"
+      }
     },
     "aliases": [
       {
@@ -280,7 +316,19 @@
       "flag_url": "https://flagcdn.com/w320/ar.png",
       "flag_svg_url": "https://flagcdn.com/ar.svg",
       "iso_code": "AR",
-      "flag_emoji": "🇦🇷"
+      "flag_emoji": "🇦🇷",
+      "historical_wc_stats": {
+        "total_matches": 88,
+        "total_wins": 47,
+        "total_draws": 17,
+        "total_losses": 24,
+        "total_goals_for": 156,
+        "total_goals_against": 100,
+        "titles": 3,
+        "finals": 6,
+        "semi_finals": 6,
+        "best_result": "Winners (1978, 1986, 2022)"
+      }
     },
     "aliases": [
       {
@@ -349,7 +397,19 @@
       "flag_url": "https://flagcdn.com/w320/br.png",
       "flag_svg_url": "https://flagcdn.com/br.svg",
       "iso_code": "BR",
-      "flag_emoji": "🇧🇷"
+      "flag_emoji": "🇧🇷",
+      "historical_wc_stats": {
+        "total_matches": 114,
+        "total_wins": 76,
+        "total_draws": 19,
+        "total_losses": 19,
+        "total_goals_for": 237,
+        "total_goals_against": 108,
+        "titles": 5,
+        "finals": 7,
+        "semi_finals": 11,
+        "best_result": "Winners (1958, 1962, 1970, 1994, 2002)"
+      }
     },
     "aliases": [
       {
@@ -422,7 +482,19 @@
       "flag_url": "https://flagcdn.com/w320/fr.png",
       "flag_svg_url": "https://flagcdn.com/fr.svg",
       "iso_code": "FR",
-      "flag_emoji": "🇫🇷"
+      "flag_emoji": "🇫🇷",
+      "historical_wc_stats": {
+        "total_matches": 73,
+        "total_wins": 39,
+        "total_draws": 13,
+        "total_losses": 21,
+        "total_goals_for": 131,
+        "total_goals_against": 82,
+        "titles": 2,
+        "finals": 4,
+        "semi_finals": 7,
+        "best_result": "Winners (1998, 2018)"
+      }
     },
     "aliases": [
       {
@@ -491,7 +563,19 @@
       "flag_url": "https://flagcdn.com/w320/gb-eng.png",
       "flag_svg_url": "https://flagcdn.com/gb-eng.svg",
       "iso_code": "GB-ENG",
-      "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+      "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "historical_wc_stats": {
+        "total_matches": 74,
+        "total_wins": 32,
+        "total_draws": 21,
+        "total_losses": 21,
+        "total_goals_for": 108,
+        "total_goals_against": 72,
+        "titles": 1,
+        "finals": 1,
+        "semi_finals": 4,
+        "best_result": "Winners (1966)"
+      }
     },
     "aliases": [
       {
@@ -560,7 +644,19 @@
       "flag_url": "https://flagcdn.com/w320/es.png",
       "flag_svg_url": "https://flagcdn.com/es.svg",
       "iso_code": "ES",
-      "flag_emoji": "🇪🇸"
+      "flag_emoji": "🇪🇸",
+      "historical_wc_stats": {
+        "total_matches": 67,
+        "total_wins": 33,
+        "total_draws": 16,
+        "total_losses": 18,
+        "total_goals_for": 103,
+        "total_goals_against": 72,
+        "titles": 1,
+        "finals": 1,
+        "semi_finals": 2,
+        "best_result": "Winners (2010)"
+      }
     },
     "aliases": [
       {
@@ -633,7 +729,19 @@
       "flag_url": "https://flagcdn.com/w320/de.png",
       "flag_svg_url": "https://flagcdn.com/de.svg",
       "iso_code": "DE",
-      "flag_emoji": "🇩🇪"
+      "flag_emoji": "🇩🇪",
+      "historical_wc_stats": {
+        "total_matches": 112,
+        "total_wins": 68,
+        "total_draws": 21,
+        "total_losses": 23,
+        "total_goals_for": 232,
+        "total_goals_against": 130,
+        "titles": 4,
+        "finals": 8,
+        "semi_finals": 13,
+        "best_result": "Winners (1954, 1974, 1990, 2014)"
+      }
     },
     "aliases": [
       {
@@ -706,7 +814,19 @@
       "flag_url": "https://flagcdn.com/w320/pt.png",
       "flag_svg_url": "https://flagcdn.com/pt.svg",
       "iso_code": "PT",
-      "flag_emoji": "🇵🇹"
+      "flag_emoji": "🇵🇹",
+      "historical_wc_stats": {
+        "total_matches": 37,
+        "total_wins": 19,
+        "total_draws": 6,
+        "total_losses": 12,
+        "total_goals_for": 56,
+        "total_goals_against": 38,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 2,
+        "best_result": "3rd place (1966, 2006)"
+      }
     },
     "aliases": [
       {
@@ -775,7 +895,19 @@
       "flag_url": "https://flagcdn.com/w320/nl.png",
       "flag_svg_url": "https://flagcdn.com/nl.svg",
       "iso_code": "NL",
-      "flag_emoji": "🇳🇱"
+      "flag_emoji": "🇳🇱",
+      "historical_wc_stats": {
+        "total_matches": 56,
+        "total_wins": 30,
+        "total_draws": 12,
+        "total_losses": 14,
+        "total_goals_for": 95,
+        "total_goals_against": 57,
+        "titles": 0,
+        "finals": 3,
+        "semi_finals": 5,
+        "best_result": "Runners-up (1974, 1978, 2010)"
+      }
     },
     "aliases": [
       {
@@ -856,7 +988,19 @@
       "flag_url": "https://flagcdn.com/w320/be.png",
       "flag_svg_url": "https://flagcdn.com/be.svg",
       "iso_code": "BE",
-      "flag_emoji": "🇧🇪"
+      "flag_emoji": "🇧🇪",
+      "historical_wc_stats": {
+        "total_matches": 51,
+        "total_wins": 21,
+        "total_draws": 9,
+        "total_losses": 21,
+        "total_goals_for": 75,
+        "total_goals_against": 75,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 2,
+        "best_result": "3rd place (2018)"
+      }
     },
     "aliases": [
       {
@@ -933,7 +1077,19 @@
       "flag_url": "https://flagcdn.com/w320/it.png",
       "flag_svg_url": "https://flagcdn.com/it.svg",
       "iso_code": "IT",
-      "flag_emoji": "🇮🇹"
+      "flag_emoji": "🇮🇹",
+      "historical_wc_stats": {
+        "total_matches": 83,
+        "total_wins": 45,
+        "total_draws": 21,
+        "total_losses": 17,
+        "total_goals_for": 128,
+        "total_goals_against": 77,
+        "titles": 4,
+        "finals": 6,
+        "semi_finals": 8,
+        "best_result": "Winners (1934, 1938, 1982, 2006)"
+      }
     },
     "aliases": [
       {
@@ -1010,7 +1166,19 @@
       "flag_url": "https://flagcdn.com/w320/hr.png",
       "flag_svg_url": "https://flagcdn.com/hr.svg",
       "iso_code": "HR",
-      "flag_emoji": "🇭🇷"
+      "flag_emoji": "🇭🇷",
+      "historical_wc_stats": {
+        "total_matches": 24,
+        "total_wins": 11,
+        "total_draws": 3,
+        "total_losses": 10,
+        "total_goals_for": 34,
+        "total_goals_against": 31,
+        "titles": 0,
+        "finals": 2,
+        "semi_finals": 3,
+        "best_result": "Runners-up (2018, 2022)"
+      }
     },
     "aliases": [
       {
@@ -1083,7 +1251,19 @@
       "flag_url": "https://flagcdn.com/w320/co.png",
       "flag_svg_url": "https://flagcdn.com/co.svg",
       "iso_code": "CO",
-      "flag_emoji": "🇨🇴"
+      "flag_emoji": "🇨🇴",
+      "historical_wc_stats": {
+        "total_matches": 21,
+        "total_wins": 9,
+        "total_draws": 3,
+        "total_losses": 9,
+        "total_goals_for": 32,
+        "total_goals_against": 28,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Quarter-finals (2014)"
+      }
     },
     "aliases": [
       {
@@ -1152,7 +1332,19 @@
       "flag_url": "https://flagcdn.com/w320/uy.png",
       "flag_svg_url": "https://flagcdn.com/uy.svg",
       "iso_code": "UY",
-      "flag_emoji": "🇺🇾"
+      "flag_emoji": "🇺🇾",
+      "historical_wc_stats": {
+        "total_matches": 59,
+        "total_wins": 24,
+        "total_draws": 12,
+        "total_losses": 23,
+        "total_goals_for": 87,
+        "total_goals_against": 78,
+        "titles": 2,
+        "finals": 2,
+        "semi_finals": 5,
+        "best_result": "Winners (1930, 1950)"
+      }
     },
     "aliases": [
       {
@@ -1221,7 +1413,19 @@
       "flag_url": "https://flagcdn.com/w320/jp.png",
       "flag_svg_url": "https://flagcdn.com/jp.svg",
       "iso_code": "JP",
-      "flag_emoji": "🇯🇵"
+      "flag_emoji": "🇯🇵",
+      "historical_wc_stats": {
+        "total_matches": 24,
+        "total_wins": 7,
+        "total_draws": 5,
+        "total_losses": 12,
+        "total_goals_for": 27,
+        "total_goals_against": 33,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Round of 16 (2002, 2010, 2018, 2022)"
+      }
     },
     "aliases": [
       {
@@ -1294,7 +1498,19 @@
       "flag_url": "https://flagcdn.com/w320/ma.png",
       "flag_svg_url": "https://flagcdn.com/ma.svg",
       "iso_code": "MA",
-      "flag_emoji": "🇲🇦"
+      "flag_emoji": "🇲🇦",
+      "historical_wc_stats": {
+        "total_matches": 20,
+        "total_wins": 6,
+        "total_draws": 5,
+        "total_losses": 9,
+        "total_goals_for": 19,
+        "total_goals_against": 24,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 1,
+        "best_result": "4th place (2022)"
+      }
     },
     "aliases": [
       {
@@ -1371,7 +1587,19 @@
       "flag_url": "https://flagcdn.com/w320/ch.png",
       "flag_svg_url": "https://flagcdn.com/ch.svg",
       "iso_code": "CH",
-      "flag_emoji": "🇨🇭"
+      "flag_emoji": "🇨🇭",
+      "historical_wc_stats": {
+        "total_matches": 40,
+        "total_wins": 14,
+        "total_draws": 8,
+        "total_losses": 18,
+        "total_goals_for": 55,
+        "total_goals_against": 68,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Quarter-finals (1934, 1938, 1954)"
+      }
     },
     "aliases": [
       {
@@ -1448,7 +1676,19 @@
       "flag_url": "https://flagcdn.com/w320/dk.png",
       "flag_svg_url": "https://flagcdn.com/dk.svg",
       "iso_code": "DK",
-      "flag_emoji": "🇩🇰"
+      "flag_emoji": "🇩🇰",
+      "historical_wc_stats": {
+        "total_matches": 21,
+        "total_wins": 8,
+        "total_draws": 4,
+        "total_losses": 9,
+        "total_goals_for": 30,
+        "total_goals_against": 29,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Quarter-finals (1998)"
+      }
     },
     "aliases": [
       {
@@ -1590,7 +1830,19 @@
       "flag_url": "https://flagcdn.com/w320/sn.png",
       "flag_svg_url": "https://flagcdn.com/sn.svg",
       "iso_code": "SN",
-      "flag_emoji": "🇸🇳"
+      "flag_emoji": "🇸🇳",
+      "historical_wc_stats": {
+        "total_matches": 11,
+        "total_wins": 4,
+        "total_draws": 3,
+        "total_losses": 4,
+        "total_goals_for": 13,
+        "total_goals_against": 14,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Quarter-finals (2002)"
+      }
     },
     "aliases": [
       {
@@ -1663,7 +1915,19 @@
       "flag_url": "https://flagcdn.com/w320/au.png",
       "flag_svg_url": "https://flagcdn.com/au.svg",
       "iso_code": "AU",
-      "flag_emoji": "🇦🇺"
+      "flag_emoji": "🇦🇺",
+      "historical_wc_stats": {
+        "total_matches": 18,
+        "total_wins": 4,
+        "total_draws": 4,
+        "total_losses": 10,
+        "total_goals_for": 17,
+        "total_goals_against": 32,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Round of 16 (2006, 2022)"
+      }
     },
     "aliases": [
       {
@@ -1809,7 +2073,19 @@
       "flag_url": "https://flagcdn.com/w320/pl.png",
       "flag_svg_url": "https://flagcdn.com/pl.svg",
       "iso_code": "PL",
-      "flag_emoji": "🇵🇱"
+      "flag_emoji": "🇵🇱",
+      "historical_wc_stats": {
+        "total_matches": 34,
+        "total_wins": 16,
+        "total_draws": 5,
+        "total_losses": 13,
+        "total_goals_for": 46,
+        "total_goals_against": 45,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 2,
+        "best_result": "3rd place (1974, 1982)"
+      }
     },
     "aliases": [
       {
@@ -1882,7 +2158,19 @@
       "flag_url": "https://flagcdn.com/w320/ec.png",
       "flag_svg_url": "https://flagcdn.com/ec.svg",
       "iso_code": "EC",
-      "flag_emoji": "🇪🇨"
+      "flag_emoji": "🇪🇨",
+      "historical_wc_stats": {
+        "total_matches": 10,
+        "total_wins": 3,
+        "total_draws": 1,
+        "total_losses": 6,
+        "total_goals_for": 9,
+        "total_goals_against": 15,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Round of 16 (2006)"
+      }
     },
     "aliases": [
       {
@@ -1951,7 +2239,19 @@
       "flag_url": "https://flagcdn.com/w320/rs.png",
       "flag_svg_url": "https://flagcdn.com/rs.svg",
       "iso_code": "RS",
-      "flag_emoji": "🇷🇸"
+      "flag_emoji": "🇷🇸",
+      "historical_wc_stats": {
+        "total_matches": 49,
+        "total_wins": 20,
+        "total_draws": 10,
+        "total_losses": 19,
+        "total_goals_for": 72,
+        "total_goals_against": 63,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 2,
+        "best_result": "4th place (1930, 1962) (as Yugoslavia)"
+      }
     },
     "aliases": [
       {
@@ -2592,7 +2892,19 @@
       "flag_url": "https://flagcdn.com/w320/sa.png",
       "flag_svg_url": "https://flagcdn.com/sa.svg",
       "iso_code": "SA",
-      "flag_emoji": "🇸🇦"
+      "flag_emoji": "🇸🇦",
+      "historical_wc_stats": {
+        "total_matches": 17,
+        "total_wins": 4,
+        "total_draws": 2,
+        "total_losses": 11,
+        "total_goals_for": 12,
+        "total_goals_against": 36,
+        "titles": 0,
+        "finals": 0,
+        "semi_finals": 0,
+        "best_result": "Round of 16 (1994)"
+      }
     },
     "aliases": [
       {

@@ -2,23 +2,31 @@
 
 ## 1. Project Overview
 
-Sportshub is a sports data aggregation platform that ingests upcoming event data from multiple independent sources, deduplicates and normalizes it into a single canonical dataset, and exposes it through a REST API with full data provenance.
+Sportshub is a sports data aggregation platform that ingests upcoming event data from multiple independent sources, deduplicates and normalises it into a single canonical dataset, and exposes it through a REST API with full data provenance. It serves as the internal data backbone for multiple front-end sites and products.
 
 ### Problem
 
-No single sports data source is both comprehensive and reliable. Official APIs have gaps, community sources have errors, and betting feeds use non-standard naming. A downstream consumer (frontend, analytics pipeline, or trading system) needs a single, high-confidence view of "what events are happening, when, and where" without worrying about source inconsistencies.
+No single sports data source is both comprehensive and reliable. Official APIs have gaps, community sources have errors, and betting feeds use non-standard naming. A downstream consumer (frontend, analytics pipeline, or model) needs a single, high-confidence view of "what events are happening, when, and where" without worrying about source inconsistencies.
 
 ### Solution
 
-Sportshub pulls from 11 upstream adapters across three sports, resolves entity mismatches (team names, competition labels, timezones) using alias tables and LLM fallback, scores each event by how many independent sources confirm it, and serves the result through a paginated API.
+Sportshub pulls from 15 registered providers (9 with live automated adapters) across three sports, resolves entity mismatches (team names, competition labels, timezones) using alias tables and AI fallback, scores each event by how many independent sources confirm it, and continuously validates data quality through post-event reconciliation and dynamic reliability scoring.
+
+### Design Principles
+
+- **Multi-source consensus over single-source trust.** Every data point should be confirmed by 2+ independent sources. Confidence scores reflect how many sources agree, not which source is "best."
+- **Self-healing over manual curation.** Successful entity matches create aliases automatically. Failed matches route to AI. The alias table grows over time, reducing future failures without human intervention.
+- **Declarative configuration over code changes.** Provider metadata (endpoints, rate limits, abbreviation maps) lives in `data/providers.json`, not in Python code. Adding a source means editing JSON and writing a thin adapter.
+- **Transparency over opacity.** Every data point traces back to specific sources with timestamps and confidence scores. The operational dashboard exposes data quality metrics internally rather than hiding them.
+- **Official APIs for core data, scraping for enrichment.** Schedule and fixture data comes from documented APIs (FIFA, NBA.com CDN, LoL Esports). Player stats and betting trends come from scraped sources. If scraping breaks, core data continues.
 
 ### Sports Covered
 
-| Sport | Season | Adapters | Competitions |
-|-------|--------|----------|--------------|
-| **NBA** | 2025-26 | ESPN NBA, NBA.com CDN, BallDontLie, Mollybet | Regular Season, Playoffs |
-| **League of Legends** | 2026 | LoLEsports, PandaScore, Liquipedia, Mollybet | LCK, LEC, LCS, MSI, Worlds |
-| **Football (FIFA)** | WC 2026 | FIFA API, Football-Data.org, ESPN FIFA, Mollybet | FIFA World Cup 2026 |
+| Sport | Season | Automated Adapters | Supplementary Sources | Competitions |
+|-------|--------|-------------------|----------------------|--------------|
+| **NBA** | 2025-26 | ESPN NBA, NBA.com CDN, BallDontLie, Mollybet | BRef (stats), TeamRankings (ratings/trends) | Regular Season, Playoffs |
+| **League of Legends** | 2026 | LoL Esports, PandaScore, Mollybet | Liquipedia (health check only) | LCK, LEC, LCS, MSI, Worlds |
+| **Football (FIFA)** | WC 2026 | FIFA API, Football-Data.org, ESPN FIFA, Mollybet | Reep (entity register, 23 provider cross-refs) | FIFA World Cup 2026 |
 
 ---
 
@@ -26,76 +34,89 @@ Sportshub pulls from 11 upstream adapters across three sports, resolves entity m
 
 ### Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Web framework | FastAPI (async) |
-| Database | PostgreSQL 16 via SQLAlchemy Core (async) + asyncpg |
-| Cache | Redis 7 with hiredis |
-| Scheduling | APScheduler 3.x (AsyncIOScheduler) |
-| HTTP client | httpx (async) |
-| LLM | Anthropic Claude Haiku via `anthropic` SDK |
-| WebSocket | `websockets` library (Mollybet stream) |
-| Migrations | Alembic |
-| Deployment | Railway (Docker) |
+| Layer | Technology | Why |
+|-------|-----------|-----|
+| Web framework | FastAPI (async) | Native async, auto-generated OpenAPI docs, Pydantic integration |
+| Database | PostgreSQL 16 + SQLAlchemy Core (async) + asyncpg | JSONB for flexible metadata, trigram indexes for fuzzy search, partial indexes for query performance |
+| Cache | Redis 7 with hiredis | Reliability score cache, rate limiting, graceful fallback if unavailable |
+| Scheduling | APScheduler 3.x (AsyncIOScheduler) | In-process async scheduler, lightweight for MVP (Celery for scale) |
+| HTTP client | httpx (async) | Connection pooling, timeout handling, async-native |
+| AI resolution | Anthropic Claude Haiku via `anthropic` SDK | Cheap ($0.80/1M input tokens), fast (~2s), good enough for entity matching |
+| WebSocket | `websockets` library | Mollybet real-time stream ingestion |
+| Dashboard | HTMX + Jinja2 templates | Server-rendered, no frontend build step, auto-refresh partials |
+| Provider config | JSON registry (`data/providers.json`) | Declarative, version-controlled, no code changes to add sources |
+| Migrations | Alembic | Standard SQLAlchemy migration tool |
 
 ### Data Flow
 
 ```
-                                  11 Source Adapters
-                                  (ESPN, NBA.com, LoLEsports,
-                                   PandaScore, Liquipedia,
-                                   FIFA API, Football-Data,
-                                   ESPN FIFA, Mollybet x3)
-                                         |
-                                         v
-                                  +-------------+
-                                  | Raw Events  |  --> source_records table
-                                  +-------------+
-                                         |
-                                         v
-                              +---------------------+
-                              | Entity Resolution   |
-                              |  1. Team lookup     |
-                              |  2. Alias match     |
-                              |  3. LLM fallback    |
-                              |  4. Timezone norm   |
-                              +---------------------+
-                                         |
-                                         v
-                              +---------------------+
-                              | Event Matching      |
-                              |  Confidence scoring |
-                              |  Merge or create    |
-                              +---------------------+
-                                         |
-                           +-------------+-------------+
-                           |                           |
-                           v                           v
-                  +----------------+          +------------------+
-                  | Canonical      |          | Confirmation     |
-                  | Events table   |          | (Mollybet, Odds) |
-                  | (deduplicated) |          | Boosts confidence|
-                  +----------------+          +------------------+
-                           |
-                           v
-                  +----------------+
-                  | Validation     |
-                  | Sport-specific |
-                  | constraints    |
-                  +----------------+
-                           |
-                           v
-                  +----------------+
-                  | Reconciliation |
-                  | Post-event     |
-                  | accuracy check |
-                  +----------------+
-                           |
-                           v
-                  +----------------+
-                  | REST API       |
-                  | /api/v1/...    |
-                  +----------------+
+   +-------------------+
+   | Provider Registry  |  data/providers.json (15 providers)
+   | (config, endpoints,|  data/provider_id_mappings.json
+   |  abbreviation maps)|
+   +-------------------+
+            |
+            v
+   +-------------------+       +--------------------+
+   | 9 Automated       |       | 6 Supplementary    |
+   | Adapters           |       | Sources             |
+   | (ESPN, NBA.com,   |       | (BRef, TeamRankings,|
+   |  FIFA, LoLEsports,|       |  Reep, Liquipedia)  |
+   |  PandaScore,      |       | via manual scripts  |
+   |  Mollybet x3)     |       +--------------------+
+   +-------------------+                |
+            |                           v
+            v                  +-------------------+
+   +-------------------+       | Reference Data    |
+   | Raw Events        |       | 22 JSON files     |
+   | source_records    |       | (players, stats,  |
+   | table             |       |  ratings, trends) |
+   +-------------------+       +-------------------+
+            |
+            v
+   +-------------------+
+   | Entity Resolution  |
+   |  1. Normalise      |
+   |  2. Alias lookup   |
+   |  3. AI fallback    |
+   |  4. Timezone norm  |
+   +-------------------+
+            |
+            v
+   +-------------------+
+   | Event Matching     |
+   |  Confidence score  |
+   |  Merge or create   |
+   +-------------------+
+            |
+      +-----+-----+
+      |           |
+      v           v
+   +----------+ +---------------+
+   | Canonical| | Confirmation  |
+   | Events   | | (Mollybet,    |
+   |          | |  OddsAPI)     |
+   +----------+ +---------------+
+      |
+      v
+   +-------------------+        +-------------------+
+   | Validation         |        | Reconciliation    |
+   | Sport-specific     | -----> | Post-event        |
+   | constraints        |        | accuracy check    |
+   +-------------------+        +-------------------+
+      |                                   |
+      v                                   v
+   +-------------------+        +-------------------+
+   | REST API           |        | Dynamic Reliability|
+   | /api/v1/...        |        | Scoring            |
+   +-------------------+        +-------------------+
+      |
+      v
+   +-------------------+
+   | Operational        |
+   | Dashboard          |
+   | /dashboard         |
+   +-------------------+
 ```
 
 ### Application Lifecycle
@@ -103,11 +124,12 @@ Sportshub pulls from 11 upstream adapters across three sports, resolves entity m
 The FastAPI lifespan context manager (`main.py`) orchestrates startup and shutdown:
 
 **Startup:**
-1. Initialize async database engine and run migrations
+1. Initialise async database engine and run migrations
 2. Connect Redis client (graceful fallback if unavailable)
-3. Build adapter registry (11 adapters, credential-guarded)
-4. Build confirmation registry (Mollybet + OddsAPI)
-5. Start APScheduler with all job cadences
+3. Configure Jinja2 templates for dashboard
+4. Build adapter registry (9 adapters, credential-guarded)
+5. Build confirmation registry (Mollybet + OddsAPI)
+6. Start APScheduler with all job cadences
 
 **Shutdown:**
 1. Stop scheduler
@@ -121,48 +143,49 @@ The FastAPI lifespan context manager (`main.py`) orchestrates startup and shutdo
 
 ### 3.1 Ingestion
 
-**11 adapters** inherit from `SourceAdapter` (abstract base in `ingestion/base.py`):
+**9 automated adapters** inherit from `SourceAdapter` (abstract base in `ingestion/base.py`):
 
 | Adapter | Source ID | Sport | Method | Cadence |
 |---------|-----------|-------|--------|---------|
 | ESPN NBA | `espn_nba` | NBA | REST | 1h |
-| NBA.com CDN | `nbacom_cdn` | NBA | REST | 2h |
+| NBA.com CDN | `nbacom_cdn` | NBA | CDN | 2h |
 | BallDontLie | `balldontlie_nba` | NBA | REST | 6h |
 | LoLEsports | `lolesports` | LoL | REST | 1h |
 | PandaScore | `pandascore_lol` | LoL | REST | 2h |
-| Liquipedia | `liquipedia_lol` | LoL | HTML scrape | Daily 08:00 |
 | FIFA API | `fifa_api` | Football | REST | 2h |
 | Football-Data | `footballdata_wc` | Football | REST | 3h |
 | ESPN FIFA | `espn_fifa` | Football | REST | 1h |
-| Mollybet (FB) | `mollybet_fb` | Football | WebSocket | 2h |
-| Mollybet (NBA) | `mollybet_basket` | NBA | WebSocket | 2h |
-| Mollybet (LoL) | `mollybet_esports` | LoL | WebSocket | 2h |
+| Mollybet (x3) | `mollybet_fb/basket/esports` | All | WebSocket | 2h |
 
 Each adapter's `fetch_upcoming()` returns a list of `RawEvent` with the source's raw team names, competition labels, and timestamps untouched. These are persisted as `source_records` for full provenance.
+
+**Why separate adapters per source**: Each API has its own quirks (date formats, pagination, auth, rate limits). A thin adapter per source isolates these quirks. The adapter is ~120 lines; the complexity lives in the resolution pipeline, not the ingestion layer.
 
 **Key files:**
 - `src/sportshub/ingestion/base.py` -- SourceAdapter interface
 - `src/sportshub/ingestion/registry.py` -- AdapterRegistry + factory
-- `src/sportshub/ingestion/adapters/` -- All 10 adapter files
+- `src/sportshub/ingestion/adapters/` -- 10 adapter files
 
 ### 3.2 Entity Resolution
 
 The resolution pipeline (`resolution/pipeline.py`) processes unmatched source records through these stages:
 
-1. **Team Resolution** (`normalizer.py`): Normalize raw names (lowercase, strip accents, remove suffixes like "FC", "Esports", "National Team"), look up in alias cache. O(1) for cached aliases.
+1. **Team Resolution** (`normalizer.py`): Normalise raw names (lowercase, strip accents, remove suffixes like "FC", "Esports", "National Team"), look up in alias cache. O(1) for cached aliases.
 
-2. **LLM Fallback** (`llm_resolver.py`): When alias lookup fails, send the raw name + candidate list to Claude Haiku. If confidence >= 0.70, accept the match and auto-create an alias for future runs. Circuit breaker opens if acceptance rate drops below 40% or latency exceeds 10s.
+2. **AI Fallback** (`llm_resolver.py`): When alias lookup fails, send the raw name + candidate list to Claude Haiku. If confidence >= 0.70, accept the match and auto-create an alias for future runs. Circuit breaker opens if acceptance rate drops below 40% or latency exceeds 10s.
 
 3. **Event Matching** (`matcher.py`): Find candidate canonical events by sport + teams + time window (24h). Score confidence:
    - Team set match: +0.50
    - Home/away correct: +0.10
    - Time proximity: +0.05 to +0.40 (sliding scale)
    - Auto-match threshold: 0.70
-   - Tentative (LLM promotion eligible): 0.50-0.70
+   - Tentative (AI promotion eligible): 0.50-0.70
 
 4. **Merge or Create** (`merger.py`): If matched, merge source data into existing event (higher-priority sources override time/venue). If unmatched, create a new canonical event.
 
-5. **Validation** (`validation/engine.py`): Run sport-specific constraints (e.g., NBA roster sizes, LoL match formats). Confidence reduced by 0.30 on error-level violations.
+5. **Validation** (`validation/engine.py`): Run sport-specific constraints (e.g., NBA no same-day doubleheaders, LoL 3-day team spacing, FIFA 5-day rest period). Confidence reduced by 0.30 on error-level violations.
+
+**Why hybrid resolution**: Rule-based matching handles 95%+ of cases cheaply. The AI fallback exists for the long tail (international name variants, abbreviation mismatches). Every AI success creates a new alias, so the rule-based hit rate improves over time. This is the "self-healing" mechanism.
 
 **Source Priority** (determines which source's data wins on conflict):
 
@@ -194,6 +217,8 @@ After events pass their scheduled time (+3h buffer), the reconciliation subsyste
 4. **Updates** event status (completed, cancelled, postponed) via majority vote
 5. **Feeds** accuracy data into the dynamic reliability scorer for future priority adjustments
 
+**Why reconciliation matters**: This is the system's primary quality assurance mechanism. It turns each completed event into a test case that validates (or penalises) every source that reported on it. Over time, source reliability scores converge on reality.
+
 ### 3.5 Dynamic Reliability Scoring
 
 `DynamicReliabilityScorer` computes source priorities from historical accuracy data:
@@ -218,6 +243,90 @@ APScheduler manages all recurring jobs:
 | Confirmation check | 6h | External event verification |
 
 **Circuit Breaker** (`scheduling/circuit_breaker.py`): Pauses adapters after 5 consecutive failures. Initial pause: 1 hour, escalates to 4 hours. Auto-probes after pause expires.
+
+### 3.7 Provider Registry
+
+The provider registry (`src/sportshub/providers/`) centralises all source metadata in a declarative JSON file (`data/providers.json`). Each of the 15 providers has:
+
+- Identity: source_id, display_name, sport, type (api/cdn/web_scrape/api_websocket/csv_github)
+- Reliability: official/established/community classification, numeric priority
+- Access: base_url, endpoints, auth requirements, rate_limit_seconds
+- Entity mapping: abbreviation_map (our_to_provider, provider_to_ours), entity_id_format
+
+Cross-provider ID mappings (`data/provider_id_mappings.json`) link the same team across sources (e.g., NBA team ATL has ESPN ID "1", NBA.com ID "1610612737", BallDontLie ID "1", BRef code "ATL").
+
+**Why declarative JSON**: Adding a new provider means editing a JSON file, not writing Python. The registry provides typed lookups (`get_provider()`, `get_abbreviation_map()`, `translate_abbreviation()`) that adapters, the dashboard, and scripts all consume from one source of truth.
+
+### 3.8 Operational Dashboard
+
+The dashboard (`/dashboard`) is a server-rendered HTMX application that provides real-time visibility into the data pipeline.
+
+**Sections:**
+- **Status banner** -- event/team/competition counts, system health
+- **Data Sources** -- all 15 providers grouped by sport, with type badges and reliability indicators
+- **Reference Data** -- inventory of all 22 JSON data files with record counts, sizes, schema validation status
+- **Activity** -- tabbed view of automated ingestion runs (24h) and manual script activity
+- **Alerts** -- stale source warnings, circuit breaker state
+- **Data Quality** -- confidence score distribution, source coverage, unmatched records
+- **Data Completeness** -- player stat coverage (base/advanced/PBP/adjusted shooting), team data counts, event enrichment rates
+- **Reconciliation** -- post-event accuracy metrics (teams, venue, time)
+- **Reliability Scoring** -- per-source dynamic scores vs fallback priorities
+
+Each section is an HTMX partial that auto-refreshes on 30-120s intervals. No JavaScript framework; no separate frontend build.
+
+**Why server-rendered**: The dashboard is an internal operations tool, not a consumer product. HTMX + Jinja2 keeps the dependency footprint minimal, avoids a separate frontend deployment, and makes each section independently refreshable without full page reloads.
+
+### 3.9 Script Activity Tracking
+
+Manual data operations (BRef merges, NBA stat fetches, Reep enrichment) run as standalone Python scripts outside the main app process. The activity log (`src/sportshub/scripts/activity_log.py`) tracks these runs:
+
+```python
+with log_script_run("merge_bref_pbp") as run:
+    # do work
+    run.records_processed = 527
+    run.summary = "Merged play-by-play for 527/535 players"
+```
+
+Logs append to `data/script_activity.json` (trimmed to 200 entries). The dashboard reads this file to display script history alongside automated ingestion runs.
+
+**Why file-based logging**: Scripts run outside the app process and may not have database access. A JSON file on disk is the simplest mechanism that works everywhere. The context manager pattern ensures runs are always recorded even if the script crashes.
+
+### 3.10 Reference Data Layer
+
+22 JSON files in `data/` provide static and semi-static reference data:
+
+**NBA:**
+- `nba_teams.json` -- 30 teams with metadata, aliases, arena, coach, colours
+- `nba_players.json` -- 538 players with position, height, draft info
+- `nba_player_stats.json` -- 535 players with 4 stat tiers: base per-game, advanced (PER/WS/BPM/VORP), play-by-play (on/off, turnover/foul breakdowns), adjusted shooting (FG+/TS+/shooting value added)
+- `nba_schedule.json` -- full 2025-26 season schedule
+- `nba_team_stats.json` -- team-level aggregates
+- `teamrankings_power_ratings_2026.json` -- predictive power ratings
+- `teamrankings_ats_trends_2026.json` -- against-the-spread records
+- `teamrankings_ou_trends_2026.json` -- over/under trends
+
+**Football:**
+- `fifa_wc_teams.json` -- 58 World Cup teams
+- `fifa_wc_players.json` -- 1,300 players across 50 squads
+- `fifa_wc_schedule.json` -- 104 matches with bracket labels
+
+**LoL:**
+- `lol_teams.json` -- 40 teams across 5 leagues
+
+**Infrastructure:**
+- `providers.json` -- 15 provider configurations
+- `provider_id_mappings.json` -- cross-provider team ID mappings
+- `competitions.json` -- 9 competition definitions
+- `venue_timezones.json` -- venue-to-IANA timezone lookup
+- `mollybet_competitions.json` -- Mollybet competition ID mapping
+- `script_activity.json` -- manual script run log
+
+**Raw imports** (pre-merge):
+- `bref_advanced_2026_raw.json` -- 721 players
+- `bref_adj_shooting_2026_raw.json` -- 728 players
+- `bref_pbp_2026_raw.json` -- 727 players
+
+**Why JSON files over database**: Reference data changes infrequently (once per season for rosters, weekly for stats). JSON files are version-controlled in git, readable without database access, and trivial to diff. The merge scripts (`scripts/merge_bref_*.py`) enrich `nba_player_stats.json` progressively, building up from base stats to fully enriched records.
 
 ---
 
@@ -267,7 +376,21 @@ confirmation_checks       llm_resolutions           reconciliation_results
                            accepted (bool)
                            alias_created (bool)
                            latency_ms, tokens_used
+
+source_accuracy_records
+  reconciliation_id (FK)
+  source_id, sport
+  time_accurate, teams_correct, venue_correct
+  recorded_at
 ```
+
+### Key Design Decisions
+
+- **SQLAlchemy Core over Declarative ORM.** Table objects + Pydantic domain models keeps the data layer clean. No ORM magic; queries are explicit.
+- **JSONB for metadata.** Rosters, raw source data, and enrichment data stored as JSONB. Flexible without schema migrations. Queryable and indexable in PostgreSQL.
+- **Nullable event_id on source_records.** Allows storing unmatched records for later resolution or manual review, rather than discarding them.
+- **Trigram GIN indexes on names.** Enables fuzzy text search for entity resolution without external search infrastructure.
+- **Partial indexes on scheduled events.** `(sport, scheduled_at) WHERE status = 'scheduled'` keeps upcoming-event queries fast as the table grows.
 
 ### Deduplication Strategy
 
@@ -278,20 +401,42 @@ Events are unique by the tuple `(sport, home_team_id, away_team_id, scheduled_at
 ## 5. API Layer
 
 **Base URL:** `/api/v1`
-**Auth:** `X-API-Key` header (required for all endpoints except health)
-**Deployment:** `https://joyful-peace-production-d7f2.up.railway.app`
+**Auth:** `X-API-Key` header (required for all endpoints except health and dashboard)
+**Total endpoints:** 35
 
-### Endpoints
+### Data API
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `GET` | `/health` | DB/Redis status, event counts (no auth) |
-| `GET` | `/events` | Paginated event list with filters |
-| `GET` | `/events/{id}` | Full event detail with all source records |
-| `GET` | `/teams` | Paginated team list with fuzzy search |
-| `GET` | `/teams/{id}/players` | Team roster |
-| `GET` | `/players` | Player search |
-| `GET` | `/competitions` | Competition list |
+| `GET` | `/api/v1/health` | DB/Redis status, event counts (no auth) |
+| `GET` | `/api/v1/events` | Paginated event list with filters |
+| `GET` | `/api/v1/events/{id}` | Full event detail with all source records |
+| `GET` | `/api/v1/teams` | Paginated team list with fuzzy search |
+| `GET` | `/api/v1/teams/{id}/players` | Team roster |
+| `GET` | `/api/v1/players` | Player search |
+| `GET` | `/api/v1/players/{id}` | Player detail |
+| `GET` | `/api/v1/competitions` | Competition list |
+
+### Dashboard API (JSON)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/dashboard/overview` | System health, event/team/competition counts |
+| `GET` | `/api/v1/dashboard/sources` | Per-source status, last success, failure count |
+| `GET` | `/api/v1/dashboard/ingestion` | 24h ingestion timeline per source |
+| `GET` | `/api/v1/dashboard/quality` | Confidence distribution, source coverage, unmatched |
+| `GET` | `/api/v1/dashboard/alerts` | Stale sources, circuit breaker state |
+| `GET` | `/api/v1/dashboard/violations` | Constraint violation counts |
+| `GET` | `/api/v1/dashboard/reconciliation` | Post-event accuracy metrics |
+| `GET` | `/api/v1/dashboard/llm` | AI resolution effectiveness and cost |
+| `GET` | `/api/v1/dashboard/reliability` | Per-source dynamic reliability scores |
+| `GET` | `/api/v1/dashboard/reference-data` | File inventory, record counts, schema status |
+| `GET` | `/api/v1/dashboard/script-activity` | Manual script run history |
+| `GET` | `/api/v1/dashboard/completeness` | Player/team/event data coverage |
+
+### Dashboard HTML (HTMX partials)
+
+`GET /dashboard` serves the main page. Each section has a corresponding `GET /dashboard/partials/{section}` endpoint that returns an HTML fragment for HTMX swap.
 
 ### Event List Filters
 
@@ -460,7 +605,7 @@ Pre-seeded mapping of Sportshub competitions to Mollybet IDs, discovered via a W
 
 ---
 
-## 8. Testing and Lessons Learned
+## 8. Lessons Learned
 
 ### WebSocket Message Format
 
@@ -473,16 +618,10 @@ Pre-seeded mapping of Sportshub competitions to Mollybet IDs, discovered via a W
 ### Bracket Structure Bugs
 
 **Problem:** The initial FIFA WC 2026 knockout bracket had two critical bugs:
-1. Groups E-L winners bypassed R32 entirely, going directly to R16 (R16-2 had "1st Group E vs 1st Group F")
-2. R32 mixed runners-up vs ambiguous 3rd-placed team pools ("3rd Group C/D/E") that couldn't resolve to a single team
+1. Groups E-L winners bypassed R32 entirely, going directly to R16
+2. R32 mixed runners-up vs ambiguous 3rd-placed team pools that could not resolve to a single team
 
-**Impact:** Bookmaker market references like "Winner of Playoff D" couldn't map to any R32 match because the bracket was structurally inconsistent.
-
-**Fix:** Rewrote the entire knockout bracket:
-- All 12 group winners play in R32 (paired with runners-up from mirrored groups)
-- 8 best 3rd-placed teams play each other in 4 additional R32 matches
-- Every R16 match references only R32 winners
-- Added `bracket_label` (Playoff A-P) and `feeds_into` fields
+**Fix:** Rewrote the entire knockout bracket with correct group pairing, `bracket_label` (Playoff A-P), and `feeds_into` fields for traversal.
 
 **Lesson:** Tournament bracket structures are deceptively complex. The 48-team, 12-group format with 8 best 3rd-placed teams creates a non-trivial seeding matrix. Always validate the bracket by checking that every team appears exactly once and every later-round slot references exactly two feeder matches.
 
@@ -490,139 +629,46 @@ Pre-seeded mapping of Sportshub competitions to Mollybet IDs, discovered via a W
 
 **Problem:** Writing 1,300 player records required managing context window limits.
 
-**Approach:** Split into 13 batch files (78-312 players each), wrote sequentially, then merged via Python script and deleted batch files.
+**Approach:** Split into 13 batch files (78-312 players each), wrote sequentially, then merged via Python script.
 
 **Lesson:** For large seed datasets, a batch-and-merge workflow keeps each write manageable. Version the merged file, not the batches.
 
-### Competition Country Code
+### Provider Abbreviation Mismatches
 
-**Problem:** Mollybet reports `.f` as the `competition_country` for FIFA World Cup events, which isn't a valid ISO code.
+**Problem:** Different sources use different abbreviations for the same team. ESPN uses "GS" for Golden State; NBA.com uses "GSW"; BallDontLie uses "GSW". TeamRankings uses "Okla City" for Oklahoma City Thunder.
 
-**Fix:** Manually mapped to "XX" (international) in the seed file.
+**Fix:** Each provider in `providers.json` has an `abbreviation_map` with bidirectional lookups (`our_to_provider`, `provider_to_ours`). The provider registry exposes `translate_abbreviation()` for adapters and merge scripts.
 
-**Lesson:** Betting APIs use non-standard country codes for international competitions. Build a normalization layer rather than trusting raw values.
+**Lesson:** Abbreviation mismatches are the most common entity resolution failure. A per-provider map in declarative config handles this without code changes.
+
+### Scraping Fragility
+
+**Problem:** Basketball Reference and TeamRankings are Cloudflare-protected. Standard HTTP requests return challenge pages. Browser automation works but is slow and fragile.
+
+**Approach:** Used Chrome browser automation for initial data extraction. Data saved to JSON files and merged via scripts.
+
+**Lesson:** Scraping should be used for supplementary enrichment, not core data. Managed proxy services (ScrapingBee, Zenrows) can replace browser automation with more reliable API-based scraping at $50-250/month.
 
 ---
 
-## 9. Production Considerations
+## 9. Current Production State (April 10, 2026)
 
-The current implementation is a working prototype deployed on Railway. Below are the key areas to address for a production-grade system.
+| Metric | Value |
+|--------|-------|
+| Events tracked | 428 (NBA 126, Football 126, LoL 176) |
+| Teams | 141 |
+| Competitions | 18 |
+| Ingestion runs (last 24h) | 72 runs across 9 adapters |
+| Records fetched (last 24h) | 17,512 |
+| Events reconciled | 199 (100% team accuracy, 0.0s avg time drift) |
+| AI resolution attempts | 1,980 calls, $7.10 total |
+| Unmatched source records | 10,627 (mostly Mollybet coverage beyond our 3 sports) |
+| NBA player stat coverage | 535/535 base, 527 advanced, 527 PBP, 526 adj. shooting |
+| Team data completeness | Power ratings 30/30, ATS trends 30/30, O/U trends 30/30 |
+| Reference data files | 22 JSON files, 5.8 MB total |
+| Production code | ~11,000 lines across ~80 files |
 
-### 9.1 Secrets Management
-
-**Current state:** Credentials in Railway environment variables and `.env` files.
-
-**Production needs:**
-- Use a secrets manager (AWS Secrets Manager, Vault, or Railway's encrypted variables)
-- Rotate Mollybet session tokens programmatically (current 23h expiry is handled but not monitored)
-- Audit log for credential access
-- Separate credentials per environment (dev/staging/prod)
-
-### 9.2 Database
-
-**Current state:** Single PostgreSQL instance on Railway.
-
-**Production needs:**
-- Connection pooling via PgBouncer (current pool_size=10 is adequate for low traffic but won't scale)
-- Read replicas for API queries (separate read/write connection strings)
-- Automated backups and point-in-time recovery
-- Index monitoring: the `events` table has good indexes but query plans should be reviewed under load
-- Consider partitioning `source_records` by `created_at` (high-volume table)
-
-### 9.3 Horizontal Scaling
-
-**Current state:** Single container running both the API server and scheduler.
-
-**Production needs:**
-- Separate the **API** (stateless, horizontally scalable) from the **scheduler** (singleton)
-- Use a distributed lock (Redis-based) to ensure only one scheduler instance runs ingestion jobs
-- API workers: multiple uvicorn workers or multiple containers behind a load balancer
-- Consider separating the resolution pipeline into a background worker process
-
-### 9.4 Monitoring and Alerting
-
-**Current state:** Structured logging via `structlog`. Basic health endpoint.
-
-**Production needs:**
-- Metrics export (Prometheus/Datadog): ingestion latency, resolution success rate, LLM token usage, event confidence distribution
-- Alerting on: circuit breaker opens, ingestion job failures, resolution backlog growth, LLM acceptance rate drops
-- Dashboard for source health: which adapters are healthy, last successful fetch, failure count
-- Request tracing (OpenTelemetry) for API latency debugging
-- Log aggregation (the existing structlog output is well-structured for tools like Datadog or Loki)
-
-### 9.5 Error Recovery and Resilience
-
-**Current state:** Circuit breaker pauses failing adapters. Redis failures are gracefully handled.
-
-**Production needs:**
-- Dead letter queue for permanently unresolvable source records (currently they stay in the resolution backlog forever)
-- Retry with backoff for transient failures (currently adapters either succeed or fail with no retry)
-- Graceful degradation: if the database is slow, the API should return cached responses rather than timing out
-- Health endpoint should report degraded state (not just up/down) when adapters are circuit-broken
-
-### 9.6 Data Freshness and Consistency
-
-**Current state:** Ingestion runs on fixed intervals (1-6h depending on adapter).
-
-**Production needs:**
-- Event-driven ingestion for sources that support webhooks or push notifications
-- Staleness monitoring: alert if an adapter hasn't produced new data in 2x its expected cadence
-- Consistency checks: detect when source records conflict (e.g., two sources report different kickoff times for the same event)
-- Deduplication edge cases: handle events that are rescheduled (same teams, different date) without creating duplicates
-
-### 9.7 Test Coverage
-
-**Current state:** Tests exist for the matcher and normalizer. Integration test structure is in place but coverage is limited.
-
-**Production needs:**
-- Unit tests for all adapters (mock HTTP/WebSocket responses)
-- Integration tests for the full resolution pipeline (source record in, canonical event out)
-- Contract tests for external APIs (detect when upstream response formats change)
-- Load tests for the API layer (target: 100 concurrent users, p95 < 200ms)
-- End-to-end test: seed data, run ingestion, run resolution, query API, verify results
-
-### 9.8 CI/CD
-
-**Current state:** Direct push to main, Railway auto-deploys.
-
-**Production needs:**
-- Branch protection: require PR reviews before merging to main
-- CI pipeline: lint (ruff), type check (mypy), unit tests, integration tests
-- Staging environment that mirrors production
-- Database migration safety checks (no destructive migrations without manual approval)
-- Canary deployments or blue/green for zero-downtime releases
-
-### 9.9 Rate Limiting and API Security
-
-**Current state:** Single API key for all consumers. No rate limiting on the API itself. Adapter-level rate limiting exists for OddsAPI.
-
-**Production needs:**
-- Per-consumer API keys with usage tracking
-- Rate limiting on API endpoints (e.g., 100 req/min per key)
-- Request validation and input sanitization (FastAPI handles most of this via Pydantic)
-- CORS policy tightened from "allow all origins" to specific frontends
-- API versioning strategy for breaking changes
-
-### 9.10 Data Completeness
-
-**Current state:** NBA and LoL player data files are empty placeholders. FIFA WC 2026 has full data.
-
-**Production needs:**
-- Populate NBA roster data (30 teams x 15 players = 450 players)
-- Populate LoL roster data (50+ teams x 5-10 players = 250-500 players)
-- Automated roster sync from upstream APIs (players transfer, rosters change mid-season)
-- Handle mid-season competition changes (new tournaments, schedule modifications)
-
-### 9.11 LLM Cost Control
-
-**Current state:** Claude Haiku used for team/competition resolution fallback. Circuit breaker limits runaway usage.
-
-**Production needs:**
-- Token usage tracking and budget alerts (currently logged but not aggregated)
-- Alias hit rate monitoring: as the alias table grows, LLM calls should decrease over time
-- Model evaluation: periodically test if cheaper/faster models maintain acceptable accuracy
-- Batch LLM resolution (group multiple unresolved entities into fewer API calls)
-- Cost allocation by sport/adapter for budget planning
+Production readiness analysis and scaling architecture are documented in `docs/STRATEGIC_EVALUATION.md`.
 
 ---
 
@@ -646,7 +692,7 @@ src/sportshub/
   ingestion/
     base.py                            # SourceAdapter interface
     registry.py                        # Adapter registration
-    adapters/                          # 10 adapter implementations
+    adapters/                          # 10 adapter files
     confirmation/                      # Mollybet + OddsAPI confirmation
   resolution/
     pipeline.py                        # Full resolution orchestration
@@ -656,29 +702,63 @@ src/sportshub/
     llm_resolver.py                    # Claude Haiku fallback
     reliability.py                     # Dynamic source scoring
     timezone.py                        # Venue timezone resolution
+  providers/
+    registry.py                        # Central provider config loader
+    models.py                          # Provider Pydantic models
+    abbreviations.py                   # Cross-provider abbreviation translation
+  dashboard/
+    service.py                         # Dashboard data aggregation (922 lines)
+    api.py                             # Dashboard JSON endpoints
+    views.py                           # HTMX HTML views
+    schemas.py                         # Dashboard response models
   scheduling/
     scheduler.py                       # APScheduler job registration
     jobs.py                            # Job implementations
     circuit_breaker.py                 # Adapter fault tolerance
+  scripts/
+    activity_log.py                    # Script run tracking (context manager)
+    http.py                            # HTTP utilities with retry
+    io.py                              # File I/O utilities
+    normalization.py                   # Data normalization helpers
   reconciliation/                      # Post-event verification
   validation/                          # Sport-specific constraints
   monitoring/                          # Logging, metrics, health
+  templates/
+    dashboard/
+      index.html                       # Main dashboard layout
+      partials/                        # 11 HTMX partial templates
 ```
 
 ### Data Files
 
 ```
 data/
-  fifa_wc_schedule.json                # 104 matches with bracket labels
+  providers.json                       # 15 provider configurations
+  provider_id_mappings.json            # Cross-provider team ID mappings (30 NBA teams)
+  competitions.json                    # 9 competition definitions
+  venue_timezones.json                 # Venue-to-IANA timezone lookup
+  mollybet_competitions.json           # Mollybet competition ID mapping
+  script_activity.json                 # Manual script run log
+
+  nba_teams.json                       # 30 teams with metadata + aliases
+  nba_players.json                     # 538 players
+  nba_player_stats.json                # 535 players, 4 stat tiers
+  nba_schedule.json                    # 2025-26 season schedule
+  nba_team_stats.json                  # Team-level aggregates
+  teamrankings_power_ratings_2026.json # Power ratings (30 teams)
+  teamrankings_ats_trends_2026.json    # ATS records (30 teams)
+  teamrankings_ou_trends_2026.json     # O/U trends (30 teams)
+
   fifa_wc_teams.json                   # 58 teams with full metadata
   fifa_wc_players.json                 # 1,300 players across 50 squads
-  nba_teams.json                       # 30 NBA teams with aliases
-  lol_teams.json                       # 50+ LoL teams with aliases
-  nba_players.json                     # Placeholder (empty)
-  lol_players.json                     # Placeholder (empty)
-  competitions.json                    # 9 competition definitions
-  mollybet_competitions.json           # Mollybet competition ID mapping
-  venue_timezones.json                 # Venue-to-IANA timezone lookup
+  fifa_wc_schedule.json                # 104 matches with bracket labels
+
+  lol_teams.json                       # 40 teams across 5 leagues
+  lol_players.json                     # Empty (not yet populated)
+
+  bref_advanced_2026_raw.json          # 721 players (pre-merge)
+  bref_adj_shooting_2026_raw.json      # 728 players (pre-merge)
+  bref_pbp_2026_raw.json              # 727 players (pre-merge)
 ```
 
 ### Scripts
@@ -690,6 +770,29 @@ scripts/
   seed_competitions.py                 # Load competitions into DB
   discover_mollybet_competitions.py    # WebSocket scan for competition IDs
   manual_reconcile.py                  # CLI for manual dedup + alias management
+
+  fetch_nba_players.py                 # Fetch NBA player list from ESPN
+  fetch_nba_player_stats.py            # Fetch per-game + advanced stats
+  fetch_nba_schedule.py                # Fetch NBA schedule
+  fetch_nba_team_metadata.py           # Enrich team metadata
+  fetch_nba_team_stats.py              # Fetch team-level stats
+
+  merge_bref_advanced.py               # Merge BRef advanced stats into player_stats
+  merge_bref_pbp.py                    # Merge BRef play-by-play into player_stats
+  merge_bref_adj_shooting.py           # Merge BRef adjusted shooting into player_stats
+
+  enrich_from_reep.py                  # Cross-provider player aliases from Reep (23 providers)
+```
+
+### Schema Validation
+
+```
+data/schemas/
+  providers.schema.json
+  nba_players.schema.json
+  nba_teams.schema.json
+  competitions.schema.json
+  provider_id_mappings.schema.json
 ```
 
 ---
@@ -705,3 +808,13 @@ scripts/
 | `2c620ee` | Fix: switch Mollybet adapter from REST to WebSocket event stream |
 | `cfd8fac` | Comprehensive FIFA World Cup 2026 dataset (48 teams, 1,300 players, 104 matches) |
 | `4d5f05a` | Fix: correct FIFA WC 2026 knockout bracket structure and add bracket labels |
+| `3e7be9c` | Add country flags to all 58 FIFA WC teams |
+| `4fde9e9` | Add Reep enrichment script for cross-provider player aliases |
+| `999ab39` | Add LoL match data and project summary |
+| `7bb80ba` | Comprehensive NBA data expansion -- rosters, schedule, and statistics |
+| `c91a153` | Merge Basketball Reference advanced stats into player statistics |
+| `2e27c0d` | Add centralized provider registry and cross-provider ID mappings |
+| `b4599c0` | Five architectural improvements for consistency and quality |
+| `4845702` | Add TeamRankings provider and BRef play-by-play/adjusted shooting support |
+| `5a8f88b` | Merge BRef play-by-play and adjusted shooting into player stats |
+| `d89b753` | Overhaul operational dashboard with provider registry, data inventory, and activity tracking |

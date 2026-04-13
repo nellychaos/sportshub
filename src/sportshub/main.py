@@ -157,6 +157,11 @@ def create_app() -> FastAPI:
     app.include_router(dashboard_views_router)
     app.include_router(dashboard_api_router, prefix="/api/v1")
 
+    # Mount demo showcase page — no auth required
+    from sportshub.demo.views import router as demo_views_router
+
+    app.include_router(demo_views_router)
+
     return app
 
 

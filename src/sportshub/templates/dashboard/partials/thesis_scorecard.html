@@ -1,0 +1,107 @@
+<!-- MVP Thesis Scorecard
+     Answers: Can multi-source aggregation + AI resolution produce
+     accurate sports data at a fraction of traditional provider cost? -->
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+  <!-- Card 1: Multi-Source Accuracy -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="w-2 h-2 rounded-full {% if reconciliation.summary.teams_accuracy_rate >= 0.95 %}bg-emerald-500{% elif reconciliation.summary.teams_accuracy_rate >= 0.8 %}bg-yellow-500{% else %}bg-red-500{% endif %}"></div>
+      <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider">Multi-Source Accuracy</h3>
+    </div>
+    <div class="text-3xl font-bold text-white mb-1">
+      {{ (reconciliation.summary.teams_accuracy_rate * 100) | round(1) }}%
+    </div>
+    <p class="text-xs text-gray-500">
+      Team accuracy across {{ reconciliation.summary.total_reconciled }} reconciled events
+    </p>
+    <div class="mt-3 pt-3 border-t border-gray-800 space-y-1">
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Time drift</span>
+        <span class="font-mono text-gray-300">{{ reconciliation.summary.avg_time_diff_seconds }}s avg</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Venue match</span>
+        <span class="font-mono text-gray-300">{{ (reconciliation.summary.venue_accuracy_rate * 100) | round(1) }}%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: AI Resolution Cost -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="w-2 h-2 rounded-full {% if llm.estimated_cost_usd < 20 %}bg-emerald-500{% elif llm.estimated_cost_usd < 100 %}bg-yellow-500{% else %}bg-red-500{% endif %}"></div>
+      <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider">AI Resolution Cost</h3>
+    </div>
+    <div class="text-3xl font-bold text-white mb-1">
+      ${{ '%.2f' % llm.estimated_cost_usd }}
+    </div>
+    <p class="text-xs text-gray-500">
+      {{ llm.total_calls }} LLM calls &middot; {{ (llm.acceptance_rate * 100) | round(1) }}% acceptance
+    </p>
+    <div class="mt-3 pt-3 border-t border-gray-800 space-y-1">
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Aliases learned</span>
+        <span class="font-mono text-gray-300">{{ llm.aliases_created }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500">Self-healing rate</span>
+        <span class="font-mono text-gray-300">{{ (llm.self_healing_rate * 100) | round(1) }}%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Data Coverage -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="w-2 h-2 rounded-full bg-brand-500"></div>
+      <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider">Coverage Breadth</h3>
+    </div>
+    <div class="text-3xl font-bold text-white mb-1">
+      {{ scorecard.sport_count }} Sports
+    </div>
+    <p class="text-xs text-gray-500">
+      {{ scorecard.provider_count }} providers &middot; {{ '{:,}'.format(scorecard.total_reference_records) }} records
+    </p>
+    <div class="mt-3 pt-3 border-t border-gray-800 space-y-1.5">
+      {% for key, depth in scorecard.depth_scores.items() %}
+      <div>
+        <div class="flex justify-between text-xs mb-0.5">
+          <span class="text-gray-500">{{ depth.label }}</span>
+          <span class="font-mono text-gray-300">{{ depth.players }} players</span>
+        </div>
+        <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+          {% set fill = (depth.score / depth.max * 100) if depth.max > 0 else 0 %}
+          <div class="h-full rounded-full {% if fill >= 80 %}bg-emerald-500{% elif fill >= 40 %}bg-yellow-500{% else %}bg-red-500{% endif %}" style="width: {{ fill }}%"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Card 4: System Health -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div class="flex items-center gap-2 mb-3">
+      {% set status_color = 'emerald' if overview.status == 'healthy' else ('yellow' if overview.status == 'degraded' else 'red') %}
+      <div class="w-2 h-2 rounded-full bg-{{ status_color }}-500 pulse-dot"></div>
+      <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider">System Health</h3>
+    </div>
+    <div class="text-3xl font-bold text-{{ status_color }}-400 capitalize mb-1">
+      {{ overview.status }}
+    </div>
+    <p class="text-xs text-gray-500">
+      {{ overview.total_events }} events tracked &middot;
+      {{ '%d:%02d' % (overview.uptime_seconds // 3600, (overview.uptime_seconds % 3600) // 60) }} uptime
+    </p>
+    <div class="mt-3 pt-3 border-t border-gray-800 space-y-1">
+      {% for sport, count in overview.events_by_sport.items() %}
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-500 uppercase">{{ sport }}</span>
+        <span class="font-mono text-gray-300">{{ count }} events</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>

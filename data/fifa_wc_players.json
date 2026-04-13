@@ -3404,7 +3404,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; Golden Glove recipient at Qatar 2022",
-      "reep_qid": "Q3275904"
+      "reep_qid": "Q3275904",
+      "club_appearances_2025_26": 36,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -3490,6 +3495,10 @@
       {
         "alias": "Emiliano Martínez",
         "source_id": "reep"
+      },
+      {
+        "alias": "158626",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -3513,7 +3522,12 @@
         "2026"
       ],
       "notable": "Experienced backup goalkeeper; shootout hero in 2021 Copa América final",
-      "reep_qid": "Q5879014"
+      "reep_qid": "Q5879014",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -3579,6 +3593,10 @@
       {
         "alias": "Gerónimo Rulli",
         "source_id": "reep"
+      },
+      {
+        "alias": "167192",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -3697,7 +3715,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; aggressive ball-winning centre-back",
-      "reep_qid": "Q28058687"
+      "reep_qid": "Q28058687",
+      "club_appearances_2025_26": 31,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 10,
+      "red_cards": 2
     },
     "aliases": [
       {
@@ -3775,6 +3798,10 @@
       {
         "alias": "Cristian Romero",
         "source_id": "reep"
+      },
+      {
+        "alias": "96970",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -3895,7 +3922,13 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; veteran leader of the backline",
-      "reep_qid": "Q182063"
+      "reep_qid": "Q182063",
+      "club_appearances_2025_26": 37,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 11,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -3965,6 +3998,10 @@
       {
         "alias": "Nicolás Otamendi",
         "source_id": "reep"
+      },
+      {
+        "alias": "119289",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -3989,7 +4026,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; dynamic attacking right-back",
-      "reep_qid": "Q22082590"
+      "reep_qid": "Q22082590",
+      "club_appearances_2025_26": 21,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4047,6 +4089,10 @@
       {
         "alias": "Nahuel Molina",
         "source_id": "reep"
+      },
+      {
+        "alias": "164826",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4071,7 +4117,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; energetic left-back with attacking instincts",
-      "reep_qid": "Q17462635"
+      "reep_qid": "Q17462635",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4133,6 +4184,10 @@
       {
         "alias": "Marcos Acuña",
         "source_id": "reep"
+      },
+      {
+        "alias": "157557",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4252,7 +4307,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; reliable left-back option",
-      "reep_qid": "Q3876530"
+      "reep_qid": "Q3876530",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 7,
+      "red_cards": 3
     },
     "aliases": [
       {
@@ -4314,6 +4374,10 @@
       {
         "alias": "Nicolás Tagliafico",
         "source_id": "reep"
+      },
+      {
+        "alias": "145190",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4423,7 +4487,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; engine of Argentina's midfield",
-      "reep_qid": "Q6110670"
+      "reep_qid": "Q6110670",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4493,6 +4562,10 @@
       {
         "alias": "Rodrigo De Paul",
         "source_id": "reep"
+      },
+      {
+        "alias": "174466",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4517,7 +4590,13 @@
         "2026"
       ],
       "notable": "2022 World Cup winner and Young Player of the Tournament",
-      "reep_qid": "Q96105248"
+      "reep_qid": "Q96105248",
+      "club_appearances_2025_26": 41,
+      "club_goals_2025_26": 12,
+      "club_assists_2025_26": 6,
+      "yellow_cards": 11,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -4599,6 +4678,10 @@
       {
         "alias": "Enzo Fernández",
         "source_id": "reep"
+      },
+      {
+        "alias": "285450",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4623,7 +4706,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; technically gifted box-to-box midfielder",
-      "reep_qid": "Q33297140"
+      "reep_qid": "Q33297140",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 7,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4693,6 +4781,10 @@
       {
         "alias": "Alexis Mac Allister",
         "source_id": "reep"
+      },
+      {
+        "alias": "249299",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4718,7 +4810,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; deep-lying playmaker",
-      "reep_qid": "Q630170"
+      "reep_qid": "Q630170",
+      "club_appearances_2025_26": 10,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4784,6 +4881,10 @@
       {
         "alias": "Leandro Paredes",
         "source_id": "reep"
+      },
+      {
+        "alias": "153115",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4807,7 +4908,12 @@
         "2026"
       ],
       "notable": "Dynamic midfielder; integral to Leverkusen's title-winning era",
-      "reep_qid": "Q19345715"
+      "reep_qid": "Q19345715",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -4869,6 +4975,10 @@
       {
         "alias": "Exequiel Palacios",
         "source_id": "reep"
+      },
+      {
+        "alias": "228393",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -4982,7 +5092,12 @@
         "2026"
       ],
       "notable": "Emerging attacking midfielder; Copa Libertadores winner with Botafogo",
-      "reep_qid": "Q57293140"
+      "reep_qid": "Q57293140",
+      "club_appearances_2025_26": 14,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -5044,6 +5159,10 @@
       {
         "alias": "Thiago Almada",
         "source_id": "reep"
+      },
+      {
+        "alias": "277208",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -5072,7 +5191,13 @@
         "2026"
       ],
       "notable": "All-time great; 2022 World Cup winner and Golden Ball",
-      "reep_qid": "Q615"
+      "reep_qid": "Q615",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -5162,6 +5287,10 @@
       {
         "alias": "Lionel Messi",
         "source_id": "reep"
+      },
+      {
+        "alias": "45843",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -5186,7 +5315,13 @@
         "2026"
       ],
       "notable": "2022 World Cup winner and Golden Boot contender; lethal poacher",
-      "reep_qid": "Q59381180"
+      "reep_qid": "Q59381180",
+      "club_appearances_2025_26": 37,
+      "club_goals_2025_26": 18,
+      "club_assists_2025_26": 9,
+      "yellow_cards": 2,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -5264,6 +5399,10 @@
       {
         "alias": "Julián Alvarez",
         "source_id": "reep"
+      },
+      {
+        "alias": "277206",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -5382,7 +5521,12 @@
         "2026"
       ],
       "notable": "2022 World Cup winner; versatile and powerful winger",
-      "reep_qid": "Q43381082"
+      "reep_qid": "Q43381082",
+      "club_appearances_2025_26": 21,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 4,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -5452,6 +5596,10 @@
       {
         "alias": "Nicolás González",
         "source_id": "reep"
+      },
+      {
+        "alias": "76017",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -5908,7 +6056,12 @@
         "2026"
       ],
       "notable": "World-class keeper renowned for distribution and sweeping ability",
-      "reep_qid": "Q59150057"
+      "reep_qid": "Q59150057",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -5982,6 +6135,10 @@
       {
         "alias": "Éderson José dos Santos Lourenço da Silva",
         "source_id": "reep"
+      },
+      {
+        "alias": "176948",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -6006,7 +6163,12 @@
         "2026"
       ],
       "notable": "Young reliable third choice; excellent reflexes and command of area",
-      "reep_qid": "Q98265925"
+      "reep_qid": "Q98265925",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -6064,6 +6226,10 @@
       {
         "alias": "Bento",
         "source_id": "reep"
+      },
+      {
+        "alias": "301748",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -6089,7 +6255,12 @@
         "2026"
       ],
       "notable": "Brazil captain; composed and intelligent centre-back and leader",
-      "reep_qid": "Q39230"
+      "reep_qid": "Q39230",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -6159,6 +6330,10 @@
       {
         "alias": "Marquinhos",
         "source_id": "reep"
+      },
+      {
+        "alias": "159047",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -6280,7 +6455,13 @@
         "2026"
       ],
       "notable": "Physical and tenacious centre-back; one of Serie A's best defenders",
-      "reep_qid": "Q38693097"
+      "reep_qid": "Q38693097",
+      "club_appearances_2025_26": 24,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -6342,6 +6523,10 @@
       {
         "alias": "Bremer",
         "source_id": "reep"
+      },
+      {
+        "alias": "258307",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -6464,7 +6649,13 @@
         "2026"
       ],
       "notable": "Versatile veteran defender; former Brazil vice-captain",
-      "reep_qid": "Q437329"
+      "reep_qid": "Q437329",
+      "club_appearances_2025_26": 12,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 0,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -6538,6 +6729,14 @@
       {
         "alias": "Danilo",
         "source_id": "reep"
+      },
+      {
+        "alias": "170369",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "306764",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -6804,7 +7003,12 @@
         "2026"
       ],
       "notable": "Five-time Champions League winner; dominant defensive midfielder",
-      "reep_qid": "Q616664"
+      "reep_qid": "Q616664",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 7,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 8,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -6882,6 +7086,10 @@
       {
         "alias": "Casemiro",
         "source_id": "reep"
+      },
+      {
+        "alias": "173666",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -7365,7 +7573,12 @@
         "2026"
       ],
       "notable": "Ballon d'Or contender; world-class winger with explosive pace and dribbling",
-      "reep_qid": "Q28973866"
+      "reep_qid": "Q28973866",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 16,
+      "club_assists_2025_26": 9,
+      "yellow_cards": 9,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -7443,6 +7656,10 @@
       {
         "alias": "Vinícius Júnior",
         "source_id": "reep"
+      },
+      {
+        "alias": "252107",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -7654,7 +7871,12 @@
         "2026"
       ],
       "notable": "Teenage superstar; one of the most exciting young strikers in the world",
-      "reep_qid": "Q110644260"
+      "reep_qid": "Q110644260",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 2,
+      "red_cards": 2
     },
     "aliases": [
       {
@@ -7720,6 +7942,10 @@
       {
         "alias": "Endrick Quispe Mamani",
         "source_id": "reep"
+      },
+      {
+        "alias": "346612",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -7744,7 +7970,13 @@
         "2026"
       ],
       "notable": "Relentless pressing winger; electric pace and work rate",
-      "reep_qid": "Q61460651"
+      "reep_qid": "Q61460651",
+      "club_appearances_2025_26": 21,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 6,
+      "yellow_cards": 4,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -7818,6 +8050,10 @@
       {
         "alias": "Gabriel Martinelli",
         "source_id": "reep"
+      },
+      {
+        "alias": "269844",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8117,7 +8353,12 @@
         "2026"
       ],
       "notable": "Pacy and direct winger; Copa Libertadores winner with Botafogo",
-      "reep_qid": "Q101764291"
+      "reep_qid": "Q101764291",
+      "club_appearances_2025_26": 17,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8167,6 +8408,10 @@
       {
         "alias": "Luiz Henrique",
         "source_id": "reep"
+      },
+      {
+        "alias": "304215",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8190,7 +8435,12 @@
         "2026"
       ],
       "notable": "Elite shot-stopper; took Lloris's mantle as France's first-choice keeper",
-      "reep_qid": "Q17274709"
+      "reep_qid": "Q17274709",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8256,6 +8506,10 @@
       {
         "alias": "Mike Maignan",
         "source_id": "reep"
+      },
+      {
+        "alias": "189026",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8373,7 +8627,12 @@
         "2026"
       ],
       "notable": "Ligue 1's standout keeper; saved five penalties in one League Cup shootout",
-      "reep_qid": "Q15627817"
+      "reep_qid": "Q15627817",
+      "club_appearances_2025_26": 29,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8435,6 +8694,10 @@
       {
         "alias": "Brice Samba",
         "source_id": "reep"
+      },
+      {
+        "alias": "164126",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8459,7 +8722,12 @@
         "2026"
       ],
       "notable": "Powerful and aggressive centre-back; key man for club and country",
-      "reep_qid": "Q20723878"
+      "reep_qid": "Q20723878",
+      "club_appearances_2025_26": 33,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 9,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8525,6 +8793,10 @@
       {
         "alias": "Dayot Upamecano",
         "source_id": "reep"
+      },
+      {
+        "alias": "222793",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8642,7 +8914,12 @@
         "2026"
       ],
       "notable": "Imposing centre-back with pace and power; excellent in big games",
-      "reep_qid": "Q30301454"
+      "reep_qid": "Q30301454",
+      "club_appearances_2025_26": 41,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 8,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8716,6 +8993,10 @@
       {
         "alias": "Ibrahima Konaté",
         "source_id": "reep"
+      },
+      {
+        "alias": "251634",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -8740,7 +9021,12 @@
         "2026"
       ],
       "notable": "Marauding left-back; renowned for powerful runs and explosive attacks",
-      "reep_qid": "Q23703372"
+      "reep_qid": "Q23703372",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -8810,6 +9096,10 @@
       {
         "alias": "Théo Hernandez",
         "source_id": "reep"
+      },
+      {
+        "alias": "233621",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9201,7 +9491,12 @@
         "2026"
       ],
       "notable": "Commanding defensive midfielder; composed on the ball and excellent reader of the game",
-      "reep_qid": "Q46951844"
+      "reep_qid": "Q46951844",
+      "club_appearances_2025_26": 39,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 10,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -9275,6 +9570,10 @@
       {
         "alias": "Aurélien Tchouaméni",
         "source_id": "reep"
+      },
+      {
+        "alias": "265919",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9299,7 +9598,12 @@
         "2026"
       ],
       "notable": "Champions League winner; highly dynamic and energetic box-to-box midfielder",
-      "reep_qid": "Q62960177"
+      "reep_qid": "Q62960177",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -9365,6 +9669,10 @@
       {
         "alias": "Eduardo Camavinga",
         "source_id": "reep"
+      },
+      {
+        "alias": "285150",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9390,7 +9698,12 @@
         "2026"
       ],
       "notable": "2018 World Cup winner; tall and technically gifted midfield powerhouse",
-      "reep_qid": "Q18962"
+      "reep_qid": "Q18962",
+      "club_appearances_2025_26": 25,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 6,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -9456,6 +9769,10 @@
       {
         "alias": "Adrien Rabiot",
         "source_id": "reep"
+      },
+      {
+        "alias": "176203",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9481,7 +9798,12 @@
         "2026"
       ],
       "notable": "2018 World Cup winner; legendary defensive midfielder; two-time Premier League champion",
-      "reep_qid": "Q16665941"
+      "reep_qid": "Q16665941",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -9555,6 +9877,10 @@
       {
         "alias": "N'Golo Kanté",
         "source_id": "reep"
+      },
+      {
+        "alias": "173556",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9578,7 +9904,12 @@
         "2026"
       ],
       "notable": "Sensational teenage midfielder; youngest player ever to represent France at a major tournament",
-      "reep_qid": "Q111280241"
+      "reep_qid": "Q111280241",
+      "club_appearances_2025_26": 42,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -9652,6 +9983,10 @@
       {
         "alias": "Warren Zaïre-Emery",
         "source_id": "reep"
+      },
+      {
+        "alias": "345581",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -9851,7 +10186,13 @@
         "2026"
       ],
       "notable": "2018 World Cup winner; fastest player in the world; France's all-time top scorer",
-      "reep_qid": "Q21621995"
+      "reep_qid": "Q21621995",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 39,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 5,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -9925,6 +10266,10 @@
       {
         "alias": "Kylian Mbappé",
         "source_id": "reep"
+      },
+      {
+        "alias": "231388",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10042,7 +10387,12 @@
         "2026"
       ],
       "notable": "2018 World Cup winner; electric pace and dribbling from the right wing",
-      "reep_qid": "Q20851003"
+      "reep_qid": "Q20851003",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 14,
+      "club_assists_2025_26": 8,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -10112,6 +10462,10 @@
       {
         "alias": "Ousmane Dembélé",
         "source_id": "reep"
+      },
+      {
+        "alias": "229744",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10136,7 +10490,13 @@
         "2026"
       ],
       "notable": "Powerful striker; Serie A top scorer; son of Lilian Thuram",
-      "reep_qid": "Q19903718"
+      "reep_qid": "Q19903718",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 13,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -10198,6 +10558,10 @@
       {
         "alias": "Marcus Thuram",
         "source_id": "reep"
+      },
+      {
+        "alias": "217331",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10222,7 +10586,12 @@
         "2026"
       ],
       "notable": "Came on as substitute in 2022 World Cup final; athletic and direct striker",
-      "reep_qid": "Q59655998"
+      "reep_qid": "Q59655998",
+      "club_appearances_2025_26": 20,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -10284,6 +10653,10 @@
       {
         "alias": "Randal Kolo Muani",
         "source_id": "reep"
+      },
+      {
+        "alias": "252971",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10589,7 +10962,12 @@
         "2026"
       ],
       "notable": "England's first-choice goalkeeper; hero of Euro 2020 penalty shootout win",
-      "reep_qid": "Q13014035"
+      "reep_qid": "Q13014035",
+      "club_appearances_2025_26": 32,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -10663,6 +11041,10 @@
       {
         "alias": "Jordan Lee Logan",
         "source_id": "reep"
+      },
+      {
+        "alias": "159443",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10687,7 +11069,12 @@
         "2026"
       ],
       "notable": "Experienced Premier League goalkeeper; backup for England",
-      "reep_qid": "Q27967807"
+      "reep_qid": "Q27967807",
+      "club_appearances_2025_26": 20,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -10761,6 +11148,10 @@
       {
         "alias": "Aaron Christopher Ramsdale",
         "source_id": "reep"
+      },
+      {
+        "alias": "236015",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10784,7 +11175,12 @@
         "2026"
       ],
       "notable": "Third-choice goalkeeper; strong shot-stopper in the Premier League",
-      "reep_qid": "Q28059260"
+      "reep_qid": "Q28059260",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -10858,6 +11254,14 @@
       {
         "alias": "Dean Bradley Henderson",
         "source_id": "reep"
+      },
+      {
+        "alias": "234172",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "127262",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -10986,7 +11390,12 @@
         "2026"
       ],
       "notable": "Ball-playing centre-back; integral to Pep Guardiola's Man City system",
-      "reep_qid": "Q2025900"
+      "reep_qid": "Q2025900",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -11056,6 +11465,10 @@
       {
         "alias": "John Stones",
         "source_id": "reep"
+      },
+      {
+        "alias": "157974",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11081,7 +11494,12 @@
         "2026"
       ],
       "notable": "Towering aerial presence; England's defensive lynchpin at multiple tournaments",
-      "reep_qid": "Q165772"
+      "reep_qid": "Q165772",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 4,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -11159,6 +11577,10 @@
       {
         "alias": "Jacob Harry Maguire",
         "source_id": "reep"
+      },
+      {
+        "alias": "157073",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11182,7 +11604,12 @@
         "2026"
       ],
       "notable": "Composed centre-back; key performer at Euro 2024",
-      "reep_qid": "Q44737396"
+      "reep_qid": "Q44737396",
+      "club_appearances_2025_26": 19,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -11256,6 +11683,10 @@
       {
         "alias": "Addji Keaninkin Marc-Israel Guéhi",
         "source_id": "reep"
+      },
+      {
+        "alias": "265907",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11573,7 +12004,12 @@
         "2026"
       ],
       "notable": "Consistent Premier League defender; versatile across the back line",
-      "reep_qid": "Q27063854"
+      "reep_qid": "Q27063854",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -11643,6 +12079,10 @@
       {
         "alias": "Ezri Ngoyo Konsa",
         "source_id": "reep"
+      },
+      {
+        "alias": "231859",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11666,7 +12106,12 @@
         "2026"
       ],
       "notable": "Promising young left-back; established himself as a Premier League regular at Newcastle",
-      "reep_qid": "Q110487162"
+      "reep_qid": "Q110487162",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -11740,6 +12185,10 @@
       {
         "alias": "Lewis Kieran Hall",
         "source_id": "reep"
+      },
+      {
+        "alias": "106139",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11764,7 +12213,12 @@
         "2026"
       ],
       "notable": "Defensive midfielder and team leader; record Arsenal signing; FWA Footballer of the Year 2024",
-      "reep_qid": "Q30007142"
+      "reep_qid": "Q30007142",
+      "club_appearances_2025_26": 39,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 9,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -11834,6 +12288,10 @@
       {
         "alias": "Declan Rice",
         "source_id": "reep"
+      },
+      {
+        "alias": "238262",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11858,7 +12316,12 @@
         "2026"
       ],
       "notable": "England's talismanic midfielder; La Liga champion with Real Madrid; Euro 2024 top performer",
-      "reep_qid": "Q66241169"
+      "reep_qid": "Q66241169",
+      "club_appearances_2025_26": 20,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -11928,6 +12391,10 @@
       {
         "alias": "Jude Victor William Bellingham",
         "source_id": "reep"
+      },
+      {
+        "alias": "291281",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -11952,7 +12419,12 @@
         "2026"
       ],
       "notable": "PFA and FWA Player of the Year 2024; treble winner with Manchester City",
-      "reep_qid": "Q30729096"
+      "reep_qid": "Q30729096",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 10,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12034,6 +12506,10 @@
       {
         "alias": "Philip Walter Foden",
         "source_id": "reep"
+      },
+      {
+        "alias": "250787",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12057,7 +12533,12 @@
         "2026"
       ],
       "notable": "Breakthrough midfielder; youngest England player to score in a major tournament final (Euro 2024)",
-      "reep_qid": "Q114703020"
+      "reep_qid": "Q114703020",
+      "club_appearances_2025_26": 12,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12127,6 +12608,10 @@
       {
         "alias": "Kobbie Boateng Mainoo",
         "source_id": "reep"
+      },
+      {
+        "alias": "328466",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12247,7 +12732,12 @@
         "2026"
       ],
       "notable": "Tall, composed defensive midfielder; surprise call-up for Euro 2024 proved his quality",
-      "reep_qid": "Q113488911"
+      "reep_qid": "Q113488911",
+      "club_appearances_2025_26": 35,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 6,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -12309,6 +12799,10 @@
       {
         "alias": "Adam Wharton",
         "source_id": "reep"
+      },
+      {
+        "alias": "333419",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12427,7 +12921,12 @@
         "2026"
       ],
       "notable": "England's all-time top scorer; 2018 WC Golden Boot winner",
-      "reep_qid": "Q969725"
+      "reep_qid": "Q969725",
+      "club_appearances_2025_26": 37,
+      "club_goals_2025_26": 49,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12505,6 +13004,10 @@
       {
         "alias": "Harry Kane",
         "source_id": "reep"
+      },
+      {
+        "alias": "142200",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12529,7 +13032,12 @@
         "2026"
       ],
       "notable": "Arsenal's key right winger; PFA Young Player of the Year multiple times; consistent performer for England",
-      "reep_qid": "Q59306386"
+      "reep_qid": "Q59306386",
+      "club_appearances_2025_26": 33,
+      "club_goals_2025_26": 9,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12607,6 +13115,10 @@
       {
         "alias": "Bukayo Ayoyinka Temidayo Moses Saka",
         "source_id": "reep"
+      },
+      {
+        "alias": "280555",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12630,7 +13142,12 @@
         "2026"
       ],
       "notable": "Breakout star of 2023/24 Premier League season; prolific from Chelsea's number 10 role",
-      "reep_qid": "Q99760796"
+      "reep_qid": "Q99760796",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 10,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12704,6 +13221,10 @@
       {
         "alias": "Cole Jermaine Palmer",
         "source_id": "reep"
+      },
+      {
+        "alias": "296395",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12727,7 +13248,12 @@
         "2026"
       ],
       "notable": "Pacey left winger; key to Newcastle's attacking play; strong dribbler and finisher",
-      "reep_qid": "Q45179405"
+      "reep_qid": "Q45179405",
+      "club_appearances_2025_26": 35,
+      "club_goals_2025_26": 17,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 4,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -12801,6 +13327,10 @@
       {
         "alias": "Anthony Michael Gordon",
         "source_id": "reep"
+      },
+      {
+        "alias": "268782",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -12825,7 +13355,12 @@
         "2026"
       ],
       "notable": "Experienced international attacker; influential off the pitch for social causes",
-      "reep_qid": "Q22951255"
+      "reep_qid": "Q22951255",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 10,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -12895,6 +13430,10 @@
       {
         "alias": "Marcus Rashford",
         "source_id": "reep"
+      },
+      {
+        "alias": "230945",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -15567,7 +16106,12 @@
         "2026"
       ],
       "notable": "Reliable Bundesliga goalkeeper; consistent performer who earned his late Germany call-ups",
-      "reep_qid": "Q129116"
+      "reep_qid": "Q129116",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -15613,6 +16157,10 @@
       {
         "alias": "Oliver Baumann",
         "source_id": "reep"
+      },
+      {
+        "alias": "138213",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -15637,7 +16185,12 @@
         "2026"
       ],
       "notable": "Physical and aggressive centre-back; Champions League winner with Real Madrid; Germany's defensive leader",
-      "reep_qid": "Q96755"
+      "reep_qid": "Q96755",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -15707,6 +16260,10 @@
       {
         "alias": "Antonio Rüdiger",
         "source_id": "reep"
+      },
+      {
+        "alias": "169438",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -15730,7 +16287,13 @@
         "2026"
       ],
       "notable": "Commanding centre-back; Bundesliga champion with Bayer Leverkusen in the unbeaten 2023/24 season",
-      "reep_qid": "Q14640027"
+      "reep_qid": "Q14640027",
+      "club_appearances_2025_26": 36,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 8,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -15788,6 +16351,10 @@
       {
         "alias": "Jonathan Tah",
         "source_id": "reep"
+      },
+      {
+        "alias": "188052",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -15811,7 +16378,12 @@
         "2026"
       ],
       "notable": "Left-footed centre-back; Champions League finalist with Dortmund 2024; strong in the air",
-      "reep_qid": "Q62015814"
+      "reep_qid": "Q62015814",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 6,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -15873,6 +16445,10 @@
       {
         "alias": "Nico Schlotterbeck",
         "source_id": "reep"
+      },
+      {
+        "alias": "286828",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -15897,7 +16473,12 @@
         "2026"
       ],
       "notable": "Attack-minded left-back with excellent crossing ability; key part of Germany's defensive setup",
-      "reep_qid": "Q28540571"
+      "reep_qid": "Q28540571",
+      "club_appearances_2025_26": 31,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 8,
+      "yellow_cards": 7,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -15951,6 +16532,10 @@
       {
         "alias": "David Raum",
         "source_id": "reep"
+      },
+      {
+        "alias": "249548",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16234,7 +16819,12 @@
         "2026"
       ],
       "notable": "Solid, well-rounded centre-back; part of Stuttgart's title challenge before moving to Dortmund",
-      "reep_qid": "Q23559699"
+      "reep_qid": "Q23559699",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -16292,6 +16882,10 @@
       {
         "alias": "Waldemar Anton",
         "source_id": "reep"
+      },
+      {
+        "alias": "220714",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16317,7 +16911,12 @@
         "2026"
       ],
       "notable": "Germany's captain and heartbeat; can play right-back or defensive midfield; exceptional passer",
-      "reep_qid": "Q13865408"
+      "reep_qid": "Q13865408",
+      "club_appearances_2025_26": 35,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 8,
+      "yellow_cards": 7,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -16375,6 +16974,10 @@
       {
         "alias": "Joshua Kimmich",
         "source_id": "reep"
+      },
+      {
+        "alias": "190161",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16484,7 +17087,13 @@
         "2026"
       ],
       "notable": "Creative attacking midfielder; Bundesliga champion 2024; one of the most talented players in Europe",
-      "reep_qid": "Q94699949"
+      "reep_qid": "Q94699949",
+      "club_appearances_2025_26": 36,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 2,
+      "red_cards": 0,
+      "international_goals_recent": 2
     },
     "aliases": [
       {
@@ -16542,6 +17151,10 @@
       {
         "alias": "Florian Wirtz",
         "source_id": "reep"
+      },
+      {
+        "alias": "303748",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16742,7 +17355,12 @@
         "2026"
       ],
       "notable": "Experienced and technically composed midfielder; impressed at Euro 2024 as a late-career international",
-      "reep_qid": "Q509489"
+      "reep_qid": "Q509489",
+      "club_appearances_2025_26": 21,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -16820,6 +17438,10 @@
       {
         "alias": "Pascal Groß",
         "source_id": "reep"
+      },
+      {
+        "alias": "132659",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16843,7 +17465,12 @@
         "2026"
       ],
       "notable": "Dynamic winger; key part of Stuttgart's impressive Bundesliga season; direct and hard-working",
-      "reep_qid": "Q45369082"
+      "reep_qid": "Q45369082",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 6,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -16897,6 +17524,10 @@
       {
         "alias": "Chris Führich",
         "source_id": "reep"
+      },
+      {
+        "alias": "268951",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -16921,7 +17552,13 @@
         "2026"
       ],
       "notable": "Scored in the 2021 Champions League final for Chelsea; versatile forward who plays false nine and wide",
-      "reep_qid": "Q27310755"
+      "reep_qid": "Q27310755",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -16991,6 +17628,10 @@
       {
         "alias": "Kai Havertz",
         "source_id": "reep"
+      },
+      {
+        "alias": "231182",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -17015,7 +17656,12 @@
         "2026"
       ],
       "notable": "Pacy and skilful winger; PFA Young Player of the Year 2018 at Manchester City; multiple Bundesliga winner",
-      "reep_qid": "Q16499882"
+      "reep_qid": "Q16499882",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 1,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -17081,6 +17727,10 @@
       {
         "alias": "Leroy Penne",
         "source_id": "reep"
+      },
+      {
+        "alias": "202641",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -17105,7 +17755,13 @@
         "2026"
       ],
       "notable": "Clinical and rapid winger; famous four-goal display vs Tottenham in the 2019 Champions League",
-      "reep_qid": "Q59490"
+      "reep_qid": "Q59490",
+      "club_appearances_2025_26": 25,
+      "club_goals_2025_26": 10,
+      "club_assists_2025_26": 12,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -17175,6 +17831,10 @@
       {
         "alias": "Serge Gnabry",
         "source_id": "reep"
+      },
+      {
+        "alias": "178980",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -17288,7 +17948,13 @@
         "2026"
       ],
       "notable": "Clinical striker; top scorer in Stuttgart's Bundesliga campaign; intelligent movement in the box",
-      "reep_qid": "Q55955918"
+      "reep_qid": "Q55955918",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 23,
+      "club_assists_2025_26": 13,
+      "yellow_cards": 7,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -17346,6 +18012,10 @@
       {
         "alias": "Deniz Undav",
         "source_id": "reep"
+      },
+      {
+        "alias": "273300",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -17434,7 +18104,12 @@
         "2026"
       ],
       "notable": "Pacey young striker; prolific scorer at Hoffenheim before moving to Dortmund; exciting Germany prospect",
-      "reep_qid": "Q80314837"
+      "reep_qid": "Q80314837",
+      "club_appearances_2025_26": 1,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -17484,6 +18159,10 @@
       {
         "alias": "Maximilian Beier",
         "source_id": "reep"
+      },
+      {
+        "alias": "231674",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -24461,7 +25140,12 @@
         "2026"
       ],
       "notable": "Solid Premier League performer; key part of Nottingham Forest's top-flight consolidation",
-      "reep_qid": "Q6792066"
+      "reep_qid": "Q6792066",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -24531,6 +25215,10 @@
       {
         "alias": "Matz Sels",
         "source_id": "reep"
+      },
+      {
+        "alias": "179497",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -24650,7 +25338,12 @@
         "2026"
       ],
       "notable": "Left-footed ball-playing centre-back; one of Belgium's brightest defensive talents",
-      "reep_qid": "Q97724521"
+      "reep_qid": "Q97724521",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 8,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -24712,6 +25405,10 @@
       {
         "alias": "Arthur Theate",
         "source_id": "reep"
+      },
+      {
+        "alias": "304222",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -24829,7 +25526,13 @@
         "2026"
       ],
       "notable": "Highly rated young centre-back; made senior squad at 2022 World Cup aged 19",
-      "reep_qid": "Q106686485"
+      "reep_qid": "Q106686485",
+      "club_appearances_2025_26": 9,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -24891,6 +25594,10 @@
       {
         "alias": "Zeno Debast",
         "source_id": "reep"
+      },
+      {
+        "alias": "314473",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -24916,7 +25623,12 @@
         "2026"
       ],
       "notable": "Versatile right-back/wing-back; reliable performer in Premier League and international football",
-      "reep_qid": "Q18041089"
+      "reep_qid": "Q18041089",
+      "club_appearances_2025_26": 19,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -24982,6 +25694,10 @@
       {
         "alias": "Timothy Castagne",
         "source_id": "reep"
+      },
+      {
+        "alias": "197163",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25007,7 +25723,12 @@
         "2026"
       ],
       "notable": "Experienced attacking right-back; featured at three World Cups",
-      "reep_qid": "Q2036160"
+      "reep_qid": "Q2036160",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -25069,6 +25790,10 @@
       {
         "alias": "Thomas Meunier",
         "source_id": "reep"
+      },
+      {
+        "alias": "166473",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25092,7 +25817,12 @@
         "2026"
       ],
       "notable": "Marauding left-back; earned breakout international recognition through Champions League performances",
-      "reep_qid": "Q85928265"
+      "reep_qid": "Q85928265",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -25150,6 +25880,10 @@
       {
         "alias": "Maxim De Cuyper",
         "source_id": "reep"
+      },
+      {
+        "alias": "301327",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25269,7 +26003,12 @@
         "2026"
       ],
       "notable": "Belgium's all-time greatest; multiple Premier League titles and Champions League winner; world-class creator",
-      "reep_qid": "Q357984"
+      "reep_qid": "Q357984",
+      "club_appearances_2025_26": 12,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -25347,6 +26086,10 @@
       {
         "alias": "Kevin De Bruyne",
         "source_id": "reep"
+      },
+      {
+        "alias": "134947",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25372,7 +26115,12 @@
         "2026"
       ],
       "notable": "Technically gifted central midfielder; FA Cup winner with Leicester; Champions League regular with Aston Villa",
-      "reep_qid": "Q14327453"
+      "reep_qid": "Q14327453",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -25442,6 +26190,10 @@
       {
         "alias": "Youri Tielemans",
         "source_id": "reep"
+      },
+      {
+        "alias": "193297",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25466,7 +26218,13 @@
         "2026"
       ],
       "notable": "Imposing box-to-box midfielder; physically dominant with excellent passing range; rising star of Belgian football",
-      "reep_qid": "Q99328435"
+      "reep_qid": "Q99328435",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -25544,6 +26302,10 @@
       {
         "alias": "Amadou Onana",
         "source_id": "reep"
+      },
+      {
+        "alias": "304799",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25896,7 +26658,12 @@
         "2026"
       ],
       "notable": "Electrifying winger with blistering pace; one of the fastest players in world football",
-      "reep_qid": "Q59209505"
+      "reep_qid": "Q59209505",
+      "club_appearances_2025_26": 26,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 9,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -25970,6 +26737,10 @@
       {
         "alias": "Jérémy Doku",
         "source_id": "reep"
+      },
+      {
+        "alias": "283672",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -25993,7 +26764,12 @@
         "2026"
       ],
       "notable": "Prolific striker; one of the Bundesliga's top scorers; emerged as Lukaku's likely long-term successor",
-      "reep_qid": "Q56183407"
+      "reep_qid": "Q56183407",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -26063,6 +26839,10 @@
       {
         "alias": "Loïs Openda",
         "source_id": "reep"
+      },
+      {
+        "alias": "276265",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -26089,7 +26869,11 @@
         "2026"
       ],
       "notable": "Belgium's all-time top scorer; powerful target striker; three-time Serie A participant",
-      "reep_qid": "Q313316"
+      "reep_qid": "Q313316",
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -26163,6 +26947,10 @@
       {
         "alias": "Romelu Lukaku",
         "source_id": "reep"
+      },
+      {
+        "alias": "139437",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -26186,7 +26974,13 @@
         "2026"
       ],
       "notable": "Elegant number 10 and forward; Europa League winner with Atalanta; revived career after difficult AC Milan spell",
-      "reep_qid": "Q68607008"
+      "reep_qid": "Q68607008",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -26252,6 +27046,10 @@
       {
         "alias": "Charles De Ketelaere",
         "source_id": "reep"
+      },
+      {
+        "alias": "296319",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -26275,7 +27073,13 @@
         "2026"
       ],
       "notable": "Pacey, direct winger; scored a hat-trick against Germany in a friendly; known for powerful runs",
-      "reep_qid": "Q21281344"
+      "reep_qid": "Q21281344",
+      "club_appearances_2025_26": 13,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 3
     },
     "aliases": [
       {
@@ -26345,6 +27149,10 @@
       {
         "alias": "Dodi Lukebakio",
         "source_id": "reep"
+      },
+      {
+        "alias": "229443",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -26616,7 +27424,12 @@
         "2026"
       ],
       "notable": "Hero of Croatia's 2022 World Cup run; saved three penalties against Japan; penalty-saving specialist",
-      "reep_qid": "Q18207229"
+      "reep_qid": "Q18207229",
+      "club_appearances_2025_26": 3,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -26670,6 +27483,10 @@
       {
         "alias": "Dominik Livaković",
         "source_id": "reep"
+      },
+      {
+        "alias": "187946",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -26939,7 +27756,12 @@
         "2026"
       ],
       "notable": "Tall, imposing centre-back; strong aerial presence; Ligue 1 veteran",
-      "reep_qid": "Q17612806"
+      "reep_qid": "Q17612806",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 6,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -27009,6 +27831,10 @@
       {
         "alias": "Duje Ćaleta-Car",
         "source_id": "reep"
+      },
+      {
+        "alias": "194766",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27116,7 +27942,12 @@
         "2026"
       ],
       "notable": "Composed ball-playing centre-back; strong in duels and adept in possession",
-      "reep_qid": "Q98592909"
+      "reep_qid": "Q98592909",
+      "club_appearances_2025_26": 20,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -27166,6 +27997,10 @@
       {
         "alias": "Josip Šutalo",
         "source_id": "reep"
+      },
+      {
+        "alias": "305552",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27353,7 +28188,12 @@
         "2026"
       ],
       "notable": "Versatile defender comfortable at right-back and centre-back; Bundesliga champion with Bayern Munich",
-      "reep_qid": "Q65950201"
+      "reep_qid": "Q65950201",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -27415,6 +28255,10 @@
       {
         "alias": "Josip Stanišić",
         "source_id": "reep"
+      },
+      {
+        "alias": "276329",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27438,7 +28282,12 @@
         "2026"
       ],
       "notable": "Tall and commanding defender; Serie A veteran; reliable squad option for Croatia",
-      "reep_qid": "Q42319683"
+      "reep_qid": "Q42319683",
+      "club_appearances_2025_26": 20,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 7,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -27492,6 +28341,10 @@
       {
         "alias": "Martin Erlić",
         "source_id": "reep"
+      },
+      {
+        "alias": "216579",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27519,7 +28372,12 @@
         "2026"
       ],
       "notable": "2018 Ballon d'Or winner; 2018 World Cup Golden Ball; five-time Champions League winner; greatest Croatian player ever",
-      "reep_qid": "Q483837"
+      "reep_qid": "Q483837",
+      "club_appearances_2025_26": 29,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -27597,6 +28455,10 @@
       {
         "alias": "Luka Modrić",
         "source_id": "reep"
+      },
+      {
+        "alias": "76762",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27796,7 +28658,12 @@
         "2026"
       ],
       "notable": "Goalscoring midfielder; Europa League winner with Atalanta; prolific from midfield runs",
-      "reep_qid": "Q14625183"
+      "reep_qid": "Q14625183",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 9,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -27850,6 +28717,10 @@
       {
         "alias": "Mario Pašalić",
         "source_id": "reep"
+      },
+      {
+        "alias": "189668",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27874,7 +28745,13 @@
         "2026"
       ],
       "notable": "Creative attacking midfielder; formerly of Rennes where he was one of Ligue 1's top creators",
-      "reep_qid": "Q28137504"
+      "reep_qid": "Q28137504",
+      "club_appearances_2025_26": 17,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 5,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -27932,6 +28809,10 @@
       {
         "alias": "Lovro Majer",
         "source_id": "reep"
+      },
+      {
+        "alias": "237549",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -27955,7 +28836,12 @@
         "2026"
       ],
       "notable": "Technically gifted young playmaker; one of the next generation of Croatian midfield talent",
-      "reep_qid": "Q67999144"
+      "reep_qid": "Q67999144",
+      "club_appearances_2025_26": 9,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28009,6 +28895,10 @@
       {
         "alias": "Luka Sučić",
         "source_id": "reep"
+      },
+      {
+        "alias": "306263",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28033,7 +28923,12 @@
         "2026"
       ],
       "notable": "Energetic attacking midfielder; capable of playing on the wing or behind the striker; Serie A regular",
-      "reep_qid": "Q17501875"
+      "reep_qid": "Q17501875",
+      "club_appearances_2025_26": 32,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 7,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28095,6 +28990,10 @@
       {
         "alias": "Nikola Vlašić",
         "source_id": "reep"
+      },
+      {
+        "alias": "206378",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28118,7 +29017,12 @@
         "2026"
       ],
       "notable": "Exciting young playmaker from Dinamo Zagreb; technical dribbler and creative midfielder",
-      "reep_qid": "Q107446975"
+      "reep_qid": "Q107446975",
+      "club_appearances_2025_26": 13,
+      "club_goals_2025_26": 7,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28176,6 +29080,10 @@
       {
         "alias": "Martin Baturina",
         "source_id": "reep"
+      },
+      {
+        "alias": "311475",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28201,7 +29109,12 @@
         "2026"
       ],
       "notable": "Croatia's primary striker; prolific Bundesliga scorer; consistent goal threat at international level",
-      "reep_qid": "Q502898"
+      "reep_qid": "Q502898",
+      "club_appearances_2025_26": 22,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28263,6 +29176,10 @@
       {
         "alias": "Andrej Kramarić",
         "source_id": "reep"
+      },
+      {
+        "alias": "139520",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28289,7 +29206,12 @@
         "2026"
       ],
       "notable": "Veteran wide forward; scored and assisted in 2018 World Cup Final; returned home to Hajduk Split",
-      "reep_qid": "Q161054"
+      "reep_qid": "Q161054",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 12,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28355,6 +29277,10 @@
       {
         "alias": "Ivan Perišić",
         "source_id": "reep"
+      },
+      {
+        "alias": "103485",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28456,7 +29382,12 @@
         "2026"
       ],
       "notable": "Reliable La Liga striker; holds dual Croatian-Spanish eligibility but chose Croatia; powerful in the air",
-      "reep_qid": "Q17505049"
+      "reep_qid": "Q17505049",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 17,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28510,6 +29441,10 @@
       {
         "alias": "Ante Budimir",
         "source_id": "reep"
+      },
+      {
+        "alias": "207288",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28614,7 +29549,13 @@
         "2026"
       ],
       "notable": "Young striker with an eye for goal; emerging Bundesliga talent making waves for club and country",
-      "reep_qid": "Q102399064"
+      "reep_qid": "Q102399064",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 2,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -28672,6 +29613,10 @@
       {
         "alias": "Igor Matanović",
         "source_id": "reep"
+      },
+      {
+        "alias": "310883",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -28695,7 +29640,12 @@
         "2026"
       ],
       "notable": "Young winger from Rijeka; no relation to Mario Pašalić; earned call-up on domestic form",
-      "reep_qid": "Q107641804"
+      "reep_qid": "Q107641804",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -28749,6 +29699,10 @@
       {
         "alias": "Marco Pašalić",
         "source_id": "reep"
+      },
+      {
+        "alias": "324270",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31124,7 +32078,12 @@
         "2026"
       ],
       "notable": "First-choice keeper; reliable shot-stopper who spent years in MLS before moving to Liga MX",
-      "reep_qid": "Q5026758"
+      "reep_qid": "Q5026758",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31182,6 +32141,10 @@
       {
         "alias": "Camilo Vargas",
         "source_id": "reep"
+      },
+      {
+        "alias": "185147",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31207,7 +32170,12 @@
         "2026"
       ],
       "notable": "Veteran captain figure; Colombia's most-capped goalkeeper in history",
-      "reep_qid": "Q436987"
+      "reep_qid": "Q436987",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31273,6 +32241,10 @@
       {
         "alias": "David Ospina",
         "source_id": "reep"
+      },
+      {
+        "alias": "121842",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31296,7 +32268,12 @@
         "2026"
       ],
       "notable": "Young third-choice keeper; standout performer in the Colombian top flight with Millonarios",
-      "reep_qid": "Q20645743"
+      "reep_qid": "Q20645743",
+      "club_appearances_2025_26": 12,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31346,6 +32323,10 @@
       {
         "alias": "Álvaro Montero",
         "source_id": "reep"
+      },
+      {
+        "alias": "166323",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31369,7 +32350,12 @@
         "2026"
       ],
       "notable": "Commanding centre-back; former Tottenham and Ajax defender known for aerial dominance",
-      "reep_qid": "Q20737387"
+      "reep_qid": "Q20737387",
+      "club_appearances_2025_26": 35,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 8,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -31435,6 +32421,10 @@
       {
         "alias": "Dávinson Sánchez",
         "source_id": "reep"
+      },
+      {
+        "alias": "197105",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31548,7 +32538,12 @@
         "2026"
       ],
       "notable": "Attacking right-back; one of the most improved defenders in the Premier League",
-      "reep_qid": "Q56703599"
+      "reep_qid": "Q56703599",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31610,6 +32605,10 @@
       {
         "alias": "Daniel Muñoz",
         "source_id": "reep"
+      },
+      {
+        "alias": "146679",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31633,7 +32632,12 @@
         "2026"
       ],
       "notable": "Experienced left-back; strong defensive presence and useful going forward",
-      "reep_qid": "Q5932872"
+      "reep_qid": "Q5932872",
+      "club_appearances_2025_26": 24,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31691,6 +32695,10 @@
       {
         "alias": "Johan Mojica",
         "source_id": "reep"
+      },
+      {
+        "alias": "173247",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31791,7 +32799,12 @@
         "2026"
       ],
       "notable": "Left-footed centre-back; excelled in Serie A with Bologna",
-      "reep_qid": "Q21573188"
+      "reep_qid": "Q21573188",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 7,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31849,6 +32862,10 @@
       {
         "alias": "Jhon Lucumí",
         "source_id": "reep"
+      },
+      {
+        "alias": "227697",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31874,7 +32891,12 @@
         "2026"
       ],
       "notable": "Veteran right-back; former Atlético Madrid and PSV player",
-      "reep_qid": "Q2502118"
+      "reep_qid": "Q2502118",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -31928,6 +32950,10 @@
       {
         "alias": "Santiago Arias",
         "source_id": "reep"
+      },
+      {
+        "alias": "164756",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -31951,7 +32977,12 @@
         "2026"
       ],
       "notable": "Left-back cover; solid Ligue 1 performer known for his pace and crossing ability",
-      "reep_qid": "Q19266811"
+      "reep_qid": "Q19266811",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -32005,6 +33036,10 @@
       {
         "alias": "Déiver Machado",
         "source_id": "reep"
+      },
+      {
+        "alias": "197401",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32030,7 +33065,12 @@
         "2026"
       ],
       "notable": "Iconic playmaker; Golden Boot winner at Brazil 2014; one of Colombia's greatest ever players",
-      "reep_qid": "Q368441"
+      "reep_qid": "Q368441",
+      "club_appearances_2025_26": 10,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -32104,6 +33144,10 @@
       {
         "alias": "James Rodríguez",
         "source_id": "reep"
+      },
+      {
+        "alias": "82816",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32127,7 +33171,12 @@
         "2026"
       ],
       "notable": "Combative defensive midfielder; captain of Crystal Palace; engine of the Colombian midfield",
-      "reep_qid": "Q16300824"
+      "reep_qid": "Q16300824",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -32197,6 +33246,10 @@
       {
         "alias": "Jefferson Lerma",
         "source_id": "reep"
+      },
+      {
+        "alias": "197399",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32256,7 +33309,12 @@
         "2026"
       ],
       "notable": "Dynamic young midfielder; Copa América 2024 standout; one of South America's most promising talents",
-      "reep_qid": "Q117322318"
+      "reep_qid": "Q117322318",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 11,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -32310,6 +33368,10 @@
       {
         "alias": "Richard Ríos",
         "source_id": "reep"
+      },
+      {
+        "alias": "301520",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32333,7 +33395,12 @@
         "2026"
       ],
       "notable": "Industrious central midfielder; provides energy and pressing in the middle of the park",
-      "reep_qid": "Q117289166"
+      "reep_qid": "Q117289166",
+      "club_appearances_2025_26": 1,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -32383,6 +33450,10 @@
       {
         "alias": "Kevin Castaño",
         "source_id": "reep"
+      },
+      {
+        "alias": "307756",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32488,7 +33559,12 @@
         "2026"
       ],
       "notable": "Talented young midfielder; one of Colombia's brightest emerging talents in the Championship",
-      "reep_qid": "Q116447721"
+      "reep_qid": "Q116447721",
+      "club_appearances_2025_26": 24,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 13,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -32530,6 +33606,10 @@
       {
         "alias": "Gustavo Puerta",
         "source_id": "reep"
+      },
+      {
+        "alias": "341736",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32553,7 +33633,12 @@
         "2026"
       ],
       "notable": "Colombia's star player; pacey left-winger at Liverpool; Copa América 2021 runner-up",
-      "reep_qid": "Q28531111"
+      "reep_qid": "Q28531111",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 23,
+      "club_assists_2025_26": 15,
+      "yellow_cards": 7,
+      "red_cards": 2
     },
     "aliases": [
       {
@@ -32627,6 +33712,10 @@
       {
         "alias": "Luis Díaz",
         "source_id": "reep"
+      },
+      {
+        "alias": "257390",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -32828,7 +33917,13 @@
         "2026"
       ],
       "notable": "Tricky winger; key figure at Fluminense in the Copa Libertadores triumph; Copa América 2024 squad member",
-      "reep_qid": "Q65378670"
+      "reep_qid": "Q65378670",
+      "club_appearances_2025_26": 25,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 5,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -32878,6 +33973,10 @@
       {
         "alias": "Jhon Arias",
         "source_id": "reep"
+      },
+      {
+        "alias": "239566",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -33067,7 +34166,12 @@
         "2026"
       ],
       "notable": "Powerful target striker; strong in the air and holds up play effectively; former Bundesliga player",
-      "reep_qid": "Q209847"
+      "reep_qid": "Q209847",
+      "club_appearances_2025_26": 29,
+      "club_goals_2025_26": 14,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 3,
+      "red_cards": 2
     },
     "aliases": [
       {
@@ -33125,6 +34229,10 @@
       {
         "alias": "Jhon Córdoba",
         "source_id": "reep"
+      },
+      {
+        "alias": "176058",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -34837,7 +35945,12 @@
         "2026"
       ],
       "notable": "Legendary striker; all-time top scorer for Uruguay; veteran presence and iconic figure in world football",
-      "reep_qid": "Q26517"
+      "reep_qid": "Q26517",
+      "club_appearances_2025_26": 37,
+      "club_goals_2025_26": 32,
+      "club_assists_2025_26": 6,
+      "yellow_cards": 9,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -34915,6 +36028,10 @@
       {
         "alias": "Luis Suárez",
         "source_id": "reep"
+      },
+      {
+        "alias": "272722",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -35454,7 +36571,12 @@
         "2026"
       ],
       "notable": "Young talented goalkeeper based in Serie A; heir apparent to Gonda between the sticks",
-      "reep_qid": "Q67498669"
+      "reep_qid": "Q67498669",
+      "club_appearances_2025_26": 16,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -35520,6 +36642,10 @@
       {
         "alias": "Zion Suzuki",
         "source_id": "reep"
+      },
+      {
+        "alias": "265958",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -35825,7 +36951,12 @@
         "2026"
       ],
       "notable": "Experienced centre-back; longtime captain of Kawasaki Frontale; a pillar of Japan's defence",
-      "reep_qid": "Q17160970"
+      "reep_qid": "Q17160970",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -35903,6 +37034,10 @@
       {
         "alias": "Shōgo Taniguchi",
         "source_id": "reep"
+      },
+      {
+        "alias": "202728",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -36016,7 +37151,12 @@
         "2026"
       ],
       "notable": "Left-footed centre-back at Bayern Munich; rapid rise from Stuttgart to Germany's biggest club",
-      "reep_qid": "Q30933054"
+      "reep_qid": "Q30933054",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -36094,6 +37234,10 @@
       {
         "alias": "Hiroki Itō",
         "source_id": "reep"
+      },
+      {
+        "alias": "97111",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -50456,7 +51600,12 @@
         "2026"
       ],
       "notable": "Reliable MLS goalkeeper; backup for Canada national team",
-      "reep_qid": "Q19866530"
+      "reep_qid": "Q19866530",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -50506,6 +51655,10 @@
       {
         "alias": "Maxime Crépeau",
         "source_id": "reep"
+      },
+      {
+        "alias": "159382",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -50529,7 +51682,12 @@
         "2026"
       ],
       "notable": "Emerging Canadian goalkeeper; strong MLS performer with Minnesota United",
-      "reep_qid": "Q60583915"
+      "reep_qid": "Q60583915",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -50579,6 +51737,10 @@
       {
         "alias": "Dayne St. Clair",
         "source_id": "reep"
+      },
+      {
+        "alias": "231059",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -50771,7 +51933,12 @@
         "2026"
       ],
       "notable": "Composed centre-back; key part of Canada's defensive unit at Qatar 2022",
-      "reep_qid": "Q61959630"
+      "reep_qid": "Q61959630",
+      "club_appearances_2025_26": 3,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -50833,6 +52000,10 @@
       {
         "alias": "Kamal Anthony Miller",
         "source_id": "reep"
+      },
+      {
+        "alias": "249756",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -50935,7 +52106,12 @@
         "2026"
       ],
       "notable": "Versatile centre-back; solid performer in Allsvenskan with Malmö",
-      "reep_qid": "Q29901014"
+      "reep_qid": "Q29901014",
+      "club_appearances_2025_26": 10,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -50997,6 +52173,10 @@
       {
         "alias": "Derek Austin Cornelius",
         "source_id": "reep"
+      },
+      {
+        "alias": "238712",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51111,7 +52291,12 @@
         "2026"
       ],
       "notable": "Pacey right back; returned to MLS with Vancouver Whitecaps; contributed to Canada's World Cup qualification",
-      "reep_qid": "Q22096162"
+      "reep_qid": "Q22096162",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -51173,6 +52358,10 @@
       {
         "alias": "Richie Laryea",
         "source_id": "reep"
+      },
+      {
+        "alias": "230626",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51352,7 +52541,12 @@
         "2026"
       ],
       "notable": "Veteran midfielder; pillar of both Toronto FC and Canada; key figure in qualification",
-      "reep_qid": "Q10554558"
+      "reep_qid": "Q10554558",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -51398,6 +52592,10 @@
       {
         "alias": "Jonathan Osorio",
         "source_id": "reep"
+      },
+      {
+        "alias": "184221",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51421,7 +52619,12 @@
         "2026"
       ],
       "notable": "Dynamic young midfielder; box-to-box presence at Marseille; one of Canada's most exciting prospects",
-      "reep_qid": "Q111009946"
+      "reep_qid": "Q111009946",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -51479,6 +52682,10 @@
       {
         "alias": "Ismaël Koné",
         "source_id": "reep"
+      },
+      {
+        "alias": "325001",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51650,7 +52857,12 @@
         "2026"
       ],
       "notable": "Versatile winger/midfielder; consistent performer in Swiss football with Basel",
-      "reep_qid": "Q50505969"
+      "reep_qid": "Q50505969",
+      "club_appearances_2025_26": 19,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -51708,6 +52920,10 @@
       {
         "alias": "Liam Alan Millar",
         "source_id": "reep"
+      },
+      {
+        "alias": "271879",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51731,7 +52947,12 @@
         "2026"
       ],
       "notable": "Young Canadian-Sudanese midfielder; emerging talent in Allsvenskan",
-      "reep_qid": "Q111741178"
+      "reep_qid": "Q111741178",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -51777,6 +52998,10 @@
       {
         "alias": "Ali Ahmed",
         "source_id": "reep"
+      },
+      {
+        "alias": "340228",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51801,7 +53026,13 @@
         "2026"
       ],
       "notable": "Canada's all-time top scorer; prolific Ligue 1 striker; one of Europe's most lethal forwards",
-      "reep_qid": "Q56085180"
+      "reep_qid": "Q56085180",
+      "club_appearances_2025_26": 24,
+      "club_goals_2025_26": 7,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 0,
+      "red_cards": 0,
+      "international_goals_recent": 2
     },
     "aliases": [
       {
@@ -51867,6 +53098,10 @@
       {
         "alias": "Jonathan Christian David",
         "source_id": "reep"
+      },
+      {
+        "alias": "273499",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51891,7 +53126,12 @@
         "2026"
       ],
       "notable": "Former Canada all-time top scorer; powerful La Liga striker; key figure in qualification",
-      "reep_qid": "Q16935084"
+      "reep_qid": "Q16935084",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -51949,6 +53189,10 @@
       {
         "alias": "Cyle Christopher Larin",
         "source_id": "reep"
+      },
+      {
+        "alias": "205024",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -51973,7 +53217,12 @@
         "2026"
       ],
       "notable": "Pacey winger; Serie A experience with Inter Milan; dangerous on the counter",
-      "reep_qid": "Q62016194"
+      "reep_qid": "Q62016194",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 8,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -52027,6 +53276,10 @@
       {
         "alias": "Tajon Buchanan",
         "source_id": "reep"
+      },
+      {
+        "alias": "284769",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -52051,7 +53304,12 @@
         "2026"
       ],
       "notable": "Veteran Canadian winger; long-serving contributor to the national team across two generations",
-      "reep_qid": "Q376313"
+      "reep_qid": "Q376313",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -52121,6 +53379,10 @@
       {
         "alias": "Junior Hoilett",
         "source_id": "reep"
+      },
+      {
+        "alias": "116662",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -52318,7 +53580,13 @@
         "2026"
       ],
       "notable": "Young MLS forward; Columbus Crew academy product; bringing fresh energy to Canada's 2026 squad",
-      "reep_qid": "Q78637933"
+      "reep_qid": "Q78637933",
+      "club_appearances_2025_26": 2,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -52372,6 +53640,10 @@
       {
         "alias": "Jacen Russell-Rowe",
         "source_id": "reep"
+      },
+      {
+        "alias": "297121",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -54599,7 +55871,12 @@
         "2026"
       ],
       "notable": "Egypt's captain and first-choice keeper; multiple CAF Champions League winner with Al Ahly",
-      "reep_qid": "Q17151209"
+      "reep_qid": "Q17151209",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -54665,6 +55942,10 @@
       {
         "alias": "Mohamed El-Shenawy",
         "source_id": "reep"
+      },
+      {
+        "alias": "205212",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -55143,7 +56424,12 @@
         "2026"
       ],
       "notable": "Versatile defender; capable of playing at right back or centre-back; regular for Zamalek",
-      "reep_qid": "Q27585643"
+      "reep_qid": "Q27585643",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -55213,6 +56499,10 @@
       {
         "alias": "Ahmed Aboul Fotouh",
         "source_id": "reep"
+      },
+      {
+        "alias": "265176",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -55574,7 +56864,12 @@
         "2026"
       ],
       "notable": "Creative central midfielder; orchestrates play for Zamalek and Egypt; good vision and passing range",
-      "reep_qid": "Q64681287"
+      "reep_qid": "Q64681287",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -55632,6 +56927,10 @@
       {
         "alias": "Emam Ashour",
         "source_id": "reep"
+      },
+      {
+        "alias": "299365",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -55887,7 +57186,12 @@
         "2026"
       ],
       "notable": "Exciting young winger; one of Egyptian football's brightest prospects; electric pace and trickery",
-      "reep_qid": "Q90916422"
+      "reep_qid": "Q90916422",
+      "club_appearances_2025_26": 4,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -55933,6 +57237,10 @@
       {
         "alias": "Ibrahim Adel",
         "source_id": "reep"
+      },
+      {
+        "alias": "299619",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56116,6 +57424,10 @@
       {
         "alias": "Mohamed Salah",
         "source_id": "reep"
+      },
+      {
+        "alias": "420953",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56139,7 +57451,13 @@
         "2026"
       ],
       "notable": "One of the Bundesliga's most explosive forwards; exceptional 2024-25 season form; Egypt's second star",
-      "reep_qid": "Q28065104"
+      "reep_qid": "Q28065104",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 2,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -56201,6 +57519,10 @@
       {
         "alias": "Omar Marmoush",
         "source_id": "reep"
+      },
+      {
+        "alias": "303745",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56224,7 +57546,13 @@
         "2026"
       ],
       "notable": "AFCON 2021 final hero; iconic goal-scorer for Egypt; his goal in the 2019 AFCON final won the title",
-      "reep_qid": "Q6734350"
+      "reep_qid": "Q6734350",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -56294,6 +57622,10 @@
       {
         "alias": "Trézéguet",
         "source_id": "reep"
+      },
+      {
+        "alias": "157825",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56317,7 +57649,12 @@
         "2026"
       ],
       "notable": "Powerful targetman; prolific in Ligue 1 with Nantes; Egypt's penalty-box presence when Salah plays wide",
-      "reep_qid": "Q28086083"
+      "reep_qid": "Q28086083",
+      "club_appearances_2025_26": 13,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -56379,6 +57716,10 @@
       {
         "alias": "Mostafa Mohamed",
         "source_id": "reep"
+      },
+      {
+        "alias": "243816",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56727,7 +58068,12 @@
         "2026"
       ],
       "notable": "First-choice goalkeeper; born in Argentina with Ecuadorian heritage, consistent presence between the posts at two World Cups",
-      "reep_qid": "Q5742434"
+      "reep_qid": "Q5742434",
+      "club_appearances_2025_26": 11,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -56793,6 +58139,10 @@
       {
         "alias": "Hernán Galíndez",
         "source_id": "reep"
+      },
+      {
+        "alias": "207921",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56895,7 +58245,12 @@
         "2026"
       ],
       "notable": "Young third-choice keeper developing through Ecuador's strong youth system at Independiente del Valle",
-      "reep_qid": "Q60842106"
+      "reep_qid": "Q60842106",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -56949,6 +58304,10 @@
       {
         "alias": "Moisés Ramírez",
         "source_id": "reep"
+      },
+      {
+        "alias": "269881",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -56973,7 +58332,12 @@
         "2026"
       ],
       "notable": "Elite left-sided centre-back; key part of Leverkusen's historic unbeaten Bundesliga title-winning side, one of Ecuador's most prized assets",
-      "reep_qid": "Q101053044"
+      "reep_qid": "Q101053044",
+      "club_appearances_2025_26": 26,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -57031,6 +58395,10 @@
       {
         "alias": "Piero Hincapié",
         "source_id": "reep"
+      },
+      {
+        "alias": "292062",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57055,7 +58423,12 @@
         "2026"
       ],
       "notable": "Dynamic attacking left-back; commanding presence for Ecuador and Brighton with pace and technical quality down the flank",
-      "reep_qid": "Q20994068"
+      "reep_qid": "Q20994068",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 4,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -57121,6 +58494,10 @@
       {
         "alias": "Pervis Estupiñán",
         "source_id": "reep"
+      },
+      {
+        "alias": "214689",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57223,7 +58600,12 @@
         "2026"
       ],
       "notable": "Imposing centre-back; dominant in aerial duels and brings physicality and composure to Ecuador's central defence",
-      "reep_qid": "Q30916190"
+      "reep_qid": "Q30916190",
+      "club_appearances_2025_26": 9,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -57281,6 +58663,10 @@
       {
         "alias": "Félix Torres",
         "source_id": "reep"
+      },
+      {
+        "alias": "251963",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57305,7 +58691,12 @@
         "2026"
       ],
       "notable": "Energetic right-back; known for overlapping runs and tenacious defending, key at Sparta Prague in Europe",
-      "reep_qid": "Q56599873"
+      "reep_qid": "Q56599873",
+      "club_appearances_2025_26": 12,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -57359,6 +58750,10 @@
       {
         "alias": "Angelo Preciado",
         "source_id": "reep"
+      },
+      {
+        "alias": "256560",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57383,7 +58778,12 @@
         "2026"
       ],
       "notable": "Young centre-back with pace and reading of the game; part of Ecuador's generational defensive core",
-      "reep_qid": "Q60842110"
+      "reep_qid": "Q60842110",
+      "club_appearances_2025_26": 17,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -57437,6 +58837,10 @@
       {
         "alias": "Jackson Porozo",
         "source_id": "reep"
+      },
+      {
+        "alias": "286665",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57616,7 +59020,12 @@
         "2026"
       ],
       "notable": "World-class defensive midfielder; broke the British transfer record when joining Chelsea, captain-elect and Ecuador's most valuable player",
-      "reep_qid": "Q87715532"
+      "reep_qid": "Q87715532",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 12,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -57690,6 +59099,10 @@
       {
         "alias": "Moisés Caicedo",
         "source_id": "reep"
+      },
+      {
+        "alias": "289877",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -57796,7 +59209,12 @@
         "2026"
       ],
       "notable": "Box-to-box midfielder; brings physicality and defensive cover, excels in the Brazilian Série A with Atlético Mineiro",
-      "reep_qid": "Q56164119"
+      "reep_qid": "Q56164119",
+      "club_appearances_2025_26": 18,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -57850,6 +59268,10 @@
       {
         "alias": "Alan Franco",
         "source_id": "reep"
+      },
+      {
+        "alias": "262111",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58041,7 +59463,12 @@
         "2026"
       ],
       "notable": "Teenage prodigy; secured a pre-contract with Chelsea and regarded as one of the brightest young talents in South American football",
-      "reep_qid": "Q116466426"
+      "reep_qid": "Q116466426",
+      "club_appearances_2025_26": 9,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -58099,6 +59526,10 @@
       {
         "alias": "Kendry Páez",
         "source_id": "reep"
+      },
+      {
+        "alias": "358746",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58161,7 +59592,13 @@
         "2026"
       ],
       "notable": "Ecuador's all-time top scorer; scored all three goals in the 2022 World Cup group stage opener, iconic national hero and captain",
-      "reep_qid": "Q2843080"
+      "reep_qid": "Q2843080",
+      "club_appearances_2025_26": 9,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -58231,6 +59668,10 @@
       {
         "alias": "Enner Valencia",
         "source_id": "reep"
+      },
+      {
+        "alias": "171771",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58255,7 +59696,12 @@
         "2026"
       ],
       "notable": "Pacy and direct right winger; known for explosive dribbling and goal threat, now playing in the Qatar Stars League",
-      "reep_qid": "Q60842120"
+      "reep_qid": "Q60842120",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -58309,6 +59755,10 @@
       {
         "alias": "Gonzalo Plata",
         "source_id": "reep"
+      },
+      {
+        "alias": "277352",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58414,7 +59864,12 @@
         "2026"
       ],
       "notable": "Promising young forward from Ecuador's highly regarded Independiente del Valle academy system",
-      "reep_qid": "Q115132592"
+      "reep_qid": "Q115132592",
+      "club_appearances_2025_26": 17,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -58460,6 +59915,10 @@
       {
         "alias": "Kevin Rodríguez",
         "source_id": "reep"
+      },
+      {
+        "alias": "281316",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58483,7 +59942,12 @@
         "2026"
       ],
       "notable": "Experienced striker; finisher with a knack for goals in European leagues, adds depth to Ecuador's forward line",
-      "reep_qid": "Q30346214"
+      "reep_qid": "Q30346214",
+      "club_appearances_2025_26": 14,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -58533,6 +59997,10 @@
       {
         "alias": "Jordy Caicedo",
         "source_id": "reep"
+      },
+      {
+        "alias": "217079",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58556,7 +60024,13 @@
         "2026"
       ],
       "notable": "Versatile winger of Ghanaian-Ecuadorian heritage; capable of playing on either flank, making his mark in Serie A with Venezia",
-      "reep_qid": "Q58215731"
+      "reep_qid": "Q58215731",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 9,
+      "yellow_cards": 2,
+      "red_cards": 1,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -58606,6 +60080,10 @@
       {
         "alias": "John Yeboah",
         "source_id": "reep"
+      },
+      {
+        "alias": "265926",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -58798,7 +60276,12 @@
         "2026"
       ],
       "notable": "Australia's most-capped goalkeeper and captain; veteran of four World Cups, was pivotal in Australia's historic 2022 quarter-final run",
-      "reep_qid": "Q1587689"
+      "reep_qid": "Q1587689",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -58864,6 +60347,10 @@
       {
         "alias": "Mathew David Ryan",
         "source_id": "reep"
+      },
+      {
+        "alias": "141438",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -59059,7 +60546,12 @@
         "2026"
       ],
       "notable": "Experienced left-back; veteran of three World Cups including Australia's iconic 2022 run, known for aggressive defending and forward bursts",
-      "reep_qid": "Q2947963"
+      "reep_qid": "Q2947963",
+      "club_appearances_2025_26": 30,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -59117,6 +60609,10 @@
       {
         "alias": "Aziz Eraltay Behich",
         "source_id": "reep"
+      },
+      {
+        "alias": "200414",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -59235,7 +60731,12 @@
         "2026"
       ],
       "notable": "Reliable centre-back; came to prominence at the 2022 World Cup and has been a regular for Hearts in the Scottish Premiership",
-      "reep_qid": "Q28839990"
+      "reep_qid": "Q28839990",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -59289,6 +60790,10 @@
       {
         "alias": "Kye Rowles",
         "source_id": "reep"
+      },
+      {
+        "alias": "228416",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -59795,7 +61300,12 @@
         "2026"
       ],
       "notable": "Creative central midfielder; technically gifted with excellent vision, previously played in the Bundesliga and Eredivisie",
-      "reep_qid": "Q29109911"
+      "reep_qid": "Q29109911",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 4,
+      "club_assists_2025_26": 7,
+      "yellow_cards": 6,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -59845,6 +61355,10 @@
       {
         "alias": "Ajdin Hrustic",
         "source_id": "reep"
+      },
+      {
+        "alias": "227289",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -59869,7 +61383,12 @@
         "2026"
       ],
       "notable": "Dynamic attacking midfielder; outstanding individual at the 2022 World Cup, known for his work rate and ability to score from midfield",
-      "reep_qid": "Q23771429"
+      "reep_qid": "Q23771429",
+      "club_appearances_2025_26": 17,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -59923,6 +61442,10 @@
       {
         "alias": "Riley McGree",
         "source_id": "reep"
+      },
+      {
+        "alias": "235096",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -60115,7 +61638,12 @@
         "2026"
       ],
       "notable": "Energetic midfielder; developed at Melbourne City before earning a move to St. Pauli in Germany, teammates with Jackson Irvine at club level",
-      "reep_qid": "Q51213832"
+      "reep_qid": "Q51213832",
+      "club_appearances_2025_26": 2,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -60169,6 +61697,10 @@
       {
         "alias": "Connor Metcalfe",
         "source_id": "reep"
+      },
+      {
+        "alias": "260643",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -60340,7 +61872,12 @@
         "2026"
       ],
       "notable": "Tricky and pacy right winger born in Scotland; a consistent performer for Hibernian and a dangerous direct threat on the flank for Australia",
-      "reep_qid": "Q6775043"
+      "reep_qid": "Q6775043",
+      "club_appearances_2025_26": 23,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -60394,6 +61931,10 @@
       {
         "alias": "Martin Boyle",
         "source_id": "reep"
+      },
+      {
+        "alias": "139748",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -60650,7 +62191,13 @@
         "2026"
       ],
       "notable": "South Sudanese-born Australian winger; inspiring story as a refugee who rose to Serie A, known for pace and directness on the left wing",
-      "reep_qid": "Q4830013"
+      "reep_qid": "Q4830013",
+      "club_appearances_2025_26": 19,
+      "club_goals_2025_26": 2,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -60704,6 +62251,10 @@
       {
         "alias": "Awer Mabil",
         "source_id": "reep"
+      },
+      {
+        "alias": "181707",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -60884,7 +62435,12 @@
         "2026"
       ],
       "notable": "Iran's starting goalkeeper; remarkable story of a homeless teenager who became a top keeper, saved a Ronaldo penalty at the 2018 World Cup",
-      "reep_qid": "Q4726869"
+      "reep_qid": "Q4726869",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -60934,6 +62490,10 @@
       {
         "alias": "Alireza Beiranvand",
         "source_id": "reep"
+      },
+      {
+        "alias": "214798",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61034,7 +62594,12 @@
         "2026"
       ],
       "notable": "Third-choice goalkeeper; consistent performer in the Iranian Premier League with Esteghlal, provides experienced domestic cover",
-      "reep_qid": "Q5865783"
+      "reep_qid": "Q5865783",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61088,6 +62653,10 @@
       {
         "alias": "Hossein Hosseini",
         "source_id": "reep"
+      },
+      {
+        "alias": "185648",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61112,7 +62681,12 @@
         "2026"
       ],
       "notable": "Experienced centre-back; veteran of Iran's defensive unit, has played across Europe and the Middle East over a long career",
-      "reep_qid": "Q7500146"
+      "reep_qid": "Q7500146",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61158,6 +62732,10 @@
       {
         "alias": "Shoja' Khalilzadeh",
         "source_id": "reep"
+      },
+      {
+        "alias": "180674",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61390,6 +62968,10 @@
       {
         "alias": "Milad Mohammadi",
         "source_id": "reep"
+      },
+      {
+        "alias": "226302",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61414,7 +62996,12 @@
         "2026"
       ],
       "notable": "Veteran right-back; experienced at both domestic and European level, brings versatility and pace to Iran's defensive options",
-      "reep_qid": "Q7289588"
+      "reep_qid": "Q7289588",
+      "club_appearances_2025_26": 2,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61476,6 +63063,10 @@
       {
         "alias": "Ramin Rezaian",
         "source_id": "reep"
+      },
+      {
+        "alias": "218086",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61502,7 +63093,12 @@
         "2026"
       ],
       "notable": "Veteran captain and left-back; famously spoke out in support of Iranian protests at the 2022 World Cup, Iran's most-capped active defender",
-      "reep_qid": "Q2762113"
+      "reep_qid": "Q2762113",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61552,6 +63148,10 @@
       {
         "alias": "Ehsan Hajsafi",
         "source_id": "reep"
+      },
+      {
+        "alias": "203453",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61637,6 +63237,10 @@
       {
         "alias": "Mohammad Hossein Kanaanizadegan",
         "source_id": "reep"
+      },
+      {
+        "alias": "243943",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61740,7 +63344,12 @@
         "2026"
       ],
       "notable": "Iran's most creative attacker; one of the best Eredivisie players of his era, scored a stunning overhead kick in the Champions League for Feyenoord",
-      "reep_qid": "Q4406552"
+      "reep_qid": "Q4406552",
+      "club_appearances_2025_26": 4,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61806,6 +63415,10 @@
       {
         "alias": "Alireza Jahanbakhsh",
         "source_id": "reep"
+      },
+      {
+        "alias": "188055",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61831,7 +63444,12 @@
         "2026"
       ],
       "notable": "Key defensive midfielder; one of Iran's most important anchors in midfield, experienced in European football from Russia to Denmark",
-      "reep_qid": "Q7398276"
+      "reep_qid": "Q7398276",
+      "club_appearances_2025_26": 6,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -61885,6 +63503,10 @@
       {
         "alias": "Saeid Ezzatollahi",
         "source_id": "reep"
+      },
+      {
+        "alias": "194863",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -61909,7 +63531,13 @@
         "2026"
       ],
       "notable": "Pacy right winger; a consistent performer in the Belgian Pro League with Charleroi, known for direct running and assists",
-      "reep_qid": "Q17859780"
+      "reep_qid": "Q17859780",
+      "club_appearances_2025_26": 3,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -61963,6 +63591,10 @@
       {
         "alias": "Ali Gholizadeh",
         "source_id": "reep"
+      },
+      {
+        "alias": "194865",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -62124,6 +63756,10 @@
       {
         "alias": "Saman Ghoddos",
         "source_id": "reep"
+      },
+      {
+        "alias": "235519",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -62232,7 +63868,12 @@
         "2026"
       ],
       "notable": "Attacking midfielder and key creative force at Persepolis; one of the most decorated Iranian domestic league players of his generation",
-      "reep_qid": "Q18210581"
+      "reep_qid": "Q18210581",
+      "club_appearances_2025_26": 3,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -62286,6 +63927,10 @@
       {
         "alias": "Mahdi Torabi",
         "source_id": "reep"
+      },
+      {
+        "alias": "226301",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -62310,7 +63955,13 @@
         "2026"
       ],
       "notable": "Iran's talisman and greatest striker of his generation; joined Inter Milan from Porto, scored a stunning bicycle kick vs. Chelsea in the Champions League",
-      "reep_qid": "Q17070837"
+      "reep_qid": "Q17070837",
+      "club_appearances_2025_26": 14,
+      "club_goals_2025_26": 12,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 3,
+      "red_cards": 0,
+      "international_goals_recent": 3
     },
     "aliases": [
       {
@@ -62368,6 +64019,10 @@
       {
         "alias": "Mehdi Taremi",
         "source_id": "reep"
+      },
+      {
+        "alias": "219611",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -62766,6 +64421,10 @@
       {
         "alias": "Ali Alipour",
         "source_id": "reep"
+      },
+      {
+        "alias": "219617",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -67111,7 +68770,12 @@
         "2026"
       ],
       "notable": "Commanding goalkeeper in Argentine football; strong aerial presence and shot-stopping ability",
-      "reep_qid": "Q28005145"
+      "reep_qid": "Q28005145",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -67169,6 +68833,10 @@
       {
         "alias": "Gabriel Arias",
         "source_id": "reep"
+      },
+      {
+        "alias": "268478",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -79483,7 +81151,12 @@
         "2026"
       ],
       "notable": "Attacking left-back at Borussia Dortmund in the Bundesliga, known for powerful shooting and set-piece ability",
-      "reep_qid": "Q17484446"
+      "reep_qid": "Q17484446",
+      "club_appearances_2025_26": 27,
+      "club_goals_2025_26": 6,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 7,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -79541,6 +81214,10 @@
       {
         "alias": "Ramy Bensebaini",
         "source_id": "reep"
+      },
+      {
+        "alias": "220703",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -79565,7 +81242,12 @@
         "2026"
       ],
       "notable": "Experienced centre-back at Villarreal in La Liga, a pillar of Algeria's defence for over a decade",
-      "reep_qid": "Q2876432"
+      "reep_qid": "Q2876432",
+      "club_appearances_2025_26": 34,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 9,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -79619,6 +81301,10 @@
       {
         "alias": "Aïssa Mandi",
         "source_id": "reep"
+      },
+      {
+        "alias": "150451",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -80181,7 +81867,12 @@
         "2026"
       ],
       "notable": "Tenacious and combative midfielder at Feyenoord in the Eredivisie, key in Algeria's midfield press",
-      "reep_qid": "Q73149048"
+      "reep_qid": "Q73149048",
+      "club_appearances_2025_26": 32,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 5,
+      "yellow_cards": 4,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -80235,6 +81926,10 @@
       {
         "alias": "Ramiz Zerrouki",
         "source_id": "reep"
+      },
+      {
+        "alias": "290517",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -80343,7 +82038,13 @@
         "2026"
       ],
       "notable": "Elegant playmaker at Roma in Serie A, switched international allegiance from France to Algeria in 2022",
-      "reep_qid": "Q27927442"
+      "reep_qid": "Q27927442",
+      "club_appearances_2025_26": 25,
+      "club_goals_2025_26": 11,
+      "club_assists_2025_26": 3,
+      "yellow_cards": 4,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -80405,6 +82106,10 @@
       {
         "alias": "Houssem Aouar",
         "source_id": "reep"
+      },
+      {
+        "alias": "241116",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -80668,7 +82373,13 @@
         "2026"
       ],
       "notable": "Algeria's greatest modern player, AFCON 2019 winner, Premier League champion with Leicester and Man City",
-      "reep_qid": "Q8338725"
+      "reep_qid": "Q8338725",
+      "club_appearances_2025_26": 38,
+      "club_goals_2025_26": 10,
+      "club_assists_2025_26": 10,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 1
     },
     "aliases": [
       {
@@ -80738,6 +82449,10 @@
       {
         "alias": "Riyad Mahrez",
         "source_id": "reep"
+      },
+      {
+        "alias": "163940",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -81126,7 +82841,12 @@
         "2026"
       ],
       "notable": "Exciting young forward at Wolfsburg in the Bundesliga, fast and direct, one of Algeria's most promising stars",
-      "reep_qid": "Q107285723"
+      "reep_qid": "Q107285723",
+      "club_appearances_2025_26": 25,
+      "club_goals_2025_26": 8,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -81184,6 +82904,10 @@
       {
         "alias": "Mohamed Amoura",
         "source_id": "reep"
+      },
+      {
+        "alias": "315384",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -81207,7 +82931,13 @@
         "2026"
       ],
       "notable": "Technically gifted forward at Rennes in Ligue 1, French-born who chose Algeria, known for creativity and flair",
-      "reep_qid": "Q30045780"
+      "reep_qid": "Q30045780",
+      "club_appearances_2025_26": 16,
+      "club_goals_2025_26": 10,
+      "club_assists_2025_26": 4,
+      "yellow_cards": 1,
+      "red_cards": 0,
+      "international_goals_recent": 2
     },
     "aliases": [
       {
@@ -81269,6 +82999,10 @@
       {
         "alias": "Amine Gouiri",
         "source_id": "reep"
+      },
+      {
+        "alias": "259743",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -91835,7 +93569,12 @@
       "world_cups": [
         "2026"
       ],
-      "notable": "Third-choice GK; dominant in Congolese domestic league"
+      "notable": "Third-choice GK; dominant in Congolese domestic league",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -91844,6 +93583,10 @@
       },
       {
         "alias": "L. Mpasi",
+        "source_id": "espn_fifa"
+      },
+      {
+        "alias": "211669",
         "source_id": "espn_fifa"
       }
     ]
@@ -91868,7 +93611,12 @@
         "2026"
       ],
       "notable": "Commanding centre-back; AFCON runner-up and Ligue 1 regular with Marseille",
-      "reep_qid": "Q3196721"
+      "reep_qid": "Q3196721",
+      "club_appearances_2025_26": 19,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -91950,6 +93698,10 @@
       {
         "alias": "Chancel Mangulu Mbemba",
         "source_id": "reep"
+      },
+      {
+        "alias": "174322",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -91973,7 +93725,12 @@
         "2026"
       ],
       "notable": "Attack-minded left-back; known for energetic runs down the flank at Premier League level",
-      "reep_qid": "Q16010783"
+      "reep_qid": "Q16010783",
+      "club_appearances_2025_26": 5,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 1
     },
     "aliases": [
       {
@@ -92035,6 +93792,10 @@
       {
         "alias": "Arthur Masuaku",
         "source_id": "reep"
+      },
+      {
+        "alias": "165892",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -92058,7 +93819,12 @@
         "2026"
       ],
       "notable": "Pacy right-back; a Belgian Pro League stalwart who chose DRC over Belgium",
-      "reep_qid": "Q16979997"
+      "reep_qid": "Q16979997",
+      "club_appearances_2025_26": 28,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 5,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -92108,6 +93874,10 @@
       {
         "alias": "Joris Kayembe",
         "source_id": "reep"
+      },
+      {
+        "alias": "204329",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -92216,7 +93986,12 @@
         "2026"
       ],
       "notable": "DR Congo all-time top scorer; prolific across Villarreal, Beijing Guoan and beyond",
-      "reep_qid": "Q932982"
+      "reep_qid": "Q932982",
+      "club_appearances_2025_26": 15,
+      "club_goals_2025_26": 5,
+      "club_assists_2025_26": 2,
+      "yellow_cards": 4,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -92270,6 +94045,10 @@
       {
         "alias": "Cédric Bakambu",
         "source_id": "reep"
+      },
+      {
+        "alias": "147193",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -92382,7 +94161,12 @@
         "2026"
       ],
       "notable": "Premier League forward; DR Congo most dangerous attacker in the 2026 cycle",
-      "reep_qid": "Q28101965"
+      "reep_qid": "Q28101965",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 3,
+      "club_assists_2025_26": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -92452,6 +94236,10 @@
       {
         "alias": "Yoane Wissa",
         "source_id": "reep"
+      },
+      {
+        "alias": "224077",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -92859,7 +94647,12 @@
         "2026"
       ],
       "notable": "Explosive young winger; one of Belgium best players in 2024-25 who switched to DRC",
-      "reep_qid": "Q22162731"
+      "reep_qid": "Q22162731",
+      "club_appearances_2025_26": 8,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -92913,6 +94706,10 @@
       {
         "alias": "Elia Meschak",
         "source_id": "reep"
+      },
+      {
+        "alias": "232492",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -93085,7 +94882,12 @@
         "2026"
       ],
       "notable": "Tricky right winger; adds depth and flair to DR Congo attacking options",
-      "reep_qid": "Q14948183"
+      "reep_qid": "Q14948183",
+      "club_appearances_2025_26": 3,
+      "club_goals_2025_26": 1,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -93135,6 +94937,10 @@
       {
         "alias": "Theo Bongonda",
         "source_id": "reep"
+      },
+      {
+        "alias": "182337",
+        "source_id": "espn_fifa"
       }
     ]
   },
@@ -93316,7 +95122,12 @@
         "2026"
       ],
       "notable": "Tall centre-back based in Ligue 1; provides physicality at the heart of defence",
-      "reep_qid": "Q34360045"
+      "reep_qid": "Q34360045",
+      "club_appearances_2025_26": 7,
+      "club_goals_2025_26": 0,
+      "club_assists_2025_26": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
     },
     "aliases": [
       {
@@ -93362,6 +95173,10 @@
       {
         "alias": "Dylan Batubinsika",
         "source_id": "reep"
+      },
+      {
+        "alias": "260228",
+        "source_id": "espn_fifa"
       }
     ]
   },

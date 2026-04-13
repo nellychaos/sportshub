@@ -1,27 +1,29 @@
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+<!-- Data Depth: per-sport player and team completeness -->
 
-  <!-- Player Stat Coverage -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+  <!-- ── NBA ────────────────────────────────────────────────────── -->
   <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
-    <h3 class="text-sm font-medium text-gray-300 mb-3">Player Stat Coverage</h3>
-    {% if completeness.player_stats.total_players > 0 %}
-    <p class="text-2xl font-bold text-white mb-3">{{ completeness.player_stats.total_players }} <span class="text-sm font-normal text-gray-400">players</span></p>
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-white">NBA</h3>
+      <span class="text-xs text-gray-500">{{ completeness.player_stats.nba.total }} players</span>
+    </div>
 
-    {% set cats = [
-      ('Base Stats', 'base_stats', 'blue'),
-      ('Advanced', 'advanced', 'brand'),
-      ('Play-by-Play', 'play_by_play', 'cyan'),
-      ('Adj. Shooting', 'adjusted_shooting', 'violet'),
-      ('Fully Enriched', 'fully_enriched', 'emerald')
-    ] %}
-
-    <div class="space-y-2">
-      {% for label, key, color in cats %}
-      {% set count = completeness.player_stats.categories.get(key, 0) %}
-      {% set pct = completeness.player_stats.coverage_pct.get(key, 0) %}
+    {% if completeness.player_stats.nba.total > 0 %}
+    <div class="space-y-2 mb-4">
+      {% set nba_tiers = [
+        ('Base Stats', 'base_stats', 'blue'),
+        ('Advanced', 'advanced', 'brand'),
+        ('Play-by-Play', 'play_by_play', 'cyan'),
+        ('Adj. Shooting', 'adjusted_shooting', 'violet'),
+        ('Fully Enriched', 'fully_enriched', 'emerald')
+      ] %}
+      {% for label, key, color in nba_tiers %}
+      {% set pct = completeness.player_stats.nba.pct.get(key, 0) %}
       <div>
         <div class="flex items-center justify-between mb-0.5">
           <span class="text-[11px] text-gray-400">{{ label }}</span>
-          <span class="text-[11px] font-mono text-gray-300">{{ count }} <span class="text-gray-500">({{ pct }}%)</span></span>
+          <span class="text-[11px] font-mono text-gray-300">{{ completeness.player_stats.nba.tiers.get(key, 0) }} <span class="text-gray-500">({{ pct }}%)</span></span>
         </div>
         <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
           <div class="h-full rounded-full bg-{{ color }}-500" style="width: {{ pct }}%"></div>
@@ -30,53 +32,136 @@
       {% endfor %}
     </div>
     {% else %}
-    <p class="text-sm text-gray-500">No player stats data</p>
+    <p class="text-xs text-gray-500 mb-4">No player stats data</p>
     {% endif %}
+
+    <!-- NBA Teams -->
+    <div class="pt-3 border-t border-gray-800">
+      <p class="text-[11px] text-gray-500 mb-2">Teams: {{ completeness.team_data.nba.total }}</p>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Power Ratings</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.nba.with_power_ratings }}/{{ completeness.team_data.nba.total }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">ATS Trends</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.nba.with_ats_trends }}/{{ completeness.team_data.nba.total }}</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Team Data -->
+  <!-- ── LoL Esports ────────────────────────────────────────────── -->
   <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
-    <h3 class="text-sm font-medium text-gray-300 mb-3">Team Data</h3>
-    <p class="text-2xl font-bold text-white mb-3">{{ completeness.team_data.total_teams }} <span class="text-sm font-normal text-gray-400">teams</span></p>
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-white">LoL Esports</h3>
+      <span class="text-xs text-gray-500">{{ completeness.player_stats.lol.total }} players</span>
+    </div>
 
-    <div class="space-y-2">
-      {% set team_items = [
-        ('Power Ratings', completeness.team_data.with_power_ratings),
-        ('ATS Trends', completeness.team_data.with_ats_trends),
-        ('O/U Trends', completeness.team_data.with_ou_trends),
+    {% if completeness.player_stats.lol.total > 0 %}
+    <div class="space-y-2 mb-4">
+      {% set lol_tiers = [
+        ('Roster', 'roster', 'blue'),
+        ('KDA Stats', 'kda_stats', 'brand'),
+        ('Champion Pool', 'champion_pool', 'violet')
       ] %}
-
-      {% for label, count in team_items %}
-      <div class="flex items-center justify-between">
-        <span class="text-xs text-gray-400">{{ label }}</span>
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-mono text-gray-300">{{ count }}/{{ completeness.team_data.total_teams }}</span>
-          {% if count >= completeness.team_data.total_teams %}
-            <span class="text-emerald-400 text-[10px]">&#10003;</span>
-          {% elif count > 0 %}
-            <span class="text-yellow-400 text-[10px]">&#9679;</span>
-          {% else %}
-            <span class="text-gray-600 text-[10px]">&#10007;</span>
-          {% endif %}
+      {% for label, key, color in lol_tiers %}
+      {% set pct = completeness.player_stats.lol.pct.get(key, 0) %}
+      <div>
+        <div class="flex items-center justify-between mb-0.5">
+          <span class="text-[11px] text-gray-400">{{ label }}</span>
+          <span class="text-[11px] font-mono text-gray-300">{{ completeness.player_stats.lol.tiers.get(key, 0) }} <span class="text-gray-500">({{ pct }}%)</span></span>
+        </div>
+        <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+          <div class="h-full rounded-full bg-{{ color }}-500" style="width: {{ pct }}%"></div>
         </div>
       </div>
       {% endfor %}
     </div>
+    {% else %}
+    <p class="text-xs text-gray-500 mb-4">No player data yet</p>
+    <p class="text-[11px] text-gray-600">Requires PANDASCORE_TOKEN</p>
+    {% endif %}
+
+    <!-- LoL Teams -->
+    <div class="pt-3 border-t border-gray-800">
+      <p class="text-[11px] text-gray-500 mb-2">Teams: {{ completeness.team_data.lol.total }}</p>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">W/L Records</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.lol.with_records }}/{{ completeness.team_data.lol.total }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Standings</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.lol.with_standings }}/{{ completeness.team_data.lol.total }}</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Event Enrichment -->
+  <!-- ── FIFA World Cup 2026 ────────────────────────────────────── -->
   <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
-    <h3 class="text-sm font-medium text-gray-300 mb-3">Event Enrichment</h3>
-    {% if completeness.event_enrichment.total_scheduled > 0 %}
-    <p class="text-2xl font-bold text-white mb-1">{{ completeness.event_enrichment.total_scheduled }} <span class="text-sm font-normal text-gray-400">scheduled</span></p>
-    <p class="text-sm text-gray-400 mb-3">{{ completeness.event_enrichment.with_enrichment }} enriched ({{ completeness.event_enrichment.enrichment_pct }}%)</p>
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-white">FIFA WC 2026</h3>
+      <span class="text-xs text-gray-500">{{ completeness.player_stats.football.total }} players</span>
+    </div>
 
-    <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-      <div class="h-full rounded-full bg-brand-500" style="width: {{ completeness.event_enrichment.enrichment_pct }}%"></div>
+    {% if completeness.player_stats.football.total > 0 %}
+    <div class="space-y-2 mb-4">
+      {% set fifa_tiers = [
+        ('Identity + DOB', 'identity', 'blue'),
+        ('Cross-Provider IDs', 'cross_provider_ids', 'brand'),
+        ('ESPN Stats', 'espn_stats', 'cyan'),
+        ('FBref Club Stats', 'club_stats', 'violet')
+      ] %}
+      {% for label, key, color in fifa_tiers %}
+      {% set pct = completeness.player_stats.football.pct.get(key, 0) %}
+      <div>
+        <div class="flex items-center justify-between mb-0.5">
+          <span class="text-[11px] text-gray-400">{{ label }}</span>
+          <span class="text-[11px] font-mono text-gray-300">{{ completeness.player_stats.football.tiers.get(key, 0) }} <span class="text-gray-500">({{ pct }}%)</span></span>
+        </div>
+        <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+          <div class="h-full rounded-full bg-{{ color }}-500" style="width: {{ pct }}%"></div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
     {% else %}
-    <p class="text-sm text-gray-500">No scheduled events</p>
+    <p class="text-xs text-gray-500 mb-4">No player data</p>
     {% endif %}
+
+    <!-- FIFA Teams -->
+    <div class="pt-3 border-t border-gray-800">
+      <p class="text-[11px] text-gray-500 mb-2">Teams: {{ completeness.team_data.football.total }}</p>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Historical WC Data</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.football.with_historical }}/{{ completeness.team_data.football.total }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Tournament Stats</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.football.with_tournament }}/{{ completeness.team_data.football.total }}</span>
+      </div>
+    </div>
   </div>
 
+</div>
+
+<!-- Event Enrichment (all sports) -->
+<div class="mt-4 bg-gray-900 rounded-xl border border-gray-800 p-5">
+  <div class="flex items-center justify-between">
+    <div>
+      <h3 class="text-sm font-medium text-gray-300">Event Enrichment</h3>
+      {% if completeness.event_enrichment.total_scheduled > 0 %}
+      <p class="text-xs text-gray-500 mt-1">
+        {{ completeness.event_enrichment.with_enrichment }}/{{ completeness.event_enrichment.total_scheduled }} scheduled events enriched ({{ completeness.event_enrichment.enrichment_pct }}%)
+      </p>
+      {% else %}
+      <p class="text-xs text-gray-500 mt-1">No scheduled events</p>
+      {% endif %}
+    </div>
+    {% if completeness.event_enrichment.total_scheduled > 0 %}
+    <div class="w-48">
+      <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-full rounded-full bg-brand-500" style="width: {{ completeness.event_enrichment.enrichment_pct }}%"></div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </div>

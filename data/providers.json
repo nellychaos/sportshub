@@ -149,9 +149,12 @@
       "rate_limit_seconds": 1.0,
       "source_timezone": "UTC",
       "endpoints": {
-        "scoreboard": "/scoreboard"
+        "scoreboard": "/scoreboard",
+        "teams": "/teams",
+        "team_roster": "/teams/{team_id}/roster",
+        "player_overview": "https://site.web.api.espn.com/apis/common/v3/sports/soccer/fifa.world/athletes/{player_id}/overview"
       },
-      "notes": "Public ESPN API. Scans next 14 days plus WC tournament window (Jun 11 - Jul 19, 2026). Filters TBD/placeholder matches."
+      "notes": "Public ESPN API. Scans next 14 days plus WC tournament window (Jun 11 - Jul 19, 2026). Filters TBD/placeholder matches. Team/roster/player endpoints follow same pattern as ESPN NBA."
     },
     {
       "source_id": "fifa_api",
@@ -186,9 +189,10 @@
       "source_timezone": "UTC",
       "endpoints": {
         "matches": "/competitions/{competition}/matches",
-        "standings": "/competitions/{competition}/standings"
+        "standings": "/competitions/{competition}/standings",
+        "teams": "/competitions/{competition}/teams"
       },
-      "notes": "Free tier: 10 req/min. Auth via X-Auth-Token header. Filters: status=SCHEDULED."
+      "notes": "Free tier: 10 req/min. Auth via X-Auth-Token header. Filters: status=SCHEDULED. Teams endpoint returns squads with player metadata."
     },
     {
       "source_id": "reep",
@@ -237,9 +241,10 @@
         "schedule": "/getSchedule",
         "leagues": "/getLeagues",
         "standings": "/getStandings",
-        "live": "/getLive"
+        "live": "/getLive",
+        "teams": "/getTeams"
       },
-      "notes": "Official Riot API. Covers 6 leagues: LCK, LPL, LEC, LCS, MSI, Worlds. Auth via x-api-key header. Pagination via pageToken."
+      "notes": "Official Riot API. Covers 6 leagues: LCK, LPL, LEC, LCS, MSI, Worlds. Auth via x-api-key header. Pagination via pageToken. getStandings returns W/L records and rankings per tournament."
     },
     {
       "source_id": "pandascore_lol",
@@ -256,9 +261,11 @@
       "endpoints": {
         "matches": "/lol/matches/upcoming",
         "teams": "/lol/teams",
-        "players": "/lol/players"
+        "players": "/lol/players",
+        "player_detail": "/lol/players/{player_id}",
+        "team_detail": "/lol/teams/{team_id}"
       },
-      "notes": "Auth via Bearer token. Page-based pagination (100 per page)."
+      "notes": "Auth via Bearer token. Page-based pagination (100 per page). Free tier provides player profiles with basic stats. Detailed per-game stats may require paid plan."
     },
     {
       "source_id": "liquipedia_lol",

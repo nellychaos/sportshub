@@ -25,5 +25,104 @@
     "records_processed": 527,
     "summary": "Merged advanced stats for 527/535 players",
     "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_team_stats",
+    "started_at": "2026-04-10T08:34:18.628013+00:00",
+    "completed_at": "2026-04-10T08:34:26.370009+00:00",
+    "status": "success",
+    "records_processed": 26,
+    "summary": "Enriched 26/58 teams (standings: 0, historical: 26)",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_team_stats",
+    "started_at": "2026-04-10T08:34:57.011720+00:00",
+    "completed_at": "2026-04-10T08:35:04.408618+00:00",
+    "status": "success",
+    "records_processed": 26,
+    "summary": "Enriched 26/58 teams (standings: 0, historical: 26)",
+    "error_message": null
+  },
+  {
+    "script_name": "enrich_lol_teams",
+    "started_at": "2026-04-10T08:40:23.234173+00:00",
+    "completed_at": "2026-04-10T08:41:06.652320+00:00",
+    "status": "success",
+    "records_processed": 0,
+    "summary": "Enriched 0/40 teams with standings data",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_player_stats",
+    "started_at": "2026-04-10T08:41:06.920945+00:00",
+    "completed_at": "2026-04-10T08:41:41.351280+00:00",
+    "status": "success",
+    "records_processed": 12,
+    "summary": "Enriched 12 player records (ESPN: 12, Football-Data: 0, errors: 1)",
+    "error_message": null
+  },
+  {
+    "script_name": "enrich_lol_teams",
+    "started_at": "2026-04-10T08:44:17.227545+00:00",
+    "completed_at": "2026-04-10T08:47:02.404290+00:00",
+    "status": "success",
+    "records_processed": 35,
+    "summary": "Enriched 35/40 teams with W/L records",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_player_stats",
+    "started_at": "2026-04-10T08:47:07.590093+00:00",
+    "completed_at": "2026-04-10T08:49:01.736812+00:00",
+    "status": "success",
+    "records_processed": 12,
+    "summary": "Enriched 12 player records (ESPN: 12, Football-Data: 0, errors: 1)",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_player_stats",
+    "started_at": "2026-04-10T08:54:52.685866+00:00",
+    "completed_at": "2026-04-10T08:54:56.520175+00:00",
+    "status": "success",
+    "records_processed": 0,
+    "summary": "Enriched 0 player records (ESPN: 0, Football-Data: 0, errors: 0)",
+    "error_message": null
+  },
+  {
+    "script_name": "merge_fbref_stats",
+    "started_at": "2026-04-10T09:00:32.043161+00:00",
+    "completed_at": "2026-04-10T09:00:32.056333+00:00",
+    "status": "success",
+    "records_processed": 0,
+    "summary": "No players to process",
+    "error_message": null
+  },
+  {
+    "script_name": "merge_fbref_stats",
+    "started_at": "2026-04-10T09:01:21.327221+00:00",
+    "completed_at": "2026-04-10T09:01:32.656689+00:00",
+    "status": "success",
+    "records_processed": 0,
+    "summary": "Merged FBref stats for 0/3 players (0 blocked, 3 errors, 0 no data)",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_player_stats",
+    "started_at": "2026-04-10T09:01:52.134122+00:00",
+    "completed_at": "2026-04-10T09:01:59.514684+00:00",
+    "status": "success",
+    "records_processed": 0,
+    "summary": "Enriched 0 player records (ESPN: 0, Football-Data: 0, errors: 0)",
+    "error_message": null
+  },
+  {
+    "script_name": "fetch_fifa_player_stats",
+    "started_at": "2026-04-10T09:13:31.676343+00:00",
+    "completed_at": "2026-04-10T09:22:43.052513+00:00",
+    "status": "success",
+    "records_processed": 202,
+    "summary": "Enriched 202 player records (ESPN: 202, Football-Data: 0, errors: 10)",
+    "error_message": null
   }
 ]

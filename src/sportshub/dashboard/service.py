@@ -818,58 +818,173 @@ class DashboardService:
         }
 
     def _compute_player_completeness(self) -> dict:
-        """Count player stat coverage from nba_player_stats.json."""
+        """Count player stat coverage across all sports."""
+        return {
+            "nba": self._nba_player_completeness(),
+            "lol": self._lol_player_completeness(),
+            "football": self._football_player_completeness(),
+        }
+
+    def _nba_player_completeness(self) -> dict:
         try:
             with open(DATA_DIR / "nba_player_stats.json") as f:
                 data = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
-            return {"total_players": 0, "categories": {}, "coverage_pct": {}}
+            return {"total": 0, "tiers": {}, "pct": {}}
 
         players = data.get("players", [])
         total = len(players)
         if total == 0:
-            return {"total_players": 0, "categories": {}, "coverage_pct": {}}
+            return {"total": 0, "tiers": {}, "pct": {}}
 
-        categories = {
+        tiers = {
             "base_stats": sum(1 for p in players if p.get("stats")),
             "advanced": sum(1 for p in players if p.get("advanced")),
             "play_by_play": sum(1 for p in players if p.get("play_by_play")),
             "adjusted_shooting": sum(1 for p in players if p.get("adjusted_shooting")),
         }
-
-        fully_enriched = sum(
+        tiers["fully_enriched"] = sum(
             1 for p in players
             if p.get("advanced") and p.get("play_by_play") and p.get("adjusted_shooting")
         )
-        categories["fully_enriched"] = fully_enriched
+        pct = {k: round(v / total * 100, 1) for k, v in tiers.items()}
+        return {"total": total, "tiers": tiers, "pct": pct}
 
-        coverage_pct = {
-            k: round(v / total * 100, 1) for k, v in categories.items()
-        }
+    def _lol_player_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "lol_players.json") as f:
+                roster = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            roster = []
 
-        return {
-            "total_players": total,
-            "categories": categories,
-            "coverage_pct": coverage_pct,
+        try:
+            with open(DATA_DIR / "lol_player_stats.json") as f:
+                stats_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            stats_data = {}
+
+        players = stats_data.get("players", [])
+        roster_count = len(roster) if isinstance(roster, list) else 0
+        stats_count = len(players)
+
+        tiers = {
+            "roster": roster_count,
+            "kda_stats": sum(1 for p in players if p.get("stats", {}).get("kda") is not None),
+            "champion_pool": sum(1 for p in players if p.get("champion_pool")),
         }
+        total = max(roster_count, stats_count, 1)
+        pct = {k: round(v / total * 100, 1) for k, v in tiers.items()}
+        return {"total": roster_count, "tiers": tiers, "pct": pct}
+
+    def _football_player_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "fifa_wc_players.json") as f:
+                players = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            players = []
+
+        if not isinstance(players, list):
+            players = []
+
+        total = len(players)
+        if total == 0:
+            return {"total": 0, "tiers": {}, "pct": {}}
+
+        tiers = {
+            "identity": sum(1 for p in players if p.get("name") and p.get("metadata", {}).get("date_of_birth")),
+            "cross_provider_ids": sum(1 for p in players if len(p.get("aliases", [])) >= 5),
+            "club_stats": sum(1 for p in players if p.get("metadata", {}).get("club_stats_2025_26")),
+            "espn_stats": sum(1 for p in players if p.get("metadata", {}).get("club_goals_2025_26") is not None
+                            or p.get("metadata", {}).get("club_appearances_2025_26") is not None),
+        }
+        pct = {k: round(v / total * 100, 1) for k, v in tiers.items()}
+        return {"total": total, "tiers": tiers, "pct": pct}
 
     def _compute_team_completeness(self) -> dict:
-        """Count team data coverage from reference files."""
-        def _count_file(filename: str) -> int:
+        """Count team data coverage across all sports."""
+        def _load_list(filename: str) -> list:
             try:
                 with open(DATA_DIR / filename) as f:
                     data = json.load(f)
-                return len(data) if isinstance(data, list) else 0
+                return data if isinstance(data, list) else []
             except (FileNotFoundError, json.JSONDecodeError):
-                return 0
+                return []
 
-        total_teams = _count_file("nba_teams.json")
+        nba_teams = _load_list("nba_teams.json")
+        lol_teams = _load_list("lol_teams.json")
+        fifa_teams = _load_list("fifa_wc_teams.json")
 
         return {
-            "total_teams": total_teams,
-            "with_power_ratings": _count_file("teamrankings_power_ratings_2026.json"),
-            "with_ats_trends": _count_file("teamrankings_ats_trends_2026.json"),
-            "with_ou_trends": _count_file("teamrankings_ou_trends_2026.json"),
+            "nba": {
+                "total": len(nba_teams),
+                "with_power_ratings": len(_load_list("teamrankings_power_ratings_2026.json")),
+                "with_ats_trends": len(_load_list("teamrankings_ats_trends_2026.json")),
+            },
+            "lol": {
+                "total": len(lol_teams),
+                "with_records": sum(1 for t in lol_teams if t.get("metadata", {}).get("wins") is not None),
+                "with_standings": sum(1 for t in lol_teams if t.get("metadata", {}).get("region_standing") is not None),
+            },
+            "football": {
+                "total": len(fifa_teams),
+                "with_historical": sum(1 for t in fifa_teams if t.get("metadata", {}).get("historical_wc_stats")),
+                "with_tournament": sum(1 for t in fifa_teams if t.get("metadata", {}).get("tournament_stats")),
+            },
+        }
+
+    def get_thesis_scorecard(self) -> dict:
+        """Compute the MVP thesis validation metrics.
+
+        Answers the core questions:
+        1. Is multi-source aggregation accurate?
+        2. Can AI handle entity resolution cheaply?
+        3. How deep is data coverage vs paid providers?
+        4. Is it self-healing?
+        """
+        # Count providers and sports from registry
+        providers = _registry.get_all_providers()
+        sports = set()
+        for p in providers:
+            if p.sport:
+                sports.add(p.sport)
+
+        # Data depth scores per sport
+        nba = self._nba_player_completeness()
+        lol = self._lol_player_completeness()
+        football = self._football_player_completeness()
+
+        nba_depth = len([v for v in nba.get("pct", {}).values() if v > 80])
+        lol_depth = len([v for v in lol.get("pct", {}).values() if v > 30])
+        football_depth = len([v for v in football.get("pct", {}).values() if v > 30])
+
+        # Reference data totals
+        total_records = 0
+        for fn in ["nba_players.json", "nba_player_stats.json", "nba_teams.json",
+                    "lol_players.json", "lol_teams.json",
+                    "fifa_wc_players.json", "fifa_wc_teams.json"]:
+            try:
+                with open(DATA_DIR / fn) as f:
+                    data = json.load(f)
+                if isinstance(data, list):
+                    total_records += len(data)
+                elif isinstance(data, dict) and "players" in data:
+                    total_records += len(data["players"])
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
+
+        return {
+            "provider_count": len(providers),
+            "sport_count": len(sports),
+            "sports": sorted(sports),
+            "total_reference_records": total_records,
+            "depth_scores": {
+                "nba": {"score": nba_depth, "max": 5, "label": "NBA",
+                        "players": nba.get("total", 0)},
+                "lol": {"score": lol_depth, "max": 3, "label": "LoL Esports",
+                        "players": lol.get("total", 0)},
+                "football": {"score": football_depth, "max": 4, "label": "FIFA WC 2026",
+                             "players": football.get("total", 0)},
+            },
         }
 
     async def _compute_event_enrichment(self) -> dict:

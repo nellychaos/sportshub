@@ -4,15 +4,43 @@
     "short_name": "T1",
     "abbreviation": "T1",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 78,
+      "losses": 45,
+      "win_rate": 63.4,
+      "region_standing": 3,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "T1", "source_id": "global" },
-      { "alias": "SK Telecom T1", "source_id": "global" },
-      { "alias": "SKT T1", "source_id": "global" },
-      { "alias": "SKT", "source_id": "global" },
-      { "alias": "t1", "source_id": "lolesports" },
-      { "alias": "T1", "source_id": "pandascore_lol" },
-      { "alias": "T1", "source_id": "liquipedia_lol" }
+      {
+        "alias": "T1",
+        "source_id": "global"
+      },
+      {
+        "alias": "SK Telecom T1",
+        "source_id": "global"
+      },
+      {
+        "alias": "SKT T1",
+        "source_id": "global"
+      },
+      {
+        "alias": "SKT",
+        "source_id": "global"
+      },
+      {
+        "alias": "t1",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "T1",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "T1",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -20,17 +48,51 @@
     "short_name": "Gen.G",
     "abbreviation": "GEN",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 108,
+      "losses": 12,
+      "win_rate": 90.0,
+      "region_standing": 1,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "Gen.G", "source_id": "global" },
-      { "alias": "Gen.G Esports", "source_id": "global" },
-      { "alias": "GEN", "source_id": "global" },
-      { "alias": "Samsung Galaxy", "source_id": "global" },
-      { "alias": "SSG", "source_id": "global" },
-      { "alias": "KSV Esports", "source_id": "global" },
-      { "alias": "gen-g", "source_id": "lolesports" },
-      { "alias": "Gen.G", "source_id": "pandascore_lol" },
-      { "alias": "Gen.G", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Gen.G",
+        "source_id": "global"
+      },
+      {
+        "alias": "Gen.G Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "GEN",
+        "source_id": "global"
+      },
+      {
+        "alias": "Samsung Galaxy",
+        "source_id": "global"
+      },
+      {
+        "alias": "SSG",
+        "source_id": "global"
+      },
+      {
+        "alias": "KSV Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "gen-g",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Gen.G",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Gen.G",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -38,14 +100,39 @@
     "short_name": "Hanwha Life",
     "abbreviation": "HLE",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 81,
+      "losses": 39,
+      "win_rate": 67.5,
+      "region_standing": 2,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "Hanwha Life Esports", "source_id": "global" },
-      { "alias": "HLE", "source_id": "global" },
-      { "alias": "Hanwha Life", "source_id": "global" },
-      { "alias": "hanwha-life-esports", "source_id": "lolesports" },
-      { "alias": "Hanwha Life Esports", "source_id": "pandascore_lol" },
-      { "alias": "Hanwha Life Esports", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Hanwha Life Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "HLE",
+        "source_id": "global"
+      },
+      {
+        "alias": "Hanwha Life",
+        "source_id": "global"
+      },
+      {
+        "alias": "hanwha-life-esports",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Hanwha Life Esports",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Hanwha Life Esports",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -53,16 +140,42 @@
     "short_name": "DRX",
     "abbreviation": "DRX",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK"
+    },
     "aliases": [
-      { "alias": "DRX", "source_id": "global" },
-      { "alias": "DragonX", "source_id": "global" },
-      { "alias": "Kingzone DragonX", "source_id": "global" },
-      { "alias": "KZ", "source_id": "global" },
-      { "alias": "Longzhu Gaming", "source_id": "global" },
-      { "alias": "drx", "source_id": "lolesports" },
-      { "alias": "DRX", "source_id": "pandascore_lol" },
-      { "alias": "DRX", "source_id": "liquipedia_lol" }
+      {
+        "alias": "DRX",
+        "source_id": "global"
+      },
+      {
+        "alias": "DragonX",
+        "source_id": "global"
+      },
+      {
+        "alias": "Kingzone DragonX",
+        "source_id": "global"
+      },
+      {
+        "alias": "KZ",
+        "source_id": "global"
+      },
+      {
+        "alias": "Longzhu Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "drx",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "DRX",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "DRX",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -70,13 +183,35 @@
     "short_name": "KT Rolster",
     "abbreviation": "KT",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 67,
+      "losses": 49,
+      "win_rate": 57.8,
+      "region_standing": 5,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "KT Rolster", "source_id": "global" },
-      { "alias": "KT", "source_id": "global" },
-      { "alias": "kt-rolster", "source_id": "lolesports" },
-      { "alias": "KT Rolster", "source_id": "pandascore_lol" },
-      { "alias": "KT Rolster", "source_id": "liquipedia_lol" }
+      {
+        "alias": "KT Rolster",
+        "source_id": "global"
+      },
+      {
+        "alias": "KT",
+        "source_id": "global"
+      },
+      {
+        "alias": "kt-rolster",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "KT Rolster",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "KT Rolster",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -84,17 +219,51 @@
     "short_name": "Dplus",
     "abbreviation": "DK",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 74,
+      "losses": 50,
+      "win_rate": 59.7,
+      "region_standing": 4,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "Dplus KIA", "source_id": "global" },
-      { "alias": "DK", "source_id": "global" },
-      { "alias": "DWG KIA", "source_id": "global" },
-      { "alias": "DAMWON Gaming", "source_id": "global" },
-      { "alias": "DWG", "source_id": "global" },
-      { "alias": "DAMWON", "source_id": "global" },
-      { "alias": "dplus-kia", "source_id": "lolesports" },
-      { "alias": "Dplus KIA", "source_id": "pandascore_lol" },
-      { "alias": "Dplus KIA", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Dplus KIA",
+        "source_id": "global"
+      },
+      {
+        "alias": "DK",
+        "source_id": "global"
+      },
+      {
+        "alias": "DWG KIA",
+        "source_id": "global"
+      },
+      {
+        "alias": "DAMWON Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "DWG",
+        "source_id": "global"
+      },
+      {
+        "alias": "DAMWON",
+        "source_id": "global"
+      },
+      {
+        "alias": "dplus-kia",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Dplus KIA",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Dplus KIA",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -102,15 +271,38 @@
     "short_name": "Kwangdong",
     "abbreviation": "KDF",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK"
+    },
     "aliases": [
-      { "alias": "Kwangdong Freecs", "source_id": "global" },
-      { "alias": "KDF", "source_id": "global" },
-      { "alias": "Afreeca Freecs", "source_id": "global" },
-      { "alias": "AF", "source_id": "global" },
-      { "alias": "kwangdong-freecs", "source_id": "lolesports" },
-      { "alias": "Kwangdong Freecs", "source_id": "pandascore_lol" },
-      { "alias": "Kwangdong Freecs", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Kwangdong Freecs",
+        "source_id": "global"
+      },
+      {
+        "alias": "KDF",
+        "source_id": "global"
+      },
+      {
+        "alias": "Afreeca Freecs",
+        "source_id": "global"
+      },
+      {
+        "alias": "AF",
+        "source_id": "global"
+      },
+      {
+        "alias": "kwangdong-freecs",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Kwangdong Freecs",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Kwangdong Freecs",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -118,14 +310,39 @@
     "short_name": "Nongshim",
     "abbreviation": "NS",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 34,
+      "losses": 75,
+      "win_rate": 31.2,
+      "region_standing": 7,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "Nongshim RedForce", "source_id": "global" },
-      { "alias": "NS", "source_id": "global" },
-      { "alias": "NS RedForce", "source_id": "global" },
-      { "alias": "nongshim-redforce", "source_id": "lolesports" },
-      { "alias": "Nongshim RedForce", "source_id": "pandascore_lol" },
-      { "alias": "Nongshim RedForce", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Nongshim RedForce",
+        "source_id": "global"
+      },
+      {
+        "alias": "NS",
+        "source_id": "global"
+      },
+      {
+        "alias": "NS RedForce",
+        "source_id": "global"
+      },
+      {
+        "alias": "nongshim-redforce",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Nongshim RedForce",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Nongshim RedForce",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -133,17 +350,51 @@
     "short_name": "FearX",
     "abbreviation": "FOX",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 41,
+      "losses": 66,
+      "win_rate": 38.3,
+      "region_standing": 6,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "BNK FearX", "source_id": "global" },
-      { "alias": "FearX", "source_id": "global" },
-      { "alias": "FOX", "source_id": "global" },
-      { "alias": "Liiv SANDBOX", "source_id": "global" },
-      { "alias": "LSB", "source_id": "global" },
-      { "alias": "SANDBOX Gaming", "source_id": "global" },
-      { "alias": "bnk-fearx", "source_id": "lolesports" },
-      { "alias": "BNK FearX", "source_id": "pandascore_lol" },
-      { "alias": "BNK FearX", "source_id": "liquipedia_lol" }
+      {
+        "alias": "BNK FearX",
+        "source_id": "global"
+      },
+      {
+        "alias": "FearX",
+        "source_id": "global"
+      },
+      {
+        "alias": "FOX",
+        "source_id": "global"
+      },
+      {
+        "alias": "Liiv SANDBOX",
+        "source_id": "global"
+      },
+      {
+        "alias": "LSB",
+        "source_id": "global"
+      },
+      {
+        "alias": "SANDBOX Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "bnk-fearx",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "BNK FearX",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "BNK FearX",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -151,15 +402,43 @@
     "short_name": "BRION",
     "abbreviation": "BRO",
     "sport": "lol",
-    "metadata": { "region": "LCK" },
+    "metadata": {
+      "region": "LCK",
+      "wins": 23,
+      "losses": 78,
+      "win_rate": 22.8,
+      "region_standing": 10,
+      "league": "LCK"
+    },
     "aliases": [
-      { "alias": "OKSavingsBank BRION", "source_id": "global" },
-      { "alias": "BRION", "source_id": "global" },
-      { "alias": "BRO", "source_id": "global" },
-      { "alias": "Fredit BRION", "source_id": "global" },
-      { "alias": "ok-savingsbank-brion", "source_id": "lolesports" },
-      { "alias": "OKSavingsBank BRION", "source_id": "pandascore_lol" },
-      { "alias": "OKSavingsBank BRION", "source_id": "liquipedia_lol" }
+      {
+        "alias": "OKSavingsBank BRION",
+        "source_id": "global"
+      },
+      {
+        "alias": "BRION",
+        "source_id": "global"
+      },
+      {
+        "alias": "BRO",
+        "source_id": "global"
+      },
+      {
+        "alias": "Fredit BRION",
+        "source_id": "global"
+      },
+      {
+        "alias": "ok-savingsbank-brion",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "OKSavingsBank BRION",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "OKSavingsBank BRION",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -167,14 +446,39 @@
     "short_name": "JDG",
     "abbreviation": "JDG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 71,
+      "losses": 44,
+      "win_rate": 61.7,
+      "region_standing": 3,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "JD Gaming", "source_id": "global" },
-      { "alias": "JDG", "source_id": "global" },
-      { "alias": "JDG Intel", "source_id": "global" },
-      { "alias": "jd-gaming", "source_id": "lolesports" },
-      { "alias": "JD Gaming", "source_id": "pandascore_lol" },
-      { "alias": "JD Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "JD Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "JDG",
+        "source_id": "global"
+      },
+      {
+        "alias": "JDG Intel",
+        "source_id": "global"
+      },
+      {
+        "alias": "jd-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "JD Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "JD Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -182,13 +486,35 @@
     "short_name": "BLG",
     "abbreviation": "BLG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 90,
+      "losses": 24,
+      "win_rate": 78.9,
+      "region_standing": 1,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Bilibili Gaming", "source_id": "global" },
-      { "alias": "BLG", "source_id": "global" },
-      { "alias": "bilibili-gaming", "source_id": "lolesports" },
-      { "alias": "Bilibili Gaming", "source_id": "pandascore_lol" },
-      { "alias": "Bilibili Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Bilibili Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "BLG",
+        "source_id": "global"
+      },
+      {
+        "alias": "bilibili-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Bilibili Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Bilibili Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -196,15 +522,43 @@
     "short_name": "Weibo",
     "abbreviation": "WBG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 62,
+      "losses": 59,
+      "win_rate": 51.2,
+      "region_standing": 5,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Weibo Gaming", "source_id": "global" },
-      { "alias": "WBG", "source_id": "global" },
-      { "alias": "Suning", "source_id": "global" },
-      { "alias": "SN", "source_id": "global" },
-      { "alias": "weibo-gaming", "source_id": "lolesports" },
-      { "alias": "Weibo Gaming", "source_id": "pandascore_lol" },
-      { "alias": "Weibo Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Weibo Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "WBG",
+        "source_id": "global"
+      },
+      {
+        "alias": "Suning",
+        "source_id": "global"
+      },
+      {
+        "alias": "SN",
+        "source_id": "global"
+      },
+      {
+        "alias": "weibo-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Weibo Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Weibo Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -212,14 +566,39 @@
     "short_name": "TES",
     "abbreviation": "TES",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 88,
+      "losses": 32,
+      "win_rate": 73.3,
+      "region_standing": 2,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Top Esports", "source_id": "global" },
-      { "alias": "TES", "source_id": "global" },
-      { "alias": "Topsports Gaming", "source_id": "global" },
-      { "alias": "top-esports", "source_id": "lolesports" },
-      { "alias": "Top Esports", "source_id": "pandascore_lol" },
-      { "alias": "Top Esports", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Top Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "TES",
+        "source_id": "global"
+      },
+      {
+        "alias": "Topsports Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "top-esports",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Top Esports",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Top Esports",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -227,14 +606,39 @@
     "short_name": "EDG",
     "abbreviation": "EDG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 33,
+      "losses": 44,
+      "win_rate": 42.9,
+      "region_standing": 10,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Edward Gaming", "source_id": "global" },
-      { "alias": "EDG", "source_id": "global" },
-      { "alias": "EDward Gaming", "source_id": "global" },
-      { "alias": "edward-gaming", "source_id": "lolesports" },
-      { "alias": "Edward Gaming", "source_id": "pandascore_lol" },
-      { "alias": "Edward Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Edward Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "EDG",
+        "source_id": "global"
+      },
+      {
+        "alias": "EDward Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "edward-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Edward Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Edward Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -242,14 +646,39 @@
     "short_name": "RNG",
     "abbreviation": "RNG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 14,
+      "losses": 38,
+      "win_rate": 26.9,
+      "region_standing": 16,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Royal Never Give Up", "source_id": "global" },
-      { "alias": "RNG", "source_id": "global" },
-      { "alias": "Royal Club", "source_id": "global" },
-      { "alias": "royal-never-give-up", "source_id": "lolesports" },
-      { "alias": "Royal Never Give Up", "source_id": "pandascore_lol" },
-      { "alias": "Royal Never Give Up", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Royal Never Give Up",
+        "source_id": "global"
+      },
+      {
+        "alias": "RNG",
+        "source_id": "global"
+      },
+      {
+        "alias": "Royal Club",
+        "source_id": "global"
+      },
+      {
+        "alias": "royal-never-give-up",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Royal Never Give Up",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Royal Never Give Up",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -257,14 +686,39 @@
     "short_name": "LNG",
     "abbreviation": "LNG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 42,
+      "losses": 36,
+      "win_rate": 53.8,
+      "region_standing": 8,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "LNG Esports", "source_id": "global" },
-      { "alias": "LNG", "source_id": "global" },
-      { "alias": "Li-Ning Gaming", "source_id": "global" },
-      { "alias": "lng-esports", "source_id": "lolesports" },
-      { "alias": "LNG Esports", "source_id": "pandascore_lol" },
-      { "alias": "LNG Esports", "source_id": "liquipedia_lol" }
+      {
+        "alias": "LNG Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "LNG",
+        "source_id": "global"
+      },
+      {
+        "alias": "Li-Ning Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "lng-esports",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "LNG Esports",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "LNG Esports",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -272,13 +726,35 @@
     "short_name": "FPX",
     "abbreviation": "FPX",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 32,
+      "losses": 54,
+      "win_rate": 37.2,
+      "region_standing": 11,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "FunPlus Phoenix", "source_id": "global" },
-      { "alias": "FPX", "source_id": "global" },
-      { "alias": "funplus-phoenix", "source_id": "lolesports" },
-      { "alias": "FunPlus Phoenix", "source_id": "pandascore_lol" },
-      { "alias": "FunPlus Phoenix", "source_id": "liquipedia_lol" }
+      {
+        "alias": "FunPlus Phoenix",
+        "source_id": "global"
+      },
+      {
+        "alias": "FPX",
+        "source_id": "global"
+      },
+      {
+        "alias": "funplus-phoenix",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "FunPlus Phoenix",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "FunPlus Phoenix",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -286,15 +762,43 @@
     "short_name": "AL",
     "abbreviation": "AL",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 68,
+      "losses": 42,
+      "win_rate": 61.8,
+      "region_standing": 4,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Anyone's Legend", "source_id": "global" },
-      { "alias": "AL", "source_id": "global" },
-      { "alias": "Rogue Warriors", "source_id": "global" },
-      { "alias": "RW", "source_id": "global" },
-      { "alias": "anyones-legend", "source_id": "lolesports" },
-      { "alias": "Anyone's Legend", "source_id": "pandascore_lol" },
-      { "alias": "Anyone's Legend", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Anyone's Legend",
+        "source_id": "global"
+      },
+      {
+        "alias": "AL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Rogue Warriors",
+        "source_id": "global"
+      },
+      {
+        "alias": "RW",
+        "source_id": "global"
+      },
+      {
+        "alias": "anyones-legend",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Anyone's Legend",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Anyone's Legend",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -302,14 +806,39 @@
     "short_name": "IG",
     "abbreviation": "IG",
     "sport": "lol",
-    "metadata": { "region": "LPL" },
+    "metadata": {
+      "region": "LPL",
+      "wins": 59,
+      "losses": 50,
+      "win_rate": 54.1,
+      "region_standing": 6,
+      "league": "LPL"
+    },
     "aliases": [
-      { "alias": "Invictus Gaming", "source_id": "global" },
-      { "alias": "IG", "source_id": "global" },
-      { "alias": "iG", "source_id": "global" },
-      { "alias": "invictus-gaming", "source_id": "lolesports" },
-      { "alias": "Invictus Gaming", "source_id": "pandascore_lol" },
-      { "alias": "Invictus Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Invictus Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "IG",
+        "source_id": "global"
+      },
+      {
+        "alias": "iG",
+        "source_id": "global"
+      },
+      {
+        "alias": "invictus-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Invictus Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Invictus Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -317,14 +846,39 @@
     "short_name": "G2",
     "abbreviation": "G2",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 87,
+      "losses": 27,
+      "win_rate": 76.3,
+      "region_standing": 1,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "G2 Esports", "source_id": "global" },
-      { "alias": "G2", "source_id": "global" },
-      { "alias": "Gamers2", "source_id": "global" },
-      { "alias": "g2-esports", "source_id": "lolesports" },
-      { "alias": "G2 Esports", "source_id": "pandascore_lol" },
-      { "alias": "G2 Esports", "source_id": "liquipedia_lol" }
+      {
+        "alias": "G2 Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "G2",
+        "source_id": "global"
+      },
+      {
+        "alias": "Gamers2",
+        "source_id": "global"
+      },
+      {
+        "alias": "g2-esports",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "G2 Esports",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "G2 Esports",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -332,13 +886,35 @@
     "short_name": "Fnatic",
     "abbreviation": "FNC",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 71,
+      "losses": 43,
+      "win_rate": 62.3,
+      "region_standing": 2,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "Fnatic", "source_id": "global" },
-      { "alias": "FNC", "source_id": "global" },
-      { "alias": "fnatic", "source_id": "lolesports" },
-      { "alias": "Fnatic", "source_id": "pandascore_lol" },
-      { "alias": "Fnatic", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Fnatic",
+        "source_id": "global"
+      },
+      {
+        "alias": "FNC",
+        "source_id": "global"
+      },
+      {
+        "alias": "fnatic",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Fnatic",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Fnatic",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -346,14 +922,34 @@
     "short_name": "MAD Lions",
     "abbreviation": "MAD",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC"
+    },
     "aliases": [
-      { "alias": "MAD Lions KOI", "source_id": "global" },
-      { "alias": "MAD Lions", "source_id": "global" },
-      { "alias": "MAD", "source_id": "global" },
-      { "alias": "mad-lions-koi", "source_id": "lolesports" },
-      { "alias": "MAD Lions KOI", "source_id": "pandascore_lol" },
-      { "alias": "MAD Lions KOI", "source_id": "liquipedia_lol" }
+      {
+        "alias": "MAD Lions KOI",
+        "source_id": "global"
+      },
+      {
+        "alias": "MAD Lions",
+        "source_id": "global"
+      },
+      {
+        "alias": "MAD",
+        "source_id": "global"
+      },
+      {
+        "alias": "mad-lions-koi",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "MAD Lions KOI",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "MAD Lions KOI",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -361,14 +957,39 @@
     "short_name": "Vitality",
     "abbreviation": "VIT",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 41,
+      "losses": 52,
+      "win_rate": 44.1,
+      "region_standing": 7,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "Team Vitality", "source_id": "global" },
-      { "alias": "Vitality", "source_id": "global" },
-      { "alias": "VIT", "source_id": "global" },
-      { "alias": "team-vitality", "source_id": "lolesports" },
-      { "alias": "Team Vitality", "source_id": "pandascore_lol" },
-      { "alias": "Team Vitality", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Team Vitality",
+        "source_id": "global"
+      },
+      {
+        "alias": "Vitality",
+        "source_id": "global"
+      },
+      {
+        "alias": "VIT",
+        "source_id": "global"
+      },
+      {
+        "alias": "team-vitality",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Team Vitality",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Team Vitality",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -376,13 +997,35 @@
     "short_name": "Rogue",
     "abbreviation": "RGE",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 15,
+      "losses": 46,
+      "win_rate": 24.6,
+      "region_standing": 10,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "Rogue", "source_id": "global" },
-      { "alias": "RGE", "source_id": "global" },
-      { "alias": "rogue", "source_id": "lolesports" },
-      { "alias": "Rogue", "source_id": "pandascore_lol" },
-      { "alias": "Rogue", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Rogue",
+        "source_id": "global"
+      },
+      {
+        "alias": "RGE",
+        "source_id": "global"
+      },
+      {
+        "alias": "rogue",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Rogue",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Rogue",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -390,13 +1033,30 @@
     "short_name": "BDS",
     "abbreviation": "BDS",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC"
+    },
     "aliases": [
-      { "alias": "Team BDS", "source_id": "global" },
-      { "alias": "BDS", "source_id": "global" },
-      { "alias": "team-bds", "source_id": "lolesports" },
-      { "alias": "Team BDS", "source_id": "pandascore_lol" },
-      { "alias": "Team BDS", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Team BDS",
+        "source_id": "global"
+      },
+      {
+        "alias": "BDS",
+        "source_id": "global"
+      },
+      {
+        "alias": "team-bds",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Team BDS",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Team BDS",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -404,14 +1064,39 @@
     "short_name": "Heretics",
     "abbreviation": "TH",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 37,
+      "losses": 54,
+      "win_rate": 40.7,
+      "region_standing": 8,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "Team Heretics", "source_id": "global" },
-      { "alias": "Heretics", "source_id": "global" },
-      { "alias": "TH", "source_id": "global" },
-      { "alias": "team-heretics", "source_id": "lolesports" },
-      { "alias": "Team Heretics", "source_id": "pandascore_lol" },
-      { "alias": "Team Heretics", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Team Heretics",
+        "source_id": "global"
+      },
+      {
+        "alias": "Heretics",
+        "source_id": "global"
+      },
+      {
+        "alias": "TH",
+        "source_id": "global"
+      },
+      {
+        "alias": "team-heretics",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Team Heretics",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Team Heretics",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -419,13 +1104,35 @@
     "short_name": "SK",
     "abbreviation": "SK",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 32,
+      "losses": 57,
+      "win_rate": 36.0,
+      "region_standing": 9,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "SK Gaming", "source_id": "global" },
-      { "alias": "SK", "source_id": "global" },
-      { "alias": "sk-gaming", "source_id": "lolesports" },
-      { "alias": "SK Gaming", "source_id": "pandascore_lol" },
-      { "alias": "SK Gaming", "source_id": "liquipedia_lol" }
+      {
+        "alias": "SK Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "SK",
+        "source_id": "global"
+      },
+      {
+        "alias": "sk-gaming",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "SK Gaming",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "SK Gaming",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -433,13 +1140,35 @@
     "short_name": "Karmine Corp",
     "abbreviation": "KC",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 47,
+      "losses": 36,
+      "win_rate": 56.6,
+      "region_standing": 5,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "Karmine Corp", "source_id": "global" },
-      { "alias": "KC", "source_id": "global" },
-      { "alias": "karmine-corp", "source_id": "lolesports" },
-      { "alias": "Karmine Corp", "source_id": "pandascore_lol" },
-      { "alias": "Karmine Corp", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Karmine Corp",
+        "source_id": "global"
+      },
+      {
+        "alias": "KC",
+        "source_id": "global"
+      },
+      {
+        "alias": "karmine-corp",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Karmine Corp",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Karmine Corp",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -447,15 +1176,43 @@
     "short_name": "GiantX",
     "abbreviation": "GX",
     "sport": "lol",
-    "metadata": { "region": "LEC" },
+    "metadata": {
+      "region": "LEC",
+      "wins": 44,
+      "losses": 53,
+      "win_rate": 45.4,
+      "region_standing": 6,
+      "league": "LEC"
+    },
     "aliases": [
-      { "alias": "GiantX", "source_id": "global" },
-      { "alias": "GX", "source_id": "global" },
-      { "alias": "Excel Esports", "source_id": "global" },
-      { "alias": "XL", "source_id": "global" },
-      { "alias": "giantx", "source_id": "lolesports" },
-      { "alias": "GiantX", "source_id": "pandascore_lol" },
-      { "alias": "GiantX", "source_id": "liquipedia_lol" }
+      {
+        "alias": "GiantX",
+        "source_id": "global"
+      },
+      {
+        "alias": "GX",
+        "source_id": "global"
+      },
+      {
+        "alias": "Excel Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "XL",
+        "source_id": "global"
+      },
+      {
+        "alias": "giantx",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "GiantX",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "GiantX",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -463,13 +1220,35 @@
     "short_name": "Cloud9",
     "abbreviation": "C9",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 38,
+      "losses": 18,
+      "win_rate": 67.9,
+      "region_standing": 1,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "Cloud9", "source_id": "global" },
-      { "alias": "C9", "source_id": "global" },
-      { "alias": "cloud9", "source_id": "lolesports" },
-      { "alias": "Cloud9", "source_id": "pandascore_lol" },
-      { "alias": "Cloud9", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Cloud9",
+        "source_id": "global"
+      },
+      {
+        "alias": "C9",
+        "source_id": "global"
+      },
+      {
+        "alias": "cloud9",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Cloud9",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Cloud9",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -477,15 +1256,38 @@
     "short_name": "Liquid",
     "abbreviation": "TL",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS"
+    },
     "aliases": [
-      { "alias": "Team Liquid", "source_id": "global" },
-      { "alias": "Liquid", "source_id": "global" },
-      { "alias": "TL", "source_id": "global" },
-      { "alias": "Team Liquid Honda", "source_id": "global" },
-      { "alias": "team-liquid", "source_id": "lolesports" },
-      { "alias": "Team Liquid", "source_id": "pandascore_lol" },
-      { "alias": "Team Liquid", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Team Liquid",
+        "source_id": "global"
+      },
+      {
+        "alias": "Liquid",
+        "source_id": "global"
+      },
+      {
+        "alias": "TL",
+        "source_id": "global"
+      },
+      {
+        "alias": "Team Liquid Honda",
+        "source_id": "global"
+      },
+      {
+        "alias": "team-liquid",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Team Liquid",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Team Liquid",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -493,14 +1295,39 @@
     "short_name": "100T",
     "abbreviation": "100",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 24,
+      "losses": 25,
+      "win_rate": 49.0,
+      "region_standing": 4,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "100 Thieves", "source_id": "global" },
-      { "alias": "100T", "source_id": "global" },
-      { "alias": "100", "source_id": "global" },
-      { "alias": "100-thieves", "source_id": "lolesports" },
-      { "alias": "100 Thieves", "source_id": "pandascore_lol" },
-      { "alias": "100 Thieves", "source_id": "liquipedia_lol" }
+      {
+        "alias": "100 Thieves",
+        "source_id": "global"
+      },
+      {
+        "alias": "100T",
+        "source_id": "global"
+      },
+      {
+        "alias": "100",
+        "source_id": "global"
+      },
+      {
+        "alias": "100-thieves",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "100 Thieves",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "100 Thieves",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -508,13 +1335,35 @@
     "short_name": "FlyQuest",
     "abbreviation": "FLY",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 29,
+      "losses": 25,
+      "win_rate": 53.7,
+      "region_standing": 3,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "FlyQuest", "source_id": "global" },
-      { "alias": "FLY", "source_id": "global" },
-      { "alias": "flyquest", "source_id": "lolesports" },
-      { "alias": "FlyQuest", "source_id": "pandascore_lol" },
-      { "alias": "FlyQuest", "source_id": "liquipedia_lol" }
+      {
+        "alias": "FlyQuest",
+        "source_id": "global"
+      },
+      {
+        "alias": "FLY",
+        "source_id": "global"
+      },
+      {
+        "alias": "flyquest",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "FlyQuest",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "FlyQuest",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -522,15 +1371,43 @@
     "short_name": "NRG",
     "abbreviation": "NRG",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 21,
+      "losses": 27,
+      "win_rate": 43.8,
+      "region_standing": 5,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "NRG", "source_id": "global" },
-      { "alias": "NRG Esports", "source_id": "global" },
-      { "alias": "Counter Logic Gaming", "source_id": "global" },
-      { "alias": "CLG", "source_id": "global" },
-      { "alias": "nrg", "source_id": "lolesports" },
-      { "alias": "NRG", "source_id": "pandascore_lol" },
-      { "alias": "NRG", "source_id": "liquipedia_lol" }
+      {
+        "alias": "NRG",
+        "source_id": "global"
+      },
+      {
+        "alias": "NRG Esports",
+        "source_id": "global"
+      },
+      {
+        "alias": "Counter Logic Gaming",
+        "source_id": "global"
+      },
+      {
+        "alias": "CLG",
+        "source_id": "global"
+      },
+      {
+        "alias": "nrg",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "NRG",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "NRG",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -538,14 +1415,39 @@
     "short_name": "Dignitas",
     "abbreviation": "DIG",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 21,
+      "losses": 31,
+      "win_rate": 40.4,
+      "region_standing": 6,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "Dignitas", "source_id": "global" },
-      { "alias": "DIG", "source_id": "global" },
-      { "alias": "Team Dignitas", "source_id": "global" },
-      { "alias": "dignitas", "source_id": "lolesports" },
-      { "alias": "Dignitas", "source_id": "pandascore_lol" },
-      { "alias": "Dignitas", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Dignitas",
+        "source_id": "global"
+      },
+      {
+        "alias": "DIG",
+        "source_id": "global"
+      },
+      {
+        "alias": "Team Dignitas",
+        "source_id": "global"
+      },
+      {
+        "alias": "dignitas",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Dignitas",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Dignitas",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -553,13 +1455,35 @@
     "short_name": "EG",
     "abbreviation": "EG",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 13,
+      "losses": 8,
+      "win_rate": 61.9,
+      "region_standing": 8,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "Evil Geniuses", "source_id": "global" },
-      { "alias": "EG", "source_id": "global" },
-      { "alias": "evil-geniuses", "source_id": "lolesports" },
-      { "alias": "Evil Geniuses", "source_id": "pandascore_lol" },
-      { "alias": "Evil Geniuses", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Evil Geniuses",
+        "source_id": "global"
+      },
+      {
+        "alias": "EG",
+        "source_id": "global"
+      },
+      {
+        "alias": "evil-geniuses",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Evil Geniuses",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Evil Geniuses",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -567,14 +1491,39 @@
     "short_name": "TSM",
     "abbreviation": "TSM",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 8,
+      "losses": 12,
+      "win_rate": 40.0,
+      "region_standing": 10,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "TSM", "source_id": "global" },
-      { "alias": "Team SoloMid", "source_id": "global" },
-      { "alias": "Team Solo Mid", "source_id": "global" },
-      { "alias": "tsm", "source_id": "lolesports" },
-      { "alias": "TSM", "source_id": "pandascore_lol" },
-      { "alias": "TSM", "source_id": "liquipedia_lol" }
+      {
+        "alias": "TSM",
+        "source_id": "global"
+      },
+      {
+        "alias": "Team SoloMid",
+        "source_id": "global"
+      },
+      {
+        "alias": "Team Solo Mid",
+        "source_id": "global"
+      },
+      {
+        "alias": "tsm",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "TSM",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "TSM",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -582,14 +1531,39 @@
     "short_name": "Golden Guardians",
     "abbreviation": "GG",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 15,
+      "losses": 9,
+      "win_rate": 62.5,
+      "region_standing": 7,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "Golden Guardians", "source_id": "global" },
-      { "alias": "GG", "source_id": "global" },
-      { "alias": "GGS", "source_id": "global" },
-      { "alias": "golden-guardians", "source_id": "lolesports" },
-      { "alias": "Golden Guardians", "source_id": "pandascore_lol" },
-      { "alias": "Golden Guardians", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Golden Guardians",
+        "source_id": "global"
+      },
+      {
+        "alias": "GG",
+        "source_id": "global"
+      },
+      {
+        "alias": "GGS",
+        "source_id": "global"
+      },
+      {
+        "alias": "golden-guardians",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Golden Guardians",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Golden Guardians",
+        "source_id": "liquipedia_lol"
+      }
     ]
   },
   {
@@ -597,14 +1571,39 @@
     "short_name": "Immortals",
     "abbreviation": "IMT",
     "sport": "lol",
-    "metadata": { "region": "LCS" },
+    "metadata": {
+      "region": "LCS",
+      "wins": 10,
+      "losses": 29,
+      "win_rate": 25.6,
+      "region_standing": 9,
+      "league": "LCS"
+    },
     "aliases": [
-      { "alias": "Immortals", "source_id": "global" },
-      { "alias": "IMT", "source_id": "global" },
-      { "alias": "Immortals Progressive", "source_id": "global" },
-      { "alias": "immortals", "source_id": "lolesports" },
-      { "alias": "Immortals", "source_id": "pandascore_lol" },
-      { "alias": "Immortals", "source_id": "liquipedia_lol" }
+      {
+        "alias": "Immortals",
+        "source_id": "global"
+      },
+      {
+        "alias": "IMT",
+        "source_id": "global"
+      },
+      {
+        "alias": "Immortals Progressive",
+        "source_id": "global"
+      },
+      {
+        "alias": "immortals",
+        "source_id": "lolesports"
+      },
+      {
+        "alias": "Immortals",
+        "source_id": "pandascore_lol"
+      },
+      {
+        "alias": "Immortals",
+        "source_id": "liquipedia_lol"
+      }
     ]
   }
 ]
