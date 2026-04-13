@@ -41,3 +41,7 @@ redisdata/
 # Large data files (downloaded at runtime)
 data/reep/
 data/bref_*_raw.json
+
+# Claude Code / MCP
+.claude/
+.mcp.json

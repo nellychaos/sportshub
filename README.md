@@ -1,570 +1,44 @@
-# Sportshub API
+# Sportshub
 
-Sports data aggregation platform that consumes from multiple upstream sources, deduplicates events, and serves a clean, consistent REST API. Covers NBA, League of Legends esports, and the FIFA World Cup 2026.
+Sports data aggregation platform that ingests from 18 upstream providers, deduplicates events via entity resolution, and serves a unified REST API. Covers NBA, League of Legends esports, and FIFA World Cup 2026.
 
-**Live API**: `https://joyful-peace-production-d7f2.up.railway.app`
-**Interactive Docs**: `https://joyful-peace-production-d7f2.up.railway.app/docs`
-**ReDoc**: `https://joyful-peace-production-d7f2.up.railway.app/redoc`
+## What It Does
+
+1. **Ingests** schedules, rosters, stats, and odds from ESPN, NBA.com, LoL Esports, PandaScore, Cloudbet, Mollybet, and more
+2. **Deduplicates** events across sources using fuzzy matching and optional LLM-backed resolution (Claude)
+3. **Enriches** events with player stats (4 tiers for NBA), injury reports, team records, and betting odds
+4. **Serves** a clean REST API with confidence scores showing how many sources confirm each event
+5. **Monitors** data quality via an operations dashboard with real-time ingestion tracking
 
 ---
 
 ## Quick Start
 
-All endpoints (except `/health`) require an API key passed via the `X-API-Key` header.
+### Docker (recommended)
 
 ```bash
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://joyful-peace-production-d7f2.up.railway.app/api/v1/events?sport=nba&per_page=5"
+git clone <repo-url> && cd Sportshub
+cp .env.example .env        # Edit credentials as needed
+docker compose up -d         # Starts app + PostgreSQL 16 + Redis 7
 ```
 
----
+The API is available at `http://localhost:8000`. Interactive docs at `/docs`.
 
-## Authentication
+### Native
 
-Include your API key in every request:
-
-```
-X-API-Key: YOUR_API_KEY
-```
-
-Requests without a valid key receive a `403 Forbidden` response.
-
----
-
-## Base URL
-
-```
-https://joyful-peace-production-d7f2.up.railway.app/api/v1
-```
-
-All endpoints below are relative to this base.
-
----
-
-## Pagination
-
-All list endpoints support pagination via query parameters:
-
-| Parameter  | Type | Default | Description              |
-|------------|------|---------|--------------------------|
-| `page`     | int  | 1       | Page number (1-indexed)  |
-| `per_page` | int  | 20      | Items per page (max 100) |
-
-Every list response includes a `pagination` object:
-
-```json
-{
-  "pagination": {
-    "page": 1,
-    "per_page": 20,
-    "total": 328,
-    "total_pages": 17
-  }
-}
-```
-
----
-
-## Sports
-
-The API covers three sports, each identified by a string value:
-
-| Sport Value  | Description                        |
-|--------------|------------------------------------|
-| `nba`        | NBA basketball (2025-26 season)    |
-| `lol`        | League of Legends esports          |
-| `football`   | FIFA World Cup 2026                |
-
-Use these values in `?sport=` query filters.
-
----
-
-## Endpoints
-
-### Health Check
-
-```
-GET /health
-```
-
-No authentication required. Returns system status including database, cache, and aggregate data counts.
-
-**Response:**
-
-```json
-{
-  "status": "healthy",
-  "database": { "status": "healthy" },
-  "cache": { "status": "healthy" },
-  "sources": [],
-  "stats": {
-    "total_events": 328,
-    "events_scheduled": 328,
-    "total_teams": 141,
-    "total_competitions": 18,
-    "unmatched_source_records": 50
-  }
-}
-```
-
----
-
-### Events
-
-#### List Events
-
-```
-GET /events
-```
-
-Returns upcoming sports events, deduplicated and normalized across sources.
-
-**Query Parameters:**
-
-| Parameter       | Type     | Default     | Description                                             |
-|-----------------|----------|-------------|---------------------------------------------------------|
-| `sport`         | string   | —           | Filter by sport: `nba`, `lol`, `football`               |
-| `team_id`       | UUID     | —           | Filter to events involving this team                    |
-| `competition_id`| UUID     | —           | Filter to events in this competition                    |
-| `status`        | string   | `scheduled` | Event status filter: `scheduled`, `live`, `completed`   |
-| `from`          | datetime | now         | Start of date range (ISO 8601)                          |
-| `to`            | datetime | now + 30d   | End of date range (ISO 8601)                            |
-| `sort`          | string   | `scheduled_at` | Sort field                                           |
-
-**Example:**
+**Prerequisites:** Python 3.12+, PostgreSQL 16, Redis 7 (optional)
 
 ```bash
-# NBA games in April 2026
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://joyful-peace-production-d7f2.up.railway.app/api/v1/events?sport=nba&from=2026-04-01T00:00:00Z&to=2026-04-30T23:59:59Z"
-```
-
-**Response:**
-
-```json
-{
-  "data": [
-    {
-      "id": "0f3a1bf0-3b34-43ed-87f6-5a41c00fe307",
-      "sport": "nba",
-      "home_team": {
-        "id": "58275661-ef80-4b09-a52b-db10c2a16f91",
-        "name": "Milwaukee Bucks",
-        "short_name": "Bucks",
-        "abbreviation": "MIL",
-        "sport": "nba"
-      },
-      "away_team": {
-        "id": "ea7c5b54-00b1-4575-8de2-9b34df7210ae",
-        "name": "Los Angeles Clippers",
-        "short_name": "Clippers",
-        "abbreviation": "LAC",
-        "sport": "nba"
-      },
-      "competition": {
-        "id": "69d8b3bf-dde0-4263-b845-b088bd55f8e0",
-        "name": "NBA 2025-26 Regular Season",
-        "short_name": "NBA-RS",
-        "sport": "nba",
-        "season": "2025-26"
-      },
-      "scheduled_at": "2026-03-29T19:30:00Z",
-      "status": "scheduled",
-      "match_format": "single",
-      "venue": "Fiserv Forum",
-      "confidence_score": 1.0,
-      "source_count": 2,
-      "created_at": "2026-03-28T06:04:30.778920Z",
-      "updated_at": "2026-03-28T06:24:03.814270Z"
-    }
-  ],
-  "pagination": { "page": 1, "per_page": 20, "total": 120, "total_pages": 6 }
-}
-```
-
-#### Get Event Detail
-
-```
-GET /events/{event_id}
-```
-
-Returns full event detail including data sources and enrichment data (rosters, player stats, injuries) when available.
-
-**Example:**
-
-```bash
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://joyful-peace-production-d7f2.up.railway.app/api/v1/events/86bd9bdd-16be-4c18-b1cd-f36c38e4a98c"
-```
-
-**Response** (truncated for brevity):
-
-```json
-{
-  "id": "86bd9bdd-16be-4c18-b1cd-f36c38e4a98c",
-  "sport": "nba",
-  "home_team": {
-    "name": "Brooklyn Nets",
-    "abbreviation": "BKN"
-  },
-  "away_team": {
-    "name": "Charlotte Hornets",
-    "abbreviation": "CHA"
-  },
-  "scheduled_at": "2026-03-31T23:30:00Z",
-  "venue": "Barclays Center",
-  "confidence_score": 1.0,
-  "source_count": 2,
-  "sources": [
-    {
-      "source_id": "espn_nba",
-      "source_event_id": "401810955",
-      "raw_home_team": "Brooklyn Nets",
-      "raw_away_team": "Charlotte Hornets",
-      "scheduled_at": "2026-03-31T23:30:00Z",
-      "venue": "Barclays Center",
-      "match_confidence": 1.0
-    },
-    {
-      "source_id": "nbacom_cdn",
-      "source_event_id": "0022501100",
-      "raw_home_team": "Nets",
-      "raw_away_team": "Hornets",
-      "scheduled_at": "2026-03-31T23:30:00Z",
-      "venue": "Barclays Center",
-      "match_confidence": 1.0
-    }
-  ],
-  "enrichment": {
-    "home_team": {
-      "record": "17-57",
-      "stats": {
-        "wins": 17, "losses": 57, "win_pct": 0.23,
-        "points_per_game": 106.2, "rebounds_per_game": 39.7,
-        "assists_per_game": 25.2,
-        "fg_pct": 0.443, "fg3_pct": 0.341, "ft_pct": 0.777
-      },
-      "roster": [
-        {
-          "name": "Nic Claxton",
-          "jersey_number": "33",
-          "position": "C",
-          "bio": {
-            "height": "6' 11\"", "weight": "215 lbs",
-            "age": 26, "college": "Georgia",
-            "headshot_url": "https://a.espncdn.com/i/headshots/nba/players/full/4278067.png"
-          },
-          "season_stats": {
-            "games_played": 66, "minutes_per_game": 28.0,
-            "points_per_game": 11.8, "rebounds_per_game": 7.0,
-            "assists_per_game": 3.7, "fg_pct": 0.571
-          }
-        }
-      ],
-      "injuries": []
-    },
-    "away_team": {
-      "record": "39-34",
-      "stats": { "wins": 39, "losses": 34, "points_per_game": 116.3 },
-      "roster": ["... 18 players with full stats ..."],
-      "injuries": []
-    }
-  },
-  "metadata": { "... raw enrichment data ..." }
-}
-```
-
-**Key fields:**
-
-| Field               | Description                                                                 |
-|---------------------|-----------------------------------------------------------------------------|
-| `confidence_score`  | 0.0-1.0 — how confident the system is this event is correctly deduplicated  |
-| `source_count`      | Number of independent sources confirming this event                         |
-| `sources`           | Raw data from each upstream source, including their original team names     |
-| `enrichment`        | Typed roster, stats, and injury data (present on enriched events only)      |
-| `metadata`          | Raw JSONB enrichment data as stored                                         |
-
----
-
-### Teams
-
-#### List Teams
-
-```
-GET /teams
-```
-
-**Query Parameters:**
-
-| Parameter | Type   | Description                         |
-|-----------|--------|-------------------------------------|
-| `sport`   | string | Filter by sport: `nba`, `lol`, `football` |
-| `search`  | string | Fuzzy search by team name           |
-
-**Example:**
-
-```bash
-# Search for teams matching "lakers"
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://joyful-peace-production-d7f2.up.railway.app/api/v1/teams?search=lakers"
-```
-
-**Response:**
-
-```json
-{
-  "data": [
-    {
-      "id": "a1b2c3d4-...",
-      "name": "Los Angeles Lakers",
-      "short_name": "Lakers",
-      "abbreviation": "LAL",
-      "sport": "nba",
-      "active": true,
-      "metadata": {}
-    }
-  ],
-  "pagination": { "page": 1, "per_page": 20, "total": 1, "total_pages": 1 }
-}
-```
-
-#### List Team Players
-
-```
-GET /teams/{team_id}/players
-```
-
-Returns the roster for a specific team.
-
-**Query Parameters:**
-
-| Parameter  | Type   | Default | Description                     |
-|------------|--------|---------|---------------------------------|
-| `active`   | bool   | `true`  | Filter by active status         |
-| `position` | string | —       | Filter by position (e.g. `G`, `F`, `C`) |
-
----
-
-### Players
-
-#### List Players
-
-```
-GET /players
-```
-
-**Query Parameters:**
-
-| Parameter  | Type   | Default | Description                              |
-|------------|--------|---------|------------------------------------------|
-| `sport`    | string | —       | Filter by sport                          |
-| `team_id`  | UUID   | —       | Filter by team                           |
-| `search`   | string | —       | Search by player name                    |
-| `position` | string | —       | Filter by position                       |
-| `active`   | bool   | `true`  | Filter by active status                  |
-
-#### Get Player Detail
-
-```
-GET /players/{player_id}
-```
-
-Returns player details including aliases from different data sources.
-
-**Response:**
-
-```json
-{
-  "id": "...",
-  "name": "LaMelo Ball",
-  "sport": "nba",
-  "team_id": "89e601c3-...",
-  "position": "G",
-  "jersey_number": "1",
-  "nationality": "",
-  "active": true,
-  "metadata": {
-    "height": "6' 7\"",
-    "weight": "180 lbs",
-    "age": 24,
-    "college": "",
-    "season_stats": {
-      "gp": 63, "pts": 19.7, "reb": 4.8, "ast": 7.1,
-      "stl": 1.2, "blk": 0.3, "fg_pct": 0.407
-    }
-  },
-  "aliases": [
-    { "alias": "LaMelo Ball", "source_id": "espn_nba", "is_primary": true }
-  ]
-}
-```
-
----
-
-### Competitions
-
-#### List Competitions
-
-```
-GET /competitions
-```
-
-**Query Parameters:**
-
-| Parameter | Type   | Description     |
-|-----------|--------|-----------------|
-| `sport`   | string | Filter by sport |
-
-**Response:**
-
-```json
-{
-  "data": [
-    {
-      "id": "69d8b3bf-...",
-      "name": "NBA 2025-26 Regular Season",
-      "short_name": "NBA-RS",
-      "sport": "nba",
-      "season": "2025-26",
-      "region": "North America",
-      "tier": "tier_1",
-      "start_date": null,
-      "end_date": null,
-      "metadata": {
-        "teams": 30,
-        "format": "82-game regular season",
-        "governing_body": "NBA"
-      }
-    },
-    {
-      "id": "e4f2b00e-...",
-      "name": "FIFA World Cup 2026",
-      "short_name": "WC2026",
-      "sport": "football",
-      "season": "2026",
-      "region": "International",
-      "tier": "tier_1",
-      "metadata": {
-        "teams": 48,
-        "host_countries": ["United States", "Mexico", "Canada"],
-        "total_matches": 104,
-        "format": "48-team tournament: 12 groups of 4, knockout rounds from Round of 32"
-      }
-    }
-  ]
-}
-```
-
----
-
-## Enrichment Data
-
-Some events include enrichment data with detailed roster and statistical information. This is available in the `enrichment` field of the event detail response.
-
-### Enrichment Structure
-
-```
-enrichment
-  home_team / away_team
-    record          — season record (e.g. "39-34")
-    stats           — team aggregate stats
-      wins, losses, win_pct
-      points_per_game, rebounds_per_game, assists_per_game
-      fg_pct, fg3_pct, ft_pct
-    roster[]        — player roster
-      name, jersey_number, position
-      bio
-        height, weight, age, birthdate, college, headshot_url
-      season_stats
-        games_played, minutes_per_game
-        points_per_game, rebounds_per_game, assists_per_game
-        steals_per_game, blocks_per_game, turnovers_per_game
-        fg_pct, fg3_pct, ft_pct, plus_minus
-    injuries[]      — injury reports
-      player_name, position, status, injury, details
-  enriched_at       — when the enrichment was last updated
-  enrichment_sources — which APIs provided the data
-```
-
-Not all events have enrichment data. The `enrichment` field is `null` for events that haven't been enriched.
-
----
-
-## Data Sources
-
-Events are aggregated and deduplicated from multiple independent sources:
-
-| Source ID       | Sport      | Description                    |
-|-----------------|------------|--------------------------------|
-| `espn_nba`      | NBA        | ESPN public API                |
-| `nbacom_cdn`    | NBA        | NBA.com CDN schedule feed      |
-| `lolesports`    | LoL        | Riot Games LoL Esports API     |
-| `espn_fifa`     | Football   | ESPN FIFA World Cup coverage   |
-
-Events confirmed by multiple sources have a higher `confidence_score` and `source_count`. The `sources` array on event detail shows each source's raw data, allowing you to trace provenance.
-
----
-
-## Error Responses
-
-All errors follow a consistent format:
-
-```json
-{
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Event not found"
-  }
-}
-```
-
-| HTTP Status | Code           | Description                    |
-|-------------|----------------|--------------------------------|
-| 403         | `FORBIDDEN`    | Missing or invalid API key     |
-| 404         | `NOT_FOUND`    | Resource does not exist        |
-| 422         | `VALIDATION`   | Invalid query parameters       |
-
----
-
-## Current Data Coverage
-
-| Sport      | Events | Teams | Competitions | Sources per Event |
-|------------|--------|-------|--------------|-------------------|
-| NBA        | 126    | 30    | 2            | 2 (cross-verified) |
-| LoL        | 148    | 102   | 8            | 1                 |
-| Football   | 54     | 9     | 1            | 1                 |
-
----
-
-## Rate Limits
-
-There are no enforced rate limits at this time. Please be respectful and avoid excessive polling. If you need real-time updates, check back periodically rather than polling continuously.
-
----
-
-## Local Development
-
-### Prerequisites
-
-- Python 3.12+
-- PostgreSQL 16
-- Redis 7 (optional, app degrades gracefully)
-
-### Setup
-
-```bash
-# Clone and install
-git clone <repo-url>
-cd Sportshub
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
+cp .env.example .env         # Edit with your local DB credentials
 
-# Configure
-cp .env.example .env  # Edit with your database credentials
-
-# Database
+# Database setup
 createdb sportshub
+psql sportshub -c 'CREATE EXTENSION IF NOT EXISTS pg_trgm; CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
 alembic upgrade head
+
+# Seed reference data
 python scripts/seed_competitions.py
 python scripts/seed_teams.py
 
@@ -572,32 +46,211 @@ python scripts/seed_teams.py
 uvicorn sportshub.main:app --reload --port 8000
 ```
 
-### Docker
+---
+
+## Authentication
+
+All API endpoints (except `/health`) require an API key via the `X-API-Key` header:
 
 ```bash
-# Development (includes PostgreSQL and Redis)
-docker compose up -d
+curl -H "X-API-Key: YOUR_KEY" http://localhost:8000/api/v1/events?sport=nba&per_page=5
+```
 
-# Production
+API keys are configured as a comma-separated list in `SPORTSHUB_API_KEYS`. Invalid keys receive a `401 Unauthorized` response.
+
+Rate limit: **60 requests/minute** per API key (10 burst). Health endpoint is exempt.
+
+---
+
+## API Endpoints
+
+Base path: `/api/v1`
+
+| Method | Path | Auth | Description |
+|--------|------|------|-------------|
+| GET | `/health` | No | Platform status, DB/Redis health, entity counts |
+| GET | `/events` | Yes | List events with filters (sport, team, competition, date range, status) |
+| GET | `/events/{id}` | Yes | Event detail with sources, enrichment (rosters, stats, injuries) |
+| GET | `/events/{id}/odds` | Yes | Combined betting odds from Cloudbet + Mollybet |
+| GET | `/events/by-source/{source_id}/{source_event_id}` | Yes | Reverse lookup: source-specific ID to canonical event |
+| GET | `/teams` | Yes | List teams with sport filter and fuzzy search |
+| GET | `/teams/{id}/players` | Yes | Team roster with position/active filters |
+| GET | `/players` | Yes | List players with sport, team, search, position filters |
+| GET | `/players/{id}` | Yes | Player detail with cross-provider aliases |
+| GET | `/competitions` | Yes | List competitions with sport filter |
+
+All list endpoints support `?page=` and `?per_page=` pagination (max 100).
+
+### Web Pages (no auth)
+
+| Path | Description |
+|------|-------------|
+| `/dashboard` | Operations dashboard -- ingestion status, data quality, provider health |
+| `/demo` | Interactive data explorer -- player stats, team cards, live API playground |
+| `/docs` | OpenAPI interactive docs (Swagger UI) |
+| `/redoc` | ReDoc API reference |
+
+---
+
+## Data Sources
+
+18 providers across 3 sports:
+
+| Source | Sport | Type | Description |
+|--------|-------|------|-------------|
+| ESPN NBA | NBA | API | Schedule, rosters, player stats, injuries |
+| NBA.com CDN | NBA | CDN | Official schedule feed |
+| BallDontLie | NBA | API | Player/team stats (free tier) |
+| Basketball Reference | NBA | Scrape | Advanced, play-by-play, adjusted shooting |
+| TeamRankings NBA | NBA | Scrape | Power ratings, ATS/O-U trends |
+| ESPN FIFA | Football | API | World Cup schedule and rosters |
+| FIFA API | Football | API | Official FIFA data |
+| Football-Data.org | Football | API | Standings and fixtures |
+| Reep Entity Register | Football | CSV | Cross-provider player ID mappings |
+| LoL Esports API | LoL | API | Official Riot schedule and standings |
+| PandaScore LoL | LoL | API | Player stats and team data |
+| Liquipedia LoL | LoL | Scrape | Champion pools and career stats |
+| Cloudbet Basketball | NBA | API | Live betting odds |
+| Cloudbet Soccer | Football | API | Live betting odds |
+| Cloudbet LoL | LoL | API | Live betting odds |
+| Mollybet Football | Football | WebSocket | Odds confirmation |
+| Mollybet Basketball | NBA | WebSocket | Odds confirmation |
+| Mollybet Esports | LoL | WebSocket | Odds confirmation |
+
+Events confirmed by multiple sources receive higher `confidence_score` values (0.0-1.0). The `source_count` field shows how many independent sources confirm each event.
+
+---
+
+## Environment Variables
+
+All prefixed with `SPORTSHUB_`. Copy `.env.example` and fill in your values.
+
+### Required
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DATABASE_URL` | PostgreSQL async connection string | `postgresql+asyncpg://sportshub:sportshub_dev@localhost:5432/sportshub` |
+| `API_KEYS` | Comma-separated API keys | `sh_dev_changeme_in_production` |
+
+### Optional -- Infrastructure
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `REDIS_URL` | Redis connection (app works without it) | `redis://localhost:6379/0` |
+| `DB_POOL_SIZE` | SQLAlchemy pool size | `10` |
+| `DB_MAX_OVERFLOW` | SQLAlchemy max overflow | `5` |
+| `ENVIRONMENT` | `development`, `staging`, or `production` | `development` |
+| `LOG_LEVEL` | Python log level | `INFO` |
+
+### Optional -- Source Credentials
+
+| Variable | Description |
+|----------|-------------|
+| `BALLDONTLIE_API_KEY` | BallDontLie NBA stats |
+| `PANDASCORE_TOKEN` | PandaScore LoL data |
+| `LOLESPORTS_API_KEY` | LoL Esports API (has default public key) |
+| `FOOTBALLDATA_API_KEY` | Football-Data.org |
+| `CLOUDBET_API_KEY` | Cloudbet odds ingestion |
+| `CLOUDBET_API_URL` | Cloudbet base URL (default: `https://sports-api.cloudbet.com/pub`) |
+| `MOLLYBET_USERNAME` | Mollybet credentials |
+| `MOLLYBET_PASSWORD` | Mollybet credentials |
+| `MOLLYBET_API_URL` | Mollybet base URL (default: `https://api.mollybet.com`) |
+| `ODDS_API_KEY` | The Odds API (external confirmation) |
+| `ODDS_API_URL` | Odds API base URL (default: `https://api.the-odds-api.com/v4`) |
+
+### Optional -- LLM Entity Resolution
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `ANTHROPIC_API_KEY` | Claude API key for AI-backed matching | |
+| `LLM_RESOLUTION_ENABLED` | Enable LLM dedup | `false` |
+| `LLM_MODEL` | Model to use | `claude-haiku-4-5-20251001` |
+| `LLM_ACCEPTANCE_THRESHOLD` | Min confidence to accept LLM match | `0.40` |
+| `LLM_COOLDOWN_MINUTES` | Cooldown between LLM calls for same entity | `30` |
+
+---
+
+## Development
+
+### Tests
+
+```bash
+pytest                       # Full suite (requires PostgreSQL + Redis)
+pytest tests/test_api/       # API tests only
+pytest -x -q                 # Stop on first failure, quiet output
+```
+
+### Lint and Type Check
+
+```bash
+ruff check src/ scripts/ tests/    # Lint
+ruff format src/ scripts/ tests/   # Format
+mypy src/sportshub/                # Type check
+```
+
+### Database Migrations
+
+```bash
+alembic upgrade head          # Apply all migrations
+alembic revision --autogenerate -m "description"   # Create new migration
+```
+
+### Pre-commit Hooks
+
+```bash
+pre-commit install           # One-time setup
+pre-commit run --all-files   # Manual run
+```
+
+---
+
+## Deployment
+
+The project includes a `Dockerfile` and `docker-compose.prod.yml` with production resource limits. The Dockerfile runs migrations automatically on startup.
+
+For Railway: push to `main` triggers auto-deploy. Set all `SPORTSHUB_*` env vars in the Railway service dashboard.
+
+```bash
+# Production Docker
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
 
-### Project Structure
+---
+
+## Project Structure
 
 ```
 src/sportshub/
-  api/v1/           REST API endpoints and Pydantic schemas
-  ingestion/        Source adapters (ESPN, NBA.com, LoL Esports, etc.)
-  resolution/       Entity resolution (team matching, timezone, dedup)
-  validation/       Sport-specific constraint validation
-  reconciliation/   Cross-source data reconciliation
-  scheduling/       Background job scheduling with circuit breakers
-  cache/            Redis caching layer
-  db/               SQLAlchemy models, tables, repositories
-  models/           Domain models (Event, Team, Player, Competition)
-  dashboard/        Operations dashboard (HTML)
-  monitoring/       Health and observability
-data/               Seed data (teams, competitions, venue timezones)
-alembic/            Database migrations
-scripts/            Seed and utility scripts
+  main.py               FastAPI app factory, middleware, lifespan
+  config.py             Pydantic Settings (all env vars)
+  api/v1/               REST endpoints and Pydantic schemas
+  db/                   SQLAlchemy tables, engine, repositories
+  models/               Domain models (Event, Team, Player, Competition)
+  ingestion/            Source adapters and adapter registry
+  providers/            Provider integrations (Cloudbet, Mollybet)
+  resolution/           Entity resolution (fuzzy matching, LLM dedup)
+  reconciliation/       Cross-source post-event validation
+  validation/           Sport-specific data constraints
+  scheduling/           APScheduler jobs with circuit breakers
+  cache/                Redis client with graceful fallback
+  dashboard/            Ops dashboard (HTMX + Jinja2 templates)
+  demo/                 Interactive data explorer
+  monitoring/           Health checks
+  templates/            Jinja2 HTML templates
+  scripts/              Shared utilities (HTTP client, normalization, IO)
+data/                   Seed data and provider registry (JSON)
+alembic/               Database migrations (6 revisions)
+scripts/               Data fetch, merge, and enrichment scripts
+tests/                 pytest suite (adapters, API, integration, resolution)
 ```
+
+---
+
+## CI/CD
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on push to `main` and PRs:
+
+1. **Lint** -- Ruff format + lint checks
+2. **Type Check** -- MyPy
+3. **Test** -- Full pytest suite with PostgreSQL 16 + Redis 7 services
+4. **Data Validation** -- JSON schema checks on data files
