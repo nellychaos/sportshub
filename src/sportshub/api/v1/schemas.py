@@ -115,6 +115,52 @@ class EventEnrichment(BaseModel):
     enrichment_sources: list[str] = []
 
 
+# ─── Betting / Odds schemas ──────────────────────────────────────────────────
+
+
+class OddsSelection(BaseModel):
+    """A single odds selection (e.g., home moneyline at 1.95)."""
+    outcome: str  # "home", "away", "draw", "over", "under"
+    price: float
+    line: float | None = None  # spread/total line
+
+
+class MarketOdds(BaseModel):
+    """Odds for a single market type."""
+    market_type: str  # "moneyline", "spread", "total", "btts"
+    selections: list[OddsSelection] = []
+
+
+class PlayerPropOdds(BaseModel):
+    """Player prop odds from a betting source."""
+    market: str  # e.g., "basketball.player_points"
+    player: str
+    outcome: str
+    price: float
+    min_stake: float | None = None
+    max_stake: float | None = None
+
+
+class SourceOdds(BaseModel):
+    """All odds from a single betting source for one event."""
+    source_id: str
+    source_event_id: str
+    markets: list[MarketOdds] = []
+    player_props: list[PlayerPropOdds] = []
+    fetched_at: datetime | None = None
+
+
+class EventOddsResponse(BaseModel):
+    """Combined odds from all betting sources for a canonical event."""
+    event_id: uuid.UUID
+    sport: str
+    home_team: TeamSummary
+    away_team: TeamSummary
+    scheduled_at: datetime
+    sources: list[SourceOdds]
+    source_count: int
+
+
 # ─── Event responses ──────────────────────────────────────────────────────────
 
 

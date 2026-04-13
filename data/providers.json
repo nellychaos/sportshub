@@ -216,12 +216,34 @@
         "team": "Wikidata QID (clubs only, NOT national teams)"
       },
       "cross_provider_ids": [
-        "transfermarkt", "fbref", "sofascore", "flashscore", "opta",
-        "espn", "premier_league", "11v11", "worldfootball", "soccerway",
-        "whoscored", "understat", "api_football", "kicker", "lequipe",
-        "serie_a", "besoccer", "soccerbase", "footballcritic", "tmkt_news",
-        "national_football_teams", "eu_football", "worldfootball_net",
-        "bdfutbol", "zerozero", "fmdataba", "wikidata", "fotmob"
+        "transfermarkt",
+        "fbref",
+        "sofascore",
+        "flashscore",
+        "opta",
+        "espn",
+        "premier_league",
+        "11v11",
+        "worldfootball",
+        "soccerway",
+        "whoscored",
+        "understat",
+        "api_football",
+        "kicker",
+        "lequipe",
+        "serie_a",
+        "besoccer",
+        "soccerbase",
+        "footballcritic",
+        "tmkt_news",
+        "national_football_teams",
+        "eu_football",
+        "worldfootball_net",
+        "bdfutbol",
+        "zerozero",
+        "fmdataba",
+        "wikidata",
+        "fotmob"
       ],
       "notes": "430K+ players/coaches, 45K+ clubs (no national teams), 149K+ name aliases. CSV files ~47MB total. Use token-indexed fuzzy matching (ReepPlayerIndex) for efficient lookup. Nationality stored as country name, not demonym. Provider IDs in key_{provider} columns."
     },
@@ -390,6 +412,66 @@
         }
       },
       "notes": "Cloudflare-protected, requires browser automation. 10s crawl delay per robots.txt. Power ratings include predictive rank and record vs opponent tiers. ATS/O-U trends include season-long records, cover %, and margin. Team names use shortened display forms with record in parens on some pages."
+    },
+    {
+      "source_id": "cloudbet_basketball",
+      "display_name": "Cloudbet Basketball",
+      "sport": "nba",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "CLOUDBET_API_KEY",
+      "base_url": "https://sports-api.cloudbet.com/pub",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "sports": "/v2/odds/sports",
+        "events": "/v2/odds/events",
+        "event_detail": "/v2/odds/events/{event_id}",
+        "competitions": "/v2/odds/competitions/{key}"
+      },
+      "notes": "Free affiliate API key. X-API-Key auth header. Covers moneyline, spread, totals, and player props (points, rebounds, assists, 3PT). Responses may cache up to 60s behind real-time on affiliate keys."
+    },
+    {
+      "source_id": "cloudbet_soccer",
+      "display_name": "Cloudbet Soccer",
+      "sport": "football",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "CLOUDBET_API_KEY",
+      "base_url": "https://sports-api.cloudbet.com/pub",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "sports": "/v2/odds/sports",
+        "events": "/v2/odds/events",
+        "event_detail": "/v2/odds/events/{event_id}",
+        "competitions": "/v2/odds/competitions/{key}"
+      },
+      "notes": "Covers match odds (1X2), Asian handicap, totals, BTTS, correct score. Same API key as basketball."
+    },
+    {
+      "source_id": "cloudbet_league_of_legends",
+      "display_name": "Cloudbet LoL",
+      "sport": "lol",
+      "type": "api",
+      "reliability": "established",
+      "priority": 8,
+      "auth_required": true,
+      "auth_env_var": "CLOUDBET_API_KEY",
+      "base_url": "https://sports-api.cloudbet.com/pub",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "sports": "/v2/odds/sports",
+        "events": "/v2/odds/events",
+        "event_detail": "/v2/odds/events/{event_id}",
+        "competitions": "/v2/odds/competitions/{key}"
+      },
+      "notes": "Covers match winner, handicap, map totals for LoL esports. Sport key: league-of-legends."
     }
   ]
 }

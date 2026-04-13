@@ -26,8 +26,8 @@ class Settings(BaseSettings):
     # Redis
     redis_url: str = "redis://localhost:6379/0"
 
-    # API
-    api_key: str = "sh_dev_changeme_in_production"
+    # API — comma-separated list of valid keys
+    api_keys: str = "sh_dev_changeme_in_production"
     environment: Literal["development", "staging", "production"] = "development"
 
     # Source credentials
@@ -51,6 +51,10 @@ class Settings(BaseSettings):
     mollybet_username: str | None = None   # SPORTSHUB_MOLLYBET_USERNAME
     mollybet_password: str | None = None   # SPORTSHUB_MOLLYBET_PASSWORD
     mollybet_api_url: str = "https://api.mollybet.com"
+
+    # Cloudbet (odds ingestion)
+    cloudbet_api_key: str | None = None    # SPORTSHUB_CLOUDBET_API_KEY
+    cloudbet_api_url: str = "https://sports-api.cloudbet.com/pub"
 
     # Logging
     log_level: str = "INFO"

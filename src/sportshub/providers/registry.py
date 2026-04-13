@@ -16,8 +16,11 @@ from sportshub.providers.models import (
 
 logger = structlog.get_logger()
 
-# Default data directory relative to project root
+# Default data directory relative to project root.
+# Falls back to /app/data/ when installed as a package (Docker).
 _DEFAULT_DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+if not _DEFAULT_DATA_DIR.is_dir():
+    _DEFAULT_DATA_DIR = Path("/app/data")
 
 
 class ProviderRegistry:

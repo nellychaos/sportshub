@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Any
 
 _DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+if not _DATA_DIR.is_dir():
+    _DATA_DIR = Path("/app/data")
 _SCHEMA_DIR = _DATA_DIR / "schemas"
 
 

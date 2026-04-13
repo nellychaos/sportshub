@@ -99,6 +99,18 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
+         BETTING MARKETS
+         Cloudbet + Mollybet odds coverage and cross-source matching
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <section>
+      <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Betting Markets</h2>
+      <div id="betting-panel" hx-get="/dashboard/partials/betting" hx-trigger="every 60s" hx-swap="innerHTML" class="fade-in">
+        {% include "dashboard/partials/betting_coverage.html" %}
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
          TIER 3: ACCURACY & RESOLUTION
          Is multi-source data accurate? Does AI entity resolution work?
          ═══════════════════════════════════════════════════════════════ -->

@@ -1,0 +1,135 @@
+<!-- Betting Markets: Cloudbet + Mollybet odds coverage -->
+
+{% set sport_labels = {'nba': 'NBA', 'lol': 'LoL', 'football': 'Football'} %}
+
+{% set ns = namespace(cb_count=0, mb_count=0) %}
+{% for p in betting.providers %}
+  {% if p.source_id.startswith('cloudbet_') %}{% set ns.cb_count = ns.cb_count + 1 %}{% endif %}
+  {% if p.source_id.startswith('mollybet_') %}{% set ns.mb_count = ns.mb_count + 1 %}{% endif %}
+{% endfor %}
+
+<!-- Summary Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+
+  <!-- Betting Sources -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Betting Sources</h3>
+    <div class="text-3xl font-bold text-white mb-1">{{ betting.providers_configured }}</div>
+    <p class="text-xs text-gray-500">{{ ns.cb_count }} Cloudbet &middot; {{ ns.mb_count }} Mollybet</p>
+  </div>
+
+  <!-- Total Events Ingested -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Events Ingested</h3>
+    <div class="text-3xl font-bold text-white mb-1">{{ '{:,}'.format(betting.total_betting_events) }}</div>
+    <p class="text-xs text-gray-500">
+      {{ '{:,}'.format(betting.total_cloudbet) }} Cloudbet
+      &middot;
+      {{ '{:,}'.format(betting.total_mollybet) }} Mollybet
+    </p>
+  </div>
+
+  <!-- Events with Odds -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">With Odds Data</h3>
+    <div class="text-3xl font-bold {% if betting.total_with_odds > 0 %}text-emerald-400{% else %}text-gray-500{% endif %} mb-1">
+      {{ '{:,}'.format(betting.total_with_odds) }}
+    </div>
+    <p class="text-xs text-gray-500">
+      {% if betting.total_cloudbet > 0 %}
+        {{ (betting.total_with_odds / betting.total_cloudbet * 100) | round(1) }}% of Cloudbet events
+      {% else %}
+        Awaiting first ingestion
+      {% endif %}
+    </p>
+  </div>
+
+  <!-- Cross-Source Overlap -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Cross-Source Matches</h3>
+    {% set total_overlap = betting.cross_source_overlap.values() | sum %}
+    <div class="text-3xl font-bold {% if total_overlap > 0 %}text-brand-400{% else %}text-gray-500{% endif %} mb-1">
+      {{ '{:,}'.format(total_overlap) }}
+    </div>
+    <p class="text-xs text-gray-500">Events matched across Cloudbet + Mollybet</p>
+  </div>
+
+</div>
+
+<!-- Per-Sport Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  {% for sport_key in ['nba', 'football', 'lol'] %}
+  {% set sport_label = sport_labels.get(sport_key, sport_key) %}
+  {% set odds = betting.odds_by_sport.get(sport_key, {}) %}
+  {% set overlap = betting.cross_source_overlap.get(sport_key, 0) %}
+
+  {# Find Cloudbet and Mollybet stats for this sport #}
+  {% set ns2 = namespace(cb_events=0, cb_matched=0, cb_rate=0, mb_events=0, mb_matched=0, mb_rate=0) %}
+  {% for s in betting.source_stats %}
+    {% if s.sport == sport_key and s.source_id.startswith('cloudbet_') %}
+      {% set ns2.cb_events = s.total_events %}
+      {% set ns2.cb_matched = s.matched_events %}
+      {% set ns2.cb_rate = s.match_rate %}
+    {% endif %}
+    {% if s.sport == sport_key and s.source_id.startswith('mollybet_') %}
+      {% set ns2.mb_events = s.total_events %}
+      {% set ns2.mb_matched = s.matched_events %}
+      {% set ns2.mb_rate = s.match_rate %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <h3 class="text-sm font-semibold text-white mb-3">{{ sport_label }}</h3>
+
+    <div class="space-y-3">
+      <!-- Cloudbet -->
+      <div>
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs text-gray-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+            Cloudbet
+          </span>
+          <span class="text-xs font-mono text-gray-300">{{ ns2.cb_events }} events</span>
+        </div>
+        {% if odds %}
+        <div class="flex items-center gap-2">
+          <div class="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+            <div class="h-full rounded-full bg-blue-500" style="width: {{ odds.pct }}%"></div>
+          </div>
+          <span class="text-[10px] font-mono text-gray-400">{{ odds.with_odds }}/{{ odds.total }} with odds</span>
+        </div>
+        {% else %}
+        <div class="h-1.5 bg-gray-800 rounded-full"></div>
+        {% endif %}
+      </div>
+
+      <!-- Mollybet -->
+      <div>
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-xs text-gray-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span>
+            Mollybet
+          </span>
+          <span class="text-xs font-mono text-gray-300">{{ ns2.mb_events }} events</span>
+        </div>
+        {% if ns2.mb_events > 0 %}
+        <div class="flex items-center gap-2">
+          <div class="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+            <div class="h-full rounded-full bg-violet-500" style="width: {{ ns2.mb_rate }}%"></div>
+          </div>
+          <span class="text-[10px] font-mono text-gray-400">{{ ns2.mb_rate }}% matched</span>
+        </div>
+        {% else %}
+        <div class="h-1.5 bg-gray-800 rounded-full"></div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Overlap -->
+    <div class="mt-3 pt-3 border-t border-gray-800 flex justify-between text-xs">
+      <span class="text-gray-500">Cross-source overlap</span>
+      <span class="font-mono {% if overlap > 0 %}text-brand-400{% else %}text-gray-500{% endif %}">{{ overlap }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>

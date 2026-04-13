@@ -10,9 +10,13 @@ import json
 from pathlib import Path
 from typing import Any
 
-# Resolve the project's data directory
+# Resolve the project's data directory.
+# When installed as a package (e.g., Docker), __file__ is in site-packages
+# so the relative path won't work. Fall back to /app/data/ (Docker workdir).
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 DATA_DIR = _PROJECT_ROOT / "data"
+if not DATA_DIR.is_dir():
+    DATA_DIR = Path("/app/data")
 
 
 def data_path(filename: str) -> Path:

@@ -23,6 +23,10 @@ SOURCE_PRIORITY: dict[str, int] = {
     "mollybet_fb": 9,
     "mollybet_basket": 9,
     "mollybet_esports": 8,
+    # Cloudbet — bookmaker odds; good for event confirmation + odds data
+    "cloudbet_basketball": 7,
+    "cloudbet_soccer": 7,
+    "cloudbet_league_of_legends": 7,
 }
 
 # Confidence thresholds

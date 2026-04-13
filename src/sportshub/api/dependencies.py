@@ -12,7 +12,8 @@ from sportshub.models.common import PaginationParams
 async def verify_api_key(x_api_key: str = Header(..., alias="X-API-Key")) -> str:
     """Validate the API key from the request header."""
     settings = get_settings()
-    if x_api_key != settings.api_key:
+    valid_keys = {k.strip() for k in settings.api_keys.split(",") if k.strip()}
+    if x_api_key not in valid_keys:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail={"error": {"code": "UNAUTHORIZED", "message": "Invalid API key"}},

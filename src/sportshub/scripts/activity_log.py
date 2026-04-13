@@ -24,7 +24,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Generator
 
-_LOG_FILE = Path(__file__).resolve().parent.parent.parent.parent / "data" / "script_activity.json"
+_DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+if not _DATA_DIR.is_dir():
+    _DATA_DIR = Path("/app/data")
+_LOG_FILE = _DATA_DIR / "script_activity.json"
 _MAX_ENTRIES = 200
 
 

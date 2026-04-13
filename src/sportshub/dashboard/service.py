@@ -987,6 +987,130 @@ class DashboardService:
             },
         }
 
+    async def get_betting_coverage(self) -> dict:
+        """Compute betting/odds coverage metrics from Cloudbet and Mollybet sources."""
+        sr = source_records_table
+
+        # Per-source event counts and match rates
+        stmt = (
+            sa.select(
+                sr.c.source_id,
+                sr.c.sport,
+                sa.func.count().label("total_events"),
+                sa.func.count(sr.c.event_id).label("matched_events"),
+            )
+            .where(
+                sa.or_(
+                    sr.c.source_id.like("cloudbet_%"),
+                    sr.c.source_id.like("mollybet_%"),
+                )
+            )
+            .group_by(sr.c.source_id, sr.c.sport)
+        )
+        result = await self._session.execute(stmt)
+        source_stats = [
+            {
+                "source_id": r.source_id,
+                "sport": r.sport,
+                "total_events": r.total_events,
+                "matched_events": r.matched_events,
+                "match_rate": round(r.matched_events / r.total_events * 100, 1)
+                if r.total_events > 0
+                else 0.0,
+            }
+            for r in result.all()
+        ]
+
+        # Odds coverage per sport (Cloudbet only -- Mollybet is event-discovery)
+        stmt = (
+            sa.select(
+                sr.c.sport,
+                sa.func.count().label("total"),
+                sa.func.count()
+                .filter(sr.c.raw_data.has_key("odds"))
+                .label("with_odds"),
+            )
+            .where(sr.c.source_id.like("cloudbet_%"))
+            .group_by(sr.c.sport)
+        )
+        result = await self._session.execute(stmt)
+        odds_by_sport = {}
+        for r in result.all():
+            odds_by_sport[r.sport] = {
+                "total": r.total,
+                "with_odds": r.with_odds,
+                "pct": round(r.with_odds / r.total * 100, 1) if r.total > 0 else 0.0,
+            }
+
+        # Cross-source overlap: events matched to same canonical event
+        cb = sr.alias("cb")
+        mb = sr.alias("mb")
+        try:
+            stmt = (
+                sa.select(
+                    cb.c.sport,
+                    sa.func.count(sa.func.distinct(cb.c.event_id)).label("overlap"),
+                )
+                .select_from(
+                    cb.join(
+                        mb,
+                        sa.and_(
+                            cb.c.event_id == mb.c.event_id,
+                            cb.c.event_id.isnot(None),
+                        ),
+                    )
+                )
+                .where(
+                    sa.and_(
+                        cb.c.source_id.like("cloudbet_%"),
+                        mb.c.source_id.like("mollybet_%"),
+                    )
+                )
+                .group_by(cb.c.sport)
+            )
+            result = await self._session.execute(stmt)
+            cross_source = {r.sport: r.overlap for r in result.all()}
+        except Exception:
+            cross_source = {}
+
+        # Summary
+        total_betting_events = sum(s["total_events"] for s in source_stats)
+        total_with_odds = sum(v["with_odds"] for v in odds_by_sport.values())
+        total_cloudbet = sum(
+            s["total_events"] for s in source_stats if "cloudbet" in s["source_id"]
+        )
+        total_mollybet = sum(
+            s["total_events"] for s in source_stats if "mollybet" in s["source_id"]
+        )
+
+        # Configured betting providers from registry
+        providers = _registry.get_all_providers()
+        betting_providers = [
+            p
+            for p in providers
+            if p.source_id.startswith("cloudbet_") or p.source_id.startswith("mollybet_")
+        ]
+
+        return {
+            "source_stats": source_stats,
+            "odds_by_sport": odds_by_sport,
+            "cross_source_overlap": cross_source,
+            "total_betting_events": total_betting_events,
+            "total_with_odds": total_with_odds,
+            "total_cloudbet": total_cloudbet,
+            "total_mollybet": total_mollybet,
+            "providers_configured": len(betting_providers),
+            "providers": [
+                {
+                    "source_id": p.source_id,
+                    "display_name": p.display_name,
+                    "sport": p.sport,
+                    "type": p.type,
+                }
+                for p in betting_providers
+            ],
+        }
+
     async def _compute_event_enrichment(self) -> dict:
         """Count event enrichment coverage from the database."""
         t = events_table

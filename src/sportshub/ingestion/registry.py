@@ -107,4 +107,19 @@ def create_registry(settings: Settings) -> AdapterRegistry:
     else:
         logger.warning("mollybet_skipped", reason="No credentials configured")
 
+    # Cloudbet adapters (one per sport — free affiliate API key)
+    if settings.cloudbet_api_key:
+        from sportshub.ingestion.adapters.cloudbet import CloudbetAdapter
+
+        for sport in (Sport.NBA, Sport.FOOTBALL, Sport.LOL):
+            registry.register(
+                CloudbetAdapter(
+                    api_key=settings.cloudbet_api_key,
+                    sport=sport,
+                    api_url=settings.cloudbet_api_url,
+                )
+            )
+    else:
+        logger.warning("cloudbet_skipped", reason="No API key configured")
+
     return registry

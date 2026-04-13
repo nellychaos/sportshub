@@ -40,6 +40,7 @@ async def dashboard_index(
     script_activity = svc.get_script_activity()
     completeness = await svc.get_data_completeness()
     scorecard = svc.get_thesis_scorecard()
+    betting = await svc.get_betting_coverage()
 
     return templates.TemplateResponse(
         request,
@@ -58,6 +59,7 @@ async def dashboard_index(
             "script_activity": script_activity,
             "completeness": completeness,
             "scorecard": scorecard,
+            "betting": betting,
         },
     )
 
@@ -215,4 +217,18 @@ async def partial_completeness(
         request,
         "dashboard/partials/data_completeness.html",
         {"completeness": completeness},
+    )
+
+
+@router.get("/dashboard/partials/betting", response_class=HTMLResponse)
+async def partial_betting(
+    request: Request, session: AsyncSession = Depends(get_db)
+):
+    svc = _get_service(request, session)
+    templates = request.app.state.templates
+    betting = await svc.get_betting_coverage()
+    return templates.TemplateResponse(
+        request,
+        "dashboard/partials/betting_coverage.html",
+        {"betting": betting},
     )

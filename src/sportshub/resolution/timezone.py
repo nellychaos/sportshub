@@ -20,7 +20,10 @@ logger = structlog.get_logger()
 _VENUE_MATCH_THRESHOLD = 0.85
 
 # Path to the venue timezone data file (relative to project root)
-_DATA_FILE = Path(__file__).resolve().parent.parent.parent.parent / "data" / "venue_timezones.json"
+_DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+if not _DATA_DIR.is_dir():
+    _DATA_DIR = Path("/app/data")
+_DATA_FILE = _DATA_DIR / "venue_timezones.json"
 
 
 class VenueTimezoneResolver:

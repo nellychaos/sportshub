@@ -55,6 +55,19 @@ class SourceRecordRepository(BaseRepository):
         rows = await self._fetch_all(stmt)
         return [SourceRecord(**self._row_to_dict(r)) for r in rows]
 
+    async def get_by_source_event(self, source_id: str, source_event_id: str) -> SourceRecord | None:
+        """Look up a source record by its source-specific identifiers."""
+        stmt = sa.select(source_records_table).where(
+            sa.and_(
+                source_records_table.c.source_id == source_id,
+                source_records_table.c.source_event_id == source_event_id,
+            )
+        )
+        row = await self._fetch_one(stmt)
+        if row is None:
+            return None
+        return SourceRecord(**self._row_to_dict(row))
+
     async def get_unmatched(self, sport: Sport | None = None) -> list[SourceRecord]:
         """Get source records not yet linked to a canonical event."""
         stmt = sa.select(source_records_table).where(

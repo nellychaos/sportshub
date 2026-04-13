@@ -58,6 +58,10 @@ class SportshubScheduler:
             "mollybet_fb": IntervalTrigger(hours=2),
             "mollybet_basket": IntervalTrigger(hours=2),
             "mollybet_esports": IntervalTrigger(hours=2),
+            # Cloudbet (bookmaker odds — one job per sport)
+            "cloudbet_basketball": IntervalTrigger(hours=1),
+            "cloudbet_soccer": IntervalTrigger(hours=1),
+            "cloudbet_league_of_legends": IntervalTrigger(hours=2),
         }
 
         for adapter in registry.get_all():

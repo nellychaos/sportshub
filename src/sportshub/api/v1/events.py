@@ -14,11 +14,16 @@ from sportshub.api.v1.schemas import (
     EventEnrichment,
     EventListItem,
     EventListResponse,
+    EventOddsResponse,
     InjuryReport,
+    MarketOdds,
+    OddsSelection,
     PlayerBio,
+    PlayerPropOdds,
     PlayerSeasonStats,
     RosterPlayer,
     SourceInfo,
+    SourceOdds,
     TeamEnrichment,
     TeamStats,
     TeamSummary,
@@ -294,6 +299,179 @@ async def get_event(
     ]
 
     # Parse typed enrichment from raw metadata (rosters, stats, injuries)
+    enrichment = _parse_enrichment(
+        event.metadata,
+        home_abbr=home.abbreviation,
+        away_abbr=away.abbreviation,
+    ) if event.metadata else None
+
+    return EventDetailResponse(
+        id=event.id, sport=event.sport.value,
+        home_team=home, away_team=away, competition=comp,
+        scheduled_at=event.scheduled_at, status=event.status.value,
+        match_format=event.match_format.value, venue=event.venue,
+        confidence_score=event.confidence_score, source_count=event.source_count,
+        sources=sources, enrichment=enrichment, metadata=event.metadata,
+        created_at=event.created_at, updated_at=event.updated_at,
+    )
+
+
+# ─── Betting / Odds Endpoints ───────────────────────────────────────────────
+
+_BETTING_SOURCES = {"cloudbet_basketball", "cloudbet_soccer", "cloudbet_league_of_legends",
+                    "mollybet_fb", "mollybet_basket", "mollybet_esports"}
+
+
+def _extract_source_odds(raw_data: dict, source_id: str, source_event_id: str, created_at: datetime) -> SourceOdds:
+    """Extract structured odds from a source_record's raw_data JSONB."""
+    odds = raw_data.get("odds", {})
+    markets: list[MarketOdds] = []
+    props: list[PlayerPropOdds] = []
+
+    # Moneyline / Match Winner
+    ml = odds.get("moneyline", {})
+    if ml:
+        sels = [OddsSelection(outcome=k, price=v) for k, v in ml.items() if isinstance(v, (int, float))]
+        if sels:
+            markets.append(MarketOdds(market_type="moneyline", selections=sels))
+
+    # Spread / Handicap
+    spread = odds.get("spread", {})
+    if spread:
+        sels = []
+        for side, data in spread.items():
+            if isinstance(data, dict) and "price" in data:
+                sels.append(OddsSelection(outcome=side, price=data["price"], line=data.get("line")))
+        if sels:
+            markets.append(MarketOdds(market_type="spread", selections=sels))
+
+    # Totals
+    total = odds.get("total", {})
+    if total:
+        sels = []
+        for side, data in total.items():
+            if isinstance(data, dict) and "price" in data:
+                sels.append(OddsSelection(outcome=side, price=data["price"], line=data.get("line")))
+        if sels:
+            markets.append(MarketOdds(market_type="total", selections=sels))
+
+    # BTTS
+    btts = odds.get("btts", {})
+    if btts:
+        sels = [OddsSelection(outcome=k, price=v) for k, v in btts.items() if isinstance(v, (int, float))]
+        if sels:
+            markets.append(MarketOdds(market_type="btts", selections=sels))
+
+    # Player Props
+    for prop in odds.get("player_props", []):
+        props.append(PlayerPropOdds(
+            market=prop.get("market", ""),
+            player=prop.get("player", ""),
+            outcome=prop.get("outcome", ""),
+            price=prop.get("price", 0),
+            min_stake=prop.get("min_stake"),
+            max_stake=prop.get("max_stake"),
+        ))
+
+    return SourceOdds(
+        source_id=source_id,
+        source_event_id=source_event_id,
+        markets=markets,
+        player_props=props,
+        fetched_at=created_at,
+    )
+
+
+@router.get("/{event_id}/odds", response_model=EventOddsResponse)
+async def get_event_odds(
+    event_id: UUID,
+    session: AsyncSession = Depends(get_db),
+) -> EventOddsResponse:
+    """Get combined odds from all betting sources for a canonical event.
+
+    Returns structured odds data from Cloudbet and Mollybet, allowing
+    frontends to display odds from multiple bookmakers for the same event.
+    """
+    event_repo = EventRepository(session)
+    team_repo = TeamRepository(session)
+    source_repo = SourceRecordRepository(session)
+
+    event = await event_repo.get_by_id(event_id)
+    if not event:
+        raise HTTPException(status_code=404, detail={"error": {"code": "NOT_FOUND", "message": "Event not found"}})
+
+    home = await _build_team_summary(team_repo, event.home_team_id)
+    away = await _build_team_summary(team_repo, event.away_team_id)
+
+    # Get all source records linked to this event
+    all_records = await source_repo.get_by_event(event_id)
+    betting_records = [r for r in all_records if r.source_id in _BETTING_SOURCES]
+
+    sources = []
+    for sr in betting_records:
+        raw = sr.raw_data if hasattr(sr, "raw_data") else {}
+        if not raw:
+            continue
+        source_odds = _extract_source_odds(raw, sr.source_id, sr.source_event_id, sr.created_at)
+        if source_odds.markets or source_odds.player_props:
+            sources.append(source_odds)
+
+    return EventOddsResponse(
+        event_id=event.id,
+        sport=event.sport.value,
+        home_team=home,
+        away_team=away,
+        scheduled_at=event.scheduled_at,
+        sources=sources,
+        source_count=len(sources),
+    )
+
+
+@router.get("/by-source/{source_id}/{source_event_id}", response_model=EventDetailResponse)
+async def get_event_by_source(
+    source_id: str,
+    source_event_id: str,
+    session: AsyncSession = Depends(get_db),
+    cache: RedisClient = Depends(get_redis),
+) -> EventDetailResponse:
+    """Look up a canonical event by source-specific event ID.
+
+    Allows Cloudbet and Mollybet frontends to find the canonical event
+    using their own event identifiers, then access the combined data.
+    """
+    source_repo = SourceRecordRepository(session)
+    event_repo = EventRepository(session)
+    team_repo = TeamRepository(session)
+    comp_repo = CompetitionRepository(session)
+
+    # Find the source record
+    sr = await source_repo.get_by_source_event(source_id, source_event_id)
+    if not sr or not sr.event_id:
+        raise HTTPException(
+            status_code=404,
+            detail={"error": {"code": "NOT_FOUND", "message": f"No matched event for {source_id}/{source_event_id}"}},
+        )
+
+    # Load the canonical event (reuse the detail logic)
+    event = await event_repo.get_by_id(sr.event_id)
+    if not event:
+        raise HTTPException(status_code=404, detail={"error": {"code": "NOT_FOUND", "message": "Event not found"}})
+
+    home = await _build_team_summary(team_repo, event.home_team_id)
+    away = await _build_team_summary(team_repo, event.away_team_id)
+    comp = await _build_competition_summary(comp_repo, event.competition_id)
+    source_records = await source_repo.get_by_event(sr.event_id)
+
+    sources = [
+        SourceInfo(
+            source_id=s.source_id, source_event_id=s.source_event_id,
+            raw_home_team=s.raw_home_team, raw_away_team=s.raw_away_team,
+            scheduled_at=s.scheduled_at, venue=s.venue,
+            match_confidence=s.match_confidence, created_at=s.created_at,
+        )
+        for s in source_records
+    ]
+
     enrichment = _parse_enrichment(
         event.metadata,
         home_abbr=home.abbreviation,
