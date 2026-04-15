@@ -1,0 +1,772 @@
+[
+  {
+    "round": 1,
+    "race_name": "Australian Grand Prix",
+    "official_name": "FORMULA 1 QATAR AIRWAYS AUSTRALIAN GRAND PRIX 2026",
+    "date": "2026-03-08",
+    "time_utc": "04:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-03-06",
+        "time_utc": "01:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-03-06",
+        "time_utc": "05:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-03-07",
+        "time_utc": "01:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-03-07",
+        "time_utc": "05:00:00Z"
+      }
+    },
+    "circuit_id": "albert_park",
+    "circuit_name": "Albert Park Grand Prix Circuit",
+    "location": "Melbourne",
+    "country": "Australia",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/australia-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia%20carbon.png",
+    "openf1_meeting_key": 1279,
+    "openf1_circuit_key": 10
+  },
+  {
+    "round": 2,
+    "race_name": "Chinese Grand Prix",
+    "official_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2026",
+    "date": "2026-03-15",
+    "time_utc": "07:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-03-13",
+        "time_utc": "03:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-03-14",
+        "time_utc": "07:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-03-14",
+        "time_utc": "03:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-03-13",
+        "time_utc": "07:30:00Z"
+      }
+    },
+    "circuit_id": "shanghai",
+    "circuit_name": "Shanghai International Circuit",
+    "location": "Shanghai",
+    "country": "China",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/china-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/China%20carbon.png",
+    "openf1_meeting_key": 1280,
+    "openf1_circuit_key": 49
+  },
+  {
+    "round": 3,
+    "race_name": "Japanese Grand Prix",
+    "official_name": "FORMULA 1 ARAMCO JAPANESE GRAND PRIX 2026",
+    "date": "2026-03-29",
+    "time_utc": "05:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-03-27",
+        "time_utc": "02:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-03-27",
+        "time_utc": "06:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-03-28",
+        "time_utc": "02:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-03-28",
+        "time_utc": "06:00:00Z"
+      }
+    },
+    "circuit_id": "suzuka",
+    "circuit_name": "Suzuka Circuit",
+    "location": "Suzuka",
+    "country": "Japan",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/japan-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan%20carbon.png",
+    "openf1_meeting_key": 1281,
+    "openf1_circuit_key": 46
+  },
+  {
+    "round": 4,
+    "race_name": "Miami Grand Prix",
+    "official_name": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
+    "date": "2026-05-03",
+    "time_utc": "20:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-05-01",
+        "time_utc": "16:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-05-02",
+        "time_utc": "20:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-05-02",
+        "time_utc": "16:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-05-01",
+        "time_utc": "20:30:00Z"
+      }
+    },
+    "circuit_id": "miami",
+    "circuit_name": "Miami International Autodrome",
+    "location": "Miami",
+    "country": "USA",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami%20carbon.png",
+    "openf1_meeting_key": 1284,
+    "openf1_circuit_key": 151
+  },
+  {
+    "round": 5,
+    "race_name": "Canadian Grand Prix",
+    "official_name": "FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026",
+    "date": "2026-05-24",
+    "time_utc": "20:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-05-22",
+        "time_utc": "16:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-05-23",
+        "time_utc": "20:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-05-23",
+        "time_utc": "16:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-05-22",
+        "time_utc": "20:30:00Z"
+      }
+    },
+    "circuit_id": "villeneuve",
+    "circuit_name": "Circuit Gilles Villeneuve",
+    "location": "Montreal",
+    "country": "Canada",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/canada-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada%20carbon.png",
+    "openf1_meeting_key": 1285,
+    "openf1_circuit_key": 23
+  },
+  {
+    "round": 6,
+    "race_name": "Monaco Grand Prix",
+    "official_name": "FORMULA 1 LOUIS VUITTON GRAND PRIX DE MONACO 2026",
+    "date": "2026-06-07",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-06-05",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-06-05",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-06-06",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-06-06",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "monaco",
+    "circuit_name": "Circuit de Monaco",
+    "location": "Monte Carlo",
+    "country": "Monaco",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/monaco-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco%20carbon.png",
+    "openf1_meeting_key": 1286,
+    "openf1_circuit_key": 22
+  },
+  {
+    "round": 7,
+    "race_name": "Barcelona Grand Prix",
+    "official_name": "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+    "date": "2026-06-14",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-06-12",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-06-12",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-06-13",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-06-13",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "catalunya",
+    "circuit_name": "Circuit de Barcelona-Catalunya",
+    "location": "Barcelona",
+    "country": "Spain",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Barcelona-Catalunya%20carbon.png",
+    "openf1_meeting_key": 1287,
+    "openf1_circuit_key": 15
+  },
+  {
+    "round": 8,
+    "race_name": "Austrian Grand Prix",
+    "official_name": "FORMULA 1 LENOVO AUSTRIAN GRAND PRIX 2026",
+    "date": "2026-06-28",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-06-26",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-06-26",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-06-27",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-06-27",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "red_bull_ring",
+    "circuit_name": "Red Bull Ring",
+    "location": "Spielberg",
+    "country": "Austria",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/austria-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria%20carbon.png",
+    "openf1_meeting_key": 1288,
+    "openf1_circuit_key": 19
+  },
+  {
+    "round": 9,
+    "race_name": "British Grand Prix",
+    "official_name": "FORMULA 1 PIRELLI BRITISH GRAND PRIX 2026",
+    "date": "2026-07-05",
+    "time_utc": "14:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-07-03",
+        "time_utc": "11:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-07-04",
+        "time_utc": "15:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-07-04",
+        "time_utc": "11:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-07-03",
+        "time_utc": "15:30:00Z"
+      }
+    },
+    "circuit_id": "silverstone",
+    "circuit_name": "Silverstone Circuit",
+    "location": "Silverstone",
+    "country": "UK",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-kingdom-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great Britain%20carbon.png",
+    "openf1_meeting_key": 1289,
+    "openf1_circuit_key": 2
+  },
+  {
+    "round": 10,
+    "race_name": "Belgian Grand Prix",
+    "official_name": "FORMULA 1 MOËT & CHANDON BELGIAN GRAND PRIX 2026",
+    "date": "2026-07-19",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-07-17",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-07-17",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-07-18",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-07-18",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "spa",
+    "circuit_name": "Circuit de Spa-Francorchamps",
+    "location": "Spa",
+    "country": "Belgium",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/belgium-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium%20carbon.png",
+    "openf1_meeting_key": 1290,
+    "openf1_circuit_key": 7
+  },
+  {
+    "round": 11,
+    "race_name": "Hungarian Grand Prix",
+    "official_name": "FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026",
+    "date": "2026-07-26",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-07-24",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-07-24",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-07-25",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-07-25",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "hungaroring",
+    "circuit_name": "Hungaroring",
+    "location": "Budapest",
+    "country": "Hungary",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/hungary-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary%20carbon.png",
+    "openf1_meeting_key": 1291,
+    "openf1_circuit_key": 4
+  },
+  {
+    "round": 12,
+    "race_name": "Dutch Grand Prix",
+    "official_name": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026",
+    "date": "2026-08-23",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-08-21",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-08-22",
+        "time_utc": "14:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-08-22",
+        "time_utc": "10:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-08-21",
+        "time_utc": "14:30:00Z"
+      }
+    },
+    "circuit_id": "zandvoort",
+    "circuit_name": "Circuit Park Zandvoort",
+    "location": "Zandvoort",
+    "country": "Netherlands",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/netherlands-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands%20carbon.png",
+    "openf1_meeting_key": 1292,
+    "openf1_circuit_key": 55
+  },
+  {
+    "round": 13,
+    "race_name": "Italian Grand Prix",
+    "official_name": "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
+    "date": "2026-09-06",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-09-04",
+        "time_utc": "10:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-09-04",
+        "time_utc": "14:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-09-05",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-09-05",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "monza",
+    "circuit_name": "Autodromo Nazionale di Monza",
+    "location": "Monza",
+    "country": "Italy",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/italy-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Italy%20carbon.png",
+    "openf1_meeting_key": 1293,
+    "openf1_circuit_key": 39
+  },
+  {
+    "round": 14,
+    "race_name": "Spanish Grand Prix",
+    "official_name": "FORMULA 1 TAG HEUER GRAN PREMIO DE ESPAÑA 2026",
+    "date": "2026-09-13",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-09-11",
+        "time_utc": "11:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-09-11",
+        "time_utc": "15:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-09-12",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-09-12",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "madring",
+    "circuit_name": "Madring",
+    "location": "Madrid",
+    "country": "Spain",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png",
+    "openf1_meeting_key": 1294,
+    "openf1_circuit_key": 153
+  },
+  {
+    "round": 15,
+    "race_name": "Azerbaijan Grand Prix",
+    "official_name": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
+    "date": "2026-09-26",
+    "time_utc": "11:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-09-24",
+        "time_utc": "08:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-09-24",
+        "time_utc": "12:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-09-25",
+        "time_utc": "08:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-09-25",
+        "time_utc": "12:00:00Z"
+      }
+    },
+    "circuit_id": "baku",
+    "circuit_name": "Baku City Circuit",
+    "location": "Baku",
+    "country": "Azerbaijan",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/azerbaijan-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan%20carbon.png",
+    "openf1_meeting_key": 1295,
+    "openf1_circuit_key": 144
+  },
+  {
+    "round": 16,
+    "race_name": "Singapore Grand Prix",
+    "official_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
+    "date": "2026-10-11",
+    "time_utc": "12:00:00Z",
+    "is_sprint_weekend": true,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-10-09",
+        "time_utc": "08:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-10-10",
+        "time_utc": "13:00:00Z"
+      },
+      "Sprint": {
+        "date": "2026-10-10",
+        "time_utc": "09:00:00Z"
+      },
+      "SprintQualifying": {
+        "date": "2026-10-09",
+        "time_utc": "12:30:00Z"
+      }
+    },
+    "circuit_id": "marina_bay",
+    "circuit_name": "Marina Bay Street Circuit",
+    "location": "Marina Bay",
+    "country": "Singapore",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/singapore-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore%20carbon.png",
+    "openf1_meeting_key": 1296,
+    "openf1_circuit_key": 61
+  },
+  {
+    "round": 17,
+    "race_name": "United States Grand Prix",
+    "official_name": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
+    "date": "2026-10-25",
+    "time_utc": "20:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-10-23",
+        "time_utc": "17:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-10-23",
+        "time_utc": "21:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-10-24",
+        "time_utc": "17:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-10-24",
+        "time_utc": "21:00:00Z"
+      }
+    },
+    "circuit_id": "americas",
+    "circuit_name": "Circuit of the Americas",
+    "location": "Austin",
+    "country": "USA",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/United States%20carbon.png",
+    "openf1_meeting_key": 1297,
+    "openf1_circuit_key": 9
+  },
+  {
+    "round": 18,
+    "race_name": "Mexico City Grand Prix",
+    "official_name": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
+    "date": "2026-11-01",
+    "time_utc": "20:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-10-30",
+        "time_utc": "18:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-10-30",
+        "time_utc": "22:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-10-31",
+        "time_utc": "17:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-10-31",
+        "time_utc": "21:00:00Z"
+      }
+    },
+    "circuit_id": "rodriguez",
+    "circuit_name": "Autódromo Hermanos Rodríguez",
+    "location": "Mexico City",
+    "country": "Mexico",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/mexico-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Mexico%20carbon.png",
+    "openf1_meeting_key": 1298,
+    "openf1_circuit_key": 65
+  },
+  {
+    "round": 19,
+    "race_name": "Brazilian Grand Prix",
+    "official_name": null,
+    "date": "2026-11-08",
+    "time_utc": "17:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-11-06",
+        "time_utc": "15:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-11-06",
+        "time_utc": "19:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-11-07",
+        "time_utc": "14:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-11-07",
+        "time_utc": "18:00:00Z"
+      }
+    },
+    "circuit_id": "interlagos",
+    "circuit_name": "Autódromo José Carlos Pace",
+    "location": "São Paulo",
+    "country": "Brazil",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Brazilian_Grand_Prix",
+    "country_flag_url": null,
+    "circuit_image_url": null,
+    "openf1_meeting_key": null,
+    "openf1_circuit_key": null
+  },
+  {
+    "round": 20,
+    "race_name": "Las Vegas Grand Prix",
+    "official_name": "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX 2026",
+    "date": "2026-11-22",
+    "time_utc": "04:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-11-20",
+        "time_utc": "00:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-11-20",
+        "time_utc": "04:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-11-21",
+        "time_utc": "00:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-11-21",
+        "time_utc": "04:00:00Z"
+      }
+    },
+    "circuit_id": "vegas",
+    "circuit_name": "Las Vegas Strip Street Circuit",
+    "location": "Las Vegas",
+    "country": "USA",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Las Vegas%20carbon.png",
+    "openf1_meeting_key": 1300,
+    "openf1_circuit_key": 152
+  },
+  {
+    "round": 21,
+    "race_name": "Qatar Grand Prix",
+    "official_name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
+    "date": "2026-11-29",
+    "time_utc": "16:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-11-27",
+        "time_utc": "13:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-11-27",
+        "time_utc": "17:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-11-28",
+        "time_utc": "14:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-11-28",
+        "time_utc": "18:00:00Z"
+      }
+    },
+    "circuit_id": "losail",
+    "circuit_name": "Losail International Circuit",
+    "location": "Lusail",
+    "country": "Qatar",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/qatar-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar%20carbon.png",
+    "openf1_meeting_key": 1301,
+    "openf1_circuit_key": 150
+  },
+  {
+    "round": 22,
+    "race_name": "Abu Dhabi Grand Prix",
+    "official_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026",
+    "date": "2026-12-06",
+    "time_utc": "13:00:00Z",
+    "is_sprint_weekend": false,
+    "sessions": {
+      "FirstPractice": {
+        "date": "2026-12-04",
+        "time_utc": "09:30:00Z"
+      },
+      "SecondPractice": {
+        "date": "2026-12-04",
+        "time_utc": "13:00:00Z"
+      },
+      "ThirdPractice": {
+        "date": "2026-12-05",
+        "time_utc": "10:30:00Z"
+      },
+      "Qualifying": {
+        "date": "2026-12-05",
+        "time_utc": "14:00:00Z"
+      }
+    },
+    "circuit_id": "yas_marina",
+    "circuit_name": "Yas Marina Circuit",
+    "location": "Abu Dhabi",
+    "country": "UAE",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix",
+    "country_flag_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-arab-emirates-flag.png",
+    "circuit_image_url": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu Dhabi%20carbon.png",
+    "openf1_meeting_key": 1302,
+    "openf1_circuit_key": 70
+  }
+]

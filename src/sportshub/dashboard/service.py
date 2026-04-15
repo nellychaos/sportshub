@@ -779,6 +779,8 @@ class DashboardService:
             return "lol"
         if name.startswith("fifa_") or name.startswith("wc_"):
             return "football"
+        if name.startswith("f1_"):
+            return "f1"
         if name in ("providers.json", "provider_id_mappings.json",
                      "competitions.json", "venue_timezones.json"):
             return "system"
@@ -815,6 +817,8 @@ class DashboardService:
             "player_stats": player_stats,
             "team_data": team_data,
             "event_enrichment": event_enrichment,
+            "f1_schedule": self._f1_schedule_completeness(),
+            "f1_circuits": self._f1_circuit_completeness(),
         }
 
     def _compute_player_completeness(self) -> dict:
@@ -823,6 +827,7 @@ class DashboardService:
             "nba": self._nba_player_completeness(),
             "lol": self._lol_player_completeness(),
             "football": self._football_player_completeness(),
+            "f1": self._f1_driver_completeness(),
         }
 
     def _nba_player_completeness(self) -> dict:
@@ -900,6 +905,85 @@ class DashboardService:
         pct = {k: round(v / total * 100, 1) for k, v in tiers.items()}
         return {"total": total, "tiers": tiers, "pct": pct}
 
+    def _f1_driver_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "f1_drivers_2026.json") as f:
+                drivers = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            drivers = []
+        if not isinstance(drivers, list):
+            drivers = []
+        total = len(drivers)
+        if total == 0:
+            return {"total": 0, "tiers": {}, "pct": {}}
+        tiers = {
+            "identity": sum(1 for d in drivers if d.get("name") and d.get("date_of_birth") and d.get("nationality")),
+            "team_assignment": sum(1 for d in drivers if d.get("team_id")),
+            "headshot": sum(1 for d in drivers if d.get("headshot_url")),
+            "championship_data": sum(1 for d in drivers if d.get("championship_position")),
+        }
+        pct = {k: round(v / total * 100, 1) for k, v in tiers.items()}
+        return {"total": total, "tiers": tiers, "pct": pct}
+
+    def _f1_constructor_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "f1_constructors_2026.json") as f:
+                constructors = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            constructors = []
+        if not isinstance(constructors, list):
+            constructors = []
+        total = len(constructors)
+        if total == 0:
+            return {"total": 0, "tiers": {}}
+        return {
+            "total": total,
+            "with_colour": sum(1 for c in constructors if c.get("team_colour")),
+            "with_driver_pair": sum(1 for c in constructors if len(c.get("drivers", [])) >= 2),
+            "with_metadata": sum(1 for c in constructors if c.get("metadata", {}).get("team_principal") and c.get("metadata", {}).get("headquarters")),
+        }
+
+    def _f1_schedule_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "f1_schedule_2026.json") as f:
+                races = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            races = []
+        if not isinstance(races, list):
+            races = []
+        total = len(races)
+        if total == 0:
+            return {"total": 0, "tiers": {}}
+        return {
+            "total": total,
+            "with_session_times": sum(
+                1 for r in races
+                if r.get("sessions", {}).get("FirstPractice", {}).get("date")
+                and r.get("sessions", {}).get("Qualifying", {}).get("date")
+            ),
+            "sprint_weekends": sum(1 for r in races if r.get("is_sprint_weekend")),
+            "with_circuit": sum(1 for r in races if r.get("circuit_id")),
+        }
+
+    def _f1_circuit_completeness(self) -> dict:
+        try:
+            with open(DATA_DIR / "f1_circuits.json") as f:
+                circuits = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            circuits = []
+        if not isinstance(circuits, list):
+            circuits = []
+        total = len(circuits)
+        if total == 0:
+            return {"total": 0, "tiers": {}}
+        return {
+            "total": total,
+            "with_coordinates": sum(1 for c in circuits if (c.get("track_layout") or {}).get("x")),
+            "with_corners": sum(1 for c in circuits if (c.get("track_layout") or {}).get("corners")),
+            "with_svg": sum(1 for c in circuits if c.get("svg_track_map_url")),
+            "with_type": sum(1 for c in circuits if c.get("circuit_type")),
+        }
+
     def _compute_team_completeness(self) -> dict:
         """Count team data coverage across all sports."""
         def _load_list(filename: str) -> list:
@@ -930,6 +1014,7 @@ class DashboardService:
                 "with_historical": sum(1 for t in fifa_teams if t.get("metadata", {}).get("historical_wc_stats")),
                 "with_tournament": sum(1 for t in fifa_teams if t.get("metadata", {}).get("tournament_stats")),
             },
+            "f1": self._f1_constructor_completeness(),
         }
 
     def get_thesis_scorecard(self) -> dict:
@@ -952,16 +1037,20 @@ class DashboardService:
         nba = self._nba_player_completeness()
         lol = self._lol_player_completeness()
         football = self._football_player_completeness()
+        f1 = self._f1_driver_completeness()
 
         nba_depth = len([v for v in nba.get("pct", {}).values() if v > 80])
         lol_depth = len([v for v in lol.get("pct", {}).values() if v > 30])
         football_depth = len([v for v in football.get("pct", {}).values() if v > 30])
+        f1_depth = len([v for v in f1.get("pct", {}).values() if v > 80])
 
         # Reference data totals
         total_records = 0
         for fn in ["nba_players.json", "nba_player_stats.json", "nba_teams.json",
                     "lol_players.json", "lol_teams.json",
-                    "fifa_wc_players.json", "fifa_wc_teams.json"]:
+                    "fifa_wc_players.json", "fifa_wc_teams.json",
+                    "f1_drivers_2026.json", "f1_constructors_2026.json",
+                    "f1_schedule_2026.json", "f1_circuits.json"]:
             try:
                 with open(DATA_DIR / fn) as f:
                     data = json.load(f)
@@ -984,6 +1073,8 @@ class DashboardService:
                         "players": lol.get("total", 0)},
                 "football": {"score": football_depth, "max": 4, "label": "FIFA WC 2026",
                              "players": football.get("total", 0)},
+                "f1": {"score": f1_depth, "max": 4, "label": "F1 2026",
+                       "players": f1.get("total", 0)},
             },
         }
 

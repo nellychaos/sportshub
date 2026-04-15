@@ -1,0 +1,398 @@
+[
+  {
+    "name": "Alpine F1 Team",
+    "short_name": "Alpine",
+    "abbreviation": "ALP",
+    "sport": "f1",
+    "team_id": "f1-alpine",
+    "constructor_id": "alpine",
+    "nationality": "French",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alpine_F1_Team",
+    "team_colour": "#00A1E8",
+    "drivers": [
+      "Franco Colapinto",
+      "Pierre Gasly"
+    ],
+    "metadata": {
+      "team_principal": "Oliver Oakes",
+      "headquarters": "Enstone, UK",
+      "founded": 2021,
+      "constructor_championships": 0,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Alpine F1 Team",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "alpine",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "ALP",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Aston Martin",
+    "short_name": "Aston",
+    "abbreviation": "AMR",
+    "sport": "f1",
+    "team_id": "f1-aston_martin",
+    "constructor_id": "aston_martin",
+    "nationality": "British",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+    "team_colour": "#229971",
+    "drivers": [
+      "Fernando Alonso",
+      "Lance Stroll"
+    ],
+    "metadata": {
+      "team_principal": "Andy Cowell",
+      "headquarters": "Silverstone, UK",
+      "founded": 2021,
+      "constructor_championships": 0,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Aston Martin",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "aston_martin",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "AMR",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Audi",
+    "short_name": "Audi",
+    "abbreviation": "AUD",
+    "sport": "f1",
+    "team_id": "f1-audi",
+    "constructor_id": "audi",
+    "nationality": "German",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
+    "team_colour": "#F50537",
+    "drivers": [
+      "Gabriel Bortoleto",
+      "Nico Hülkenberg"
+    ],
+    "metadata": {
+      "team_principal": "Mattia Binotto",
+      "headquarters": "Hinwil, Switzerland",
+      "founded": 1993,
+      "constructor_championships": 0,
+      "notes": "Formerly Sauber, rebranded as Audi for 2026"
+    },
+    "aliases": [
+      {
+        "alias": "Audi",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "audi",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "AUD",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Cadillac F1 Team",
+    "short_name": "Cadillac",
+    "abbreviation": "CAD",
+    "sport": "f1",
+    "team_id": "f1-cadillac",
+    "constructor_id": "cadillac",
+    "nationality": "American",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+    "team_colour": "#909090",
+    "drivers": [
+      "Valtteri Bottas",
+      "Sergio Pérez"
+    ],
+    "metadata": {
+      "team_principal": "Graeme Lowdon",
+      "headquarters": "Detroit, USA",
+      "founded": 2026,
+      "constructor_championships": 0,
+      "notes": "New entry for 2026 (GM/Cadillac)"
+    },
+    "aliases": [
+      {
+        "alias": "Cadillac F1 Team",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "cadillac",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "CAD",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Ferrari",
+    "short_name": "Ferrari",
+    "abbreviation": "FER",
+    "sport": "f1",
+    "team_id": "f1-ferrari",
+    "constructor_id": "ferrari",
+    "nationality": "Italian",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+    "team_colour": "#ED1131",
+    "drivers": [
+      "Lewis Hamilton",
+      "Charles Leclerc"
+    ],
+    "metadata": {
+      "team_principal": "Fred Vasseur",
+      "headquarters": "Maranello, Italy",
+      "founded": 1929,
+      "constructor_championships": 16,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Ferrari",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "ferrari",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "FER",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Haas F1 Team",
+    "short_name": "Haas",
+    "abbreviation": "HAA",
+    "sport": "f1",
+    "team_id": "f1-haas",
+    "constructor_id": "haas",
+    "nationality": "American",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Haas_F1_Team",
+    "team_colour": "#9C9FA2",
+    "drivers": [
+      "Oliver Bearman",
+      "Esteban Ocon"
+    ],
+    "metadata": {
+      "team_principal": "Ayao Komatsu",
+      "headquarters": "Kannapolis, USA",
+      "founded": 2016,
+      "constructor_championships": 0,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Haas F1 Team",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "haas",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "HAA",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "McLaren",
+    "short_name": "McLaren",
+    "abbreviation": "MCL",
+    "sport": "f1",
+    "team_id": "f1-mclaren",
+    "constructor_id": "mclaren",
+    "nationality": "British",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/McLaren",
+    "team_colour": "#F47600",
+    "drivers": [
+      "Lando Norris",
+      "Oscar Piastri"
+    ],
+    "metadata": {
+      "team_principal": "Andrea Stella",
+      "headquarters": "Woking, UK",
+      "founded": 1963,
+      "constructor_championships": 9,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "McLaren",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "mclaren",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "MCL",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Mercedes",
+    "short_name": "Mercedes",
+    "abbreviation": "MER",
+    "sport": "f1",
+    "team_id": "f1-mercedes",
+    "constructor_id": "mercedes",
+    "nationality": "German",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+    "team_colour": "#00D7B6",
+    "drivers": [
+      "Andrea Kimi Antonelli",
+      "George Russell"
+    ],
+    "metadata": {
+      "team_principal": "Toto Wolff",
+      "headquarters": "Brackley, UK",
+      "founded": 2010,
+      "constructor_championships": 8,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Mercedes",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "mercedes",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "MER",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "RB F1 Team",
+    "short_name": "RB",
+    "abbreviation": "RB",
+    "sport": "f1",
+    "team_id": "f1-rb",
+    "constructor_id": "rb",
+    "nationality": "Italian",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Racing_Bulls",
+    "team_colour": "#6692FF",
+    "drivers": [
+      "Liam Lawson",
+      "Arvid Lindblad"
+    ],
+    "metadata": {
+      "team_principal": "Laurent Mekies",
+      "headquarters": "Faenza, Italy",
+      "founded": 2006,
+      "constructor_championships": 0,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "RB F1 Team",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "rb",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "RB",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Red Bull",
+    "short_name": "Red",
+    "abbreviation": "RBR",
+    "sport": "f1",
+    "team_id": "f1-red_bull",
+    "constructor_id": "red_bull",
+    "nationality": "Austrian",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
+    "team_colour": "#4781D7",
+    "drivers": [
+      "Isack Hadjar",
+      "Max Verstappen"
+    ],
+    "metadata": {
+      "team_principal": "Christian Horner",
+      "headquarters": "Milton Keynes, UK",
+      "founded": 2005,
+      "constructor_championships": 6,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Red Bull",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "red_bull",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "RBR",
+        "source_id": "global"
+      }
+    ]
+  },
+  {
+    "name": "Williams",
+    "short_name": "Williams",
+    "abbreviation": "WIL",
+    "sport": "f1",
+    "team_id": "f1-williams",
+    "constructor_id": "williams",
+    "nationality": "British",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Williams_Racing",
+    "team_colour": "#1868DB",
+    "drivers": [
+      "Alexander Albon",
+      "Carlos Sainz"
+    ],
+    "metadata": {
+      "team_principal": "James Vowles",
+      "headquarters": "Grove, UK",
+      "founded": 1977,
+      "constructor_championships": 9,
+      "notes": null
+    },
+    "aliases": [
+      {
+        "alias": "Williams",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "williams",
+        "source_id": "jolpica_f1"
+      },
+      {
+        "alias": "WIL",
+        "source_id": "global"
+      }
+    ]
+  }
+]

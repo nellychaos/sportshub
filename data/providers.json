@@ -472,6 +472,87 @@
         "competitions": "/v2/odds/competitions/{key}"
       },
       "notes": "Covers match winner, handicap, map totals for LoL esports. Sport key: league-of-legends."
+    },
+    {
+      "source_id": "jolpica_f1",
+      "display_name": "Jolpica F1 API",
+      "sport": "f1",
+      "type": "api",
+      "reliability": "established",
+      "priority": 9,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://api.jolpi.ca/ergast/f1",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "schedule": "/{year}.json?limit=50",
+        "next_race": "/{year}/next.json",
+        "drivers": "/{year}/drivers.json?limit=50",
+        "constructors": "/{year}/constructors.json",
+        "circuits": "/circuits.json?limit=100",
+        "circuit_detail": "/circuits/{circuit_id}.json",
+        "driver_standings": "/{year}/driverStandings.json",
+        "constructor_standings": "/{year}/constructorStandings.json",
+        "race_results": "/{year}/{round}/results.json"
+      },
+      "entity_id_format": {
+        "driver": "slug (e.g., hamilton, verstappen)",
+        "team": "slug (e.g., red_bull, ferrari)",
+        "circuit": "slug (e.g., miami, silverstone)",
+        "event": "{season}_{round}"
+      },
+      "notes": "Community successor to deprecated Ergast API. Free tier: 200 req/hr, no auth needed. Full historical data from 1950. Default pagination limit=30, use ?limit= to override."
+    },
+    {
+      "source_id": "openf1",
+      "display_name": "OpenF1 API",
+      "sport": "f1",
+      "type": "api",
+      "reliability": "community",
+      "priority": 7,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://api.openf1.org/v1",
+      "rate_limit_seconds": 0.5,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "meetings": "/meetings?year={year}",
+        "sessions": "/sessions?meeting_key={meeting_key}",
+        "drivers": "/drivers?session_key={session_key}",
+        "drivers_latest": "/drivers?session_key=latest",
+        "laps": "/laps?session_key={session_key}&driver_number={driver_number}",
+        "position": "/position?session_key={session_key}",
+        "car_data": "/car_data?session_key={session_key}&driver_number={driver_number}",
+        "weather": "/weather?session_key={session_key}"
+      },
+      "entity_id_format": {
+        "meeting": "numeric meeting_key",
+        "session": "numeric session_key",
+        "driver": "driver_number (1-99)",
+        "circuit": "numeric circuit_key"
+      },
+      "notes": "Free real-time and historical F1 data from 2023+. Provides driver headshots, team hex colors, circuit images, and circuit type (Permanent/Street/Road). Rate limit: 3 req/s free tier."
+    },
+    {
+      "source_id": "multiviewer_circuits",
+      "display_name": "Multiviewer Circuit Data",
+      "sport": "f1",
+      "type": "api",
+      "reliability": "community",
+      "priority": 5,
+      "auth_required": false,
+      "auth_env_var": null,
+      "base_url": "https://api.multiviewer.app/api/v1/circuits",
+      "rate_limit_seconds": 1.0,
+      "source_timezone": "UTC",
+      "endpoints": {
+        "circuit_detail": "/{circuit_key}/{year}"
+      },
+      "entity_id_format": {
+        "circuit": "numeric circuit_key (from OpenF1)"
+      },
+      "notes": "Provides track geometry (x/y coordinate arrays, corner positions, marshal sectors) for rendering circuit layouts. Referenced via OpenF1 circuit_info_url field. Falls back to earlier years if current year data not yet available."
     }
   ]
 }

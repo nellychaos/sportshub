@@ -139,5 +139,25 @@
       "total_matches": 104,
       "description": "First FIFA World Cup with 48 teams, hosted across North America"
     }
+  },
+  {
+    "id": "f1-2026-season",
+    "name": "Formula 1 2026 Season",
+    "short_name": "F1-2026",
+    "sport": "f1",
+    "season": "2026",
+    "region": "International",
+    "tier": "tier_1",
+    "metadata": {
+      "format": "22-race world championship",
+      "start_date": "2026-03-08",
+      "end_date": "2026-12-06",
+      "teams": 11,
+      "drivers": 22,
+      "governing_body": "FIA",
+      "sprint_weekends": 6,
+      "new_entries": ["Cadillac F1 Team", "Audi (ex-Sauber)"],
+      "description": "First season under new 2026 technical regulations with ground-effect cars and active aero. 11 teams including new Cadillac/GM entry."
+    }
   }
 ]

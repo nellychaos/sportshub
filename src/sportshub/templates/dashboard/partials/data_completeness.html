@@ -1,6 +1,6 @@
 <!-- Data Depth: per-sport player and team completeness -->
 
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
   <!-- ── NBA ────────────────────────────────────────────────────── -->
   <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
@@ -137,6 +137,65 @@
       <div class="flex justify-between text-xs">
         <span class="text-gray-400">Tournament Stats</span>
         <span class="font-mono text-gray-300">{{ completeness.team_data.football.with_tournament }}/{{ completeness.team_data.football.total }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── F1 2026 ────────────────────────────────────────────────── -->
+  <div class="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-sm font-semibold text-white">F1 2026</h3>
+      <span class="text-xs text-gray-500">{{ completeness.player_stats.f1.total }} drivers</span>
+    </div>
+
+    {% if completeness.player_stats.f1.total > 0 %}
+    <div class="space-y-2 mb-4">
+      {% set f1_tiers = [
+        ('Identity', 'identity', 'red'),
+        ('Team Assigned', 'team_assignment', 'orange'),
+        ('Headshot', 'headshot', 'cyan'),
+        ('Championship', 'championship_data', 'emerald')
+      ] %}
+      {% for label, key, color in f1_tiers %}
+      {% set pct = completeness.player_stats.f1.pct.get(key, 0) %}
+      <div>
+        <div class="flex items-center justify-between mb-0.5">
+          <span class="text-[11px] text-gray-400">{{ label }}</span>
+          <span class="text-[11px] font-mono text-gray-300">{{ completeness.player_stats.f1.tiers.get(key, 0) }} <span class="text-gray-500">({{ pct }}%)</span></span>
+        </div>
+        <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+          <div class="h-full rounded-full bg-{{ color }}-500" style="width: {{ pct }}%"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-xs text-gray-500 mb-4">No driver data</p>
+    {% endif %}
+
+    <!-- F1 Constructors -->
+    <div class="pt-3 border-t border-gray-800">
+      <p class="text-[11px] text-gray-500 mb-2">Constructors: {{ completeness.team_data.f1.total }}</p>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Team Colour</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.f1.with_colour }}/{{ completeness.team_data.f1.total }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Driver Pairs</span>
+        <span class="font-mono text-gray-300">{{ completeness.team_data.f1.with_driver_pair }}/{{ completeness.team_data.f1.total }}</span>
+      </div>
+    </div>
+
+    <!-- F1 Schedule + Circuits -->
+    <div class="pt-3 border-t border-gray-800">
+      <p class="text-[11px] text-gray-500 mb-2">Schedule: {{ completeness.f1_schedule.total }} races</p>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Session Times</span>
+        <span class="font-mono text-gray-300">{{ completeness.f1_schedule.with_session_times }}/{{ completeness.f1_schedule.total }}</span>
+      </div>
+      <div class="flex justify-between text-xs">
+        <span class="text-gray-400">Track Geometry</span>
+        <span class="font-mono text-gray-300">{{ completeness.f1_circuits.with_coordinates }}/{{ completeness.f1_circuits.total }}</span>
       </div>
     </div>
   </div>

@@ -123,6 +123,9 @@
     <button onclick="switchTab('lol')" id="tab-lol" class="tab-inactive pb-3 text-sm font-semibold transition-colors cursor-pointer flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-violet-500"></span> LoL Esports
     </button>
+    <button onclick="switchTab('f1')" id="tab-f1" class="tab-inactive pb-3 text-sm font-semibold transition-colors cursor-pointer flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-red-600"></span> F1
+    </button>
     <button onclick="switchTab('api')" id="tab-api" class="tab-inactive pb-3 text-sm font-semibold transition-colors cursor-pointer flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-brand-500"></span> API Explorer
     </button>
@@ -765,6 +768,240 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════════
+       F1 SECTION (hidden by default)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="section-f1" class="hidden">
+
+    <!-- Section Header -->
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center">
+        <svg class="w-4 h-4 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div>
+        <h2 class="text-lg font-bold text-white">Formula 1 2026</h2>
+        <p class="text-xs text-gray-500">{{ data.f1.depth.total_drivers }} drivers · {{ data.f1.depth.total_constructors }} constructors · {{ data.f1.depth.total_races }} races · {{ data.f1.depth.total_circuits }} circuits</p>
+      </div>
+    </div>
+
+    <!-- ── A: Season Calendar ─────────────────────────────────────── -->
+    <div class="mb-8">
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">2026 Season Calendar</p>
+      <div class="flex gap-3 overflow-x-auto pb-3" style="scrollbar-width: thin; scrollbar-color: #374151 transparent;">
+        {% for race in data.f1.calendar.races %}
+        <div class="flex-shrink-0 w-36 bg-gray-900 rounded-xl border border-gray-800 p-3 cursor-pointer hover:border-red-900/50 transition-colors {% if race.round in data.f1.calendar.past_rounds %}opacity-60{% endif %}"
+             onclick="expandRace({{ race.round }})">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-bold text-gray-600">R{{ race.round }}</span>
+            {% if race.is_sprint_weekend %}
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900/30 text-red-400 font-bold">SPRINT</span>
+            {% endif %}
+          </div>
+          <p class="text-xs font-semibold text-white truncate">{{ race.race_name | replace(' Grand Prix', ' GP') }}</p>
+          <div class="flex items-center gap-1.5 mt-1.5">
+            {% if race.country_flag_url %}
+            <img src="{{ race.country_flag_url }}" alt="" class="w-4 h-3 rounded-sm object-cover" onerror="this.style.display='none'">
+            {% endif %}
+            <span class="text-[10px] text-gray-500">{{ race.date }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Expandable race detail -->
+      <div id="race-detail" class="hidden mt-3 bg-gray-900 rounded-xl border border-gray-800 p-4 fade-in">
+        <div id="race-detail-content"></div>
+      </div>
+    </div>
+
+
+    <!-- ── B: Next Race ───────────────────────────────────────────── -->
+    {% if data.f1.calendar.next_race %}
+    {% set nr = data.f1.calendar.next_race %}
+    <div class="mb-8">
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Next Race</p>
+      <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <!-- Race info + sessions -->
+          <div class="lg:col-span-2 p-5">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-base font-bold text-white">{{ nr.race_name }}</h3>
+                <p class="text-xs text-gray-500">{{ nr.circuit_name }} · {{ nr.location }}, {{ nr.country }}</p>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-mono text-white">{{ nr.date }}</p>
+                {% if nr.is_sprint_weekend %}
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-900/30 text-red-400 font-bold">SPRINT WEEKEND</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-x-6">
+              <div>
+                <p class="text-[10px] text-gray-600 uppercase mb-1.5">Sessions</p>
+                {% set session_labels = {'FirstPractice': 'Practice 1', 'SecondPractice': 'Practice 2', 'ThirdPractice': 'Practice 3', 'Qualifying': 'Qualifying', 'Sprint': 'Sprint Race', 'SprintQualifying': 'Sprint Qualifying'} %}
+                {% for skey, sval in (nr.sessions or {}).items() %}
+                <div class="flex justify-between text-xs py-1.5 border-b border-gray-800/50">
+                  <span class="text-gray-400">{{ session_labels.get(skey, skey) }}</span>
+                  <span class="font-mono text-gray-300">{{ sval.time_utc or sval.date }}</span>
+                </div>
+                {% endfor %}
+                <div class="flex justify-between text-xs py-1.5 mt-0.5">
+                  <span class="text-white font-semibold">Race</span>
+                  <span class="font-mono text-red-400 font-semibold">{{ nr.time_utc or nr.date }}</span>
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] text-gray-600 uppercase mb-1.5">Circuit</p>
+                <div class="space-y-1.5">
+                  {% if nr._circuit_type %}
+                  <div class="flex justify-between text-xs"><span class="text-gray-400">Type</span><span class="text-gray-300">{{ nr._circuit_type }}</span></div>
+                  {% endif %}
+                  {% if nr._num_corners %}
+                  <div class="flex justify-between text-xs"><span class="text-gray-400">Corners</span><span class="font-mono text-gray-300">{{ nr._num_corners }}</span></div>
+                  {% endif %}
+                  <div class="flex justify-between text-xs"><span class="text-gray-400">Round</span><span class="font-mono text-gray-300">{{ nr.round }} of {{ data.f1.calendar.total }}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Track diagram -->
+          <div class="border-t lg:border-t-0 lg:border-l border-gray-800 bg-gray-950 flex items-center justify-center p-4">
+            {% if nr._circuit_image_url %}
+            <img src="{{ nr._circuit_image_url }}" alt="{{ nr.circuit_name }}"
+                 class="max-h-48 max-w-full object-contain opacity-80"
+                 onerror="this.parentElement.innerHTML='<span class=\'text-gray-700 text-xs\'>No track diagram</span>'">
+            {% else %}
+            <span class="text-gray-700 text-xs">No track diagram</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <!-- ── C: Driver Grid ─────────────────────────────────────────── -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between mb-3">
+        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">2026 Driver Grid</p>
+        <div class="flex gap-1">
+          <button onclick="sortDrivers('team')" id="sort-team" class="px-2 py-0.5 text-[10px] rounded bg-gray-700 text-white font-medium">By Team</button>
+          <button onclick="sortDrivers('position')" id="sort-pos" class="px-2 py-0.5 text-[10px] rounded bg-gray-800 text-gray-500 font-medium">By Position</button>
+          <button onclick="sortDrivers('number')" id="sort-num" class="px-2 py-0.5 text-[10px] rounded bg-gray-800 text-gray-500 font-medium">By Number</button>
+        </div>
+      </div>
+
+      <div id="driver-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        {% for driver in data.f1.drivers.grid %}
+        <div class="driver-card bg-gray-900 rounded-xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-colors"
+             data-team="{{ driver.team_name or 'ZZZ' }}"
+             data-position="{{ driver.championship_position or 99 }}"
+             data-number="{{ driver.driver_number or 99 }}">
+          <div class="h-1" style="background-color: #{{ driver.team_colour or '333' }}"></div>
+          <div class="p-3">
+            <div class="flex items-center gap-2 mb-2">
+              {% if driver.headshot_url %}
+              <img src="{{ driver.headshot_url }}" alt="{{ driver.name }}"
+                   class="w-10 h-10 rounded-full object-cover bg-gray-800"
+                   onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect width=%2240%22 height=%2240%22 fill=%22%23374151%22 rx=%2220%22/><text x=%2220%22 y=%2226%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-size=%2216%22>?</text></svg>'">
+              {% else %}
+              <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
+                <span class="text-gray-600 text-sm">?</span>
+              </div>
+              {% endif %}
+              {% if driver.driver_number %}
+              <span class="text-lg font-black text-gray-700">#{{ driver.driver_number }}</span>
+              {% endif %}
+            </div>
+            <p class="text-xs font-bold text-white truncate">{{ driver.name }}</p>
+            <p class="text-[10px] text-gray-500 truncate">{{ driver.team_name or 'Reserve' }} · {{ driver.nationality or '?' }}</p>
+            {% if driver.championship_position %}
+            <p class="text-[10px] font-mono mt-1" style="color: #{{ driver.team_colour or '888' }}">P{{ driver.championship_position }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <!-- ── D: Constructor Cards ───────────────────────────────────── -->
+    <div class="mb-8">
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Constructors</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {% for team in data.f1.constructors.teams %}
+        <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-colors">
+          <div class="h-1.5" style="background: linear-gradient(90deg, {{ team.team_colour or '#333' }}, {{ team.team_colour or '#333' }}88)"></div>
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <h4 class="text-sm font-bold text-white">{{ team.name }}</h4>
+                <p class="text-[10px] text-gray-500">{{ team.abbreviation }} · {{ team.nationality }}</p>
+              </div>
+              {% if team.metadata.notes and 'New entry' in team.metadata.notes %}
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-yellow-900/30 text-yellow-400 font-bold">NEW</span>
+              {% endif %}
+            </div>
+            <div class="flex gap-2 mb-3 flex-wrap">
+              {% for driver_name in team.drivers %}
+              <span class="text-[10px] px-2 py-0.5 rounded bg-gray-800 text-gray-300">{{ driver_name }}</span>
+              {% endfor %}
+            </div>
+            {% set m = team.metadata %}
+            <div class="space-y-1 text-[10px]">
+              {% if m.team_principal %}
+              <div class="flex justify-between"><span class="text-gray-500">Principal</span><span class="text-gray-300">{{ m.team_principal }}</span></div>
+              {% endif %}
+              {% if m.headquarters %}
+              <div class="flex justify-between"><span class="text-gray-500">HQ</span><span class="text-gray-300">{{ m.headquarters }}</span></div>
+              {% endif %}
+              {% if m.founded %}
+              <div class="flex justify-between"><span class="text-gray-500">Founded</span><span class="text-gray-300">{{ m.founded }}</span></div>
+              {% endif %}
+              {% if m.constructor_championships and m.constructor_championships > 0 %}
+              <div class="flex justify-between"><span class="text-gray-500">Championships</span><span class="font-mono text-yellow-400">{{ m.constructor_championships }}</span></div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <!-- ── E: Data Depth Counter ──────────────────────────────────── -->
+    <div>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Data Depth</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-center">
+          <div class="text-2xl font-black text-white">{{ data.f1.depth.total_drivers }}</div>
+          <div class="text-[10px] text-gray-500 mt-1">Drivers</div>
+        </div>
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-center">
+          <div class="text-2xl font-black text-red-400">{{ data.f1.depth.total_constructors }}</div>
+          <div class="text-[10px] text-gray-500 mt-1">Constructors</div>
+        </div>
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-center">
+          <div class="text-2xl font-black text-white">{{ data.f1.depth.total_races }}</div>
+          <div class="text-[10px] text-gray-500 mt-1">Races</div>
+        </div>
+        <div class="bg-gray-900 rounded-xl border border-gray-800 p-4 text-center">
+          <div class="text-2xl font-black text-white">{{ data.f1.depth.sprint_weekends }}</div>
+          <div class="text-[10px] text-gray-500 mt-1">Sprint Weekends</div>
+        </div>
+      </div>
+      <p class="text-[10px] text-gray-600 mt-2 text-center">
+        {{ data.f1.depth.total_circuits }} circuits ({{ data.f1.depth.circuits_with_geometry }} with track geometry) · {{ data.f1.depth.total_corners }} corners mapped
+      </p>
+    </div>
+
+  </section>
+
+
+  <script>const F1_SCHEDULE = {{ data.f1.calendar.races | tojson }};</script>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
        API EXPLORER SECTION (hidden by default)
        ═══════════════════════════════════════════════════════════════ -->
   <section id="section-api" class="hidden">
@@ -881,6 +1118,7 @@
             {% if prov.sport == 'nba' %}bg-orange-500
             {% elif prov.sport == 'football' %}bg-emerald-500
             {% elif prov.sport == 'lol' %}bg-violet-500
+            {% elif prov.sport == 'f1' %}bg-red-600
             {% else %}bg-gray-500{% endif %}"></div>
           <div class="min-w-0">
             <p class="text-xs font-medium text-gray-200 truncate">{{ prov.name }}</p>
@@ -894,6 +1132,7 @@
         <span><span class="inline-block w-2 h-2 rounded-full bg-orange-500 mr-1"></span> NBA</span>
         <span><span class="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-1"></span> Football</span>
         <span><span class="inline-block w-2 h-2 rounded-full bg-violet-500 mr-1"></span> LoL Esports</span>
+        <span><span class="inline-block w-2 h-2 rounded-full bg-red-600 mr-1"></span> F1</span>
         <span class="text-gray-600 ml-auto">API &middot; CDN &middot; Web Scrape &middot; WebSocket &middot; CSV</span>
       </div>
     </div>
@@ -910,7 +1149,7 @@
 
 <script>
   // ── Sport Tab Switching ─────────────────────────────────────────
-  const tabs = ['nba', 'fifa', 'lol', 'api'];
+  const tabs = ['nba', 'fifa', 'lol', 'f1', 'api'];
   function switchTab(tab) {
     tabs.forEach(t => {
       const section = document.getElementById('section-' + t);
@@ -1046,6 +1285,86 @@
     btn.textContent = 'Copied';
     setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
   }
+
+  // ── F1: Race Detail Expand ─────────────────────────────────────
+  function expandRace(round) {
+    const race = F1_SCHEDULE.find(function(r) { return r.round === round; });
+    const detail = document.getElementById('race-detail');
+    const content = document.getElementById('race-detail-content');
+    if (!race || !detail || !content) return;
+
+    // Toggle: click same race again to close
+    if (!detail.classList.contains('hidden') && detail.dataset.round == round) {
+      detail.classList.add('hidden');
+      return;
+    }
+    detail.dataset.round = round;
+    detail.classList.remove('hidden');
+
+    const sessions = race.sessions || {};
+    const sessionLabels = {
+      'FirstPractice': 'Practice 1', 'SecondPractice': 'Practice 2', 'ThirdPractice': 'Practice 3',
+      'Qualifying': 'Qualifying', 'Sprint': 'Sprint Race', 'SprintQualifying': 'Sprint Qualifying'
+    };
+    let sessionHtml = '';
+    for (const [key, val] of Object.entries(sessions)) {
+      const label = sessionLabels[key] || key;
+      sessionHtml += '<div class="flex justify-between text-xs py-1.5 border-b border-gray-800/50">' +
+        '<span class="text-gray-400">' + label + '</span>' +
+        '<span class="font-mono text-gray-300">' + val.date + ' ' + (val.time_utc || '') + '</span></div>';
+    }
+
+    content.innerHTML =
+      '<div class="flex items-center justify-between mb-3">' +
+        '<div>' +
+          '<h4 class="text-sm font-bold text-white">' + race.race_name + '</h4>' +
+          '<p class="text-[10px] text-gray-500">' + (race.official_name || '') + '</p>' +
+        '</div>' +
+        '<button onclick="document.getElementById(\'race-detail\').classList.add(\'hidden\')" class="text-gray-600 hover:text-white">' +
+          '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+        '<div>' +
+          '<p class="text-[10px] text-gray-600 uppercase mb-1">Race</p>' +
+          '<p class="text-xs text-white font-mono">' + race.date + ' ' + (race.time_utc || '') + '</p>' +
+          '<p class="text-[10px] text-gray-500 mt-1">' + race.circuit_name + ' · ' + race.location + ', ' + race.country + '</p>' +
+          (race.is_sprint_weekend ? '<span class="inline-block mt-2 text-[9px] px-1.5 py-0.5 rounded bg-red-900/30 text-red-400 font-bold">SPRINT WEEKEND</span>' : '') +
+        '</div>' +
+        '<div>' +
+          '<p class="text-[10px] text-gray-600 uppercase mb-1">Sessions</p>' +
+          sessionHtml +
+        '</div>' +
+      '</div>';
+  }
+
+  // ── F1: Driver Sort ────────────────────────────────────────────
+  function sortDrivers(mode) {
+    const grid = document.getElementById('driver-grid');
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll('.driver-card'));
+
+    // Update button states
+    const modes = {'team': 'sort-team', 'position': 'sort-pos', 'number': 'sort-num'};
+    for (const [m, id] of Object.entries(modes)) {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.className = m === mode
+          ? 'px-2 py-0.5 text-[10px] rounded bg-gray-700 text-white font-medium'
+          : 'px-2 py-0.5 text-[10px] rounded bg-gray-800 text-gray-500 font-medium';
+      }
+    }
+
+    cards.sort(function(a, b) {
+      if (mode === 'team') return (a.dataset.team || '').localeCompare(b.dataset.team || '');
+      if (mode === 'position') return parseInt(a.dataset.position || 99) - parseInt(b.dataset.position || 99);
+      if (mode === 'number') return parseInt(a.dataset.number || 99) - parseInt(b.dataset.number || 99);
+      return 0;
+    });
+
+    cards.forEach(function(card) { grid.appendChild(card); });
+  }
+
 </script>
 
 </body>

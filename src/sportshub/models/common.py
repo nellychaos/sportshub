@@ -10,6 +10,7 @@ class Sport(str, Enum):
     NBA = "nba"
     LOL = "lol"
     FOOTBALL = "football"
+    F1 = "f1"
 
 
 class EventStatus(str, Enum):

@@ -7,6 +7,7 @@ the depth and richness of multi-source sports data aggregation.
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -50,6 +51,11 @@ class DemoService:
         lol_teams = _load("lol_teams.json")
         providers = _load("providers.json")
 
+        f1_drivers = _load("f1_drivers_2026.json")
+        f1_constructors = _load("f1_constructors_2026.json")
+        f1_schedule = _load("f1_schedule_2026.json")
+        f1_circuits = _load("f1_circuits.json")
+
         provider_list = []
         if isinstance(providers, dict) and "providers" in providers:
             provider_list = providers["providers"]
@@ -60,8 +66,10 @@ class DemoService:
             "nba": self._nba_showcase(nba_stats),
             "fifa": self._fifa_showcase(fifa_players, fifa_teams),
             "lol": self._lol_showcase(lol_teams),
+            "f1": self._f1_showcase(f1_drivers, f1_constructors, f1_schedule, f1_circuits),
             "coverage": self._coverage_stats(
-                nba_stats, fifa_players, fifa_teams, lol_teams, provider_list
+                nba_stats, fifa_players, fifa_teams, lol_teams, provider_list,
+                f1_drivers, f1_constructors,
             ),
         }
 
@@ -155,6 +163,87 @@ class DemoService:
             "featured": _find_team(teams, "Gen.G"),
         }
 
+    # -- F1 -----------------------------------------------------------------
+
+    def _f1_showcase(
+        self,
+        drivers: list[dict],
+        constructors: list[dict],
+        schedule: list[dict],
+        circuits: list[dict],
+    ) -> dict:
+        today = date.today().isoformat()
+
+        # Calendar data
+        past_rounds = [r["round"] for r in schedule if r.get("date", "") < today]
+        next_race = None
+        for r in schedule:
+            if r.get("date", "") >= today:
+                next_race = r
+                break
+
+        # Build circuit lookup for enriching schedule with circuit info
+        circuit_map = {c["circuit_id"]: c for c in circuits}
+
+        # Enrich each race with circuit metadata (type, svg, corners)
+        for race in schedule:
+            cid = race.get("circuit_id")
+            circ = circuit_map.get(cid)
+            if circ:
+                tl = circ.get("track_layout") or {}
+                race["_circuit_type"] = circ.get("circuit_type")
+                race["_svg_url"] = circ.get("svg_track_map_url")
+                race["_circuit_image_url"] = circ.get("circuit_image_url")
+                race["_num_corners"] = tl.get("num_corners")
+                race["_lat"] = circ.get("latitude")
+                race["_lon"] = circ.get("longitude")
+
+        # Drivers sorted by team then championship position (exclude reserves)
+        active_drivers = [d for d in drivers if d.get("team_id")]
+        sorted_drivers = sorted(
+            active_drivers,
+            key=lambda d: (
+                d.get("team_name") or "ZZZ",
+                int(d.get("championship_position") or 99),
+            ),
+        )
+
+        by_team: dict[str, list[dict]] = {}
+        for d in sorted_drivers:
+            by_team.setdefault(d["team_id"], []).append(d)
+
+        # Depth stats
+        circuits_with_geo = sum(1 for c in circuits if (c.get("track_layout") or {}).get("x"))
+        total_corners = sum(len((c.get("track_layout") or {}).get("corners", [])) for c in circuits)
+
+        return {
+            "calendar": {
+                "races": schedule,
+                "total": len(schedule),
+                "sprint_count": sum(1 for r in schedule if r.get("is_sprint_weekend")),
+                "next_race": next_race,
+                "past_rounds": past_rounds,
+            },
+            "drivers": {
+                "grid": sorted_drivers,
+                "total": len(sorted_drivers),
+                "by_team": by_team,
+            },
+            "constructors": {
+                "teams": constructors,
+                "total": len(constructors),
+            },
+            "depth": {
+                "total_drivers": len(sorted_drivers),
+                "total_constructors": len(constructors),
+                "total_races": len(schedule),
+                "total_circuits": len(circuits),
+                "circuits_with_geometry": circuits_with_geo,
+                "total_corners": total_corners,
+                "sprint_weekends": sum(1 for r in schedule if r.get("is_sprint_weekend")),
+            },
+        }
+
     # -- Coverage Stats ------------------------------------------------------
 
     def _coverage_stats(
@@ -164,13 +253,17 @@ class DemoService:
         fifa_teams: list,
         lol_teams: list,
         providers: list,
+        f1_drivers: list | None = None,
+        f1_constructors: list | None = None,
     ) -> dict:
         nba_count = len(nba_stats.get("players", []))
+        f1_driver_count = len(f1_drivers) if f1_drivers else 0
+        f1_constructor_count = len(f1_constructors) if f1_constructors else 0
         return {
             "provider_count": len(providers),
-            "sport_count": 3,
-            "total_athletes": nba_count + len(fifa_players),
-            "total_teams": 30 + len(fifa_teams) + len(lol_teams),
+            "sport_count": 4,
+            "total_athletes": nba_count + len(fifa_players) + f1_driver_count,
+            "total_teams": 30 + len(fifa_teams) + len(lol_teams) + f1_constructor_count,
             "providers": [
                 {
                     "name": p.get("display_name", p.get("source_id", "?")),
