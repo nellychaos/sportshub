@@ -59,10 +59,22 @@ SPORT_MARKETS: dict[Sport, list[str]] = {
     ],
 }
 
-# Competitions we care about (filter out minor leagues)
-NBA_COMPETITIONS = {"nba", "nba-playoffs", "nba-finals"}
-FOOTBALL_COMPETITIONS = {"fifa-world-cup", "world-cup"}
-LOL_COMPETITIONS = {"lol-worlds", "lck", "lpl", "lec", "lcs", "msi"}
+# Competitions we care about (filter out minor leagues).
+# Matched against the Cloudbet `competition.key` field via substring containment.
+SPORT_COMPETITION_WHITELIST: dict[Sport, set[str]] = {
+    Sport.NBA: {"nba", "nba-playoffs", "nba-finals"},
+    Sport.FOOTBALL: {"fifa-world-cup", "world-cup"},
+    Sport.LOL: {"lol-worlds", "lck", "lpl", "lec", "lcs", "msi", "league-of-legends"},
+}
+
+
+def _is_whitelisted_competition(sport: Sport, comp_key: str) -> bool:
+    """Return True if the given competition key matches the sport whitelist."""
+    allowed = SPORT_COMPETITION_WHITELIST.get(sport, set())
+    if not allowed or not comp_key:
+        return False
+    key = comp_key.lower()
+    return any(token in key for token in allowed)
 
 
 def _parse_cloudbet_time(raw: str | None) -> datetime | None:
@@ -306,6 +318,7 @@ class CloudbetAdapter(SourceAdapter):
             # Flat event list format
             competitions = [{"events": data.get("events", [])}]
 
+        skipped_competitions = 0
         for comp in competitions:
             comp_key = comp.get("key", "")
             comp_name = comp.get("name", "")
@@ -315,6 +328,12 @@ class CloudbetAdapter(SourceAdapter):
                 if isinstance(comp_category, dict)
                 else ""
             )
+
+            # Skip competitions not on the whitelist (e.g., Japanese B.League when we want NBA).
+            # This prevents low-value records from filling the pipeline and diluting the match rate.
+            if not _is_whitelisted_competition(self._sport, comp_key):
+                skipped_competitions += 1
+                continue
 
             events = comp.get("events", [])
             for ev in events:
@@ -383,4 +402,11 @@ class CloudbetAdapter(SourceAdapter):
                     )
                 )
 
+        if skipped_competitions:
+            logger.debug(
+                "cloudbet_competitions_filtered",
+                source_id=self.source_id,
+                skipped=skipped_competitions,
+                kept_events=len(raw_events),
+            )
         return raw_events

@@ -36,6 +36,41 @@ logger = structlog.get_logger()
 _WS_TIMEOUT = 60
 _WS_CONNECT_TIMEOUT = 15
 
+# Competition whitelist per Mollybet sport code. Matched against the
+# lowercased `competition_name` field via substring containment. Without this
+# filter, the basket stream floods the pipeline with Dominican / Mexican /
+# Venezuelan leagues (none in our teams table), the fb stream adds every J-League
+# division globally, and the esports stream returns FIFA video-game matches.
+MOLLYBET_COMPETITION_WHITELIST: dict[str, tuple[str, ...]] = {
+    "basket": ("usa nba", "nba",),
+    "fb": (
+        "fifa world cup",
+        "world cup",
+        "uefa euro",
+        "copa america",
+        "world cup qualification",
+        "euro qualification",
+    ),
+    "esports": (
+        "lol",
+        "league of legends",
+        "worlds",
+        "lck",
+        "lpl",
+        "lec",
+        "lcs",
+        "msi",
+    ),
+}
+
+
+def _is_whitelisted_competition(mollybet_sport: str, competition_name: str) -> bool:
+    allowed = MOLLYBET_COMPETITION_WHITELIST.get(mollybet_sport, ())
+    if not allowed or not competition_name:
+        return False
+    cn = competition_name.lower()
+    return any(token in cn for token in allowed)
+
 
 def _parse_kickoff(raw: Any) -> datetime | None:
     """Parse Mollybet kickoff time to an aware UTC datetime."""
@@ -290,6 +325,10 @@ class MollybetAdapter(SourceAdapter):
                     competition_id = str(ev.get("competition_id", ""))
                     competition_name = ev.get("competition_name", "")
                     competition_country = ev.get("competition_country", "")
+
+                    # Skip competitions not on the whitelist (e.g., Dominican LNB when we want NBA)
+                    if not _is_whitelisted_competition(self._mollybet_sport, competition_name):
+                        continue
 
                     raw_events.append(RawEvent(
                         source_id=self.source_id,
